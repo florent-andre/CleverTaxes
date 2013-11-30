@@ -32,7 +32,6 @@ import org.apache.stanbol.commons.web.base.LinkResource;
 import org.apache.stanbol.commons.web.base.NavigationLink;
 import org.apache.stanbol.commons.web.base.ScriptResource;
 import org.apache.stanbol.commons.web.base.WebFragment;
-import org.apache.stanbol.enhancer.servicesapi.EnhancementJobManager;
 import org.lh.stanbol.enhancer.jersey.resource.SkosifierRootResource;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.component.ComponentContext;
@@ -57,8 +56,8 @@ public class SkosifierWebFragment implements WebFragment {
     private BundleContext bundleContext;
     
     //TODO : remove this unused references
-    @Reference
-    EnhancementJobManager jobManager;
+//    @Reference
+//    EnhancementJobManager jobManager;
 
     @Reference
     TcManager tcManager;

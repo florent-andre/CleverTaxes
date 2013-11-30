@@ -19,11 +19,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-	<groupId>eu.lh</groupId>
-	<artifactId>eu.lh.parent</artifactId>
-	<version>0.0.2-incubating-SNAPSHOT</version>
-  </parent>
+<!--   <parent> -->
+<!-- 	<groupId>eu.lh</groupId> -->
+<!-- 	<artifactId>eu.lh.parent</artifactId> -->
+<!-- 	<version>0.0.2-incubating-SNAPSHOT</version> -->
+<!--   </parent> -->
+
+	<parent>
+	    <groupId>org.apache.stanbol</groupId>
+	    <artifactId>stanbol-parent</artifactId>
+	    <version>3</version>
+    </parent>
 
   <groupId>eu.ooffee</groupId>
   <artifactId>eu.ooffee.clevertaxes</artifactId>
@@ -91,52 +97,52 @@
   <!-- TODO : use scope provided for this dependencies -->
   
     <!-- dep on skosifier -->
-    <dependency>
-      <groupId>eu.lh</groupId>
-      <artifactId>eu.lh.skosifier</artifactId>
-    </dependency>
+<!--     <dependency> -->
+<!--       <groupId>eu.lh</groupId> -->
+<!--       <artifactId>eu.lh.skosifier</artifactId> -->
+<!--     </dependency> -->
     
     
-    <dependency>
-      <groupId>eu.lh</groupId>
-      <artifactId>eu.lh.registry.broadcaster</artifactId>
-      <version>0.0.2-incubating-SNAPSHOT</version>
-    </dependency>
+<!--     <dependency> -->
+<!--       <groupId>eu.lh</groupId> -->
+<!--       <artifactId>eu.lh.registry.broadcaster</artifactId> -->
+<!--       <version>0.0.2-incubating-SNAPSHOT</version> -->
+<!--     </dependency> -->
     
     <!-- dependencies on other IKS modules -->
-    <dependency>
-      <groupId>org.apache.stanbol</groupId>
-      <artifactId>org.apache.stanbol.enhancer.servicesapi</artifactId>
-    </dependency>
+<!--     <dependency> -->
+<!--       <groupId>org.apache.stanbol</groupId> -->
+<!--       <artifactId>org.apache.stanbol.enhancer.servicesapi</artifactId> -->
+<!--     </dependency> -->
     <!-- <dependency> -->
     <!--   <groupId>org.apache.stanbol</groupId> -->
     <!--   <artifactId>org.apache.stanbol.enhancer.standalone</artifactId> -->
     <!-- </dependency> -->
-    <dependency>
-      <groupId>org.apache.stanbol</groupId>
-      <artifactId>org.apache.stanbol.commons.jsonld</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.stanbol</groupId>
-      <artifactId>org.apache.stanbol.commons.web.base</artifactId>
-    </dependency>
+<!--     <dependency> -->
+<!--       <groupId>org.apache.stanbol</groupId> -->
+<!--       <artifactId>org.apache.stanbol.commons.jsonld</artifactId> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>org.apache.stanbol</groupId> -->
+<!--       <artifactId>org.apache.stanbol.commons.web.base</artifactId> -->
+<!--     </dependency> -->
     <!-- Clerezza dependencies -->
-    <dependency>
-      <groupId>org.apache.clerezza</groupId>
-      <artifactId>rdf.core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.clerezza</groupId>
-      <artifactId>jaxrs.rdf.providers</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.clerezza</groupId>
-      <artifactId>rdf.jena.serializer</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.clerezza</groupId>
-      <artifactId>rdf.jena.parser</artifactId>
-    </dependency>
+<!--     <dependency> -->
+<!--       <groupId>org.apache.clerezza</groupId> -->
+<!--       <artifactId>rdf.core</artifactId> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>org.apache.clerezza</groupId> -->
+<!--       <artifactId>jaxrs.rdf.providers</artifactId> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>org.apache.clerezza</groupId> -->
+<!--       <artifactId>rdf.jena.serializer</artifactId> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>org.apache.clerezza</groupId> -->
+<!--       <artifactId>rdf.jena.parser</artifactId> -->
+<!--     </dependency> -->
     <!-- TODO : when this dependency is enable Tcprovider initialisation in test fail -->
 <!--     <dependency> -->
 <!--       <groupId>org.apache.clerezza</groupId> -->
@@ -211,37 +217,43 @@
       <artifactId>jetty</artifactId>
       <scope>provided</scope>
     </dependency>
+    
+    <dependency>
+	    <groupId>org.apache.stanbol</groupId>
+	      <artifactId>org.apache.stanbol.commons.web.base</artifactId>
+	    <version>0.11.0</version>
+    </dependency>
 
 	<!-- Dependencies for search related functions -->
-	<dependency>
-      <groupId>org.apache.stanbol</groupId>
-      <artifactId>org.apache.stanbol.commons.namespaceprefix.service</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.stanbol</groupId>
-      <artifactId>org.apache.stanbol.entityhub.core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.stanbol</groupId>
-      <artifactId>org.apache.stanbol.entityhub.model.clerezza</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.stanbol</groupId>
-      <artifactId>org.apache.stanbol.entityhub.query.clerezza</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.stanbol</groupId>
-      <artifactId>org.apache.stanbol.entityhub.ldpath</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.stanbol</groupId>
-      <artifactId>org.apache.stanbol.commons.indexedgraph</artifactId>
-    </dependency>
+<!-- 	<dependency> -->
+<!--       <groupId>org.apache.stanbol</groupId> -->
+<!--       <artifactId>org.apache.stanbol.commons.namespaceprefix.service</artifactId> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>org.apache.stanbol</groupId> -->
+<!--       <artifactId>org.apache.stanbol.entityhub.core</artifactId> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>org.apache.stanbol</groupId> -->
+<!--       <artifactId>org.apache.stanbol.entityhub.model.clerezza</artifactId> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>org.apache.stanbol</groupId> -->
+<!--       <artifactId>org.apache.stanbol.entityhub.query.clerezza</artifactId> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>org.apache.stanbol</groupId> -->
+<!--       <artifactId>org.apache.stanbol.entityhub.ldpath</artifactId> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>org.apache.stanbol</groupId> -->
+<!--       <artifactId>org.apache.stanbol.commons.indexedgraph</artifactId> -->
+<!--     </dependency> -->
     <!-- for some Static LDPath utilities -->
-	<dependency>
-	  <groupId>org.apache.stanbol</groupId>
-      <artifactId>org.apache.stanbol.entityhub.jersey</artifactId>
-	</dependency>
+<!-- 	<dependency> -->
+<!-- 	  <groupId>org.apache.stanbol</groupId> -->
+<!--       <artifactId>org.apache.stanbol.entityhub.jersey</artifactId> -->
+<!-- 	</dependency> -->
 	
     <!-- for tests -->
     <dependency>
@@ -256,10 +268,25 @@
       	<scope>test</scope>
     </dependency>
     <!-- end dependencies for parsing a graph -->
+<!--     <dependency> -->
+<!--     	<groupId>com.google.guava</groupId> -->
+<!--     	<artifactId>guava</artifactId> -->
+<!--     </dependency> -->
+    
     <dependency>
-    	<groupId>com.google.guava</groupId>
-    	<artifactId>guava</artifactId>
+    	<groupId>eu.ooffee.utilities</groupId>
+		<artifactId>jaxb</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
     </dependency>
+    <!-- logging -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
   </dependencies>
 
 </project>

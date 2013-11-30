@@ -1,0 +1,17 @@
+* TODO : write an integration test for automatic testing of this things.
+
+# TEST  :
+
+0) create the empty graph
+curl -H "Accept: application/json" "http://localhost:8080/skosifier/graphlink?graphOne=http://cuture-heritage.org/thesaurus/organisationID/nameTest2&graphTwo=http://cuture-heritage.org/thesaurus/organisationID/nameTest6"
+
+0') copy the graph id in test files in history-of node
+
+1) add one concept with 2 closeMatch && one another concept with broaderMatch
+curl -X POST --data-urlencode change@add-a-close-match-triple.xml http://localhost:8080/skosifer/changes
+
+2) modify a close match object && change a property (from broaderMatch to a narrower)
+curl -X POST --data-urlencode change@change-a-close-match-triple.xml http://localhost:8080/skosifer/changes
+
+3) delete *one* close match property && delete a concept
+curl -X POST --data-urlencode change@delete-a-close-match-triple.xml http://localhost:8080/skosifer/changes

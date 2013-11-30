@@ -1,0 +1,97 @@
+<bundles>
+	<startLevel level="27">
+		
+		<bundle>
+			      <groupId>eu.lh</groupId>
+			      <artifactId>eu.lh.models</artifactId> 
+			      <version>0.0.2-incubating-SNAPSHOT</version>
+		</bundle>
+		
+		<bundle>
+			      <groupId>eu.lh</groupId>
+			      <artifactId>skosifier-web</artifactId> 
+			      <version>0.0.2-incubating-SNAPSHOT</version>
+		</bundle>
+		
+		<bundle>
+			      <groupId>eu.lh</groupId>
+			      <artifactId>eu.lh.skosifier</artifactId>
+			      <version>0.0.2-incubating-SNAPSHOT</version>
+		</bundle>
+		
+		<bundle>
+			      <groupId>eu.xplor</groupId>
+			      <artifactId>eu.xplor.xplormodels</artifactId>
+			      <version>0.0.2-incubating-SNAPSHOT</version>
+		</bundle>
+		
+		<bundle>
+			      <groupId>eu.lh</groupId>
+			      <artifactId>eu.lh.registry.broadcaster</artifactId>
+			      <version>0.0.2-incubating-SNAPSHOT</version>
+		</bundle>
+		
+		<bundle>
+			      <groupId>org.apache.clerezza</groupId>
+			      <artifactId>rdf.jena.tdb.storage</artifactId>
+			      <version>0.6</version>
+		</bundle>
+		
+		<bundle>
+			      <groupId>org.apache.clerezza</groupId>
+			      <artifactId>rdf.core</artifactId>
+			      <version>0.13</version>
+		</bundle>
+		
+		<bundle>
+			      <groupId>org.apache.clerezza</groupId>
+			      <artifactId>rdf.jena.commons</artifactId>
+			      <version>0.6</version>
+		</bundle>
+		
+		<bundle>   
+			      <groupId>org.apache.clerezza</groupId>
+			      <artifactId>rdf.jena.facade</artifactId>
+			      <version>0.13</version>
+		</bundle>
+		
+		<bundle>
+			      <groupId>org.apache.clerezza</groupId>
+			      <artifactId>rdf.jena.parser</artifactId>
+			      <version>0.11</version>
+		</bundle>
+		
+		<bundle>   
+			      <groupId>org.apache.clerezza</groupId>
+			      <artifactId>rdf.jena.serializer</artifactId>
+			      <version>0.10</version>
+		</bundle>
+		
+		<bundle>
+			      <groupId>org.apache.clerezza</groupId>
+			      <artifactId>rdf.jena.sparql</artifactId>
+			      <version>0.6</version>
+		</bundle>
+		
+		<bundle>
+			      <groupId>org.apache.clerezza</groupId>
+			      <artifactId>rdf.jena.storage</artifactId>
+			      <version>0.6</version>
+		</bundle>
+		
+		<bundle>
+	<groupId>org.apache.clerezza</groupId>
+	<artifactId>platform.graphprovider.content</artifactId>
+	<version>0.6-incubating</version>
+</bundle>
+
+	
+	</startLevel>
+	<startLevel level="28">
+		<bundle>
+			<groupId>eu.xplor</groupId>
+			<artifactId>eu.xplor.bundleconfig</artifactId>
+			 <version>0.0.2-incubating-SNAPSHOT</version>
+		</bundle>  
+	</startLevel>
+</bundles>

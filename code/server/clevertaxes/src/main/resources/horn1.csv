@@ -1,0 +1,825 @@
+"ID"	"prefLabel@fra"	"prefLabel@nl"	"prefLabel@eng"	"broader"	"SN@nld"	"SN@eng"	"SN@fra"
+41875	"Nom de l'objet"	"Objectnaam"	"Object name"				
+41877	"Architecture"	"Architectuur"	"Architecture"	41875	"Topterm voor architecturale elementen en onderdelen van architecturale elementen"		
+41879	"Construction"	"Bouwwerk"	"Single built work"	41877	"Algemene benaming voor alle soorten van (in aanbouw zijnde) gebouwen"		
+45278	"Composant de bâtiment"	"Deel van een gebouw"	"Building division"	41879	"Wordt gebruikt voor het benoemen van afzonderlijke kamers of ruimten van een gebouw"		
+46319	"Construction funéraire"	"Funerair bouwwerk"	"Funerary structure"	41879	"Wordt gebruikt voor gebouwen die betrekking hebben op begravingen"		
+42134	"Monument"	"Monument"	"Monument"	41879	"Bouwwerken die getuigen van een (vroegere) cultuur, kunst, nijverheid of wetenschap en die beschouwd worden als uitzonderlijk cultuurhistorisch waardevol"		
+41878	"Élément d'architecture"	"Architecturaal element"	"Architectural element"	41877	"Structurele of decoratieve vormen die oorspronkelijk of hoofdzakelijk ontstonden als architectonische componenten. Deze kunnen een structurele of een decoratieve functie hebben"		
+45650	" Antéfixe"	"Antefix"	"Antefix"	41878	"Dakornamenten, die het open eind van een rij dektegels afsluiten of verbergen, o.a. om te voorkomen dat regen tussen de daktegels kan doorsijpelen en wind de bovenste tegels niet kan losmaken"	"Plaque closing the outer end of the final cover tile in each row of overlapping cover tiles running down from the ridge to the eaves of a sloped roof on Classical Greek and Roman and Neo-Classical buildings"	
+42194	" Arc et composant d'arc"	"Boog en boogonderdeel"	"Arch and arch component"	41878	"Gidsterm voor bogen en onderdelen van bogen"		
+44470	" Bracon"	"Korbeel"	"Bracket (structural element)"	41878	"Wordt gebruikt voor architecturale elementen die dienen om een verticaal gewicht, vb. een dak, te ondersteunen of om een hoek te versterken. Ze kunnen ook meer decoratief dan functioneel zijn"		
+44436	" Cheminée et composant de cheminée"	"Haard en haardonderdelen"	"Hearth and hearth component"	41878	"Gidsterm voor haarden en onderdelen van haarden"		
+42191	" Colonne et composant de colonne"	"Zuil en zuilonderdeel"	"Column and column component"	41878	"Gidsterm voor zuilen en onderdelen van zuilen"		
+42124	" Composant de pyramide"	"Onderdeel van een pyramide"	"Pyramid component"	41878	"Wordt gebruikt voor onderdelen van pyramiden"		
+44698	" Corbeau"	"Kraagsteen"	"Corbel"	41878	"Wordt gebruikt voor een uit de muur vooruitspringende steen die een kroonlijst, fries, gewelf etc. draagt"	"A bracket, projectong horizontally to support something above"	
+42215	" Élément de surface et composant de surface"	"Oppervlakte-element en onderdeel van oppervlakte-element"	"Surface element and surface element component"	41878	"Gidsterm voor architecturale elementen die een deel van het oppervlakte van een gebouw innemen of het oppervlakte vormgeven"		
+42220	" Entablement et composant d'entablement"	"Entablement en entablementonderdeel"	"Entablature and entablature component"	41878	"Wordt gebruikt voor de omlijsting van een raam of deur, met name het geheel van architraaf, fries en kroonlijst"		
+44494	" Grillage et composant de grillage"	"Hekwerk en hekwerkonderdeel"	"Barrier and barrier element"	41878	"Gidsterm hekwerk en onderdelen van hekwerk"		
+43068	" Linteau"	"Latei"	"Lintel"	41878	"Wordt gebruikt voor draagbalken of draagstukken die een deur, venster of andere opening overspannen"		
+41985	" Mur et composant de mur"	"Muur en muuronderdeel"	"Wall and wall component"	41878	"Gidsterm voor architecturale elementen die betrekking hebben op muren en onderdelen van muren"		
+42204	" Ouverture et composant d'ouverture"	"Opening en openingsonderdeel"	"Opening and opening component"	41878	"Gidsterm voor architecturale elementen die betrekking hebben op openingen in gebouwen, zoals ramen en deuren"		
+44468	" Patin"	"Sleutelstuk"	"Sole-plate"	41878	"Decoratieve balksleutel, slof of langwerpig plat stuk hout ter ondersteuning van een balkeinde"		
+42262	" Pilier et composant de pilier"	"Pijler en pijleronderdeel"	"Pier and pier component"	41878	"Gidsterm voor pijlers en onderdelen van pijlers"		
+44480	" Poutre (élément de construction)"	"Balk (bouwelement)"	"Beam (structural element)"	41878	"Dragend constructiedeel van een bouwwerk, meestal in hout, staal of beton"		
+44447	" Socle"	"Sokkel"	"Socle"	41878	"Wordt gebruikt voor een basis, variërend van vorm, dat dient als voetstuk van beelden, zuilen, vazen enz"		"Petite base de formes variées, comportant une surface plate sur le dessus formant support pour un objet (pendule, statue, bouquet, vase, éléments de surtout ou pierre montées) ou comportant une encoche ou un trou permettant de l'y fixer"
+41955	"Arme et armure"	"Wapen en wapenrusting"	"Arm and armour"	41875			
+45128	"Accessoire d'arme et d'armure"	"Wapen- en wapenrustingaccessoire"	"Arm and armour accessory"	41955			
+45094	" Amorçoir"	"Ontstekingsapparaat"	"Ignition mechanism"	45128			
+45768	" Baudrier (armure)"	"Degenkoppel"	"Sword-belt"	45128			
+42029	" Carquois"	"Pijlkoker"	"Quiver"	45128			
+45114	" Cartouchière"	"Patroontas"	"Cartridge box"	45128			
+45769	" Ceinture à munitions"	"Munitieriem"	"Munition belt"	45128			
+45798	" Clé d'arme à rouet"	"Key of a wheellock"	"Sleutel van een radslot"	45128			
+45137	" Corne à poudre"	"Kruithoorn"	"Powder horn"	45128			
+43016	" Couvre-fonte"	"Holsterbedekking"	"Holster cover"	45128			
+42948	" Fonte à pistolet"	"Holster"	"Holster"	45128			
+45129	" Fourquine"	"Geweervork"	"Musket-rest"	45128			
+43407	" Fourreau"	"Schede"	"Scabbard"	45128			
+45884	" Moule à balle"	"Kogelmal"	"Bullet mold"	45128			
+45801	" Poire à poudre"	"Kruitpeer"	"Powder pear"	45128			
+41956	"Arme"	"Wapen"	"Weapon"	41955			
+42046	" Arme blanche"	"Blank wapen"	"Edged weapon"	41956			
+42092	" Arme de choc"	"Slagwapen"	"Percussive weapon"	41956			
+42065	" Arme de jet"	"Afstandswapen"	"Ranged weapon"	41956			
+41957	"Armure"	"Wapenrusting"	"Armor"	41955			
+43313	" Bouclier"	"Schild (harnas)"	"Shield (armor)"	41957			
+45098	" Casque (armure)"	"Helm (wapenrusting)"	"Helmet (armor)"	41957			
+42004	" Cotte de mailles"	"Maliënkolder"	"Hauberk"	41957			
+45122	" Cubitière"	"Elleboogkap"	"Cowter"	41957			
+43258	" Cuirasse"	"Kuras"	"Cuirasse"	41957			
+45123	" Cuissard"	"Bovenbeenstuk"	"Cuisse"	41957			
+45860	" Dossière d'armure"	"Rugstuk van pantser"	"Harness obverse"	41957			
+45153	" Épaulière"	"Schouderstuk"	"Pauldron"	41957			
+45131	" Gantelet"	"Kaphandschoen"	"Gauntlet"	41957			
+45859	" Gantelet-miton"	"Pantserhandschoen van ridder"	"Knight gauntlet"	41957			
+45132	" Genouillère"	"Kniekap"	"Knee cap"	41957			
+45134	" Gorgerin (de casque)"	"Halsbergstuk"	"Gorget plate"	41957			
+45146	" Plastron (armure)"	"Borstschild"	"Breastplate (body armor)"	41957			
+45152	" Soleret"	"IJzeren schoen"	"Sabaton"	41957			
+45157	" Tassette"	"Liesbeschermer"	"Tasset"	41957			
+41958	"Composant d'arme et d'armure"	"Onderdeel van wapen en wapenrusting"	"Arm and armour component"	41955			
+45689	" Composant d'accessoire d'arme et d'armure"	"Onderdeel van wapen- en wapenrustingaccessoire"	"Arm and armour accessory component"	41958			
+42018	" Composant d'arme"	"Wapenonderdeel"	"Weapon component"	41958			
+42050	" Composant d'armure"	"Onderdeel van wapenrusting"	"Armor component"	41958			
+45102	"Projectile"	"Projectiel"	"Projectile"	41955			
+45103	" Balle (munition)"	"Kogel (munitie)"	"Bullet"	45102			
+45106	" Bombe (ammunition)"	"Bom (munitie)"	"Bomb (explosive weapon)"	45102			
+45802	" Boulet"	"Kanonskogel"	"Cannonball"	45102			
+45800	" Carreau d'arbalète"	"Schicht (kruisboogpijl)"	"Bolt (crossbow arrow)"	45102			
+45113	" Cartouche (munition)"	"Patroon (munitie)"	"Cartridge"	45102			
+42064	" Flèche"	"Pijl"	"Arrow"	45102			
+45803	" Grenade"	"Mortiergranaat"	"Grenade"	45102			
+41929	"Article de toilette et instrument médical"	"Toiletgerei en medische instrumenten"	"Toiletry and medical instrument"	41875	"Gidsterm voor zaken die men nodig heeft bij het maken van zijn toilet en voor zaken die te maken hebben met medische verzorging"		
+43088	" Article de toilette"	"Toiletartikel"	" Toiletry"	41929	"Te gebruiken voor alle zaken die men nodig heeft bij het maken van zijn toilet"		
+45658	" Bac à suie"	"Roetbak"	"Soot container"	43088			
+45113	" Bâtonnet à fard"	"Schminkstaafje"	"Make-up stick"	43088			
+42180	" Boîte à fard"	"Schminkdoos"	"Make-up box"	43088			
+46315	" Boîte à mouche"	"Boîte à mouche"	"Boîte à mouche"	43088	"Platte metalen doosjes, vaak bestaande uit verschillende compartimenten, waarin men de moedervlekjes of ""mouches"" opborg"		"Boîte plate en métal de très petites dimensions dont la longueur se situe entre 6 et 7 cm et comportant des petits compartiments dans lesquels on range les mouches; son couvercle à charnière est doublé intérieurement d'un petit miroir."
+44935	" Brosse (article de toilette)"	"Borstel (toiletartikel)"	"Brush (grooming tool)"	43088	"Borstels, meestal met handvat, die worden gebruikt voor het gladmaken en in vorm leggen van het haar"		"Instrument formé de fibres en matrériaux variés plus ou moins souples, taillées de même longueur, ajustées dans une monture de forme variée, prolongée ou non par un manche situé dans l'axe ou perpendiculaire"
+42201	" Cuiller à fard"	"Schminklepel"	"Make-up spoon"	43088			
+44938	" Cure-dents"	"Tandenstoker"	"Toothpick"	43088	"Dunne, puntige voorwerpen die na het eten worden gebruikt voor het verwijderen van restjes voedsel die tussen de tanden zitten"		"Petite tige en bois, en os, en papier ou en métal, dont une extrémité est taillée en pointe ou en biseau"
+42277	" Étui à fard"	"Schminketui"	"Make-up etui"	43088			
+44886	" Flacon de parfum"	"Parfumfles"	"Scent bottle"	43088	"Flesjes uit metaal, keramiek, glas of ander materiaal, van diverse grootte, hermetisch gelosten voor het bewaren van geparfumeerde producten"		"Flacon en métal, céramique ou verre, de dimensions variées, fermé hermétiquement et conenant des produits parfumés."
+46335	" Glace à main"	"Handspiegel"	"Hand mirror"	43088			
+44887	" Nécessaire de toilette"	"Toiletnécessaire"	"Beauty case"	43088			
+42260	" Peigne"	"Kam (toiletartikel)"	"Comb (grooming tool)"	43088	"Voorwerpen met aan één of beide kanten een rij tanden die worden gebruikt voor het in orde brengen, ontwarren of schoonmaken van het haar"		"Plaque dont le bord est découpé en dents serrées, de grosseurs variable, servant à démêler et lisser les cheveux"
+43421	" Pince à épiler"	"Epileerpincet"	"Depilation tweezer"	43088	"Pincet om mee te epileren"		"Petite pince à ressort en métal de 10 à 15 cm de long"
+42266	" Pot à fard"	"Schminkpot"	"Make-up vessel"	43088			
+42267	" Pot de pommade"	"Zalfpot"	"Ointment vessel"	43088			
+45496	" Protège-ongles"	"Nagelbeschermer"	"Nail protector"	43088			
+42154	" Pyxide (article de toilette)"	"Pyxis (toiletgerei)"	"Pyx (toiletry)"	43088			
+42155	" Rasoir"	"Scheermes"	"Razor"	43088	"Scherpe voorwerpen die gebruikt worden voor het scheren van het gezicht en benen of het bijknippen van haar"		"Couteau à lame très affûtée. Les lames de rasoir sont soit articulées et rentrant  dans le manche (chasse), soit interchangeables, soit à rabot, la lame étant, dans ce dernier cas, protégée par une gaine ne laissant dépasser que le fil"
+43075	" Vase à fard"	"Maquillagevaas"	"Make-up vase"	43088			
+43089	" Instrument médical"	"Medisch instrument"	"Medical instrument"	41929			
+46409	" Spatule"	"Spatel"	"Spatula"	43089	"Medisch instrument om  een lichaamsdeel op te lichten of neer te houden, vb. tongspatel"		
+41922	"Conteneur"	"Houder"	" Container (receptacle)"	41875			
+42866	" Abreuvoir"	"Drinkbak"	"Drinking trough"	41922			
+41973	" Boîte"	"Doos"	"Box (container)"	41922			
+44885	" Boîte d'allumettes"	"Luciferdoosje"	"Matchbox"	41922			
+45211	" Bourse"	"Geldbuidel"	"Moneybag"	41922			
+44800	" Brûle-parfum"	"Aromabrander"	"Aroma burner"	41922			
+45648	" Brûleur d'encens"	"Wierookbrander"	"Incense burner"	41922			
+45512	" Caisse (boîte)"	"Koker"	"Case (container)"	41922			
+44894	" Cave à liqueurs"	"Likeurstel"	"Liqueur stand"	41922			
+44472	" Coffre-fort"	"Brandkast"	"Safe (storage container)"	41922			
+42196	" Coffret"	"Kistje"	"Small case"	41922			
+44898	" Coffret à bijoux"	"Juwelenkistje"	"Casket (personal gear)"	42196			
+43015	" Composant de conteneur"	"Houderonderdeel"	"Container component"	41922			
+45287	" Anse"	"Oor"	"Lug (knob)"	43015			
+45286	" Tesson (composant de conteneur)"	"Scherf (houderonderdeel)"	"Sherd (container component)"	43015			
+45471	" Tige (composant de conteneur)"	"Steel (houderonderdeel)"	"Stem (container component)"	43015			
+45797	" Enveloppe"	"Envelop"	"Envelope"	41922			
+44700	" Étui"	"Etui"	"Etui"	41922			
+45655	" Étui de bambou"	"Bamboekoker"	"Bamboo holder"	41922			
+42224	" Gaine"	"Beschermingsmantel (omhulsel)"	"Protective cover"	41922			
+42911	" Housse"	"Hoes"	"Cover (overlying object)"	41922			
+45432	" Magasin de dia"	"Diamagazijn"	"Dia holder"	41922			
+42257	" Panier"	"Mand"	"Basket (container)"	41922			
+44814	" Parflèche"	"Parfleche"	"Parfleche"	41922			
+44787	" Plateau de service"	"Dienblad"	"Tray"	41922			
+44838	" Porte-bébé"	"Babydraagzak"	"Baby sling"	41922			
+44907	" Porte-cartes"	"Kaartenhouder"	"Card holder"	41922			
+45433	" Porte-plaque"	"Plaathouder"	"Plate holder"	41922			
+44988	" Rond de serviette"	"Servetring"	"Napkin ring"	41922			
+42918	" Sac"	"Tas"	"Bag (generic container)"	41922			
+45778	" Seau"	"Emmer"	"Bucket"	41922			
+42285	" Tirelire"	"Spaarpot"	"Bank (container)"	41922			
+41925	" Vaisselle"	"Vaatwerk"	"Vessel (container)"	41922			
+42271	" Aiguière"	"Waterkan"	"Ewer"	41925			
+42272	" Amphore"	"Amfoor"	"Amphora (storage vessel)"	41925			
+43132	" Aryballe"	"Aryballos"	"Aryballos"	41925			
+41967	" Askos"	"Askos"	"Askos"	41925			
+41968	" Assiette"	"Bord (vaatwerk)"	"Plate (dish)"	41925			
+43392	" Bassin"	"Kom"	"Basin"	41925			
+46316	" Biberon"	"Tuitbeker"	"Biberon"	41925			
+45878	" Boîte à couvercle"	"Dekseldoos"	"Covered box"	41925			
+41974	" Bol"	"Kommetje"	"Bowl (vessel)"	41925			
+46231	" Bol à couvercle"	"Dekselkom"	"Covered bowl"	41925			
+44991	" Bouilloire"	"Bouilloire (theeketel)"	"Teakettle-on-stand"	41925			
+42273	" Bouteille"	"Fles"	"Bottle"	41925			
+46239	" Broc"	"Kan"	"Pitcher"	41925			
+44916	" Buire"	"Schenkkan met hoge hals"	"Long-necked flagon"	41925			
+44891	" Cafetière"	"Koffiekan"	"Coffeepot"	41925			
+41992	" Calice"	"Kelk"	"Chalice"	41925			
+42274	" Canthare"	"Kantharos"	"Kantharos"	41925			
+41993	" Carafe"	"Karaf"	"Carafe"	41925			
+43443	" Chaudron"	"Kookketel (met hengsel)"	"Cauldron (kettle)"	41925			
+44896	" Chocolatière"	"Chokoladekan"	"Chocolate pot"	41925			
+44993	" Chope"	"Bierpul"	"Tankard"	41925			
+44899	" Coquetier"	"Eierdopje"	"Eggcup"	41925			
+44857	" Corne à boire"	"Drinkhoorn"	"Drinking horn"	41925			
+45882	" Cornet"	"Spitsbeker"	"Cornet (drinking vessel)"	41925			
+45284	" Coupe"	"Schaaltje"	"Coupe"	41925			
+44904	" Coupe de champagne"	"Champagneglas"	"Champagne glass"	41925			
+45872	" Coupe sur pied"	"Kom op voet"	"Standing bowl"	41925			
+42045	" Cratère"	"Krater"	"Krater"	41925			
+42199	" Creuset"	"Smeltkroes"	"Crucible"	41925			
+42007	" Cruche"	"Kruik"	"Jug (vessel)"	41925			
+42011	" Depas amphikypellon"	"Depas amphikypellon"	"Depa"	41925			
+42042	" Écuelle"	"Nap"	"Shallow bowl"	41925			
+42202	" Fiole"	"Fiool"	"Vial"	41925			
+42275	" Flacon"	"Flesje"	"Flask"	41925			
+42069	" Gobelet"	"Beker"	"Beaker"	41925			
+46233	" Gobelet à pied"	"Beker op voet"	"Standing cup"	41925			
+42070	" Gourde"	"Veldfles"	"Canteen (vessel)"	41925			
+45876	" Grande jarre"	"Voorraadpot"	"Storage jar"	41925			
+44911	" Grande tasse"	"Mok"	"Mug"	41925			
+44910	" Huilier"	"Olie- en azijnstel"	"Cruet set"	41925			
+46234	" Jarre"	"Grote kruik"	"Jar"	41925			
+46410	" Kylix"	"Kylix"	"Kylix"	41925			
+46238	" Lèchefrite"	"Vetvanger"	"Dripping pan"	41925			
+45487	" Marmite"	"Kookpot"	"Cooking-pot"	41925			
+44932	" Moutardier saupoudroir"	"Mosterdstrooier"	"Mustard caster"	41925			
+42120	" Olpé"	"Olpé"	"Olpe"	41925			
+42119	" Plat"	"Schotel"	"Platter"	41925			
+42121	" Plateau"	"Schaal"	"Dish (vessel)"	41925			
+46237	" Poêlon"	"Steelpan"	"Saucepan"	41925			
+44442	" Poivrier"	"Peperbus"	"Pepper shaker"	41925			
+42085	" Pot"	"Pot"	"Pot"	41925			
+45491	" Pot à chaux"	"Kalkpot"	"Chalk pot"	41925			
+45875	" Pot à couvercle"	"Dekselpot"	"Covered jar"	41925			
+44978	" Pot à lait"	"Melkkan"	"Milk jug"	41925			
+46240	" Présentoir"	"Presenteerblad"	"Salver"	41925			
+42127	" Riton"	"Ryton"	"Rhyton"	41925			
+42279	" Situle"	"Situla"	"Situla"	41925			
+43062	" Soucoupe"	"Onderbordje"	"Saucer (plate)"	41925			
+44981	" Sucrier"	"Suikerpot"	"Sugar box"	41925			
+42028	" Tasse"	"Kop (drinkgerei)"	"Cup"	41925			
+42141	" Théière"	"Theepot"	"Teapot"	41925			
+43063	" Timbale (vaisselle)"	"Kroes"	"Pannikin"	41925			
+44665	" Tulipière"	"Tulpenvaas"	"Tulip vase"	41925			
+42147	" Vase"	"Vaas"	"Vase"	41925			
+45479	" Vase à bec verseur"	"Schenkkan"	"Flagon"	41925			
+46492	" Vase à couvercle"	"Dekselvaas"	"Covered vase"	41925			
+46236	" Vase à vin"	"Wijnvat"	"Wine container"	41925			
+42145	" Vase tripode"	"Drievoetige pot"	"Tripod vessel"	41925			
+46232	" Vase tripode à couvercle"	"Drievoetige dekselpot"	"Covered tripod vessel"	41925			
+43439	" Verre (récipient)"	"Drinkglas"	"Drinking glass"	41925			
+41934	"Costume et accessoire de costume"	"Kleding en kledingaccessoire"	"Costume and costume accessory"	41875			
+41937	" Accessoire de costume"	"Kledingaccessoire"	"Costume accessory"	41934	"Gidsterm voor kledingaccessoires"		
+45445	" Accessoire de cheveux"	"Haaraccessoire"	"Hair ornament"	41937	"Gidsterm voor accessoires voor het bijeenhouden of versieren van haar, zoals haarspelden, hoofdtooien enz"		
+43871	" Baudrier"	"Schouderriem"	"Baldric"	41937	"Te gebruiken voor gewoonlijk rijk versierde banden, sjerpen of riemen, diagonaal van schouder tot heup gedragen ter ondersteuning van een dolk, hoorn, zwaard of trommel"		
+41994	" Ceinture (accessoire de costume)"	"Riem (kledingaccessoire)"	"Belt (costume accessory)"	41937	"Buigzame banden die rond het middel of de heupen worden gedragen en meestal een soort sluiting hebben, bijvoorbeeld een gesp. Worden gedragen ter decoratie, steun of om geld, documenten of dergelijke te bevatten"		
+43322	" Couvre-chef"	"Hoofddeksel"	"Headgear"	41937	"Iedere bedekking van het hoofd"		
+46621	" Cravate"	"Das"	"Neckcloth"	41937			
+42834	" Éperons"	"Sporen (gedragen accessoire)"	"Spurs (costume accessory)"	41937	"Metalen drijvers die zijn bevestigd aan de hielen van de laarzen van de rijder en die worden gebruikt om het paard aan te drijven"		
+43661	" Éventail"	"Waaier (kledingaccessoire)"	"Fan (costume accessory)"	41937	"Gedragen accessoire voor het produceren van een luchtstroom of louter als decoratie"		
+44964	" Face-à-main"	"Face-à-main"	"Lorgnette"	41937	"Type bril dat vaak decoratief is en geen werkelijke functie heeft; wordt met de hand bij het oog gehouden en is vaak op een lang, ornamentaal steeltje bevestigd"		
+42949	" Fourragère"	"Fourragère"	"Fourragère"	41937	"Schouderkwasten met koorden op uniformen"		
+46465	" Mitaine"	"Want"	"Mitten"	41937			
+45520	" Mouchoir"	"Zakdoek"	"Handkerchief"	41937	"Stukken stof, meestal vierkant, van verschillende afmetingen en materialen, die worden meegenomen als gebruiksvoorwerp of als kostuumaccessoire"		
+46468	" Ombrelle"	"Parasol"	"Parasol"	41937			
+43321	" Parure"	"Opsmuk"	"Finery"	41937	"Verzamelnaam voor alle soorten juwelen, sieraden, hoofdtooien e.d. dienen ter verfraaiing van de mens"		
+46469	" Plastron (costume)"	"Plastron"	"Vestee"	41937			
+45444	" Sac (accessoire de costume)"	"Tas (kledingaccessoire)"	"Bag (costume accessory)"	41937	"Zachte of onbuigzame accessoires voor het dragen van persoonlijke artikelen, vaak met een trekkoordsluiting. Gebruik 'handtassen' voor tassen met een vast frame en knipsluiting "		
+42867	" Soulier"	"Schoeisel"	"Footwear"	41937	"Bedekkingen voor de voeten die soms tot boven de enkel lopen en over het algemeen van duurzaam materiaal zijn gemaakt"		
+41938	" Composant de costume et d'accessoire de costume"	"Onderdeel van kledij en kledingaccessoire"	"Costume and costume accessory component"	41934			
+43387	" Ardillon"	"Gesptong"	"Tongue (costume accessory component)"	41938			"Pointe faisant partie d’une boucle et servant à arrêter la courroie"
+41981	" Bouton"	"Knoop"	"Button"	41938	"Schijven, ballen of instrumenten met een andere vorm, met gaten of een oog waardoor ze worden genaaid of vastgemaakt aan een voorwerp en die gebruikt worden als sluitingen door ze door een knoopsgat, een lus of een boordsel te halen"		
+43877	" Brassard (composant de costume)"	"Mouwband"	"Armband (of armour)"	41938	"Banden die rondom de arm zitten en soms ter identificatie of bij rouw worden gedragen. Ook soortgelijke onderdelen van een mouw "		
+43178	" Chaton de bague"	"Ringkas"	"Bezel (ring)"	41938	"Omranding of band die een steen of ander ornament omgeven en vasthouden"		
+46448	" Col (costume)"	"Kraag"	"Collar"	41938			
+46615	" Composant de bonnet"	"Mutsonderdeel"	"Bonnet component"	41938			
+45446	" Composant de ceinture"	"Riemonderdeel"	"Belt component"	41938			
+46450	" Corsage"	"Lijfje"	"Corsage"	41938			
+42874	" Épaulette"	"Epaulet"	"Epaulet"	41938	"Sierbelegsels op de schouder; van het soort dat voornamelijk door militaire officieren wordt gedragen"		
+43402	" Ferret"	"Nestel (veterstift)"	"Aglet"	41938			
+43873	" Jambière"	"Beenhouder"		41938			
+46460	" Manche (costume)"	"Mouw"	"Sleeve (costume)"	41938			
+46461	" Manchette"	"Manchet (kledingonderdeel)"	"Wristband"	41938			
+43416	" Oeillet"	"Oogje"	"Eyelet (component)"	41938			
+43417	" Passant"	"Riemlus"	"Belt loop"	41938			
+44501	" Pommeau (de canne)"	"Pommel (van wandelstok)"	"Pommel (of walking stick)"	41938	"Uitstekende knop aan het einde van een wandelstok, om vast te grijpen"		
+42281	" Semelle"	"Schoenzool"	"Shoe sole"	41938	"Onderkant van een schoen"		
+46473	" Traîne"	"Sleep"	"Train (costume component)"	41938			
+46631	" Volant"	"Strook"	"Strip"	41938			
+41935	" Costume"	"Kleding"	"Costume"	41934			
+46441	" Aube (habit liturgique)"	"Albe (liturgisch gewaad)"	"Alb (liturgical costume)"	41935			
+43018	" Bas"	"Kous"	"Stocking"	41935	"Kousen die de voet bedekken en tot aan de knie reiken of erboven; kunnen dik of dun zijn"		
+46443	" Bavoir"	"Slab"	"Bib"	41935			
+46444	" Berthe (col)"	"Berthe (kraag)"	"Bertha (collar)"	41935			
+46445	" Blouse"	"Blouse"	"Blouse"	41935			
+46446	" Bretelle"	"Bretelle"	"Bretelle"	41935			
+44804	" Cache-sexe"	"Cache-sexe"	"Cache-sexe"	41935	"Bovenkleding die door vrouwen wordt gedragen om de geslachtsdelen te bedekken en die  afhangen van een om de taille of heupen gebonden koord"		
+42930	" Cape"	"Cape"	"Cloak"	41935	"Mouwloze overkleding die bij de hals wordt vastgemaakt en los van de schouders valt, waarbij het hele lichaam wordt bedekt; kan een schouderstuk hebben of enigszins gemodelleerd zijn van de hals naar de schouders"		
+44805	" Châle"	"Sjaal"	"Scarve (costume accessory)"	41935	"Stukken stof, waarvan de lengte en breedte variëert, die voor de sier of voor de warmte om de schouders, de hals, over het hoofd of om het middel worden gedragen"		
+44465	" Chasuble (habit liturgique)"	"Kazuifel (liturgisch gewaad)"	"Vestment (liturgical costume)"	41935	"Mouwloze liturgische bovenkleding in de vorm van een wijde cape of mantel die door de drager over het hoofd wordt aangetrokken en aan de zijkanten open blijft"	"A sleeveless vestment covering the body and shoulders, worn by a Christian priest over the alb and stole when celebrating the Eucharist. It is roughly oval in shape with a central hole for the head"	
+46633	" Chemise"	"Hemd"	"Shirt"	41935			
+46632	" Corset"	"Korset"	"Corset"	41935			
+42831	" Costume (tenue)"	"Pak (kleding)"	"Suit (main garment)"	41935			
+46453	" Écharpe"	"Halsdoek"	"Shawl"	41935			
+44810	" Gant"	"Handschoen"	"Glove"	41935	"Bedekkingen voor de hand die iedere vinger apart omsluiten en soms doorlopen tot over de pols en arm "		
+42926	" Gilet"	"Vest (kleding)"	"Vest (garment)"	41935			
+46458	" Jabot"	"Jabot"	"Jabot"	41935			
+42902	" Jacquette"	"Overjas"	"Overcoat (outerwear)"	41935	"Jassen die over een pak of andere bovenkleding worden gedragen; wordt vooral gebruikt voor jassen die bij koud weer worden gedragen"		
+43311	" Jupe"	"Rok"	"Skirt (garment)"	41935	"Bovenkledingstukken voor het onderlichaam, in verschillende lengtes vanaf de taille of heup. Ook het onderste gedeelte van een japon, jas of ander kledingstuk "		
+46459	" Jupon"	"Onderrok"	"Underskirt"	41935			
+42894	" Manteau"	"Mantel (kleding)"	"Mantle (outerwear)"	41935	"Overkleding met enige vorm, in verschillende lengten"		
+42089	" Masque"	"Masker"	"Mask (costume)"	41935	"Bedekkingen voor het hele gezicht of gedeelten ervan, meestal met openingen voor de ogen en soms de mond; worden gedragen om de identiteit van de drager te verbergen of te veranderen of ter bescherming"		
+43289	" Pagne"	"Lendendoek"	"Loincloth"	41935	"Doeken rond de lendenen, wordt in warme klimaten vaak als enige kleding gedragen"		
+42871	" Pantalon"	"Broek"	"Trousers"	41935	"Kledingstuk met twee pijpen ter bescherming van de benen en het onderlijf"		
+42908	" Pèlerine"	"Pelerine (schoudermantel)"	"Pelerine (cape)"	41935	"Korte schoudermanteltjes, door dames op de japon gedragen"		
+45529	" Protège-bras"	"Armbeschermer"	"Bracer"	41935			
+46664	" Rabat"	"Rabat (bef)"	"Rabat (band)"	41935			
+42883	" Robe"	"Jurk"	"Dress (garment)"	41935	"Bovenkleding voor vrouwen en kinderen bestaande uit een lijfje en een rok. Bestaat uit één of meerdere stukken."		
+46614	" Rochet (habit liturgique)"	"Rochet (liturgisch gewaad)"	"Rochet (liturgical costume)"	41935			
+45521	" Sarong"	"Sarong"	"Sarong"	41935			
+45519	" Slendang"	"Slendang"	"Slendang"	41935	"Traditioneel Indonesisch kledingstuk voor mannen en vrouwen, gedragen rond de heupen."		
+46471	" Tablier"	"Schort"	"Apron"	41935			
+44358	" Tunique"	"Tuniek"	"Tunic"	41935			
+42840	" Uniforme"	"Uniform"	"Uniform"	41935	"Onderscheidende kleding gedragen door leden van een bepaalde beroepsgroep, organisatie of rang"		
+42882	" Veste"	"Jas"	"Coat (garment)"	41935	"Over de bovenkleding gedragen kledingstuk ter bescherming tegen kou en regen"		
+41940	"Dispositif de fixation et fermoir"	"Bevestigingsmiddel en sluiting"	"Fastener and closure"	41875	"Gidsterm voor voorwerpen die dingen op hun plaats te houden en voor voorwerpen die een opening bedekken of sluiten"		
+42138	" Composant de dispositif et fermoir"	"Onderdeel van bevestigingsmiddel en sluiting"	"Fastener and closure component"	41940	"Te gebruiken voor alle onderdelen van bevestigingsmiddelen en sluitingen"		
+43012	" Coulant"	"Afdichtingsring"	"Washer (fastener)"	42138	"Ringvormig object waardoor een ander stevig of soepel materiaal kan glijden, om iets aan elkaar vast te maken"		"Élément mobile en anneau glissant le long d'un autre élément rigide ou souple. Le coulant peut servir d'élément décoratif"
+42139	" Tête d'épingle"	"Speldekop"	"Pinhead"	42138	"Knopje of bolletje aan het boveneind van een speld"		
+41998	" Dispositif de fixation"	"Bevestigingsmiddel"	"Fastener"	41940	"Voorwerpen om allerlei dingen op hun plaats te houden, zoals zoals haken, bouten of spijkers"		
+43394	" Bossette"	"Bolkopspijker"	"Escutcheon pin"	41998	"Spijkers met een bolle kop, vaak ter versiering aangebracht"		
+42039	" Cheville de moise"	"Klampnagel"	"Clamp nail"	41998	"Mechanische bevestigingsmiddelen, die zijn ontworpen om een voeg te overbruggen en de twee delen strak samen te trekken terwijl ze op hun plaats worden gedreven"		
+41999	" Clou"	"Spijker"	"Nail"	41998	"Puntig staafje metaal, gewoonlijk van een kop voorzien, om iets stevig te bevestigen of aan het uitstekende deel iets op te hangen"		
+42956	" Crochet"	"Haak (bevestigingsmiddel)"	"Hook (fastener)"	41998	"Rond of hoekig gebogen voorwerp, meest van een of ander metaal, dienende om iets vast te houden, te grijpen, tot zich te trekken, aan op te hangen, enz. Gebruik ""Vishaak"" voor het visgerei en ""Punt en weerhaak van een vishaak"" voor de haak als onderdeel van een vishaak"		
+42055	" Épingle"	"Speld"	"Pin"	41998	"Puntige, van een kop voorziene metalen stiftjes om iets (m.n. delen van een weefsel) vast te steken of te bevestigen op of aan iets anders. Gebruik ""speld (juweel)"" voor sierspelden, ""haarspeld"" voor haarspelden (sierspelden) en ""votiefspeld"" voor de typische votieve objecten uit Luristan, Iran"		
+43401	" Équerre"	"Hoekijzer"	"Angle iron"	41998	"Metalen, L-vormige ijzers voor het versterken van hoekverbanden"		
+42985	" Mousqueton"	"Sluithaak"	"Clasp (fastener)"	41998	"Tweedelige sluitingen, meestal van metaal, bestaande uit een haak en een gleuf"		
+44464	" Presse à main"	"Klemschroef"	"Clamping screw"	41998	"Met een schroef sluitende klem tot het vastzetten van iets"		
+43428	" Rivet"	"Klinknagel"	"Rivet"	41998	"Speldachtige of boutachtige bevestigingsmiddelen met een kop, gemaakt van een buigzaam materiaal, die worden gebruikt om twee of meer onderdelen aan elkaar te maken door de schacht door een gat in elk onderdeel te halen en daarna het vlakke eind naar beneden te slaan of drukken, om een tweede kop te vormen"		
+42165	" Tenon"	"Pin"	"Spike (straight fastener)"	41998	"Grote, scherp gepunte voorwerpen gemaakt van metaal, in het bijzonder ijzer, of van hout, die gebruikt worden om dingen stevig aan elkaar te verbinden"		
+41977	" Fermoir"	"Sluiting"	"Closure"	41940	"Verzameld alle objecten die een sluitingsfunctie hebben"		
+41978	" Bouchon"	"Stop"	"Stopper"	41977	"Een type afsluiting dat een opening opvult"		"Élément s'adaptant à une ouverture étroite et allongée (généralement un goulot) pour la fermer"
+42006	" Couvercle"	"Deksel"	"Lid"	41977	"Voorwerp dat dient om een opening of een holte van een open lichaam af te sluiten en waarbij het er juist op past. Vaak is het deksel aan het open lichaam vastgemaakt door midden van bijvoorbeeld scharnieren"		"Élément s'adaptant à l'ouverture d'un récipient ou d'un de ses éléments pour la fermer complètement ou non. Le couvercle est indépendant, à baïonette, vissé ou articulé (à charnière, à pivot), emboîtant, emboîté ou posé"
+42086	" Poignée"	"Greep"	"Pull"	41940	"Datgene waarbij men een voorwerp vastgrijpt"		
+42087	" Manche"	"Handvat"	"Handle"	42086	"Uitstekend deel van een object, al dan niet in hetzelfde materiaal, waarbij men het object vastgrijpt"		"Élément saillant d'un objet, dans le même matériau ou non, par lequel on le tient, constitué par une tige rectiligne ou non, fixe ou mobile, articulée ou non, fixée verticalement, obliquement ou horizontalement"
+41953	"Élément de décoration"	"Toegepaste decoratie en motieven"	"Applied decoration and motives"	41875	"Te gebruiken voor decoratieve vormen die zijn bevestigd aan de buitenzijde van een object nadat het object is gevormd"		
+41995	" Applique"	"Applique (oplegsel)"	"Onlay (applied decoration)"	41953	"Te gebruiken voor de decoratieve vorm die ontstaat wanneer kleinere stukken materiaal zijn bevestigd aan de oppervlakte van een groter stuk materiaal; vooral gebruikt voor stukken leer, papier, of ander materiaal dat op banden of kaften van boeken is gelegd voor decoratieve of illustratieve doeleinden"	"French term for a sconce or other fitting attached to a wall or to a piece of furniture"	
+46619	" Bouquet"	"Boeket"	"Bouquet"	41953			
+43664	" Cartouche"	"Cartouche"	"Cartouche (ornament)"	41953	"Ornamentele omlijstingen, zoals voor een opschrift, monogram, wapenschild of omlijste platen met ornamenten die vaak een opschrift bevatten"	"Ornamental panel in the form of a scroll or sheet of paper with curling edges, usually bearing an inscription and sometimes ornately framed"	
+43340	" Incrustation"	"Inlegsel"	"Inlay (decoration)"	41953	"Te gebruiken voor decoratieve vormen gecreëerd door het tussenvoegen van een stuk materiaal in gelijkvormige openingen in een omringend materiaal, om zo een ontwerp te maken"	"Decorative technique used on furniture until replaced by marquetry in the C17. A pattern composed of differently coloured woods or other materials, notably ivory or horn, is inset into the solid wood of the carcase, most of which remains undecorated"	
+42094	" Médaillon"	"Medaillon (ornamenttype)"	"Medaillon (ornament area)"	41953	"Ronde of ovale omlijstingen die figuren of ornamentele motieven bevatten"		
+43415	" Nodule"	"Nodulus"	"Nodulus"	41953			
+45469	" Panneau (élément de décoration)"	"Paneel (toegepaste decoratie)"	"Pane (applied decoration)"	41953	"Gebieden binnen een decoratief ontwerp die vaak rechthoekig en omlijst zijn. In de boekbinderij omvat het ook de ruimten op de zijden van een boek of tussen de banden op de rug"		
+42128	" Rosace"	"Rozet"	"Rosette (motif)"	41953	"Motieven die bestaan uit geformaliseerde rozen waarvan de bloembladen straalsgewijs vanuit het centrum lopen; soms gebruikt voor elk willekeurig klein rond ornament dat uitstraalt vanuit het centrum"	"A circular patera usually with formalized rose-like petals"	
+41931	"Équipement pour animal"	"Dierenuitrusting"	"Animal equipment"	41875			
+41933	" Composant d'équipement pour animal"	"Onderdeel van uitrusting van een dier"	"Animal equipment component"	41931			
+45454	" Composant collier (équipement pour animal)"	"Onderdeel van gareel"	"Collar component (animal equipment)"	41933			
+42934	" Composant de bride"	"Onderdeel van hoofdstel"	"Bridle component"	41933			
+42943	" Composant de harnais"	"Onderdeel van paardetuig"	"Horse harness component"	41933			
+42950	" Composant de mors"	"Bitonderdeel (stang en trens)"	"Bit component"	41933			
+45455	" Composant de selle"	"Zadelonderdeel"	"Saddle component"	41933			
+41932	" Équipement pour animal"	"Dierenuitrusting"	"Animal equipment"	41931			
+42813	" Badine"	"Rijzweepje"	"Driving whip"	41932			
+45861	" Barde de cheval"	"Paardenharnas"	"Horse armor"	41932			
+43874	" Bonnet d'aveuglement"	"Verblindende kap"	"Blinding cap"	41932			
+43876	" Boutoir"	"Hoefstootmes"	"Toeing knife"	41932			
+42903	" Couverture de cheval"	"Paardendeken"	"Horse blanket"	41932			
+42913	" Étrille"	"Roskam"	"Currycomb"	41932			
+42881	" Fer à cheval"	"Hoefijzer (dierenuitrusting)"	"Horseshoe (animal equipment)"	41932			
+45465	" Fouet"	"Zweep (dierenuitrusting)"	"Whip (animal equipment)"	41932			
+42833	" Harnais"	"Paardetuig"	"Horse harness"	41932			
+42923	" Tapis de selle"	"Zadeldeken"	"Saddle blanket"	41932			
+42993	" Tenue de course"	"Outfit voor paardenkoers"	"Horse racing outfit"	41932			
+41952	"Forme d'objet et objet dérivé"	"Objectvorm en afgeleid object"	"Object form and derivated object"	41875	"Gidsterm voor objecten zonder specifieke functie, waarvan de objectnaam betrekking heeft op de vorm van het object; alsook voor objecten waarvan de oorspronkelijke vorm ongekend of onherkenbaar is, vb. fragmenten, of die afgeleid zijn van een origineel of oorspronkelijk object, zoals kopies"		
+41964	" Anneau"	"Ring (objectvorm)"	"Ring (object form)"	41952	"Cirkelvormige objecten van verschillende materialen en in verschillende formaten, die in uiteenlopende contexten en toepassingen worden gebruikt"		"Bande de profil  circulaire ou moulurée, généralement rapporté, entourant, renforçant ou maintenant certains éléments. La ceinture est une bague horizontale située au point le plus proéminant d'une panse"
+43064	" Balle"	"Bal"	"Ball"	41952	"Ronde of bijna ronde voorwerpen van verschillende materialen en maten, die met lucht gevuld, zacht of massief kunnen zijn en worden gebruikt in veel verschillende contexten en toepassingen"		
+41971	" Bande"	"Band"	"Tape"	41952	"Materiaal in de vorm van smalle, buigzame repen, bijvoorbeeld van stof, papier, plastic of metaal"		
+43005	" Bâtonnet"	"Stok"	"Stick"	41952	"Lang, smal object uit diverse materialen en met diverse functies"		
+45424	" Câble"	"Kabel"	"Cable"	41952	"Stevig dik touw met een aantal strengen ijzerdraad erdoorheen gevlochten. Te onderscheiden van 'touw', dat meestal is vervaardigd uit synthetische of organische vezels. Wordt gebruikt voor het vervoer van elektriciteit, elektronische data enz"		
+42824	" Chaîne (forme d'objet)"	"Ketting"	"Chain (object form)"	41952	"Reeks van aan elkaar vastgemaakte ringen of schakels "		
+43166	" Copie"	"Kopie (afgeleid object)"	"Copy (derivative object)"	41952	"Wordt gebruikt voor objecten die zijn afgeleid van of moeten lijken op originele, bestaande objecten. Suggereert een minder precieze en getrouwe imitatie dan de term 'reproducties'"	"Non-fraudulent manuel repetition of another work of art. The contemporary notion of Authenticity has tended to obscure the fact that the exercise of copying has been a central feature of art practice since antiquity. Unlike the forger , the copyist produces a worh that, while taking another work as its point of departure, is not intended to deceive the spectator. The difference in intention distinguishes the copy from the forgery; the use of any other methodological or aesthetic criterion may risk confusing the two. Although engravings or photographs after another work of art are obviously copies in one sense, as reproductions they emply a mechanical process that seperates them from the manuel copies under discussion here"	
+43165	" Imitation"	"Imitatie"	"Counterfeit"	43166	"Wordt gebruikt voor reproducties van hele objecten wanneer deze bedoeld zijn om te misleiden; geldt ook voor beeldhouwwerken die gegoten zijn zonder toestemming van de kunstenaar"		
+42891	" Reproduction"	"Reproductie"	"Reproduction"	43166	"Wordt gebruikt voor exacte kopies of nabootsingen, vaak kleiner dan het origineel die gemaakt zijn zonder de bedoeling te misleiden"		
+44782	" Demi-sphère"	"Schijf"	"Disk"	41952			
+43174	" Ébauche"	"Halffabrikaat"	"Blank"	41952			
+41975	" Fragment"	"Fragment"	"Fragment"	41952	"Wordt gebruikt voor delen die zijn afgescheurd, afgebroken of ontwricht van het oorspronkelijke geheel en waarvan het geheel niet meer herkenbaar is. Onderdelen van objecten moeten als dusdanig worden aangeduid (vb. haak van een vishaak). Ook als het fragment duidelijk kan herkend worden, gebruik de naam van het object in zijn geheel"		
+46328	" Fragment de cercueil"	"Fragment van een doodskist"	"Coffin fragment"	41975			
+45732	" Fragment de chapiteau"	"Fragment van een kapiteel"	"Capital fragment"	41975			
+45728	" Fragment de coffret"	"Fragment van een kistje"	"Case fragment"	41975			
+45779	" Fragment de collier"	"Fragment van een halsketting"	"Fragment of a necklace"	41975			
+45700	" Fragment de couteau"	"Fragment van een mes"	"Knife fragment"	41975			
+45743	" Fragment de couvercle"	"Fragment van een deksel"	"Fragment of a lid"	41975			
+45723	" Fragment de crucifix"	"Fragment van een kruisbeeld"	"Crucifix fragment"	41975			
+45703	" Fragment de cuillère"	"Fragment van een lepel"	"Spoon fragment"	41975			
+45704	" Fragment de disque"	"Fragment van een schijf"	"Disk fragment"	41975			
+45705	" Fragment de douille"	"Fragment van een pijlschacht"	"Arrow shaft fragment"	41975			
+45706	" Fragment de fer de lance"	"Fragment van een speerpunt"	"Spearhead fragment"	41975			
+45708	" Fragment de fermoir"	"Fragment van een sluiting"	"Closure fragment"	41975			
+45709	" Fragment de fibule"	"Fragment van een fibula"	"Fibula fragment"	41975			
+45684	" Fragment de figurine"	"Fragment van een beeldje"	"Figurine fragment"	41975			
+45730	" Fragment de fonts baptismaux"	"Fragment van een doopvont"	"Baptismal font fragment"	41975			
+45731	" Fragment de frise"	"Fragment van een fries"	"Frieze fragment"	41975			
+45712	" Fragment de hache"	"Fragment van een bijl"	"Axe fragment"	41975			
+45711	" Fragment de hache polie"	"Fragment van een gepolijste bijl"	"Polished axe fragment"	41975			
+45713	" Fragment de lame (arme)"	"Fragment van een lemmet"	"Blade fragment"	41975			
+45707	" Fragment de lance"	"Fragment van een speer"	"Spear fragment"	41975			
+46384	" Fragment de lustre"	"Fragment van een kroonluchter"	"Fragment of a chandelier (hanging light)"	41975			
+45734	" Fragment de manteau de cheminée"	"Fragment van een schoorsteenmantel"	"Mantel fragment"	41975			
+45714	" Fragment de médaille"	"Fragment van een medaille"	"Medal fragment"	41975			
+45735	" Fragment de meuble"	"Fragment van een meubel"	"Fragment of a piece of furniture"	41975			
+45715	" Fragment de meule"	"Fragment van een slijpsteen"	"Whetstone fragment"	41975			
+46596	" Fragment de miniature"	"Miniatuurfragment"	"Miniature fragment"	41975			
+45741	" Fragment de moule"	"Fragment van een mal"	"Mold fragment"	41975			
+45881	" Fragment de panneau"	"Fragment van een paneel"	"Fragment of a panel"	41975			
+45687	" Fragment de peigne"	"Fragment van een kam"	"Comb fragment"	41975			
+45716	" Fragment de perle (bijou)"	"Fragment van een kraal"	"Pearl fragment"	41975			
+45717	" Fragment de pièce de monnaie"	"Fragment van een muntstuk"	"Fragment of a coin"	41975			
+45729	" Fragment de pierre tombale"	"Fragment van een grafsteen"	"Tombstone fragment"	41975			
+45718	" Fragment de plaque"	"Fragment van een plaat"	"Plate fragment"	41975			
+45699	" Fragment de plaque-boucle"	"Fragment van een gespplaat"	"Buckle plate fragment"	41975			
+45710	" Fragment de poinçon"	"Fragment van de priem"	"Awl fragment"	41975			
+45740	" Fragment de pointe de flèche"	"Fragment van een pijlpunt"	"Arrowhead fragment"	41975			
+45726	" Fragment de porte"	"Fragment van een deur"	"Door fragment"	41975			
+45737	" Fragment de relief"	"Fragment van een reliëf"	"Relief fragment"	41975			
+45721	" Fragment de retable"	"Fragment van een retabel"	"Retable fragment"	41975			
+46329	" Fragment de sarcophage"	"Fragment van een sarcofaag"	"Sarcophage fragment"	41975			
+45733	" Fragment de stalle"	"Fragment van een koorgestoelte"	"Choir stalle fragment"	41975			
+45722	" Fragment de statue"	"Fragment van een standbeeld"	"Statue fragment"	41975			
+45746	" Fragment de stèle"	"Fragment van een stèle"	"Stela fragment"	41975			
+45744	" Fragment de tablette"	"Fragment van een tablet"	"Tablet fragment"	41975			
+45724	" Fragment de tapisserie"	"Fragment van behangsel"	"Hanging fragment"	41975			
+46602	" Fragment de textile"	"Textielfragment"	"Textile fragment"	41975			
+45736	" Fragment de tombe funéraire"	"Fragment van een graftombe"	"Funerary tomb fragment"	41975			
+46197	" Fragment de tuile"	"Fragment van een dakpan"	"Fragment of a tile"	41975			
+45745	" Fragment de vaisselle"	"Fragment van vaatwerk"	"Vessel fragment"	41975			
+45879	" Fragment d'élément architectural"	"Fragment van architecturaal element"	"Fragment of architectural element"	41975			
+45747	" Fragment d'inscription"	"Fragment van een inscriptie"	"Inscription fragment"	41975			
+41976	" Tesson"	"Scherf"	"Sherd"	41975	"Wordt alleen gebruikt voor fragmenten van aardewerk of glas. Gebruikt ""tesson (composant de vaisselle)"" om scherven van vaatwerk te definiëren (oor, bodem, hals, buik etc.)"		
+43084	" Lamelle"	"Lamel"	"Lamella"	41952	"Kleine, dunne, buigzame plaatjes of reepjes met verschillende toepassingsmogelijkheden"		
+44879	" Miniature"	"Miniatuur"	"Miniature"	41952	"Te gebruiken voor het beschrijven van voorwerpen of creaties in een verkleinde schaal in vergelijking met het gemiddelde of normale formaat voor het type. Gebruik 'miniatuurspeelgoed' voor miniaturen van objecten die bedoeld zijn als speelgoed; gebruik 'miniatuur (schildering)' voor zeer kleine schilderijen"		
+42125	" Panneau (forme d'objet)"	"Paneel (objectvorm)"	"Pane (object form)"	41952	"Rechthoekig plat vlak binnen een omlijsting"		
+42117	" Plaque"	"Plaat"	"Plate (object form)"	41952	"Wordt gebruikt voor brede, platte, enigszins dikke en meestal onbuigzame voorwerpen"		"Élément plat ou légèrement bombé, plus ou moins épais, d'un seul tenant"
+42118	" Plaquette"	"Plaatje"	"Smalle plate (object form)"	41952			
+43079	" Rondelle"	"Schijfje"	"Small disk"	41952	"Klein schijfje, soms doorboord, uit diverse materialen en met diverse functies"		
+42142	" Tige"	"Stang"	"Bar (object form)"	41952	"Lange en smalle metalen staaf"		"Élément minde et allongé disposé verticalement et supportant un corps ou un élément: la tige peut aussi former le corps d'un objet (dans le cas d'un chandelier par exemple)"
+41939	"Industrie lithique"	"Stenen werktuig"	"Stone tool"	41875			
+43331	" Biface"	"Vuistbijl"	"Celt"	41939			
+43341	" Burin (artefact lithique)"	"Steker"	"Burin (stone tool)"	41939			
+43349	" Déchet de taille"	"Debitageafval"	"Debitage"	41939			
+42150	" Éclat"	"Afslag"	"Flake"	41939			
+46304	" Faucille (artefact lithique)"	"Sikkel (stenen werktuig)"	"Sickle (stone tool)"	41939			
+43007	" Grattoir"	"Eindschrabber"	"End scraper"	41939			
+43117	" Hache polie"	"Gepolijste bijl"	"Polished axe"	41939			
+46303	" Hache-herminette (artefact lithique)"	"Disselbijl (stenen werktuig)"	"Adze-axe (stone tool)"	41939			
+46305	" Hache-marteau (artefact lithique)"	"Hamerbijl (stenen werktuig)"	"Hatchet (stone tool)"	41939			
+43660	" Herminette (artefact lithique)"	"Dissel (stenen werktuig)"	"Adze (lithic artefact)"	41939			
+43004	" Lame (artefact lithique)"	"Kling (stenen werktuig)"	"Blade (stone tool)"	41939			
+43375	" Lame-grattoir"	"Kling-eindschrabber"	"Blade-end scraper"	41939			
+43127	" Lame-racloir"	"Kling-boordschrabber"	"Blade-side scraper"	41939			
+46306	" Meule (artefact lithique)"	"Molensteen (stenen werktuig)"	"Millstone (stone tool)"	41939			
+45877	" Mortier (artefact lithique)"	"Mortier (stenen werktuig)"	"Mortar (stone tool)"	41939			
+43115	" Nucleus"	"Nucleus (kernsteen)"	"Lithic core"	41939			
+43342	" Perçoir (artefact lithique)"	"Boor (stenen werktuig)"	"Drill (stone tool)"	41939			
+43279	" Pic (artefact lithique)"	"Houweel (stenen werktuig)"	"Pick (stone tool)"	41939			
+46307	" Pilon (artefact lithique)"	"Stamper (stenen werktuig)"	"Pestle (stone tool)"	41939			
+43659	" Pointe (artefact lithique)"	"Spits (stenen werktuig)"	"Point (stone tool)"	41939			
+42999	" Racloir (artefact lithique)"	" Boordschrabber"	"Side scraper"	41939			
+42040	"Instrument de musique"	"Muziekinstrument"	"Musical instrument"	41875			
+42289	"Aérophone "	"Aërofoon"	"Aerophone"	42040			
+42290	" Aérophone libre"	"Vrije aërofoon"	"Free aerophone"	42289			
+42346	" Instrument à anche battante"	"Rietinstrument"	"Reed instrument"	42289			
+42309	" Instrument à vent proprement dits"	"Echt blaasinstrument"	"True wind instrument"	42289			
+42373	" Trompette"	"Trompet"	"Trumpet"	42289			
+42651	"Composant d'instrument de musique"	"Muziekinstrumentonderdeel"	"Musical instrument component"	42040			
+42666	" Âme"	"Stapel"	"Sound post"	42651			
+42652	" Anche"	"Riet (aërofoononderdeel)"	"Reed (aerophone component)"	42651			
+45997	" Bande de carton perforé"	"Gerperforeerde kartonnen band"	"Perforated paperboard tape"	42651			
+45998	" Bande de métal perforé"	"Band geperforeerd metaal"	"Perforated metal tape"	42651			
+44825	" Barillet (d'instrument à vent)"	"Tonnetje (onderdeel van blaasinstrument)"	"Barrel joint (wind instrument component)"	42651			
+44797	" Bec (clarinette et saxophone)"	"Mondstuk (klarinet en saxofoon)"	"Mouthpiece (clarinet and saxophone)"	42651			
+44818	" Bocal (d'instrument à vent)"	"Bokaal (onderdeel blaasinstrument)"	"Bocal (wind instrument component)"	42651			
+43521	" Chevalet"	"Kam (snaarinstrumentonderdeel)"	"Bridge (chordophone component)"	42651			
+42656	" Cheville (d'instrument à cordes)"	"Stemschroef (snaarinstrumentonderdeel)"	"Tuning peg (chordophone component)"	42651			
+42963	" Chevillier"	"Schroevenkast"	"Pegbox"	42651			
+42658	" Clef d'accord"	"Stemsleutel"	"Tuning fork"	42651			
+42659	" Corde (d'instrument à cordes)"	"Snaar (snaarinstrumentonderdeel)"	"String (chordophone component)"	42651			
+42665	" Cordier"	"Staartstuk"	"Tailpiece (string-holder)"	42651			
+44824	" Corps (d'instrument à vent)"	"Lichaam (blaasinstrumentonderdeel)"	"Body (wind instrument component)"	42651			
+44855	" Coulisse (d'instrument à vent)"	"Schuif (blaasinstrumentonderdeel)"	"Slide (wind instrument component)"	42651			
+46674	" Culasse (composant d'instrument à vent)"	"Laars (blaasinstrumentonderdeel)"	"Boot (wind instrument componant)"	42651			
+42653	" Embouchure"	"Mondstuk (koperblazer)"	"Mouthpiece (brass instrument)"	42651			
+44817	" Grande branche (composant d'instrument à vent)"	"Baspijp (blaasinstrumentonderdeel)"	"Bass joint (wind instrument component)"	42651			
+44854	" Ligature"	"Rietbinder"	"Ligature"	42651			
+45992	" Manivelle d'instrument de musique"	"Opwindsleutel (muziekinstrumentonderdeel)"	"Winding key (musical instrument component)"	42651			
+42664	" Mentonnière (composant de cordophone)"	"Kinhouder"	"Chinrest"	42651			
+44768	" Pavillon"	"Klankbeker"	"Bell (wind instrument component)"	42651			
+44858	" Pédale pour instrument de percussion"	"Pedaal (muziekinstrumentonderdeel)"	"Pedal (musical instrument component)"	42651			
+42657	" Peigne (composant de cordophone)"	"Kam (chordofoononderdeel)"	"Comb (chordophone component)"	42651			
+44816	" Petite branche (composant d'instrument à vent)"	"Vleugelpijp (blaasinstrumentonderdeel)"	"Wing joint (wind instrument component)"	42651			
+42654	" Pied de tympanon"	"Voet van een hakkebord"	"Foot of a dulcimer"	42651			
+45174	" Piston (composant d'instrument à vent)"	"Ventiel (blaasinstrumentonderdeel)"	"Valve (wind instrument component)"	42651			
+42655	" Plectre"	"Plectrum"	"Plectrum"	42651			
+44833	" Poche de cornemuse"	"Zak van doedelzak"	"Bag of a bagpipe"	42651			
+45994	" Sommier d'orgue"	"Windlade van een orgel"	"Organ wind-chest"	42651			
+45995	" Soufflet d'orgue"	"Balg van een orgel"	"Organ bellow"	42651			
+42676	" Sourdine"	"Demper"	"Mute"	42651			
+42661	" Table d'harmonie"	"Klankblad"	"Sound-board"	42651			
+43471	" Tirant et corde de serrage"	"Spanstrop en -koord"	"Tie rod and rope"	42651			
+44823	" Ton de rechange"	"Stembeugel"	"Crook (wind instrument component)"	42651			
+42662	" Touche"	"Toets (instrumentonderdeel)"	"Key (sound device component)"	42651			
+44822	" Tuyau (d'instrument à vent)"	"Buis (blaasinstrumentonderdeel)"	"Tube (windinstrument component)"	42651			
+42667	" Volute (composant d'instrument à cordes)"	"Krul (snaarinstrumentonderdeel)"	"Volute (chordophone component)"	42651			
+42540	"Cordophone"	"Chordofoon"	"Chordophone"	42040			
+42541	" Cithare"	"Citer"	"Zither"	42540			
+42585	" Cordophone composite"	"Samengestelde chordofoon"	"Composite chordophone"	42540			
+42520	"Ensemble musical"	"Muziekgezelschap"	"Musical ensemble"	42040			
+42521	" Gamelan"	"Gamelan"	"Gamelan"	42520			
+42450	"Idiophone"	"Idiofoon"	"Idiophone"	42040			
+42451	" Idiophone frappé"	"Geslagen idiofoon"	"Struck idiophone"	42450			
+42511	" Idiophone frotté"	"Gewreven idiofoon"	"Friction idiophone"	42450			
+42503	" Idiophone pincé ou lamellophone"	"Getokkelde idiofoon of lamellofoon"	"Plucked idiophone or lamellaphone"	42450			
+42517	" Idiophone soufflé"	"Aangeblazen idiofoon"	"Blown idiophone"	42450			
+42650	"Instrument éléctronique"	"Elektronisch instrument"	"Electronic musical instruments"	42040			
+43241	" Batterie électrique"	"Drummmachine"	"Rhythm box"	42650			
+42704	" Contrôleur et interface"	"Controler en interface"	"Controler and interface"	42650			
+42712	" Convertisseur de signal"	"Signaalomzetter"	"Signal modifier"	42650			
+42696	" Dispositif de combinaison de signaux"	"Signaalcombinerend apparaat"	"Signal combation device"	42650			
+42728	" Echantillonneur"	"Sampler"	"Sampler"	42650			
+42679	" Générateur de signal sonore"	"Geluidssignaalgenerator"	"Audio signal generator"	42650			
+42714	" Instrument électro-acoustique"	"Electro-akkoestisch instrument"	"Electro-acoustic instrument and device"	42650			
+42721	" Instrument électromécanique"	"Electromechanische instrumenten"	"Electromechanical instrument and device"	42650			
+42733	" Logiciel"	"Software"	"Software"	42650			
+44433	" Melowriter"	"Melowriter"	"Melowriter"	42650			
+42684	" Modificateur ou processeur de signal"	"Signaalmodifier of processor"	"Signaalmodifier of processor"	42650			
+42743	" Ondes Martenot"	"Ondes Martenot"	"Ondes Martenot"	42650			
+42739	" Orgue transistor"	"Transistororgel"	"Transistor organ"	42650			
+42740	" Sculpture sonore"	"Soundsculpture"	"Soundsculpture"	42650			
+42735	" Séquenceur"	"Sequencer"	"Sequencer"	42650			
+42729	" Synthétiseur"	"Synthesizer"	"Synthesizer"	42650			
+42741	" Thérémin"	"Theremin"	"Theremin"	42650			
+42700	" Transducteur"	"Transducer"	"Transducer"	42650			
+42744	" Trautonium"	"Trautonium"	"Trautonium"	42650			
+42738	" Vocodeur"	"Vocoder"	"Vocoder"	42650			
+42689	" Voltage-control et générateur de programme"	"Voltage-control en programmagenerator"	"Voltage-control and programme generator"	42650			
+42428	"Instrument mécanique"	"Mechanisch instrument"	"Mechanical instrument"	42040			
+43489	" à bandes de cartons"	"met kartonnen banden"		42428			
+43446	" à cylindre en bois"	"Instrument met houten cilinder"		42428			
+43497	" à disques de cartons"	"met kartonnen schijven"		42428			
+43510	" à rouleaux de papiers perforés"	"met rollen geperforeerd papier"		42428			
+45981	" Orgue de Barbarie"	"Draaiorgel"	"Barrel organ"	42428			
+45964	"Instrument mécanique, orgue et harmonium"	"Mechanisch instrument, orgel en harmonium"	"Mechanical instrument, organ and harmonium"	42040			
+45966	" Boîte à musique"	"Muziekdoos"	"Music box"	45964			
+45967	" Carillon"	"Carillon"	"Carillon"	45964			
+45983	" Céleste"	"Celesta"	"Celesta"	45964			
+43528	" Épinette à cylindre"	"Cilinderspinet"	"Cylinder spinet"	45964			
+46191	" Glocken-spiel"	"Glocken-spiel"	"Glocken-spiel"	45964			
+43566	" Harmonica de verre"	"Glasharmonica"	"Armonica"	45964			
+42308	" Harmonium"	"Harmonium"	"Harmonium"	45964			
+42432	" Harmonium mécanique"	"Mechanische harmonium"	"Mechanical harmonium"	45964			
+45990	" Machine à écrire"	"Schrijfmachine (muziekinstrument)"	"Writing machine (musical instrument)"	45964			
+42296	" Mélodica"	"Melodica"	"Melodica"	45964			
+45976	" Organette"	"Organette"	"Organette"	45964			
+45984	" Orgue"	"Orgel"	"Organ"	45964			
+46192	" Orgue électrique"	"Elektrische orgel"	"Electric organ"	45964			
+45977	" Orgue mécanique"	"Mechanische orgel"	"Mechanical organ"	45964			
+45991	" Orgue-harmonium"	"Orgel-harmonium"	"Organ-harmonium"	45964			
+45985	" Pendule à musique"	"Muziekslinger"		45964			
+45987	" Piano mécanique"	"Mechanische piano"	"Mechanical piano"	45964			
+45988	" Piano pneumatique"	"Pneumatische piano"	"Pneumatic piano"	45964			
+45986	" Piano-harmonium"	"Piano-harmonium"	"Piano-harmonium"	45964			
+45989	" Sérinette"	"Kanarieorgeltje"		45964			
+46196	" Terpodion"	"Terpodion"	"Terpodion"	45964			
+42522	"Membranophone"	"Membranofoon"	"Membranophone"	42040			
+42539	" Mirliton"	"Kazoo"	"Kazoo"	42522			
+42538	" Tambour à friction"	"Wrijftrom"	"Friction drum"	42522			
+42523	" Tambour frappé"	"Geslagen trom"	"Struck drum"	42522			
+42537	" Tambour pincé"	"Getokkelde trom"	"Plucked drum"	42522			
+41930	"Instrument d'éclairage"	"Verlichtingsmiddel"	"Lighting device"	41875	"Vaste of verplaatsbare apparatuur met als voornaamste doel het produceren van kunstmatig licht"		
+44989	" Bougie et support de bougie"	"Kaars en kaarshouder"	"Candle and candleholder"	41930			
+44990	" Bougeoir"	"Blaker"	"Chamberstick"	44989	"Kaarsenstandaards met een enkele kaarshouder op een platte schotel- of schaalvormige basis. Gebruik 'kandelaars' voor kaarsenstandaards met een enkele kaarshouder op een voetstuk met een verbrede basis of voet"	"A small support for a candlestick often incorporated in C18 and early C19 desks, card-tables, work-tables, etc. and generally made so that it can be slid into the body of the piece when not in use"	
+44476	" Candélabre"	"Kandelaber"	"Candelabra (candleholder)"	44989	"Kaarsenstandaards met twee of meer armen"	"A standing candlestick with arms and nozzles for more than one candle"	
+44514	" Chandelier"	"Kandelaar"	"Candlestick"	44989	"Kaarsenstandaards met een enkele kaarshouder die op een voetstuk rust met een verbrede basis of voet voor de balans. Het voetstuk is vaak zuilvormig. Gebruik 'blakers' voor kaarsenstandaards met een enkele kaarshouder die op een platte schotel of blad staa"	"Portable stand for a candle"	
+44908	" Flambeau"	"Toorts"	"Flambeau"	44989	"Wordt gebruikt voor fakkels van vlasdraden of katoenen lonten die met hars zijn doordrenkt en met een waslaagje zijn bedekt. Er werden vaak vier lonten samengebonden en opnieuw met een waslaagje bedekt om de fakkel groter te maken. De benaming wordt ook gebruikt voor de fakkels die bij een vuurwerkshow worden gedragen, zoals in een optocht"		
+45409	" Composant de moyen d'éclairage"	"Onderdeel verlichtingsmiddel"	"Lighting device component"	41930			
+45410	" Diffuseur"	"Diffusor"	"Diffusor"	45409			
+45301	" Miroir dichroïque"	"Dichroïsche spiegel"	"Dichroic mirror"	45409	"Spiegel van glas dat van kleur lijkt te veranderen wanneer het wordt gezien bij doorgelaten of gereflecteerd licht; wordt vaak verkregen door toevoeging van colloïdaal goud aan het glasmengsel"		
+45411	" Réflecteur"	"Reflectorlamp"	"Reflector lamp"	45409	"Gloeilampen die een reflecterende laag bevatten aan de binnenkant van het glasomhulsel, die de hele lamp nauwkeurige controle over de lichtstraal geeft"		
+45649	" Support de lampe"	"Lampstandaard"	"Lamp stand"	45409	"Houder voor lamp"		
+42082	" Lampe"	"Lamp"	"Lamp (lighting device)"	41930	"Verlichtingsmiddelen met een houder voor de brandstof voor de verlichting, meestal vet of olie. De benaming wordt ook gebruikt voor lampen die met een aparte energiebron zijn verbonden, zoals gas of elektriciteit"		
+45758	" Ampoule (lampe)"	"Gloeilamp"	"Incandescent lamp"	42082	"Lampen die licht geven door middel van gloeihitte. Deze hitte kan worden opgewekt met elektriciteit, gas, petroleum of andere energiebronnen"		
+44751	" Lampadaire"	"Vloerlamp"	"Floor lamp"	42082	"Lampen op hoge standaarden, ontworpen om op de grond te staan"		
+42083	" Lampe à huile"	"Olielamp"	"Oil lamp"	42082	"Lichtbron waarbij licht wordt verkregen door er olie in te verbranden"		
+42231	" Lanterne"	"Lantaarn (verlichtingsmiddel)"	"Lantern (lighting device)"	41930	"Vast of draagbaar, beschermend en lichtdoorlatend omhulsel van een lichtbron; stevig geraamte, zijkanten van transparant glas, hoorn of opengewerkt materiaal"		
+44517	" Lustre"	"Kroonluchter"	"Chandelier (hanging light)"	41930	"Plafondverlichting met meestal twee of meer omhoog krullende armen, waaraan kaarsen, branders of lampen"	"Lighting fixture suspended from the ceiling, equipped with multiple lamps or candles"	
+45413	" Spot"	"Spotlicht"	"Spotlight"	41930	"Verlichtingsmiddelen met een lens of lenssysteem die een geconcentreerde, sterke lichtbundel maakt"		
+41928	"Jouet et équipement de sport"	"Speelgoed en sportuitrusting"	"Toy and sport equipment"	41875			
+43327	" Composant de jouet et équipement de sport"	"Onderdeel van speelgoed en sportuitrusting"	"Toy and sport equipment component"	41928			
+43328	" Repose-pied d'échasse"	"Voetsteun van stelten"	"Foot-rest of stilts"	43327			
+44952	" Jouet"	"Speelgoed"	"Toy"	41928			
+45472	" Élément de jeu de cartes, de table et de société"	"Kaart-, tafel- en bordspelelement"	"Card, table and board game element"	44952			
+44939	" Hochet (jeu)"	"Rammelaar"	"Baby's rattle"	44952			
+42229	" Jeu de société"	"Gezelschapsspel"	"Party game"	44952			
+45474	" Jouet miniature"	"Miniatuurspeelgoed"	"Miniature toy"	44952			
+45425	" Jouet optique"	"Optisch speelgoed"	"Optical toy"	44952			
+43572	" Marionette"	"Marionet"	"Marionette (stringed puppet)"	44952			
+43065	" Poupée"	"Pop"	"Doll"	44952			
+43296	" Toupie"	"Tol"	"Top (toy)"	44952			
+41880	"Matériel visuel"	"Beeldmateriaal"	"Visual work"	41875	"Topterm voor objecten die oorspronkelijk zijn vervaardigd met als doel de betekenis hoofdzakelijk op visuele, non-verbale wijze over te dragen, met name waar het de uitdrukking van een symbolische of expressieve betekenis of esthetische ervaring betreft"		
+42976	" Album photographique"	"Fotoalbum"	"Photograph album"	41880			
+45421	" Dégradateur"	"Vignet (beeldmateriaal)"	"Vignette (visual work)"	41880	"Passe-partouts voor het maken van afdrukken met vervloeiende omtrek. VDW. Term ook gebruikt voor die afdrukken zelf en voor andere tweedimensionale beeldende werken met vervloeiende randen"		
+42832	" Dessin"	"Tekening"	"Drawing (visual work)"	41880	"Wordt gebruikt voor voorstellingen die met een potlood getekend zijn, zowel voor functionele of esthetische doeleinden"	"Term that refers both to the act of marking lines on a surface and to the product of such manual work. Whether it is a summery or complete, a drawing is defined less by its degree of finish or support than by its media an formal vocabulary"	
+44448	" Carton (dessin d'atelier)"	"Karton (werktekening)"	"Cartoon (working drawing)"	42832	"Wordt gebruikt voor tekeningen of gekleurde patronen op zwaar, sterk papier die gemaakt worden als een ontwerp voor een schilderij, tapijt, mozaïek etc"		
+45003	" Émail (image)"	"Email (beeldmateriaal)"	"Enamel (visual work)"	41880	"Beeldend werk in email"		
+44701	" Esquisse"	"Schets"	"Sketch"	41880	"Beeldende werken die slechts de hoofdlijnen of -trekken van het onderwerp weergeven, als ontwerpen voor meer uitgewerkte kunstwerken, als zelfstandige uiting, ter oefening, of ter verduidelijking; minder afgewerkt dan 'studies'"		
+42835	" Estampe"	"Prent"	"Print (visual work)"	41880	"Afdruk van een gegraveerde, gesneden of geëtste plaat, hout- of linoleumsnede"		
+43267	" Gravure"	"Gravure"	"Engraving (print)"	42835	"Diepdrukken gemaakt door lijnen direct in een metalen plaat te steken met behulp van een burijn"		
+42893	" Lithographie"	"Lithografie (steendruk)"	"Lithograph"	42835	"Vlakdrukken gemaakt met behulp van een stenen drukvorm, die met vette materialen en Arabische gom is bewerkt, waarna de drukinkt alleen hecht op de vette delen"		
+46679	" Pyrogravure"	"Brandwerk"	"Pyrography"	42835			
+45415	" Film (matériel visuel)"	"Film (beeldmateriaal)"	"Motion picture (visual work)"	41880	"Te gebruiken voor werken die bestaan uit een reeks plaatjes op fotografische film, die zo snel achter elkaar worden vertoond dat ze de illusie geven van een natuurlijk beweging"		
+42842	" Mannequin"	"Mannequin (pop)"	"Fashion doll"	41880	"Pop waarop typische klederdracht of uitrusting getoond wordt"		
+42108	" Modèle"	"Model"	"Model"	41880	"Ontwerp uit leem, was, hout, gips of ander materiaal dat als voorbeeld van ontwerp dient"		
+43304	" Pastel"	"Pastel"	"Pastel (visual work)"	41880	"Voorstellingen gemaakt met pastel, een droge keurstof verkregen door kleuren fijn te stampen met gips, krijt enz. en dit te binden met een bindmiddel"		
+42211	" Peinture"	"Schildering"	"Painting (visual work)"	41880	"Voorstellingen die gemaakt zijn door het direct aanbrengen van pigment, in de vorm van kleurenmassa’s, op een over het algemeen tweedimensionaal vlak"		
+43242	" Aquarelle"	"Aquarel"	"Watercolor painting"	42211	"Schilderij gemaakt met in water oplosbare verf of waterverf"		
+44997	" Miniature (peinture)"	"Miniatuur (schildering)"	"Miniature (painting)"	42211	"Wordt gebruikt voor fijne schilderingen op ivoorkarton, ivoor, albast etc. In het bijzonder dergelijk in klein formaat geschilderd portret"		
+45468	" Peinture sur panneau"	"Paneelschildering"	"Panel painting"	42211	"Wordt gebruikt voor schilderingen op een houten paneel of verschillende samengevoegde houten panelen"		
+45005	" Tableau"	"Schilderij"	"Easel painting"	42211	"Geschilderde voorstelling op een paneel of op een opgespannen doek"		
+42852	" Photographie"	"Foto"	"Photo"	41880	"Postieve of negatief afdruk van een fotografische opname"		
+42974	" Carte photographique"	"Fotografische kaart (foto)"	"Card photograph (photograph)"	42852	"Commercieel geproduceerde foto’s, aangebracht op dik opzetkarton, dat iets groter is dan de afbeelding"		
+43001	" Carte stéréoscopique"	"Stereokaart"	"Stereograph"	42852	"Verwijst naar de meest voorkomende en meest populaire soort stereofoto’s, een tweetal foto’s van dezelfde afbeelding genomen vanuit twee perspectieven, waarbij het verschil tussen het ene en het andere heel klein is. Het verschil met andere stereofoto’s zoals daguerreotypieën, negatieven of losse afdrukken, is dat bij stereokaarten fotografische afdrukken zijn bevestigd op kartonnen kaarten"		
+42972	" Diapositive"	"Dia"	"Slide"	42852	"Afdruk van een fotografisch negatief op een glazen plaatje, voor projectie"		
+42898	" Négatif (photo)"	"Negatief (foto)"	"Negative (photograph)"	42852	"Foto waarin de waarden van licht en donker omgekeerd zijn aan die in de natuur"		
+42997	" Photo artistique"	"Artistieke foto"	"Artistic photograph"	42852			
+42995	" Photo documentaire"	"Documentaire foto"	"Documentary photo"	42852			
+42996	" Photo mécanique"	"Mechanische foto"	"Mecanical photo"	42852			
+43000	" Photo sur différent support"	"Foto op diverse drager"	"Photo on other support"	42852			
+45473	" Plaque photographique"	"Fotografische plaat"	"Photographic plate"	42852	"Platen van glas, metaal, porselein of een ander materiaal, die zijn bedekt met een lichtgevoelige fotografische emulsie"		
+42853	" Plan"	"Ontwerp"	"Design (concept)"	41880	"Wordt gebruikt voor schetsmatige beschrijvingen op papier"		
+44760	" Réconstruction"	"Reconstructie"	"Reconstruction"	41880	"Voorwerpen of bouwconstructies die op ware grootte tonen hoe iets er vroeger heeft uitgezien, gebaseerd op historisch of archeologisch bewijsmateriaal"		
+42156	" Relief"	"Reliëf"	"Relief"	41880	"Term voor een beeldwerk waarbij de figuren boven het oppervlak uitsteken"		
+42176	" Bas-relief"	"Laag-reliëf"	"Bas-relief"	42156	"Term voor een reliëf waarbij het beeldwerk slechts matig boven het oppervlak uitsteekt"	"Term for carving, embossing or casting that protrudes  only moderately from the background plane"	
+44434	" Haut-relief"	"Hoogreliëf"	"High relief"	42156	"Term voor een reliëf waarbij het beeldwerk ver boven het oppervlak uitsteekt"		
+41962	" Sculpture"	"Beeldhouwwerk"	"Sculpture"	41880	"Kunstwerken waarin beelden en vormen zijn uitgevoerd in reliëf, in intaglio of in rondsculptuur "		
+42182	" Buste"	"Buste"	"Bust"	41962	"Beeldhouwwerk, meestal een portret, dat enkel het hoofd, borst en schouders vertoont"	"Type of sculpture, commonly but not always a portrait, that includes the chest or part of the chest, as well as the head"	
+44745	" Crucifix"	"Kruisbeeld"	"Crucifix"	41962	"Kruis met daarop de figuur van de gekruisigde Christus. Wordt gebruikt voor zowel monumentale kruisbeelden in liturgische context, als kleine, draagbare objecten voor persoonlijke devotie"	"Cross with a figure of the crucifix Christ"	
+45505	" Fétiche"	"Fetisjfiguur"	"Fetish figure"	41962	"Beeldjes waaraan spirituele krachten worden toegeschreven of ter afgodische verering"		
+42843	" Maquette"	"Maquette"	"Maquette"	41962	"Klein driedimensioneel model van een beeldhouwwerk, gebouw etc"		
+42998	" Moulage"	"Afgietsel"	"Cast"	41962	"Reproductie van een driedimensioneel object dat in een mal vormgegeven is"	"Reproduction of a three-dimensional object produced by means of a mould"	
+42160	" Scarabée"	"Scarabee"	"Scarab"	41962	"Bij de Egyptenaren symbool van de wederopstanding. Bij de lijkbalseming werd vaak een stenen scarabée in de vorm van een hart op de mummie, tussen de windsels of in de borstholte geplaatst, als een magisch kunsthart. Wordt ook gebruikt voor een Egyptische stempelzegel in de vorm van een mestkever of amuletten in deze vorm. Om de akten, die de ambtelijke bureas werden opgemaakt, te stempelen, werden scarabeeën uit allerlei steensoorten gebruikt;  (zie stempelzegels)"		
+42133	" Statue"	"Standbeeld"	"Statue"	41962	"Rondsculpturen van menselijke en dierlijke figuren of kleine groepen van figuren, steeds ten voeten uit, staande of zittende, meestal in een open ruimte en op een sokkel"		
+42140	" Tête (sculpture)"	"Kop (beeldhouwwerk)"	"Head (sculpture)"	41962			
+45756	" Tableau d'autel"	"Altaarstuk"	"Altarpiece"	41880	"Wordt gebruikt voor een beeldhouwwerk of schilderstuk, geplaatst aan de achterkant van het altaar of gehangen aan de muur achter het altaar"		
+44449	" Retable"	"Retabel"	"Retable (altar appendage)"	45756	"Achterstuk van een altaar. Wordt zowel gebruikt voor de plank of het kader waarin decoratieve panelen worden aangebracht, als voor de eigenlijke decoratieve panelen of altaarstukken die achter het altaar geplaatst worden"	"Strictly, the shelf for ornaments or the frame for decorative panels behind an altar but also applied to the decorative panels or altarpiece itself"	
+42816	" Travail d'aiguilles"	"Naaldwerk"	"Needle work"	41880	"Wordt gebruikt voor handwerk, uitgevoerd met naald en draad, garen of koord. Het omvat naaiwerk, borduurwerk, breiwerk en andere vormen van handwerk"		
+42817	" Broderie"	"Borduurwerk"	"Embroidery"	42816	"Verwijst naar werken die zich kenmerken door een patroon of ontwerp dat is uitgevoerd in met draad of fijn metaaldraad gemaakte steken. De patronen worden gewoonlijk uitgevoerd op stof, maar ook leer, papier of andere media kunnen worden gebruikt; de werken kunnen bedoeld zijn om ingelijst te worden of om kleding, bedtextiel, meubelbekleding, kussens, altaarkleden, ceremoniële voorhangen of andere zaken te versieren"	"A textile embellished by hand with stitched patterns of threads, usually of silk or wool. The craft is very old and has been practised in all parts of the world."	
+46622	" Engrêlure"	"Engrêlure"	"Engrêlure"	42816			
+46456	" Entre-deux"	"Entre-deux (tussenzetsel)"	"Entre-deux (insertion)"	42816			
+46625	" Guimpe"	"Guimpewerk"	"Hairpin lace"	42816			
+46626	" Marquoir"	"Merklap"	"Sampler (embroidery)"	42816			
+43294	" Vannerie"	"Vlechtwerk"	"Wickerwork"	41880	"Gevlochten rietstengels, rotan, takken of ander materiaal voor het maken van meubilair, kledij of allerhande recipiënten zoals manden voor het bewaren van voedsel of voor het verzamelen van planten"		"Ensemble de techniques textiles destinées à la fabrication de récipients très répandues dans l'Amérique indigène bien qu'elles aient eu un influence variable en fonction des régions"
+41917	"Mobilier"	"Meubilair en meubelaccessoire"	"Furniture and furniture accessory"	41875			
+41919	" Accessoire de meuble"	"Meubelaccessoire"	"Furniture accessory"	41917			
+45757	" Accessoire de meuble de bâtiment réligieux"	"Meubelaccessoire in een religieus gebouw"	"Furniture accessory in religious building"	41919			
+44746	" Appui-livre"	"Boekensteun"	"Bookend"	41919			
+44513	" Cadre"	"Lijst"	"Frame"	41919			
+44747	" Cendrier"	"Asbak"	"Ashtray"	41919			
+42888	" Coussin (accessoire de meuble)"	"Kussen (meubelaccessoire)"	"Cushion (furniture accessory)"	41919			
+44909	" Fontaine de table"	"Tafelfontein"	"Table fontain"	41919			
+45527	" Natte"	"Mat"	"Mat (floor covering)"	41919			
+44754	" Porte-journeaux"	"Krantenrek"	"Newspaper-rack"	41919			
+44507	" Porte-lettre"	"Brievenhouder"	"Letter holder"	41919			
+44755	" Porte-manteau"	"Kapstok"	"Hall stand"	41919			
+44756	" Porte-parapluie"	"Paraplubak"	"Umbrella stand"	41919			
+44982	" Surtout de table"	"Tafelstuk"	"Table piece"	41919			
+44458	" Tapisserie"	"Behangsel"	"Hanging (covering)"	41919			
+46624	" Textile d'ameublement"	"Meubelstof"	"Furnishing fabric"	41919			
+46474	" Volant de lit"	"Bedvalletje"	"Bed valance"	41919			
+41921	" Composant de meuble et d'accessoire de meuble"	"Onderdeel van meubel en meubelaccessoire"	"Furniture and furniture accessory component"	41917			
+45739	" Cadre de miroir"	"Spiegellijst"	"Mirror frame"	41921			
+44489	" Montant de lit"	"Bedstijl"	"Bed post"	41921			
+42103	" Pied de meuble"	"Poot van een meubel"	"Foot (furniture component)"	41921			
+41918	" Meuble"	"Meubel"	"Piece of furniture"	41917			
+44452	" Meuble de bâtiment religieux"	"Meubel van religieus gebouw"	"Furniture of religious building"	41918			
+44444	" Meuble de rangement"	"Bergmeubilair"	"Storing furniture"	41918			
+43175	" Meuble de repos"	"Ligmeubel"	"Sleeping and reclining furniture"	41918			
+42282	" Meuble de support"	"Dragend meubilair"	"Support furniture"	41918			
+42098	" Miroir"	"Spiegel"	"Mirror"	41918			
+42846	" Mobilier d'écurie"	"Stalmeubel"	"Stable furniture"	41918			
+42219	" Siège"	"Zitmeubel"	"Seating furniture"	41918			
+41885	"Moyen de communication"	"Communicatiemiddel"	"Means of communication"	41875	"Topterm voor alle middelen die communicatie mogelijk maken, zowel audiovisueel, geschreven, telecommunicatief of digitaal"		
+41886	" Communication audiovisuelle"	"Audiovisuele communicatie"	"Audio-visual communication"	41885	"Topterm voor zaken die gebruikt worden om audiovisueel te communiceren, zoals beeld-en geluidsdragers, cd-spelers, projectoren enz"		
+43052	" Dispositif sonore"	"Geluidsmiddel"	"Sound device"	41886			
+45331	" Équipement audio"	"Audio-apparatuur"	"Audio equipment"	41886	"Wordt gebruikt voor apparatuur om geluid mee op te nemen, uit te zenden, weer te geven en het versterken"		
+45762	" Équipement audiovisuelle"	"Audiovisuele apparatuur"	"Audiovisual equipment"	41886	"Te gebruiken voor de hardware die vereist is om beeld- en geluidsmateriaal weer te geven of te gebruiken, zoals viewers, projectoren, videorecorders en cd-spelers"		
+45346	" Équipement photographique"	"Fotografische uitrusting"	"Photographic equipment"	41886	"Een object dat oorspronkelijk werd vervaardigd om een visueel beeld permanent vast te leggen met behulp van optische en chemische middelen"		
+45328	" Équipement pour la projection d'images"	"Beeldprojecterende benodigdheden"	"Image-projecting equipment"	41886	"Te gebruiken voor zaken die nodig zijn om beelden te kunnen projecteren"		
+45761	" Support sonore"	"Geluidsdrager"	"Sound recording"	41886	"Schijven, banden, filamenten of andere media waarop geluid is opgenomen"		
+41887	" Communication écrite"	"Geschreven communicatie"	"Written communication"	41885			
+44912	" Almanach"	"Almanak"	"Almanac"	41887	"Meestal jaarlijkse publicaties die een grote verscheidenheid aan wetenswaardigheden of statistische gegevens bevatten. De oorspronkelijke versies bevatten ook voorspellingen over dagen, maanden en vakanties van het nieuwe jaar"		
+42819	" Carte"	"Kaart"	"Map"	41887			
+42822	" Carte de visite"	"Visitekaartje"	"Visiting card"	41887			
+42884	" Carte d'épingles"	"Speldenkaart"	"Pin card"	41887			
+42823	" Catalogue"	"Catalogus"	"Catalog"	41887			
+45326	" Diplôme"	"Diploma"	"Diploma"	41887			
+42811	" Document d'archive"	"Archiefdocument"	"Archive document"	41887			
+43339	" Étiquette"	"Etiket"	"Label"	41887			
+42877	" Guide touristique"	"Reisgids"	"Travel guidebook"	41887			
+42074	" Inscription"	"Inscriptie"	"Inscription"	41887			
+42839	" Livre"	"Boek"	"Book"	41887			
+45450	" Matériel publicitaire"	"Reclamemateriaal"	"Promotional material"	41887			
+42208	" Ostracon"	"Ostrakon"	"Ostrakon"	41887			
+42851	" Périodique"	"Tijdschrift"	"Periodical"	41887			
+42854	" Prospectus"	"Prospectus"	"Prospectus"	41887			
+42288	" Sceau"	"Zegel"	"Seal"	41887			
+46668	" Table (document)"	"Tabel (document)"	"Table (document)"	41887			
+42163	" Tablette"	"Kleitablet"	"Tablet"	41887			
+44913	" Composant de moyen de communication"	"Onderdeel van communicatiemiddel"	"Means of communication component"	41885	"Verzamelt alle onderdelen van audiovisuele, geschreven en telecommunicatieve communicatiemiddelen"		
+44914	" Reliure"	"Boekband"	"Bookbinding"	44913	"Overkoepelende term voor die delen van boeken die worden aangebracht tijdens het vastmaken van de bladen en het bedekken daarvan"		
+44430	" Informatique"	"Informatica"	"Computer science"	41885	"Verzamelnaam voor zaken die te maken hebben met de mechanische verzameling en verwerking van informatie"		
+44431	" Ordinateur"	"Computer"	"Computer"	44430	"Elektronische informatieverwerkende machine die door een reeks gecodeerde instructies wordt bestuurd"		
+41888	" Télécommunication"	"Telecommunicatie"	"Telecommunication"	41885	"Topterm voor alle zaken die communiceren over lange afstanden, vooral door middel van elektronische hulpmiddelen zoals telefoonsystemen of uitzendingen"		
+44759	" Radio"	"Radio"	"Radio"	41888	"Telecommunicatiesysteem waarbij geluid en codesignalen zonder bedrading worden uitgezonden door de ruimte, door middel van elektromagnetische golven"		
+45759	" Téléphone"	"Telefoon"	"Telephone"	41888	"Wordt gebruikt voor instrumenten, toestellen of apparaten die geluiden over een afstand overbrengen of reproduceren, vooral die apparaten waarin een menselijke stem wordt overgebracht door een kabel of een satelliet"		
+45344	" Télévision"	"Televisie"	"Television"	41888	"Telecommunicatiesysteem waarbij beelden, met of zonder begeleidend geluid, worden omgezet in elektromagnetische golven en uitgezonden naar ontvangers op afstand, waar ze worden omgezet in bewegende beelden"		
+41959	"Moyen de punition et d'obstruction"	"Bestraffings- en belemmeringsmiddel"	"Restraining and punishment equipment"	41875			
+45086	" Billot"	"Executieblok"	"Execution block"	41959			
+45091	" Chaîne (entrave)"	"Keten (boei)"	"Shackle"	41959			
+45083	" Carcan"	"Halsboei"	"Neck shackle"	45091			
+45085	" Entrave"	"Kluister"	"Fetter (shackle)"	45091			
+45084	" Menottes"	"Handboeien"	"Handcuffs"	45091			
+43128	" Fouet (moyen de punition)"	"Gesel"	"Scourge"	41959			
+45093	" Marque de justice"	"Brandmerkijzer"	"Branding iron"	41959			
+45087	" Masque de punition"	"Strafmasker"	"Punishment mask"	41959			
+45089	" Nerf de boeuf"	"Bullepees"	"Pizzle"	41959			
+45092	" Poucettes"	"Duimschroef (martelwerktuig)"	"Thumbscrew"	41959			
+41954	"Moyen de transport"	"Transportmiddel"	"Vehicle"	41875			
+45783	" Accessoire de moyen de transport"	"Accessoire van een transportmiddel"	"Vehicle accessory"	41954			
+43309	" Pagaie"	"Peddel"	"Paddle"	45783			
+43104	" Rame"	"Roeispaan"	"Oar"	45783			
+42812	" Automobile"	"Auto"	"Automobile"	41954			
+42814	" Bicyclette"	"Fiets"	"Bicycle"	41954			
+43042	" Draisienne"	"Draisienne"	"Draisienne"	42814			
+42857	" Tricycle"	"Driewieler"	"Tricycle"	42814			
+42920	" Vélocipède"	"Vélocipède"	"Velocipede"	42814			
+42825	" Chaise à porteurs"	"Draagkoets"	"Sedan chair"	41954			
+42826	" Char"	"Karretje"	"Cart"	41954			
+45774	" Chariot de glacier"	"Ijscrèmekar"	"Ice cream cart"	41954			
+42849	" Composant de moyen de transport"	"Onderdeel van transportmiddel"	"Vehicle component"	41954			
+42887	" Manivelle de voiture"	"Autozwengel"	"Swingle tree"	42849			
+42989	" Pont de voiture"	"Hefbrug voor rijtuig"	"Lift bridge for carriage"	42849			
+42990	" Porte-fouet"	"Zweepkoker"	"Whip holder"	42849			
+45659	" Proue"	"Boeg"	"Bow (vehicle component)"	42849			
+43348	" Rame de gouvernail"	"Stuurriem"	"Steering oar"	42849			
+43020	" Timon"	"Disselboom"	"Pole (horse carriage)"	42849			
+42901	" Train de voiture"	"Onderstel (van een rijtuig)"	"Undercarriage"	42849			
+42892	" Corbillard"	"Lijkwagen"	"Hearse"	41954			
+42856	" Tram"	"Tram"	"Tram"	41954			
+42858	" Vélomoteur"	"Motorfiets"	"Motorcycle"	41954			
+42860	" Voiture"	"Rijtuig"	"Carriage"	41954			
+42855	" Traîneau"	"Slee"	"Sled"	42860			
+42861	" Voiture fermée à deux roues"	"Gesloten rijtuig met twee wielen"	"Closed carriage with two wheels"	42860			
+42862	" Voiture fermée à quatre roues"	"Gesloten rijtuig met vier wielen"	"Closed carriage with four wheels"	42860			
+42863	" Voiture ouverte à deux roues"	"Open rijtuig met twee wielen"	"Open carriage with two wheels"	42860			
+42864	" Voiture ouverte à quatre roues"	"Open rijtuig met vier wielen"	"Open carriage with four wheels"	42860			
+42859	" Voiture d'enfant"	"Kinderwagen"	"Baby carriage"	41954			
+41927	"Moyen d'échange"	"Ruilmiddel"	"Means of exchange"	41875	"Topterm voor objecten waaraan een specifieke waarde is toegekend en die bedoeld zijn voor gebruik bij uitwisseling van goederen en diensten en het vereffenen van schulden "		
+43101	" Jeton"	"Jeton"	"Jetton"	41927	"Gegraveerde rekenpenningen of muntjes die sinds de 13e eeuw werden gebruikt als hulpmidel bij het maken van berekeningen; vaak zijn het kopïëen van munten uit dezelfde periode. Na de 16e eeuw voornamelijk gebruikt als souvenirs"		
+42101	" Pièce de monnaie"	"Munt"	"Coin (money)"	41927	"Stukjes metaal die met toestemming van de wettige macht worden geslagen om als betaalmiddel te dienen"		
+43087	" Tessère"	"Tessera"	"Tessera"	41927	"Kleine vierkantjes van verschillende harde materialen die de oude Romeinen gebruikten, waarschijnlijk om mee te rekenen, gokken e.d."		
+46630	" Timbre"	"Postzegel"	"Stamp"	41927			
+41881	"Objet cérémoniel"	"Ceremonieel object"	"Ceremonial object"	41875			
+46325	" Composant d'objet cérémoniel"	"Onderdeel van ceremonieel object"	"Ceremonial object component"	41881			
+46324	" Composant de mobilier funéraire"	"Onderdeel van grafmeubilair"	"Funerary equipment component"	46325			
+41882	" Mobilier funéraire"	"Grafmeubilair"	"Funerary equipment"	41881			
+42188	" Cercueil"	"Doodskist"	"Coffin"	41882			
+46330	" Coffret à ouchebtis"	"Sjabtikist"	"Shabti-box"	41882			
+46321	" Étiquette de momie"	"Mummieetiket"	"Mummy label"	41882			
+45873	" Masque funéraire"	"Dodenmasker"	"Death mask"	41882			
+46385	" Ossuaire"	"Ossuarium"	"Ossuary"	41882			
+46322	" Planche de momie"	"Mummieplank"	"Mummy board"	41882			
+42217	" Sarcophage"	"Sarcofaag"	"Sarcophagus"	41882			
+42169	" Urne"	"Asurn"	"Cremation urn"	41882			
+42187	" Vase canope"	"Canope"	"Canopic jar"	41882			
+41883	" Objet funéraire, rituel et religieux"	"Funerair, ritueel en religieus object"	"Funerary, ritual and religious object"	41881			
+42172	" Ampoule"	"Ampulla"	"Ampulla"	41883			
+41961	" Amulette"	"Amulet"	"Amulet"	41883			
+45513	" Baguette de sourcier"	"Wichelroede"	"Divining rod"	41883			
+44512	" Baiser de paix (osculatoire)"	"Paxtafel"	"Pax"	41883			
+45518	" Bâton magique"	"Toverstok"	"Magic wand"	41883			
+42181	" Brique de fondation"	"Funderingssteen"	"Foundation stone"	41883			
+44806	" Chapelet"	"Rozenkrans"	"Rosary"	41883			
+45530	" Cloche rituelle"	"Priesterschel"	"Ritual bell"	41883			
+42200	" Croix"	"Kruis"	"Cross"	41883			
+43663	" Dépôt de fondation"	"Stichtingsdepot"	"Foundation deposit"	41883			
+45210	" Encensoir"	"Wierookvat"	"Censer"	41883			
+45720	" Épingle votive"	"Votiefspeld"	"Votive pin"	41883			
+42174	" Équipement d'un momie"	"Mummieopsmuk"	"Mummie equipment"	41883			
+42038	" Idole"	"Idool (afgodsbeeld)"	"Idol"	41883			
+42232	" Linceul"	"Lijkwade"	"Shroud"	41883			
+44813	" Mât totémique"	"Totempaal"	"Totem pole"	41883			
+42249	" Naos"	"Naos"	"Naos"	41883			
+44497	" Noix de prière"	"Gebedsnoot"	"Prayer nut"	41883			
+44498	" Oratoire"	"Oratorium"	"Oratory"	41883			
+45719	" Pagaie cérémonielle"	"Ceremoniële peddel"	"Ceremonial paddle"	41883			
+46331	" Palette"	"Palet"	"Palette"	41883			
+45777	" Planche divinatoire"	"Orakelbord"	"Oracle board"	41883			
+42265	" Plateau d'offrandes"	"Offerschaal"	"Alms dish"	41883			
+45660	" Poteau protecteur"	"Beschermpaal"	"Protection pole"	41883			
+45776	" Récipient liturgique"	"Liturgisch vat"	"Lithurgical vessel"	41883			
+42284	" Table d'offrande (autel)"	"Offertafel (altaar)"	"Offering table (altar)"	41883			
+45489	" Vase rituel"	"Rituele vaas"	"Ritual visual"	41883			
+43131	"Objet indéterminé"	"Onbepaald object"	"Undetermined object"	41875			
+41941	"Objet matériau"	"Objectmateriaal"	"Object material"	41875			
+43396	" Briquet (matière)"	"Tondel"	"Tinder"	41941			
+45009	" Matière inorganique"	"Anorganisch materiaal"	"Inorganic material"	41941			
+46371	" Fossile"	"Fossiel"	"Fossile"	45009			
+45019	" Minéral"	"Mineraal"	"Mineral"	45009			
+41943	" Pierre"	"Steen"	"Stone"	45009			
+41944	" Matière manufacturée"	"Bewerkte grondstof"	"Processed material"	41941			
+43099	" Céramique"	"Keramiek (object)"	"Ceramics"	41944			
+44765	" Cuir"	"Leder"	"Leather"	41944			
+41948	" Métal"	"Metaal"	"Metal"	41944			
+41950	" Textile"	"Textiel"	"Textile"	41944			
+45060	" Verre (matière)"	"Glas (materiaal)"	"Glass (material)"	41944			
+45007	" Matière organique"	"Organische grondstof"	"Organic material"	41941			
+41942	" Matière animal"	"Dierlijk materiaal"	"Animal material"	45007			
+45014	" Matière végétale"	"Plantaardige materie"	"Vegetal material"	45007			
+41949	" Matière résiduaire"	"Reststof"	"Residue material"	41941			
+43399	" Produit de déchet"	"Afvalproduct"	"Waste"	41949			
+43067	" Scorie"	"Slak (reststof)"	"Slag"	41949			
+41889	"Outil et équipement"	"Gereedschap en uitrusting"	"Tools and equipment"	41875			
+43090	"Equipment"	"Uitrusting"	"Equipment"	41889			
+42889	" Équipement de costume"	"Kledinguitrusting"	"Equipment for costume"	42158			
+41899	" Équipement de cuisine"	"Keukengerei"	"Kitchenware"	42158			
+41910	" Équipement de pêche"	"Visgerei"	"Fishing equipment"	42158			
+41906	" Équipement de peinture"	"Schildersuitrusting"	"Painting equipment"	42158			
+42185	" Équipement d'écriture et de dessin"	"Schrijf- en tekenbenodigdheden"	"Writing and drawing equipment"	42158			
+42829	" Équipement d'impression"	"Drukkersuitrusting"	"Printing and printmaking equipment"	42158			
+45302	" Équipement pour la production d'énergie"	"Energieprocuderende apparatuur"	"Power producing equipment"	42158			
+43427	" Équipement pour usage personnel"	"Uitrusting voor persoonlijk gebruik"	"Equipment for personal use"	42158			
+45299	" Équipement reprographique"	"Reprografische apparatuur"	"Reprographic equipment"	42158			
+41900	" Instrument de mesure"	"Meetinstrument"	"Measuring device"	42158			
+44976	" Quincaillerie"	"IJzerwaren"	"Hardware"	42158	"Grote en kleine items die nodig zijn om materialen en onderdelen van bouwwerken, meubelen en andere objecten te bevestigen, verankeren, vast te houden, of aan te sluiten. Tevens onderdelen die worden gebruikt bij de afwerking van gebouwen en objecten, zoals scharnieren en knoppen"	"Ferronerie: French wrought-iron work, also decorative scrolled patterns derived from it for painted decorations, especially on faience"	
+45295	" Système"	"Systeem"	"System"	42158			
+43086	" Outil"	"Gereedschap"	"Tool"	41889			
+41890	" Outil agricole"	"Agrarisch werktuig"	"Agricultural tool"	43086			
+41902	" Outil métallurgique et composant"	"Metaalbewerkingsgereedschap en onderdelen"	"Metal working tool and components"	43086			
+41907	" Outil pour broyer et moudre"	"Slijp- en maalgereedschap"	"Grinding and milling tool"	43086			
+41894	" Outil pour couper"	"Snijgereedschap"	"Cutting tool"	43086			
+41911	" Outil pour faire et maîtriser du feu"	"Vuurmakend en -beheersend gereedschap"	"Fire-making and controlling tool"	43086			
+41895	" Outil pour former et conduire"	"Gereedschap voor vormen en geleiden"	"Shaping and guiding tool"	43086			
+41893	" Outil pour frapper"	"Slaggereedschap"	"Striking tool"	43086			
+44802	" Outil pour la préparation des surfaces à imprimer"	"Gereedschap voor het voorbereiden van drukoppervlakken"	"Printing surface preparation tool"	43086			
+45480	" Outil pour le travail d'argile"	"Gereedschap voor het bewerken van klei"	"Clayworking tool"	43086			
+41898	" Outil pour l'ébénisterie"	"Houtbewerkingsgereedschap"	"Woodworking tool"	43086			
+41909	" Outil pour l'industrie textile"	"Textielbewerkingsgereedschap"	"Textile working tool"	43086			
+41896	" Outil pour lisser"	"Gladmakend gereedschap"	"Polishing tool"	43086			
+41901	" Outil pour marquer"	"Merkgereedschap"	"Marking tool"	43086			
+43297	" Outil pour perçer"	"Boorgereedschap"	"Drilling tool"	43086			
+43298	" Outil pour poinçonner"	"Ponsgereedschap"	"Piercing tool"	43086			
+42875	" Outil pour pomper"	"Gereedschap om te pompen"	"Pumping tool"	43086			
+41897	" Outil pour saisir et serrer"	"Grijp- en klemgereedschap"	"Holding and gripping tool"	43086			
+43156	" Outil pour travailler et façonner des surfaces"	"Werktuig voor het bewerken en afwerken van oppervlakten"	"Surface working and finishing tool"	43086			
+41884	"Signe et symbole"	"Onderscheidingsteken en symbool"	"Sign and symbol"	41875			
+42167	" Composant de signe et symbole"	"Onderdeel van onderscheidingsteken en symbool"	"Sign and symbol component"	41884			
+42168	" Tête de sceptre"	"Kop van een scepter"	"Scepter head"	42167			
+42129	" Symbole et signe de pouvoir ou de fonction"	"Machtssymbool of -teken"	"Symbol or sign of power or function"	41884			
+42886	" Cocarde"	"Kokarde"	"Cockade"	42129			
+44872	" Collier de corporation"	"Gildeketting"	"Guild chain"	42129			
+46670	"Drapeau"	"Vlag"	"Flag"	42129			
+44807	" Emblème (signe)"	"Embleem (onderscheidingsteken)"	"Device (symbol)"	42129			
+43301	" Étendard (symbole de pouvoir)"	"Standaard (machtssymbool)"	"Standard (power symbol)"	42129			
+44903	" Plaque de corporation"	"Gildewapen"	"Guild coat of arms"	42129			
+42131	" Sceptre"	"Scepter"	"Scepter"	42129			
+44516	" Trône"	"Troon"	"Throne"	42129			
+42844	" Symbole personnel"	"Persoonlijk symbool"	"Personal symbol"	41884			
+44483	" Armoiries"	"Wapenschild"	"Escutcheon (coat of arms)"	42844			
+42845	" Médaille"	"Medaille"	"Medal"	42844			

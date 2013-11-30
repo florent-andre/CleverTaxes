@@ -1,0 +1,19 @@
+the problem is the file too large problem.
+
+This problem can be cause by : 
+* the javascript part
+or 
+* the server part
+
+Here will be tested the server part
+
+commande curl :
+
+curl --form file=@Michael_subjects_ArabicExt-6.txt --form conf=mapping.json http://127.0.0.1:8080/skosifier
+
+
+source : http://curl.haxx.se/docs/httpscripting.html
+
+
+==> semble venir de l'ajax :: tester avec le formdata de :
+http://blog.w3villa.com/websites/uploading-filesimage-with-ajax-jquery-without-submitting-a-form/

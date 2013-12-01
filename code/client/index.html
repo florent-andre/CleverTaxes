@@ -62,6 +62,7 @@
 		<!-- mock datas -->
 		<script type="text/javascript" src="./data/rawData.js"></script>
 		<script type="text/javascript" src="./data/dataInit.js"></script>
+		<script type="text/javascript" src="./data/dataInit2.js"></script>
 	    
 	    <script type="text/javascript">
 	    	$(document).ready(function(){
@@ -329,12 +330,20 @@
 				  
 				  //data = rawData.lines;
 				  
-				  var ageNames = [];
+				  //TODO : manage this dynamically
+				  var ageNames = [];//["state","user"];
+				  args.forEach(function(p,i){
+					  ageNames.push(p.source);
+				  });
 				  data.forEach(function(d){
-					  ageNames.push(d[0].id); //TODO : put here the complete names
-				  })
-	
-				  x0.domain(data.map(function(d) { return d.id; }));
+					  //ageNames.push(d[0].id); //TODO : put here the complete names
+					  d.values = d.map(function(v) { return {name: v.source, value: v.amount}; });
+				  });
+				  
+				  var t = data.map(function(d) { return d[0].id; });
+				  
+				  x0.domain(data.map(function(d) { return d[0].id; }));
+				  var t = x0.rangeBand();
 				  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
 				  y.domain([0, d3.max(data, function(d) { return d3.max(data, function(arr){ 
 					  return d3.max(arr,function(d) { return d.amount; })
@@ -359,20 +368,24 @@
 				      .data(data)
 				    .enter().append("g")
 				      .attr("class", "g")
-				      .attr("transform", function(d) { return "translate(" + x0(d.id) + ",0)"; });
+				      .attr("transform", function(d) { 
+				    	  return "translate(" + x0(d[0].id) + ",0)"; });
 	
 				  state.selectAll("rect")
 				      //.data(function(d) { return [d.amount]; })
-				      .data(function(d) { 
-				    	  return d; })
+				      //.data(function(d) { return d; })
+				      .data(function(d,i) {
+				    	  //return [d[i%d.length]]; })
+				    	  return d.values; })
 				    .enter().append("rect")
 				      .attr("width", x1.rangeBand())
 				      .attr("x", function(d) { 
-				    	  return x1(d.id); })
-				      .attr("y", function(d) { return y(d.amount); })
+				    	  return x1(d.name); })
+				      .attr("y", function(d) { 
+				    	  return y(d.value); })
 				      .attr("height", function(d) { 
-				    	  return height - y(d.amount); })
-				      .style("fill", function(d) { return color(d.id); });
+				    	  return height - y(d.value); })
+				      .style("fill", function(d) { return color(d.name); });
 				    	  //return color(1); });
 	
 				  var legend = svg.selectAll(".legend")
@@ -397,7 +410,7 @@
 				
 			}
 			
-			print( {data : dataInit, source : "state"},{data : dataInit, source : "user"});
+			print( {data : dataInit, source : "state"},{data : dataInit2, source : "user"});
 			
 	    
 		

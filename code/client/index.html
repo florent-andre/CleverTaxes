@@ -1,0 +1,980 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+    	<title>TMP - Terminology Management Platform</title>
+	    
+	    <link rel="icon" type="image/x-icon" href="../resources/images/favicon.ico" />
+	    
+	    <!-- 960 related stuff -->
+		<link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
+		
+		<link rel="stylesheet" type="text/css" media="all" href="css/960.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="../resources/css/jquery.percentageloader-0.1.css" />
+		<!-- end 960 -->
+		<link rel="stylesheet" type="text/css" media="all" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		
+	    <!-- header and footer -->
+		<style type="text/css" title="currentStyle">
+		    @import "resources/css/demo_table.css";
+			@import "import/css/jquery/cupertino/jquery-ui-1.8.17.custom.css";
+			@import "import/js/chosen/chosen.css";
+			@import "import/css/form.css";
+			@import "resources/css/propertiesDisplay.css";
+		</style>
+	    
+	    <style type="text/css">
+		
+			/** Jquery ui style overwrite **/
+			#tabs li .ui-icon-close { 
+				float: left; 
+				margin: 0.4em 0.2em 0 0; 
+				cursor: pointer; 
+			}
+			
+			#chartTitle{
+				padding :10px;
+				width : 320px;
+				background-color : #DEEDF7;
+				border: 1px solid #fff;
+				border-radius:10px;
+				margin-left : 30px;
+				margin-top : 10px;
+				text-align : center;
+			}
+			
+			#chartTitle2{
+				margin-left : 386px;
+				padding : 10px;
+				width : 320px;
+				background-color : #DEEDF7;
+				border: 1px solid #fff;
+				border-radius:10px;
+				margin-top : 10px;
+				text-align : center;
+			}
+			
+			.skosAlwaysDisplayed{
+				display : ;
+			}
+			
+			.skosAlwaysNoDisplayed{
+				display : none;
+			}
+			
+			#infoZone th{
+				font-weight : bold;
+				text-align : right;
+			}
+			
+			.workPartTop{
+				background-color: #E0E0E0;
+			    border: 1px solid #BBBBBB;
+			    border-radius: 10px 10px 0px 10px;
+			    margin: 5px;
+			    padding: 10px 10px 0;
+			}
+			
+			.workPartBottom{
+				background-color: #E0E0E0;
+			    border: 1px solid #BBBBBB;
+			    border-radius: 0px 10px 10px 10px;
+			    margin: 5px;
+			    padding: 10px 10px 0;
+			}
+		
+			#bar1.ui-widget-header{
+				background : transparent;
+		     	border : none;
+		    }
+				
+			.tabs li.currentTab {
+			    color: #008800;
+			    cursor: default;
+			    font-weight: bold;
+			}
+			
+			.tabs li {
+				background-color: #F0F0F0;
+			    cursor: pointer;
+			    display: inline;
+			    font-size: 0.8em;
+			    list-style-type: none;
+			    margin: 0 3px;
+			    padding: 3px 5px;
+			}
+			
+			#toolbar {
+			    height:200px;
+			    margin: 5px 0px 0px;
+			    padding: 0px;
+			  }
+			  
+			  /** sizes for the informations dialog boxes **/
+			 .infoDialog{
+			  	width   : 350px;
+			  	display : none;
+			  }
+			  
+			  #dialog-form_d{
+				float:right;
+			  }
+			  #dialog-form_g{
+				float:left;
+			  }
+			  
+			  /** overrrides default style for display in information boxes **/
+			  div.prop{
+			  	border : 1px solid #888888;
+			  	border-radius : 3px 3px 3px 3px;
+			  }
+			  div.data{
+			  	/** remove the width**/
+			  	border : none;
+			  	border-radius : none;
+			  }
+			  p.data{
+			  	/** remove the width**/
+			  	width : auto;
+			  }
+			  
+			  
+			  
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
+	.chart2 div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+		  
+	.chart2 div.my {
+  background-color: green;
+}
+
+.chart2 div.state {
+  background-color: steelblue;
+}	  	  
+	    </style>
+	    
+	    <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+	    
+		
+		<!-- Wiki edit style -->
+		<link rel="stylesheet" type="text/css" media="all" href="css/wiki.css" />
+		
+		<!-- jquery ui -->
+		<link rel="stylesheet" type="text/css" media="all" href="import/css/jquery/cupertino/jquery-ui-1.8.17.custom.css" />
+		
+		<!-- End styles -->
+		
+		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+		
+	    <!-- TODO: extract commons libs from import -->
+	    <script type="text/javascript" src="resources/js/libs/jquery-1.7.1.min.js"></script>
+	    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	    
+<!-- 	    <script type="text/javascript" src="../import/js/jquery.autoresize.js"></script> -->
+	    <!-- utils -->
+<!-- 	    <script type="text/javascript" src="../resources/js/libs/uuid.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/libs/queue.min.js"></script> -->
+	    <!-- select2 dependencies -->
+		<script type="text/javascript" src="resources/js/libs/select2/select2.js"></script>
+		<link rel="stylesheet" href="resources/js/libs/select2/select2.css" type="text/css" media="screen" />
+	    <!-- JQuery RDF import statements -->
+	    <!-- *** Minimum required libs -->
+<!-- 	    <script type="text/javascript" src="../resources/js/libs/IKS-rdfQuery-96545db/jquery.uri.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/libs/IKS-rdfQuery-96545db/jquery.datatype.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/libs/IKS-rdfQuery-96545db/jquery.curie.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/libs/IKS-rdfQuery-96545db/jquery.rdf.js"></script> -->
+	    <!-- *** import and dump libs -->
+<!-- 	    <script type="text/javascript" src="../resources/js/libs/IKS-rdfQuery-96545db/jquery.rdf.json.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/libs/IKS-rdfQuery-96545db/jquery.rdf.xml.js"></script> -->
+	    <!-- *** rules and reasonning -->
+<!-- 	    <script type="text/javascript" src="../resources/js/libs/IKS-rdfQuery-96545db/jquery.rules.js"></script> -->
+	    <!-- END JQuery RDF import statements -->
+	    <!-- lh libs -->
+		
+<!-- 		<script type="text/javascript" src="../resources/js/jquery.percentageloader-0.1.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../import/js/isoLang.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.browserCompatibility.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.ns.js"></script> -->
+<!-- 		<script type="text/javascript" src="../resources/js/lh.onto.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.histo.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.metadata.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/array.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.utils.js"></script>	 -->
+<!-- 	    <script type="text/javascript" src="../import/js/urlInfo.js"></script> -->
+<!-- 		<script type="text/javascript" src="../resources/js/rdfui/rdfui.model.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.sem.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.graph.js"></script> -->
+	    
+	    <!-- the search lib -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.search.js"></script> -->
+<!-- 		<script type="text/javascript" src="../resources/js/lh.search.display.js"></script> -->
+<!-- 		<script type="text/javascript" src="../resources/js/lh.search.ldpath.js"></script> -->
+	    
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.display.mapping.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.localtoolbar.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.localtoolbar.dragdrop.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.mapping.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.mapping.newLinkContainer.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.localtoolbar.createLink.js"></script> -->
+<!-- 		<script type="text/javascript" src="../resources/js/lh.localtoolbar.delete.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.mapping.localToolBar.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.mapping.localToolBar.plugin.js"></script> -->
+<!-- 		<script type="text/javascript" src="../resources/js/var_lang_en.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.renderer.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.renderer.util.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.renderer.configuration.js"></script> -->
+		<!-- we use the compact wiki2 implementation here -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.renderer.wiki2.impl.compact.js"></script> -->
+	    <!-- we use the view wiki2 implementation here -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.renderer.wiki2.impl.view.js"></script> -->
+	    <!-- Wiki2 abstract class -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.renderer.wiki2.abst.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.renderer.scrollBar.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.renderer.graphDisplay.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/mapping.js"></script> -->
+<!-- 		<script type="text/javascript" src="../resources/js/lh.rdfui.cfg.js"></script> -->
+	    <!-- TODO : rename lh.mapping.modify as it's not still really this -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.mapping.modify.js"></script> -->
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.mapping.widget.impl.mapping.js"></script> -->
+	    
+<!-- 	    <script type="text/javascript" src="../resources/js/lh.display.js"></script> -->
+<!-- 		<script type="text/javascript" src="../resources/js/lh.display.stateManager.js"></script> -->
+<!-- 		<script type="text/javascript" src="../resources/js/lh.display.stateObject.js"></script> -->
+<!-- 		<script type="text/javascript" src="../resources/js/lh.display.stateObject.abst.js"></script> -->
+	    
+		
+		
+		
+	    
+	    <script type="text/javascript">
+	    	$(document).ready(function(){
+	    		
+	    		$("#valid").click(function(){
+	    			disp();
+	    			
+// 	    			var t = $("#taxamount");
+// 	    			$.ajax({
+// 	    				url: "http://localhost:8080/skosifier/createUser?taxAmount="+$("#taxamount").val()+"&name="+$("#name").val(),
+	    				
+// 	    			}).done(function(){
+// 	    				disp();
+// 	    				//alert("query ok");
+// 	    			});
+	    			
+	    			
+	    		});
+	    		
+// 	    		var margin = {top: 20, right: 20, bottom: 30, left: 40},
+// 	    	    width = 960 - margin.left - margin.right,
+// 	    	    height = 500 - margin.top - margin.bottom;
+
+// 	    	var x0 = d3.scale.ordinal()
+// 	    	    .rangeRoundBands([0, width], .1);
+
+// 	    	var x1 = d3.scale.ordinal();
+
+// 	    	var y = d3.scale.linear()
+// 	    	    .range([height, 0]);
+
+// 	    	var color = d3.scale.ordinal()
+// 	    	    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+// 	    	var xAxis = d3.svg.axis()
+// 	    	    .scale(x0)
+// 	    	    .orient("bottom");
+
+// 	    	var yAxis = d3.svg.axis()
+// 	    	    .scale(y)
+// 	    	    .orient("left")
+// 	    	    .tickFormat(d3.format(".2s"));
+
+// 	    	var svg = d3.select("body").append("svg")
+// 	    	    .attr("width", width + margin.left + margin.right)
+// 	    	    .attr("height", height + margin.top + margin.bottom)
+// 	    	  .append("g")
+// 	    	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// 	    	d3.csv("data.txt", function(error, data) {
+// 	    	  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
+
+// 	    	  data.forEach(function(d) {
+// 	    	    d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+// 	    	  });
+
+// 	    	  x0.domain(data.map(function(d) { return d.State; }));
+// 	    	  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+// 	    	  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
+
+// 	    	  svg.append("g")
+// 	    	      .attr("class", "x axis")
+// 	    	      .attr("transform", "translate(0," + height + ")")
+// 	    	      .call(xAxis);
+
+// 	    	  svg.append("g")
+// 	    	      .attr("class", "y axis")
+// 	    	      .call(yAxis)
+// 	    	    .append("text")
+// 	    	      .attr("transform", "rotate(-90)")
+// 	    	      .attr("y", 6)
+// 	    	      .attr("dy", ".71em")
+// 	    	      .style("text-anchor", "end")
+// 	    	      .text("Population");
+
+// 	    	  var state = svg.selectAll(".state")
+// 	    	      .data(data)
+// 	    	    .enter().append("g")
+// 	    	      .attr("class", "g")
+// 	    	      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
+
+// 	    	  state.selectAll("rect")
+// 	    	      .data(function(d) { 
+// 	    	    	  return d.ages; })
+// 	    	    .enter().append("rect")
+// 	    	      .attr("width", x1.rangeBand())
+// 	    	      .attr("x", function(d) { return x1(d.name); })
+// 	    	      .attr("y", function(d) { return y(d.value); })
+// 	    	      .attr("height", function(d) { return height - y(d.value); })
+// 	    	      .style("fill", function(d) { return color(d.name); });
+
+// 	    	  var legend = svg.selectAll(".legend")
+// 	    	      .data(ageNames.slice().reverse())
+// 	    	    .enter().append("g")
+// 	    	      .attr("class", "legend")
+// 	    	      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+// 	    	  legend.append("rect")
+// 	    	      .attr("x", width - 18)
+// 	    	      .attr("width", 18)
+// 	    	      .attr("height", 18)
+// 	    	      .style("fill", color);
+
+// 	    	  legend.append("text")
+// 	    	      .attr("x", width - 24)
+// 	    	      .attr("y", 9)
+// 	    	      .attr("dy", ".35em")
+// 	    	      .style("text-anchor", "end")
+// 	    	      .text(function(d) { return d; });
+
+// 	    	});
+	    		
+	    		var rawData = {
+	    				  "lines" : [
+	    				             {
+	    				               "id" : 1,
+	    				               "label" : "Économie ",
+	    				               "amount" : 2057.89,
+	    				               "percentage" : 0.5444153439
+	    				             },
+	    				             {
+	    				               "id" : 2,
+	    				               "label" : "Écologie, développement et aménagement durables ",
+	    				               "amount" : 10017.07,
+	    				               "percentage" : 2.6500185185
+	    				             },
+	    				             {
+	    				               "id" : 3,
+	    				               "label" : "Ville et logement ",
+	    				               "amount" : 7593.21,
+	    				               "percentage" : 2.0087857143
+	    				             },
+	    				             {
+	    				               "id" : 4,
+	    				               "label" : "Travail et emploi ",
+	    				               "amount" : 12349.82,
+	    				               "percentage" : 3.2671481481
+	    				             },
+	    				             {
+	    				               "id" : 5,
+	    				               "label" : "Sécurité civile ",
+	    				               "amount" : 459.76,
+	    				               "percentage" : 0.1216296296
+	    				             },
+	    				             {
+	    				               "id" : 6,
+	    				               "label" : "Sécurité ",
+	    				               "amount" : 16804.21,
+	    				               "percentage" : 4.4455582011
+	    				             },
+	    				             {
+	    				               "id" : 7,
+	    				               "label" : "Sport, jeunesse et vie associative ",
+	    				               "amount" : 418.59,
+	    				               "percentage" : 0.1107380952
+	    				             },
+	    				             {
+	    				               "id" : 8,
+	    				               "label" : "Solidarité, insertion et égalité des chances ",
+	    				               "amount" : 12371.61,
+	    				               "percentage" : 3.2729126984
+	    				             },
+	    				             {
+	    				               "id" : 9,
+	    				               "label" : "Santé ",
+	    				               "amount" : 1221.63,
+	    				               "percentage" : 0.3231825397
+	    				             },
+	    				             {
+	    				               "id" : 10,
+	    				               "label" : "Régimes sociaux et de retraite ",
+	    				               "amount" : 6027.81,
+	    				               "percentage" : 1.5946587302
+	    				             },
+	    				             {
+	    				               "id" : 11,
+	    				               "label" : "Remboursements et dégrèvements ",
+	    				               "amount" : 82152.56,
+	    				               "percentage" : 21.7334814815
+	    				             },
+	    				             {
+	    				               "id" : 12,
+	    				               "label" : "Relations avec les collectivités territoriales ",
+	    				               "amount" : 2685.07,
+	    				               "percentage" : 0.7103359788
+	    				             },
+	    				             {
+	    				               "id" : 13,
+	    				               "label" : "Recherche et enseignement supérieur ",
+	    				               "amount" : 25359.34,
+	    				               "percentage" : 6.7088201058
+	    				             },
+	    				             {
+	    				               "id" : 14,
+	    				               "label" : "Provisions ",
+	    				               "amount" : 34.07,
+	    				               "percentage" : 0.0090132275
+	    				             },
+	    				             {
+	    				               "id" : 15,
+	    				               "label" : "Pouvoirs publics ",
+	    				               "amount" : 1017.92,
+	    				               "percentage" : 0.2692910053
+	    				             },
+	    				             {
+	    				               "id" : 16,
+	    				               "label" : "Politique des territoires ",
+	    				               "amount" : 350.28,
+	    				               "percentage" : 0.0926666667
+	    				             },
+	    				             {
+	    				               "id" : 17,
+	    				               "label" : "Outre-mer ",
+	    				               "amount" : 2155.92,
+	    				               "percentage" : 0.5703492063
+	    				             },
+	    				             {
+	    				               "id" : 18,
+	    				               "label" : "Médias, livre et industries culturelles ",
+	    				               "amount" : 1450.82,
+	    				               "percentage" : 0.3838148148
+	    				             },
+	    				             {
+	    				               "id" : 19,
+	    				               "label" : "Justice ",
+	    				               "amount" : 8957.18,
+	    				               "percentage" : 2.3696243386
+	    				             },
+	    				             {
+	    				               "id" : 20,
+	    				               "label" : "Immigration, asile et intégration ",
+	    				               "amount" : 563.72,
+	    				               "percentage" : 0.1491322751
+	    				             },
+	    				             {
+	    				               "id" : 21,
+	    				               "label" : "Gestion des finances publiques et des ressources humaines ",
+	    				               "amount" : 11722.29,
+	    				               "percentage" : 3.1011349206
+	    				             },
+	    				             {
+	    				               "id" : 22,
+	    				               "label" : "Enseignement scolaire ",
+	    				               "amount" : 61905.25,
+	    				               "percentage" : 16.2606005292
+	    				             },
+	    				             {
+	    				               "id" : 23,
+	    				               "label" : "Engagements financiers de l'État ",
+	    				               "amount" : 46925.91,
+	    				               "percentage" : 12.4142619048
+	    				             },
+	    				             {
+	    				               "id" : 24,
+	    				               "label" : "Défense ",
+	    				               "amount" : 41972.72,
+	    				               "percentage" : 11.1038941799
+	    				             },
+	    				             {
+	    				               "id" : 25,
+	    				               "label" : "Direction de l'action du Gouvernement ",
+	    				               "amount" : 1525.04,
+	    				               "percentage" : 0.4034497354
+	    				             },
+	    				             {
+	    				               "id" : 26,
+	    				               "label" : "Culture ",
+	    				               "amount" : 2717.38,
+	    				               "percentage" : 0.7188835979
+	    				             },
+	    				             {
+	    				               "id" : 27,
+	    				               "label" : "Conseil et contrôle de l'État ",
+	    				               "amount" : 615.55,
+	    				               "percentage" : 0.1628439153
+	    				             },
+	    				             {
+	    				               "id" : 28,
+	    				               "label" : "Anciens combattants, mémoire et liens avec la nation ",
+	    				               "amount" : 3313.18,
+	    				               "percentage" : 0.8765026455
+	    				             },
+	    				             {
+	    				               "id" : 29,
+	    				               "label" : "Aide publique au développement ",
+	    				               "amount" : 4575.13,
+	    				               "percentage" : 1.2103518519
+	    				             },
+	    				             {
+	    				               "id" : 30,
+	    				               "label" : "Agriculture, pêche, alimentation, forêt et affaires rurales ",
+	    				               "amount" : 3586.05,
+	    				               "percentage" : 0.9486904762
+	    				             },
+	    				             {
+	    				               "id" : 31,
+	    				               "label" : "Administration générale et territoriale de l'État ",
+	    				               "amount" : 2570.5,
+	    				               "percentage" : 0.680026455
+	    				             },
+	    				             {
+	    				               "id" : 32,
+	    				               "label" : "Action extérieure de l'État ",
+	    				               "amount" : 2962.7,
+	    				               "percentage" : 0.7837830688
+	    				             }
+	    				           ]
+	    				         };
+
+	    		
+	    		//var data = [4, 8, 15, 16, 23, 42];
+	    		
+	    		var valuesdata = [];
+	    		rawData.lines.forEach(function(d){
+	    			valuesdata.push(d.amount);
+	    		})
+	    		
+	    		var data = rawData.lines;
+	    		
+	    		var x = d3.scale.linear()
+    		    .domain([0, d3.max(data,function(d) { return $("#taxamount").val()*d.percentage; })]) //TODO : use accessor function
+    		    .range([0, 420]);
+    		    
+	    		function disp(){
+	    			
+	    			
+	    			
+		    		d3.select(".chart")
+		    		  .selectAll("div")
+		    		    .data(data)
+		    		  .enter().append("div")
+		    		    .style("width", function(d) { return x($("#taxamount").val()*d.percentage) + "px"; })
+		    		    .text(function(d) { return d.label; });
+		    		
+// 		    		boutton = $("<input type='button' id='valid' value='GO!'>");
+// 		    		bouton.click(function(){
+// 		    			display();
+// 		    		});
+// 		    		$(".chart").append(bouton);
+					$("#hiden").show();
+	    		}
+	    		
+	    		
+	    		
+	    		//part 2
+	    		
+	    		var dataInit = [
+   				             {
+  				               "id" : 1,
+  				               "label" : "Économie ",
+  				               "amount" : 2057.89,
+  				               "percentage" : 0.5444153439
+  				             },
+  				             {
+  				               "id" : 2,
+  				               "label" : "Écologie, développement et aménagement durables ",
+  				               "amount" : 10017.07,
+  				               "percentage" : 2.6500185185
+  				             },
+  				             {
+  				               "id" : 3,
+  				               "label" : "Ville et logement ",
+  				               "amount" : 7593.21,
+  				               "percentage" : 2.0087857143
+  				             },
+  				             {
+  				               "id" : 4,
+  				               "label" : "Travail et emploi ",
+  				               "amount" : 12349.82,
+  				               "percentage" : 3.2671481481
+  				             },
+  				             {
+  				               "id" : 5,
+  				               "label" : "Sécurité civile ",
+  				               "amount" : 459.76,
+  				               "percentage" : 0.1216296296
+  				             },
+  				             {
+  				               "id" : 6,
+  				               "label" : "Sécurité ",
+  				               "amount" : 16804.21,
+  				               "percentage" : 4.4455582011
+  				             },
+  				             {
+  				               "id" : 7,
+  				               "label" : "Sport, jeunesse et vie associative ",
+  				               "amount" : 418.59,
+  				               "percentage" : 0.1107380952
+  				             },
+  				             {
+  				               "id" : 8,
+  				               "label" : "Solidarité, insertion et égalité des chances ",
+  				               "amount" : 12371.61,
+  				               "percentage" : 3.2729126984
+  				             },
+  				             {
+  				               "id" : 9,
+  				               "label" : "Santé ",
+  				               "amount" : 1221.63,
+  				               "percentage" : 0.3231825397
+  				             },
+  				             {
+  				               "id" : 10,
+  				               "label" : "Régimes sociaux et de retraite ",
+  				               "amount" : 6027.81,
+  				               "percentage" : 1.5946587302
+  				             },
+  				             {
+  				               "id" : 11,
+  				               "label" : "Remboursements et dégrèvements ",
+  				               "amount" : 82152.56,
+  				               "percentage" : 21.7334814815
+  				             },
+  				             {
+  				               "id" : 12,
+  				               "label" : "Relations avec les collectivités territoriales ",
+  				               "amount" : 2685.07,
+  				               "percentage" : 0.7103359788
+  				             },
+  				             {
+  				               "id" : 13,
+  				               "label" : "Recherche et enseignement supérieur ",
+  				               "amount" : 25359.34,
+  				               "percentage" : 6.7088201058
+  				             },
+  				             {
+  				               "id" : 14,
+  				               "label" : "Provisions ",
+  				               "amount" : 34.07,
+  				               "percentage" : 0.0090132275
+  				             },
+  				             {
+  				               "id" : 15,
+  				               "label" : "Pouvoirs publics ",
+  				               "amount" : 1017.92,
+  				               "percentage" : 0.2692910053
+  				             },
+  				             {
+  				               "id" : 16,
+  				               "label" : "Politique des territoires ",
+  				               "amount" : 350.28,
+  				               "percentage" : 0.0926666667
+  				             },
+  				             {
+  				               "id" : 17,
+  				               "label" : "Outre-mer ",
+  				               "amount" : 2155.92,
+  				               "percentage" : 0.5703492063
+  				             },
+  				             {
+  				               "id" : 18,
+  				               "label" : "Médias, livre et industries culturelles ",
+  				               "amount" : 1450.82,
+  				               "percentage" : 0.3838148148
+  				             },
+  				             {
+  				               "id" : 19,
+  				               "label" : "Justice ",
+  				               "amount" : 8957.18,
+  				               "percentage" : 2.3696243386
+  				             },
+  				             {
+  				               "id" : 20,
+  				               "label" : "Immigration, asile et intégration ",
+  				               "amount" : 563.72,
+  				               "percentage" : 0.1491322751
+  				             },
+  				             {
+  				               "id" : 21,
+  				               "label" : "Gestion des finances publiques et des ressources humaines ",
+  				               "amount" : 11722.29,
+  				               "percentage" : 3.1011349206
+  				             },
+  				             {
+  				               "id" : 22,
+  				               "label" : "Enseignement scolaire ",
+  				               "amount" : 61905.25,
+  				               "percentage" : 16.2606005292
+  				             },
+  				             {
+  				               "id" : 23,
+  				               "label" : "Engagements financiers de l'État ",
+  				               "amount" : 46925.91,
+  				               "percentage" : 12.4142619048
+  				             },
+  				             {
+  				               "id" : 24,
+  				               "label" : "Défense ",
+  				               "amount" : 41972.72,
+  				               "percentage" : 11.1038941799
+  				             },
+  				             {
+  				               "id" : 25,
+  				               "label" : "Direction de l'action du Gouvernement ",
+  				               "amount" : 1525.04,
+  				               "percentage" : 0.4034497354
+  				             },
+  				             {
+  				               "id" : 26,
+  				               "label" : "Culture ",
+  				               "amount" : 2717.38,
+  				               "percentage" : 0.7188835979
+  				             },
+  				             {
+  				               "id" : 27,
+  				               "label" : "Conseil et contrôle de l'État ",
+  				               "amount" : 615.55,
+  				               "percentage" : 0.1628439153
+  				             },
+  				             {
+  				               "id" : 28,
+  				               "label" : "Anciens combattants, mémoire et liens avec la nation ",
+  				               "amount" : 3313.18,
+  				               "percentage" : 0.8765026455
+  				             },
+  				             {
+  				               "id" : 29,
+  				               "label" : "Aide publique au développement ",
+  				               "amount" : 4575.13,
+  				               "percentage" : 1.2103518519
+  				             },
+  				             {
+  				               "id" : 30,
+  				               "label" : "Agriculture, pêche, alimentation, forêt et affaires rurales ",
+  				               "amount" : 3586.05,
+  				               "percentage" : 0.9486904762
+  				             },
+  				             {
+  				               "id" : 31,
+  				               "label" : "Administration générale et territoriale de l'État ",
+  				               "amount" : 2570.5,
+  				               "percentage" : 0.680026455
+  				             },
+  				             {
+  				               "id" : 32,
+  				               "label" : "Action extérieure de l'État ",
+  				               "amount" : 2962.7,
+  				               "percentage" : 0.7837830688
+  				             }
+  				           ]
+  				         ;
+	    		
+	    		var dataUser = [];
+	    		data.forEach(function(d,i){
+	    			var duser = dataInit[i];
+	    			duser.user = true;
+	    			dataUser.push(d);
+	    			dataUser.push(duser);
+	    		});
+	    		
+	    		displayChart();
+	    		
+	    		function displayChart(){
+	    			d3.select(".chart2")
+		    		  .selectAll("div")
+		    		    .data(dataUser)
+		    		  .enter().append("div")
+		    		    .style("width", function(d) { return x($("#taxamount").val()*d.percentage) + "px"; })
+		    		    .text(function(d) { return d.label; })
+		    			.attr("class",function(d){
+		    				return d.user ? "my" :"state";
+		    			})
+		    			.on("click",function(d){
+		    				
+		    				$("#newvalue").val(d.amount*d.percentage);
+		    				
+		    				 $( "#dialog-form" ).dialog({
+		    					 autoOpen: false,
+		    					 height: 300,
+		    					 width: 350,
+		    					 modal: true,
+		    					 buttons: {
+		    					 "valid": function() {
+		    						 d.amount = $("#newvalue").val()*1/d.percentage;
+			    					 $( this ).dialog( "close" );
+			    					 displayChart();
+		    					 },
+		    					 Cancel: function() {
+		    						 $( this ).dialog( "close" );
+		    					 },
+		    					 close: function() {
+		    					 	allFields.val( "" ).removeClass( "ui-state-error" );
+		    					 }
+		    					 } 
+		    				 });
+		    				 
+		    				 $( "#dialog-form" ).dialog( "open" );
+		    				 
+		    			})
+		    			;
+	    		}
+	    		
+	    		
+	    		
+	    		
+// 	    		var margin = {top: 20, right: 20, bottom: 30, left: 40},
+// 	    		    width = 960 - margin.left - margin.right,
+// 	    		    height = 500 - margin.top - margin.bottom;
+
+// 	    		var x0 = d3.scale.ordinal()
+// 	    		    .rangeRoundBands([0, width], .1);
+
+// 	    		var x1 = d3.scale.ordinal();
+
+// 	    		var y = d3.scale.linear()
+// 	    		    .range([height, 0]);
+
+// 	    		var color = d3.scale.ordinal()
+// 	    		    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+// 	    		var xAxis = d3.svg.axis()
+// 	    		    .scale(x0)
+// 	    		    .orient("bottom");
+
+// 	    		var yAxis = d3.svg.axis()
+// 	    		    .scale(y)
+// 	    		    .orient("left")
+// 	    		    .tickFormat(d3.format(".2s"));
+
+// 	    		var svg = d3.select("body").append("svg")
+// 	    		    .attr("width", width + margin.left + margin.right)
+// 	    		    .attr("height", height + margin.top + margin.bottom)
+// 	    		  .append("g")
+// 	    		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	    		  
+// 	    		  data = rawData.lines;
+	    		  
+// 	    		  var ageNames = [];
+// 	    		  data.forEach(function(d){
+// 	    			  ageNames.push(d);
+// 	    		  })
+
+// 	    		  x0.domain(data.map(function(d) { return d.id; }));
+// 	    		  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+// 	    		  y.domain([0, d3.max(data, function(d) { return d3.max(data, function(d) { return d.amount; }); })]);
+
+// 	    		  svg.append("g")
+// 	    		      .attr("class", "x axis")
+// 	    		      .attr("transform", "translate(0," + height + ")")
+// 	    		      .call(xAxis);
+
+// 	    		  svg.append("g")
+// 	    		      .attr("class", "y axis")
+// 	    		      .call(yAxis)
+// 	    		    .append("text")
+// 	    		      .attr("transform", "rotate(-90)")
+// 	    		      .attr("y", 6)
+// 	    		      .attr("dy", ".71em")
+// 	    		      .style("text-anchor", "end")
+// 	    		      .text("Population");
+
+// 	    		  var state = svg.selectAll(".state")
+// 	    		      .data(data)
+// 	    		    .enter().append("g")
+// 	    		      .attr("class", "g")
+// 	    		      .attr("transform", function(d) { return "translate(" + x0(d.id) + ",0)"; });
+
+// 	    		  state.selectAll("rect")
+// 	    		      //.data(function(d) { return [d.amount]; })
+// 	    		      .data(function(d) { 
+// 	    		    	  return [d,d]; })
+// 	    		    .enter().append("rect")
+// 	    		      .attr("width", x1.rangeBand())
+// 	    		      .attr("x", function(d) { 
+// 	    		    	  return x1(d.id); })
+// 	    		      .attr("y", function(d) { return y(d.amount); })
+// 	    		      .attr("height", function(d) { return height - y(d.id); })
+// 	    		      .style("fill", function(d) { return color(d.id); });
+
+// 	    		  var legend = svg.selectAll(".legend")
+// 	    		      .data(ageNames.slice().reverse())
+// 	    		    .enter().append("g")
+// 	    		      .attr("class", "legend")
+// 	    		      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+// 	    		  legend.append("rect")
+// 	    		      .attr("x", width - 18)
+// 	    		      .attr("width", 18)
+// 	    		      .attr("height", 18)
+// 	    		      .style("fill", color);
+
+// 	    		  legend.append("text")
+// 	    		      .attr("x", width - 24)
+// 	    		      .attr("y", 9)
+// 	    		      .attr("dy", ".35em")
+// 	    		      .style("text-anchor", "end")
+// 	    		      .text(function(d) { return d; });
+	    		
+	    	});
+	    </script>
+  	</head>
+ 	<body>
+ 		<h1>Screen 1 : enter your annual tax amount</h1>
+ 		<p>your Name : <input type="text" id="name"/></p>
+ 		<p>your annual tax amount : <input type="number" id="taxamount"/></p>
+ 		<p><input type="button" id="valid" value="GO!"> </input></p>
+ 		
+ 		<div id="hiden" style="display:none">
+	 		<h1>Screen 2 : See what do politicians with</h1>
+	 		<div class="chart"></div>
+	 		
+	 		<h1>Screen 3 : Tell politiciant what you would like they do with</h1>
+	 		<div class="chart2" ></div>
+	 		
+	 		<h1>Screen 4 : See what others have suggest to politicians</h1>
+ 		</div>
+	</body>
+	
+	<div id="dialog-form" title="Change value" style="display:none">
+		<form>
+			<fieldset>
+			<label for="newvalue">Your value</label>
+			<input type="text" name="newvalue" id="newvalue" class="text ui-widget-content ui-corner-all">
+			</fieldset>
+		</form>
+	</div>
+</html>

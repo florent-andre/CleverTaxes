@@ -1,1 +1,6 @@
-javax.xml.bind.context.factory=org.eclipse.persistence.jaxb.JAXBContextFactory
+BudgetLine
+BudgetLines
+StateTaxPercentage
+TaxVentillation
+User
+UsersList

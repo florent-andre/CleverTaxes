@@ -25,6 +25,8 @@ public class User {
 	@XmlIDREF
 	@XmlElement
 	private TaxVentillation personnalTaxVentillation;
+	
+	public User(){}
 
 	public User(String name, double d){
 		this.name = name;

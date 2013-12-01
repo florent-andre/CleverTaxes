@@ -1,5 +1,10 @@
 <bundles>
 	<startLevel level="27">
+		<bundle>
+			<groupId>eu.ooffee</groupId>
+  			<artifactId>eu.ooffee.clevertaxes</artifactId>
+  			<version>3</version>
+		</bundle>
 		
 <!-- 		<bundle> -->
 <!-- 			      <groupId>eu.lh</groupId> -->
@@ -83,7 +88,7 @@
 <!-- 	<groupId>org.apache.clerezza</groupId> -->
 <!-- 	<artifactId>platform.graphprovider.content</artifactId> -->
 <!-- 	<version>0.6-incubating</version> -->
-</bundle>
+<!-- </bundle> -->
 
 	
 	</startLevel>

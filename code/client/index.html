@@ -47,6 +47,8 @@
 	    
 		<!-- End styles -->
 		
+		<script type="text/javascript" src="resources/js/array.js"></script>
+		
 		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 		
 	    <!-- TODO: extract commons libs from import -->
@@ -87,275 +89,327 @@
 	    		    
 	    			disp();
 	    			
-	    		
-	    		
-// 	    		var margin = {top: 20, right: 20, bottom: 30, left: 40},
-// 	    	    width = 960 - margin.left - margin.right,
-// 	    	    height = 500 - margin.top - margin.bottom;
-
-// 	    	var x0 = d3.scale.ordinal()
-// 	    	    .rangeRoundBands([0, width], .1);
-
-// 	    	var x1 = d3.scale.ordinal();
-
-// 	    	var y = d3.scale.linear()
-// 	    	    .range([height, 0]);
-
-// 	    	var color = d3.scale.ordinal()
-// 	    	    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
-
-// 	    	var xAxis = d3.svg.axis()
-// 	    	    .scale(x0)
-// 	    	    .orient("bottom");
-
-// 	    	var yAxis = d3.svg.axis()
-// 	    	    .scale(y)
-// 	    	    .orient("left")
-// 	    	    .tickFormat(d3.format(".2s"));
-
-// 	    	var svg = d3.select("body").append("svg")
-// 	    	    .attr("width", width + margin.left + margin.right)
-// 	    	    .attr("height", height + margin.top + margin.bottom)
-// 	    	  .append("g")
-// 	    	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-// 	    	d3.csv("data.txt", function(error, data) {
-// 	    	  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
-
-// 	    	  data.forEach(function(d) {
-// 	    	    d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
-// 	    	  });
-
-// 	    	  x0.domain(data.map(function(d) { return d.State; }));
-// 	    	  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
-// 	    	  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
-
-// 	    	  svg.append("g")
-// 	    	      .attr("class", "x axis")
-// 	    	      .attr("transform", "translate(0," + height + ")")
-// 	    	      .call(xAxis);
-
-// 	    	  svg.append("g")
-// 	    	      .attr("class", "y axis")
-// 	    	      .call(yAxis)
-// 	    	    .append("text")
-// 	    	      .attr("transform", "rotate(-90)")
-// 	    	      .attr("y", 6)
-// 	    	      .attr("dy", ".71em")
-// 	    	      .style("text-anchor", "end")
-// 	    	      .text("Population");
-
-// 	    	  var state = svg.selectAll(".state")
-// 	    	      .data(data)
-// 	    	    .enter().append("g")
-// 	    	      .attr("class", "g")
-// 	    	      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
-
-// 	    	  state.selectAll("rect")
-// 	    	      .data(function(d) { 
-// 	    	    	  return d.ages; })
-// 	    	    .enter().append("rect")
-// 	    	      .attr("width", x1.rangeBand())
-// 	    	      .attr("x", function(d) { return x1(d.name); })
-// 	    	      .attr("y", function(d) { return y(d.value); })
-// 	    	      .attr("height", function(d) { return height - y(d.value); })
-// 	    	      .style("fill", function(d) { return color(d.name); });
-
-// 	    	  var legend = svg.selectAll(".legend")
-// 	    	      .data(ageNames.slice().reverse())
-// 	    	    .enter().append("g")
-// 	    	      .attr("class", "legend")
-// 	    	      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-// 	    	  legend.append("rect")
-// 	    	      .attr("x", width - 18)
-// 	    	      .attr("width", 18)
-// 	    	      .attr("height", 18)
-// 	    	      .style("fill", color);
-
-// 	    	  legend.append("text")
-// 	    	      .attr("x", width - 24)
-// 	    	      .attr("y", 9)
-// 	    	      .attr("dy", ".35em")
-// 	    	      .style("text-anchor", "end")
-// 	    	      .text(function(d) { return d; });
-
-// 	    	});
-	    		
-	    		
-
-	    		
-	    		//var data = [4, 8, 15, 16, 23, 42];
-	    		
-	    		
-    		    
-	    		function disp(){
-	    			
-	    			
-	    			
-		    		d3.select(".chart")
-		    		  .selectAll("div")
-		    		    .data(data)
-		    		  .enter().append("div")
-		    		    .style("width", function(d) { return x(taxAmount*d.percentage) + "px"; })
-		    		    .text(function(d) { return d.label; });
+	    			function disp(){
+		    			
+		    			
+		    			
+			    		d3.select(".chart")
+			    		  .selectAll("div")
+			    		    .data(data)
+			    		  .enter().append("div")
+			    		    .style("width", function(d) { return x(taxAmount*d.percentage) + "px"; })
+			    		    .text(function(d) { return d.label; });
+			    		
+						$("#hiden").show();
+		    		}
 		    		
-					$("#hiden").show();
-	    		}
+		    		
+		    		
+		    		//part 2
+		    		
+		    		
+		    		
+		    		var dataUser = [];
+		    		data.forEach(function(d,i){
+		    			var duser = dataInit[i];
+		    			duser.user = true;
+		    			dataUser.push(d);
+		    			dataUser.push(duser);
+		    		});
+		    		
+		    		displayChart();
+		    		
+		    		function displayChart(){
+		    			d3.select(".chart2")
+			    		  .selectAll("div")
+			    		    .data(dataUser)
+			    		  .enter().append("div")
+			    		    .style("width", function(d) { return x(taxAmount*d.percentage) + "px"; })
+			    		    .text(function(d) { return d.label; })
+			    			.attr("class",function(d){
+			    				return d.user ? "my" :"state";
+			    			})
+			    			.on("click",function(d){
+			    				
+			    				$("#newvalue").attr("value", d.amount*d.percentage);
+			    				
+			    				 $( "#dialog-form" ).dialog({
+			    					 autoOpen: false,
+			    					 height: 300,
+			    					 width: 350,
+			    					 modal: true,
+			    					 buttons: {
+			    					 "valid": function() {
+			    						 d.amount = $("#newvalue").val()*1/d.percentage;
+				    					 $( this ).dialog( "close" );
+				    					 displayChart();
+			    					 },
+			    					 Cancel: function() {
+			    						 $( this ).dialog( "close" );
+			    					 },
+			    					 close: function() {
+			    					 	allFields.val( "" ).removeClass( "ui-state-error" );
+			    					 }
+			    					 } 
+			    				 });
+			    				 
+			    				 $( "#dialog-form" ).dialog( "open" );
+			    				 
+			    			})
+			    			;
+		    		}
+		    		
+	    			
+	    		///**************************************
+	    		//**************** Original version
 	    		
+	    		var margin = {top: 20, right: 20, bottom: 30, left: 40},
+	    	    width = 960 - margin.left - margin.right,
+	    	    height = 500 - margin.top - margin.bottom;
+
+	    	var x0 = d3.scale.ordinal()
+	    	    .rangeRoundBands([0, width], .1);
+
+	    	var x1 = d3.scale.ordinal();
+
+	    	var y = d3.scale.linear()
+	    	    .range([height, 0]);
+
+	    	var color = d3.scale.ordinal()
+	    	    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+	    	var xAxis = d3.svg.axis()
+	    	    .scale(x0)
+	    	    .orient("bottom");
+
+	    	var yAxis = d3.svg.axis()
+	    	    .scale(y)
+	    	    .orient("left")
+	    	    .tickFormat(d3.format(".2s"));
+
+	    	var svg = d3.select("body #g1").append("svg")
+	    	    .attr("width", width + margin.left + margin.right)
+	    	    .attr("height", height + margin.top + margin.bottom)
+	    	  .append("g")
+	    	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	    	
+	    	var dfd = $.Deferred();
+	    	
+
+	    	d3.csv("data.txt", function(error, data) {
+	    	  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
+
+	    	  data.forEach(function(d) {
+	    	    d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+	    	  });
+
+	    	  x0.domain(data.map(function(d) { return d.State; }));
+	    	  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+	    	  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
+
+	    	  svg.append("g")
+	    	      .attr("class", "x axis")
+	    	      .attr("transform", "translate(0," + height + ")")
+	    	      .call(xAxis);
+
+	    	  svg.append("g")
+	    	      .attr("class", "y axis")
+	    	      .call(yAxis)
+	    	    .append("text")
+	    	      .attr("transform", "rotate(-90)")
+	    	      .attr("y", 6)
+	    	      .attr("dy", ".71em")
+	    	      .style("text-anchor", "end")
+	    	      .text("Population");
+
+	    	  var state = svg.selectAll(".state")
+	    	      .data(data)
+	    	    .enter().append("g")
+	    	      .attr("class", "g")
+	    	      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
+
+	    	  state.selectAll("rect")
+	    	      .data(function(d) { 
+	    	    	  return d.ages; })
+	    	    .enter().append("rect")
+	    	      .attr("width", x1.rangeBand())
+	    	      .attr("x", function(d) { return x1(d.name); })
+	    	      .attr("y", function(d) { return y(d.value); })
+	    	      .attr("height", function(d) { return height - y(d.value); })
+	    	      .style("fill", function(d) { return color(d.name); });
+
+	    	  var legend = svg.selectAll(".legend")
+	    	      .data(ageNames.slice().reverse())
+	    	    .enter().append("g")
+	    	      .attr("class", "legend")
+	    	      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+	    	  legend.append("rect")
+	    	      .attr("x", width - 18)
+	    	      .attr("width", 18)
+	    	      .attr("height", 18)
+	    	      .style("fill", color);
+
+	    	  legend.append("text")
+	    	      .attr("x", width - 24)
+	    	      .attr("y", 9)
+	    	      .attr("dy", ".35em")
+	    	      .style("text-anchor", "end")
+	    	      .text(function(d) { return d; });
+	    	  
+	    	  dfd.resolve();
+	    	});
+
+
+	///**************************************
+	    		//**************** Personnal version
 	    		
+		$.when(dfd.promise()).then(function(){
+			
+			
+			function print( /* {data : d, source : "sourceName"}*/){
+				
+				var args = Array.slice(arguments);
+
+				//data transformation add the source attribute to objects
+				args.forEach(function(d,i){
+					d.data.forEach(function(a,j){
+						a.source = d.source;
+						a.position = i;
+					});
+				});
+				
+				var data = [];
+				args.forEach(function(arr,i){
+					arr.data.reduce(function(p,c){
+						var i = p.lazyIndexOf(function(a,b){
+								return a.lazyIndexOf(function(x,y){
+									return x.id == y.id}
+								,b) != -1;
+							},c); 
+						if(i != -1){
+							p[i].push(c);
+						}else{
+							p.push([c]);
+						}
+						return p;
+					},data);
+					
+				});
+				
+				var margin = {top: 20, right: 20, bottom: 30, left: 40},
+			    width = 960 - margin.left - margin.right,
+			    height = 500 - margin.top - margin.bottom;
+
+				var x0 = d3.scale.ordinal()
+				    .rangeRoundBands([0, width], .1);
+	
+				var x1 = d3.scale.ordinal();
+	
+				var y = d3.scale.linear()
+				    .range([height, 0]);
+	
+				var color = d3.scale.ordinal()
+				    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+	
+				var xAxis = d3.svg.axis()
+				    .scale(x0)
+				    .orient("bottom");
+	
+				var yAxis = d3.svg.axis()
+				    .scale(y)
+				    .orient("left")
+				    .tickFormat(d3.format(".2s"));
+	
+				var svg = d3.select("body #g2").append("svg")
+				    .attr("width", width + margin.left + margin.right)
+				    .attr("height", height + margin.top + margin.bottom)
+				  .append("g")
+				    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+				  
+				  //data = rawData.lines;
+				  
+				  var ageNames = [];
+				  data.forEach(function(d){
+					  ageNames.push(d[0].id); //TODO : put here the complete names
+				  })
+	
+				  x0.domain(data.map(function(d) { return d.id; }));
+				  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+				  y.domain([0, d3.max(data, function(d) { return d3.max(data, function(arr){ 
+					  return d3.max(arr,function(d) { return d.amount; })
+				  }); })]);
+	
+				  svg.append("g")
+				      .attr("class", "x axis")
+				      .attr("transform", "translate(0," + height + ")")
+				      .call(xAxis);
+	
+				  svg.append("g")
+				      .attr("class", "y axis")
+				      .call(yAxis)
+				    .append("text")
+				      .attr("transform", "rotate(-90)")
+				      .attr("y", 6)
+				      .attr("dy", ".71em")
+				      .style("text-anchor", "end")
+				      .text("Amount");
+	
+				  var state = svg.selectAll(".state")
+				      .data(data)
+				    .enter().append("g")
+				      .attr("class", "g")
+				      .attr("transform", function(d) { return "translate(" + x0(d.id) + ",0)"; });
+	
+				  state.selectAll("rect")
+				      //.data(function(d) { return [d.amount]; })
+				      .data(function(d) { 
+				    	  return d; })
+				    .enter().append("rect")
+				      .attr("width", x1.rangeBand())
+				      .attr("x", function(d) { 
+				    	  return x1(d.id); })
+				      .attr("y", function(d) { return y(d.amount); })
+				      .attr("height", function(d) { 
+				    	  return height - y(d.amount); })
+				      .style("fill", function(d) { return color(d.id); });
+				    	  //return color(1); });
+	
+				  var legend = svg.selectAll(".legend")
+				      .data(ageNames.slice().reverse())
+				    .enter().append("g")
+				      .attr("class", "legend")
+				      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+	
+				  legend.append("rect")
+				      .attr("x", width - 18)
+				      .attr("width", 18)
+				      .attr("height", 18)
+				      .style("fill", color);
+	
+				  legend.append("text")
+				      .attr("x", width - 24)
+				      .attr("y", 9)
+				      .attr("dy", ".35em")
+				      .style("text-anchor", "end")
+				      .text(function(d) { return d; });
+			
+				
+			}
+			
+			print( {data : dataInit, source : "state"},{data : dataInit, source : "user"});
+			
+	    
+		
+		});
+
+		});
 	    		
-	    		//part 2
-	    		
-	    		
-	    		
-	    		var dataUser = [];
-	    		data.forEach(function(d,i){
-	    			var duser = dataInit[i];
-	    			duser.user = true;
-	    			dataUser.push(d);
-	    			dataUser.push(duser);
-	    		});
-	    		
-	    		displayChart();
-	    		
-	    		function displayChart(){
-	    			d3.select(".chart2")
-		    		  .selectAll("div")
-		    		    .data(dataUser)
-		    		  .enter().append("div")
-		    		    .style("width", function(d) { return x(taxAmount*d.percentage) + "px"; })
-		    		    .text(function(d) { return d.label; })
-		    			.attr("class",function(d){
-		    				return d.user ? "my" :"state";
-		    			})
-		    			.on("click",function(d){
-		    				
-		    				$("#newvalue").attr("value", d.amount*d.percentage);
-		    				
-		    				 $( "#dialog-form" ).dialog({
-		    					 autoOpen: false,
-		    					 height: 300,
-		    					 width: 350,
-		    					 modal: true,
-		    					 buttons: {
-		    					 "valid": function() {
-		    						 d.amount = $("#newvalue").val()*1/d.percentage;
-			    					 $( this ).dialog( "close" );
-			    					 displayChart();
-		    					 },
-		    					 Cancel: function() {
-		    						 $( this ).dialog( "close" );
-		    					 },
-		    					 close: function() {
-		    					 	allFields.val( "" ).removeClass( "ui-state-error" );
-		    					 }
-		    					 } 
-		    				 });
-		    				 
-		    				 $( "#dialog-form" ).dialog( "open" );
-		    				 
-		    			})
-		    			;
-	    		}
-	    		});
-	    		
-	    		
-	    		
-	    		
-// 	    		var margin = {top: 20, right: 20, bottom: 30, left: 40},
-// 	    		    width = 960 - margin.left - margin.right,
-// 	    		    height = 500 - margin.top - margin.bottom;
-
-// 	    		var x0 = d3.scale.ordinal()
-// 	    		    .rangeRoundBands([0, width], .1);
-
-// 	    		var x1 = d3.scale.ordinal();
-
-// 	    		var y = d3.scale.linear()
-// 	    		    .range([height, 0]);
-
-// 	    		var color = d3.scale.ordinal()
-// 	    		    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
-
-// 	    		var xAxis = d3.svg.axis()
-// 	    		    .scale(x0)
-// 	    		    .orient("bottom");
-
-// 	    		var yAxis = d3.svg.axis()
-// 	    		    .scale(y)
-// 	    		    .orient("left")
-// 	    		    .tickFormat(d3.format(".2s"));
-
-// 	    		var svg = d3.select("body").append("svg")
-// 	    		    .attr("width", width + margin.left + margin.right)
-// 	    		    .attr("height", height + margin.top + margin.bottom)
-// 	    		  .append("g")
-// 	    		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-	    		  
-// 	    		  data = rawData.lines;
-	    		  
-// 	    		  var ageNames = [];
-// 	    		  data.forEach(function(d){
-// 	    			  ageNames.push(d);
-// 	    		  })
-
-// 	    		  x0.domain(data.map(function(d) { return d.id; }));
-// 	    		  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
-// 	    		  y.domain([0, d3.max(data, function(d) { return d3.max(data, function(d) { return d.amount; }); })]);
-
-// 	    		  svg.append("g")
-// 	    		      .attr("class", "x axis")
-// 	    		      .attr("transform", "translate(0," + height + ")")
-// 	    		      .call(xAxis);
-
-// 	    		  svg.append("g")
-// 	    		      .attr("class", "y axis")
-// 	    		      .call(yAxis)
-// 	    		    .append("text")
-// 	    		      .attr("transform", "rotate(-90)")
-// 	    		      .attr("y", 6)
-// 	    		      .attr("dy", ".71em")
-// 	    		      .style("text-anchor", "end")
-// 	    		      .text("Population");
-
-// 	    		  var state = svg.selectAll(".state")
-// 	    		      .data(data)
-// 	    		    .enter().append("g")
-// 	    		      .attr("class", "g")
-// 	    		      .attr("transform", function(d) { return "translate(" + x0(d.id) + ",0)"; });
-
-// 	    		  state.selectAll("rect")
-// 	    		      //.data(function(d) { return [d.amount]; })
-// 	    		      .data(function(d) { 
-// 	    		    	  return [d,d]; })
-// 	    		    .enter().append("rect")
-// 	    		      .attr("width", x1.rangeBand())
-// 	    		      .attr("x", function(d) { 
-// 	    		    	  return x1(d.id); })
-// 	    		      .attr("y", function(d) { return y(d.amount); })
-// 	    		      .attr("height", function(d) { return height - y(d.id); })
-// 	    		      .style("fill", function(d) { return color(d.id); });
-
-// 	    		  var legend = svg.selectAll(".legend")
-// 	    		      .data(ageNames.slice().reverse())
-// 	    		    .enter().append("g")
-// 	    		      .attr("class", "legend")
-// 	    		      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-// 	    		  legend.append("rect")
-// 	    		      .attr("x", width - 18)
-// 	    		      .attr("width", 18)
-// 	    		      .attr("height", 18)
-// 	    		      .style("fill", color);
-
-// 	    		  legend.append("text")
-// 	    		      .attr("x", width - 24)
-// 	    		      .attr("y", 9)
-// 	    		      .attr("dy", ".35em")
-// 	    		      .style("text-anchor", "end")
-// 	    		      .text(function(d) { return d; });
-	    		
+	    	console.warn("remove this, as it's test");
+	    	
+    		$("#taxamount").attr("value",8000);
+    		$("#valid").click();
+	    		    		
 	    	});
 	    </script>
   	</head>
@@ -374,6 +428,10 @@
 	 		
 	 		<h1>Screen 4 : See what others have suggest to politicians</h1>
  		</div>
+ 		<h1>GRAPH 1</h1>
+ 		<div id="g1"></div>
+ 		<h2>GRAPH2</h2>
+ 		<div id="g2"></div>
 	</body>
 	
 	<div id="dialog-form" title="Change value" style="display:none">

@@ -63,6 +63,7 @@
 		<script type="text/javascript" src="./data/rawData.js"></script>
 		<script type="text/javascript" src="./data/dataInit.js"></script>
 		<script type="text/javascript" src="./data/dataInit2.js"></script>
+		<script type="text/javascript" src="./data/dataInit3.js"></script>
 	    
 	    <script type="text/javascript">
 	    	$(document).ready(function(){
@@ -311,7 +312,7 @@
 				    .range([height, 0]);
 	
 				var color = d3.scale.ordinal()
-				    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+				    .range(["#98abc5", "#ff8c00","#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c"]);
 	
 				var xAxis = d3.svg.axis()
 				    .scale(x0)
@@ -410,7 +411,9 @@
 				
 			}
 			
-			print( {data : dataInit, source : "state"},{data : dataInit2, source : "user"});
+			print( {data : dataInit, source : "state"},
+					{data : dataInit2, source : "user"},
+					{data : dataInit3, source : "allpeople"});
 			
 	    
 		
@@ -420,7 +423,7 @@
 	    		
 	    	console.warn("remove this, as it's test");
 	    	
-    		$("#taxamount").attr("value",8000);
+    		$("#taxamount").attr("value",800);
     		$("#valid").click();
 	    		    		
 	    	});

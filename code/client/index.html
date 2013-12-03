@@ -277,7 +277,11 @@
 				args.forEach(function(d,i){
 					d.data.forEach(function(a,j){
 						a.source = d.source;
-						a.position = i;
+						//a.sourceID = i;
+						
+						//We generate here a random id in order to be able to define a key
+						//TODO : use a real unique number
+						a.sourceID = Math.random();
 					});
 				});
 				
@@ -312,7 +316,11 @@
 				function displayBar(data,svg){
 				
 					function budgetId(d){
-						return d.source+"-"+d.id+"-"+d.amount;
+						//TODO : see why this number generation
+// 						return d.sourceID+d.amount/100000;
+						//or a string id generation don't work
+// 						return d.sourceID+"_"+d.amount+"_"+d.source;
+						return Math.random();
 					}
 					
 
@@ -364,17 +372,14 @@
 					      .attr("dy", ".71em")
 					      .style("text-anchor", "end")
 					      .text("Amount");
-		
-					  var gg=  svg.selectAll("g.budgetLine");
 					  
 					  var state = svg.selectAll("g.budgetLine")
 					      .data(data,function(d){
-					    	  console.log(d.reduce(function(p,c){ return p+"|"+budgetId(c); },""));
+					    	  //console.log(d.reduce(function(p,c){ return p+"|"+budgetId(c); },""));
 					    	  return d.reduce(function(p,c){ return p+"|"+budgetId(c); },"");
 					    	  //return Math.random();
 					      });
 					  
-					  console.warn("qdsfqsdfqdsfqsddfqsddfqsddfqsddf");
 					  state.exit().remove();
 					  
 					  var newState = state.enter().append("g")
@@ -386,7 +391,6 @@
 					      .data(function(d,i) {
 					    	  return d.map(function(v) { return v; }); 
 					    	}, function(d){
-					    		return Math.random();
 					    		return budgetId(d);
 					    	})
 					    ;
@@ -418,6 +422,8 @@
 					var buttons = state.selectAll("rect.button")
 				      .data(function(d,i) {
 				    	  return d.reduce(function(p,c) { if (c.source == "user") p.push(c); return p; },[]);
+				    	}, function(d){
+				    		return budgetId(d);
 				    	})
 				    .enter();
 					
@@ -438,10 +444,7 @@
 					
 				      function dragmove(d) {
 				    	  d3.select(this)
-//	 			    	      .attr("cx", d.x = Math.max(radius, Math.min(width - radius, d3.event.x)))
-//	 			    	      .attr("cy", d.y = Math.max(radius, Math.min(height - radius, d3.event.y)));
-				    	  //.attr("x", d.x = d3.event.x)
-			    	      .attr("y", d.y = d3.event.y);
+			    	      		.attr("y", d.y = d3.event.y);
 				    	  
 				    	  d.amount = 400;
 				    	}

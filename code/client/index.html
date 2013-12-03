@@ -271,6 +271,8 @@
 			
 			function print( /* {data : d, source : "sourceName"}*/){
 				
+				var unassignied;
+				
 				var args = Array.slice(arguments);
 
 				//data transformation add the source attribute to objects
@@ -282,6 +284,8 @@
 						//We generate here a random id in order to be able to define a key
 						//TODO : use a real unique number
 						a.sourceID = Math.random();
+						
+						if(a.source == "user" && a.id==0) unassignied = a;
 					});
 				});
 				
@@ -303,9 +307,9 @@
 					
 				});
 				
-				var margin = {top: 20, right: 20, bottom: 30, left: 40},
-					    width = 960 - margin.left - margin.right,
-					    height = 500 - margin.top - margin.bottom;
+				var margin = {top: 20, right: 20, bottom: 430, left: 40},
+					    width = 1060 - margin.left - margin.right,
+					    height = 900 - margin.top - margin.bottom;
 				
 				var svg = d3.select("body #g2").append("svg")
 						    .attr("width", width + margin.left + margin.right)
@@ -335,7 +339,7 @@
 				
 				
 				
-				function displayBar(data,svg){
+				function displayBar(data,svg,printAxes){
 				
 					function budgetId(d){
 						//TODO : see why this number generation
@@ -348,24 +352,19 @@
 					function getHeight(d){
 						return height - y(d.amount);
 					}
-					  //data = rawData.lines;
-					  
-					  //TODO : manage this dynamically
-					  var ageNames = [];//["state","user"];
-					  args.forEach(function(p,i){
-						  ageNames.push(p.source);
-					  });
-					  
-					  x0.domain(data.map(function(d) { return d[0].id; }));
-					  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
-					  y.domain([0, d3.max(data, function(d) { return d3.max(data, function(arr){ 
-						  return d3.max(arr,function(d) { return d.amount; })
-					  }); })]);
-		
-					  svg.append("g")
+					
+					function printAxis(){
+						 svg.append("g")
 					      .attr("class", "x axis")
 					      .attr("transform", "translate(0," + height + ")")
-					      .call(xAxis);
+					      .call(xAxis)
+					      .selectAll("text")
+						    .attr("y", 0)
+						    .attr("x", -10)
+						    .attr("dy", ".35em")
+						    .attr("transform", "rotate(-75)")
+						    .style("text-anchor", "end");
+					      ;
 
 					  svg.append("g")
 					      .attr("class", "y axis")
@@ -376,6 +375,23 @@
 					      .attr("dy", ".71em")
 					      .style("text-anchor", "end")
 					      .text("Amount");
+					}
+					  //data = rawData.lines;
+					  
+					  //TODO : manage this dynamically
+					  var ageNames = [];//["state","user"];
+					  args.forEach(function(p,i){
+						  ageNames.push(p.source);
+					  });
+					  
+					  //x0.domain(data.map(function(d) { return d[0].id; }));
+					  x0.domain(data.map(function(d) { return d[0].label; }));
+					  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+					  y.domain([0, d3.max(data, function(d) { return d3.max(data, function(arr){ 
+						  return d3.max(arr,function(d) { return d.amount; })
+					  }); })]);
+		
+					 if(printAxes) printAxis();
 					  
 					  var state = svg.selectAll("g.budgetLine")
 					      .data(data,function(d){
@@ -389,7 +405,7 @@
 					  var newState = state.enter().append("g")
 					      .attr("class", "budgetLine")
 					      .attr("transform", function(d) { 
-					    	  return "translate(" + x0(d[0].id) + ",0)"; });
+					    	  return "translate(" + x0(d[0].label) + ",0)"; });
 
 					var bars = state.selectAll("rect.bar")
 					      .data(function(d,i) {
@@ -458,7 +474,10 @@
 					
 				      function dragmove(d) {
 				    	  d3.select(this)
-			    	      		.attr("y", d.y = d3.event.y);
+			    	      		//.attr("y", d.y = d3.event.y);
+// 				    	  Math.max(radius, Math.min(width - radius, d3.event.x))
+								
+				    	  		.attr("y", d.y = d3.event.y);
 				    	  d.amount = startValue + (starty - d.y - buttonHeight)*pixelValue;
 				    	}
 		
@@ -483,7 +502,7 @@
 					
 				}
 				
-				displayBar(data,svg);
+				displayBar(data,svg,true);
 			
 				
 			}

@@ -313,6 +313,28 @@
 						  .append("g")
 						    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 				
+				var x0 = d3.scale.ordinal()
+			    .rangeRoundBands([0, width], .1);
+
+				var x1 = d3.scale.ordinal();
+	
+				var y = d3.scale.linear()
+				    .range([height, 0]);
+	
+				var color = d3.scale.ordinal()
+				    .range(["#98abc5", "#ff8c00","#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c"]);
+	
+				var xAxis = d3.svg.axis()
+				    .scale(x0)
+				    .orient("bottom");
+	
+				var yAxis = d3.svg.axis()
+				    .scale(y)
+				    .orient("left")
+				    .tickFormat(d3.format(".2s"));
+				
+				
+				
 				function displayBar(data,svg){
 				
 					function budgetId(d){
@@ -322,28 +344,10 @@
 // 						return d.sourceID+"_"+d.amount+"_"+d.source;
 						return Math.random();
 					}
-					
-
-					var x0 = d3.scale.ordinal()
-					    .rangeRoundBands([0, width], .1);
-		
-					var x1 = d3.scale.ordinal();
-		
-					var y = d3.scale.linear()
-					    .range([height, 0]);
-		
-					var color = d3.scale.ordinal()
-					    .range(["#98abc5", "#ff8c00","#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c"]);
-		
-					var xAxis = d3.svg.axis()
-					    .scale(x0)
-					    .orient("bottom");
-		
-					var yAxis = d3.svg.axis()
-					    .scale(y)
-					    .orient("left")
-					    .tickFormat(d3.format(".2s"));
 					  
+					function getHeight(d){
+						return height - y(d.amount);
+					}
 					  //data = rawData.lines;
 					  
 					  //TODO : manage this dynamically
@@ -362,7 +366,7 @@
 					      .attr("class", "x axis")
 					      .attr("transform", "translate(0," + height + ")")
 					      .call(xAxis);
-		
+
 					  svg.append("g")
 					      .attr("class", "y axis")
 					      .call(yAxis)
@@ -404,19 +408,29 @@
 					      .attr("y", function(d) { 
 					    	  return y(d.amount); })
 					      .attr("height", function(d) { 
-					    	  return height - y(d.amount); })
+					    	  return getHeight(d); })
 					      .style("fill", function(d) { return color(d.source); });
 					
 					bars.exit().remove();
 					
 					var buttonHeight = 15;
+					var pixelValue;
+					var starty;
+					var startValue;
 					
 					var drag = d3.behavior.drag()
-							    .on("dragstart",function(){
-							    	console.log("START DRAG");})
+							    .on("dragstart",function(d){
+							    	starty =  +d3.select(this).attr("y") + buttonHeight;
+							    	console.warn("start");
+							    	console.debug(getHeight(d));
+							    	pixelValue = d.amount / getHeight(d);
+							    	startValue = d.amount;
+							    })
 							    .on("drag", dragmove)
 								.on("dragend",function(){
-									displayBar(data,svg);})
+									displayBar(data,svg);
+									
+								})
 								;
 					
 					var buttons = state.selectAll("rect.button")
@@ -445,8 +459,7 @@
 				      function dragmove(d) {
 				    	  d3.select(this)
 			    	      		.attr("y", d.y = d3.event.y);
-				    	  
-				    	  d.amount = 400;
+				    	  d.amount = startValue + (starty - d.y - buttonHeight)*pixelValue;
 				    	}
 		
 					  var legend = svg.selectAll(".legend")

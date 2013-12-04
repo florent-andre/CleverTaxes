@@ -22,6 +22,26 @@
 			  padding: 40px 15px;
 			  text-align: center;
 			}
+			
+			#graphContainer * {
+				display : none;
+			}
+			
+			.step1{
+				display : none;
+			}
+			
+			.step1.1{
+				display : none;
+			}
+			
+			.step2{
+				display : none;
+			}
+			
+			.step3{
+				display : none;
+			}
 	  
 	  </style>
 	
@@ -43,7 +63,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Clever Taxes</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -58,27 +78,63 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        <h1>Screen 1 : enter your annual tax amount</h1>
- 		<p>your Name : <input type="text" id="name"/></p>
- 		<p>your annual tax amount : <input type="number" id="taxamount"></input></p>
- 		<p><input type="button" id="valid" value="GO!"> </input></p>
- 		
- 		<div id="hiden" style="display:none">
-	 		<h1>Screen 2 : See what do politicians with</h1>
-	 		<div class="chart"></div>
-	 		
-	 		<h1>Screen 3 : Tell politiciant what you would like they do with</h1>
-	 		<div class="chart2" ></div>
-	 		
-	 		<h1>Screen 4 : See what others have suggest to politicians</h1>
- 		</div>
- 		<h1>GRAPH 1</h1>
- 		<div id="g1"></div>
- 		<h2>GRAPH2</h2>
- 		<div id="g2"></div>
+      	<div class="step0" >
+      		<h1>Enter your annual tax amount</h1>
+        	<div class="row" >
         
+        	<div class="col-md-4 col-md-offset-4">
+        
+        	<form class="bs-example bs-example-form">
+	        	<div class="input-group">
+				  <span class="input-group-addon">@</span>
+				  <input type="text" class="form-control" placeholder="Your name">
+				</div>
+				<br>
+				<div class="input-group">
+				  <span class="input-group-addon">€ </span>
+				  <input id="taxamount" type="text" class="form-control" placeholder="Your annual tax amount">
+<!-- 				  <span class="input-group-addon">.00</span> -->
+				</div>
+				<br>
+		 		<button id="valid" type="button" data-loading-text="Loading..." class="btn btn-lg btn-primary btn-block">GO!</button>
+		        
+	        	</form>
+        	</div>
+        </div>
+      	</div>
+        
+                
+ 		
+ 		<div>
+	 		<h1 class="step1" >See what do politicians with</h1>
+	 		<h2 class="step1 small">When you are okay (or not) with that, click on the button</h2>
+	 		<p class="step1 text-muted">Please note that actual data are related to France 2011 budget. See "About" page for details</p>
+	 		
+	 		<h1 class="step2">Tell politicians what you would like they do with</h1>
+	 		<h2 class="step2 small">Change the budget allocation according to your Democratic spirit.</h2>
+	 		<p class="step2 text-muted">Use buttons on top of the bars and when you are done click on the button to save your changes</p>
+	 		
+	 		<h1 class="step3">See what others have suggest to politicians</h1>
+	 		<h2 class="step3 small">This show (in average) how people would have manage the budget.</h2>
+	 		<p class="step3 text-muted">Click here to share this with your friends !</p>
+	 		
+	 		<button id="stepButton" 
+	 				type="button" 
+	 				data-loading-text="Loading..." 
+	 				class="btn btn-lg btn-primary col-md-4 col-md-offset-4 step1 step2 step3">Express Myself !</button>
+	 				
+	 		<div id="chart" class="step1 step2 step3"></div>
+	 		
+	 		
+ 		</div>
+ 		
+<!--         <div id="about"> -->
+<!--         	<h1>Informations coming soon</h1> -->
+<!--         </div> -->
+        
+<!--         <div id="contact"> -->
+<!--         	<h1>Informations coming soon</h1> -->
+<!--         </div> -->
         
       </div>
 

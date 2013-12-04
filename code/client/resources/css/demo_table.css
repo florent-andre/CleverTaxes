@@ -1,0 +1,406 @@
+
+body {
+    background-color: #FFFFFF;
+    color: #111111;
+    font: 80%/1.45em Arial,Verdana,Helvetica,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#container {
+    margin: 0 auto;
+    width: 960px;
+}
+h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.dataTable{
+clear: both;
+}
+
+div.dataTables_wrapper {
+    background-color: #FFF;
+}
+div.dataTables_length {
+    float: left;
+}
+div.dataTables_filter {
+    float: right;
+}
+div.dataTables_info {
+    float: left;
+    padding: 9px 6px 6px;
+}
+div.dataTables_paginate {
+    float: right;
+}
+div.dataTables_length, div.dataTables_filter, div.dataTables_paginate {
+    padding: 6px;
+}
+.dataTables_wrapper:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+html[xmlns] .dataTables_wrapper {
+    display: block;
+}
+* html .dataTables_wrapper {
+    height: 1%;
+}
+table.pretty {
+    clear: both;
+    width: 920px;
+	border : 0px solid #DAEBF0;
+	background-color : #00B1EB;
+	padding:0px;
+	margin:0px;
+}
+table.pretty td, table.pretty th {
+    border: 1px solid #DAEBF0;
+    padding: 5px;
+	color : #003663;
+}
+table.pretty thead th {
+    background: none repeat scroll 0 0 #66A9BD;
+    text-align: center;
+}
+table.pretty tbody th {
+    background: none repeat scroll 0 0 #91C5D4;
+    text-align: left;
+}
+table.pretty tbody td {
+    background: none repeat scroll 0 0 #D5EAF0;
+    text-align: center;
+	color : #000;
+	}
+table.pretty tbody tr.odd td {
+    background: none repeat scroll 0 0 #BCD9E1;
+}
+
+table.pretty tbody tr.even td {
+    background: none repeat scroll 0 0 #FFF;
+}
+
+table.pretty tfoot th {
+    background: none repeat scroll 0 0 #B0CC7F;
+    text-align: left;
+}
+table.pretty tfoot td {
+    background: none repeat scroll 0 0 #D7E1C5;
+    font-weight: bold;
+    text-align: center;
+}
+a.paginate_button, a.paginate_active {
+    background-color: #608995;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 2px;
+    padding: 2px 6px;
+}
+a.paginate_active {
+    background-color: transparent;
+    border: 1px solid black;
+}
+a.paginate_button_disabled {
+    color: #3D6672;
+}
+.paging_full_numbers a:active {
+    outline: medium none;
+}
+.paging_full_numbers a:hover {
+    text-decoration: none;
+}
+div.dataTables_paginate span > a {
+    text-align: center;
+    width: 15px;
+}
+table.pretty thead th.sorting_asc {
+    background: url("../images/sort_asc.png") no-repeat scroll right center #FFF;
+}
+table.pretty thead th.sorting_desc {
+    background: url("../images/sort_desc.png") no-repeat scroll right center #FFF;
+}
+table.pretty thead th.sorting {
+    background: url("../images/sort_both.png") no-repeat scroll right center #FFF;
+}
+
+
+table.display tr.even.row_selected td {
+	background-color: #B0BED9;
+}
+
+table.display tr.odd.row_selected td {
+	background-color: #9FAFD1;
+}
+
+
+/*
+ * Sorting classes for columns
+ */
+/* For the standard odd/even */
+tr.odd td.sorting_1 {
+	background-color: #D3D6FF;
+}
+
+tr.odd td.sorting_2 {
+	background-color: #DADCFF;
+}
+
+tr.odd td.sorting_3 {
+	background-color: #E0E2FF;
+}
+
+tr.even td.sorting_1 {
+	background-color: #EAEBFF;
+}
+
+tr.even td.sorting_2 {
+	background-color: #F2F3FF;
+}
+
+tr.even td.sorting_3 {
+	background-color: #F9F9FF;
+}
+
+
+/* For the Conditional-CSS grading rows */
+/*
+ 	Colour calculations (based off the main row colours)
+  Level 1:
+		dd > c4
+		ee > d5
+	Level 2:
+	  dd > d1
+	  ee > e2
+ */
+tr.odd.gradeA td.sorting_1 {
+	background-color: #c4ffc4;
+}
+
+tr.odd.gradeA td.sorting_2 {
+	background-color: #d1ffd1;
+}
+
+tr.odd.gradeA td.sorting_3 {
+	background-color: #d1ffd1;
+}
+
+tr.even.gradeA td.sorting_1 {
+	background-color: #d5ffd5;
+}
+
+tr.even.gradeA td.sorting_2 {
+	background-color: #e2ffe2;
+}
+
+tr.even.gradeA td.sorting_3 {
+	background-color: #e2ffe2;
+}
+
+tr.odd.gradeC td.sorting_1 {
+	background-color: #c4c4ff;
+}
+
+tr.odd.gradeC td.sorting_2 {
+	background-color: #d1d1ff;
+}
+
+tr.odd.gradeC td.sorting_3 {
+	background-color: #d1d1ff;
+}
+
+tr.even.gradeC td.sorting_1 {
+	background-color: #d5d5ff;
+}
+
+tr.even.gradeC td.sorting_2 {
+	background-color: #e2e2ff;
+}
+
+tr.even.gradeC td.sorting_3 {
+	background-color: #e2e2ff;
+}
+
+tr.odd.gradeX td.sorting_1 {
+	background-color: #ffc4c4;
+}
+
+tr.odd.gradeX td.sorting_2 {
+	background-color: #ffd1d1;
+}
+
+tr.odd.gradeX td.sorting_3 {
+	background-color: #ffd1d1;
+}
+
+tr.even.gradeX td.sorting_1 {
+	background-color: #ffd5d5;
+}
+
+tr.even.gradeX td.sorting_2 {
+	background-color: #ffe2e2;
+}
+
+tr.even.gradeX td.sorting_3 {
+	background-color: #ffe2e2;
+}
+
+tr.odd.gradeU td.sorting_1 {
+	background-color: #c4c4c4;
+}
+
+tr.odd.gradeU td.sorting_2 {
+	background-color: #d1d1d1;
+}
+
+tr.odd.gradeU td.sorting_3 {
+	background-color: #d1d1d1;
+}
+
+tr.even.gradeU td.sorting_1 {
+	background-color: #d5d5d5;
+}
+
+tr.even.gradeU td.sorting_2 {
+	background-color: #e2e2e2;
+}
+
+tr.even.gradeU td.sorting_3 {
+	background-color: #e2e2e2;
+}
+
+
+/*
+ * Row highlighting example
+ */
+.ex_highlight #example tbody tr.even:hover, #example tbody tr.even td.highlighted {
+	background-color: #ECFFB3;
+}
+
+.ex_highlight #example tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
+	background-color: #E6FF99;
+}
+
+.ex_highlight_row #example tr.even:hover {
+	background-color: #ECFFB3;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_1 {
+	background-color: #DDFF75;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_2 {
+	background-color: #E7FF9E;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_3 {
+	background-color: #E2FF89;
+}
+
+.ex_highlight_row #example tr.odd:hover {
+	background-color: #E6FF99;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_1 {
+	background-color: #D6FF5C;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_2 {
+	background-color: #E0FF84;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_3 {
+	background-color: #DBFF70;
+}
+
+
+table.display tr.gradeA {
+	background-color: #eeffee;
+}
+
+table.display tr.gradeC {
+	background-color: #ddddff;
+}
+
+table.display tr.gradeX {
+	background-color: #ffdddd;
+}
+
+table.display tr.gradeU {
+	background-color: #ddd;
+}
+
+
+
+#displayZone .dataTables_wrapper {
+	position: relative;
+	min-height: 302px;
+	clear: both;
+	_height: 302px;
+	zoom: 1; /* Feeling sorry for IE */
+	width : 100%;
+}
+
+#displayZone  .dataTables_processing {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 250px;
+	height: 30px;
+	margin-left: -125px;
+	margin-top: -15px;
+	padding: 14px 0 2px 0;
+	border: 1px solid #ddd;
+	text-align: center;
+	color: #999;
+	font-size: 14px;
+	background-color: white;
+}
+
+#displayZone  .dataTables_length {
+	width: 40%;
+	float: left;
+}
+
+#displayZone  .dataTables_filter {
+	width: 50%;
+	float: right;
+	text-align: right;
+}
+
+#displayZone  .dataTables_info {
+	width: 60%;
+	float: left;
+}
+
+#displayZone  .dataTables_paginate {
+	width: 44px;
+	* width: 50px;
+	float: right;
+	text-align: right;
+}
+
+
+#displayZone  tr.odd {
+background-color : #E2E4FF;
+}
+
+#displayZone tr.even {
+background-color : #FFF;
+}
+
+#displayZone div.dataTables_wrapper {
+    background-color: #FFF;
+}
+
+#displayZone table.display thead th {
+    
+	border-bottom : 1px solid #000;
+}

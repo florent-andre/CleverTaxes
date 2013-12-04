@@ -1,0 +1,61 @@
+
+#header{
+	margin-left: 10%;
+}
+
+#lhLogo{
+	float : left;
+	margin-top: 20px;
+}
+#imageHeader{
+	background-image:url('../images/lhheader.jpg');
+	height: 150px;
+	width: 750px;
+	margin-left: 200px;
+}
+#loginZone{
+    position:absolute;
+    top:5%;
+    right:17%;
+}
+
+#header-menu{
+	margin-left: 22%;
+}
+
+#header-menu ul.menu{
+	list-style: none outside none;
+}
+
+#header-menu .menu li {
+	background: url('../images/separator.1.jpg') no-repeat scroll left center transparent;
+	float: left;
+	font-family: 'DIN1451ComMittelschrift';
+	margin: 0;
+	padding: 0 10px;
+}
+
+
+div.c{
+	clear : both;
+	margin-bottom: 25px;
+}
+
+#footer{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#eu{
+	float: left;
+}
+
+#iks{
+	float: right;
+}
+
+table.footerTable{
+	font-family:Lucida Grande,Lucida Sans,Arial,sans-serif;
+	color: #666666;
+	font-size: 11px;
+}

@@ -5,7 +5,7 @@
 //function for the data transformation
 function prepareData(/*{data : d, source : "sourceName", referenceBudget : value}*/){
 	
-	var args = Array.slice(arguments);
+	var args = Array.prototype.slice.call(arguments, 0);
 	
 	//prepare data structure and add functions.
 

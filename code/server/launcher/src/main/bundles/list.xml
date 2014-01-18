@@ -1,4 +1,12 @@
 <bundles>
+	<startLevel level="25">
+		<bundle>
+			<groupId>eu.ooffee.utilities</groupId>
+			<artifactId>jaxb</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</bundle>
+	</startLevel>
+	
 	<startLevel level="27">
 		<bundle>
 			<groupId>eu.ooffee</groupId>

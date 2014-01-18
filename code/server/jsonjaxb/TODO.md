@@ -8,7 +8,7 @@
 
 cf 
 /home/florent/devel/dev-clever-taxes/code/server/clevertaxes/src/test/java/eu/ooffee/cleverTaxes/models/TestSerialization.java
-===
+::
 @Test
 	public void testBudgetLineDeserialization() throws JAXBException{
 		

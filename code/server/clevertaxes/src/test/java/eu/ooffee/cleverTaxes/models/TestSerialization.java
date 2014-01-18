@@ -20,7 +20,6 @@ public class TestSerialization {
 	public void testUserSerialization() throws JAXBException{
 		User user = new User("TEST", 123.5);		
 		MarshalServicer.getMarshaller().marshal(user, System.out);
-
 	}
 	
 	@Test

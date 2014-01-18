@@ -70,12 +70,29 @@
               org.apache.stanbol.enhancer.jersey.*
             </Export-Package> -->
             <Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=jersey-json|jackson-core-asl
+            	org.eclipse.persistence.moxy|
+		    org.eclipse.persistence.core|
+		    javax.persistence|
+		    persistence-api|
+		    org.eclipse.persistence.asm|
+		    org.eclipse.persistence.antlr|
+		    org.eclipse.persistence.jpa.jpql
             </Embed-Dependency>
             <Embed-Transitive>true</Embed-Transitive>
             <Import-Package>
+            !org.antlr.stringtemplate.*,
+		    !javax.jms.*,
+		    !javax.resource.*,
+               org.eclipse.persistence.jaxb.*,
               javax.ws.rs.*; version="[0,2)",
               *
             </Import-Package>
+            <!-- NOTE : c'est en fait le dynamic import package qui permet de résoudre le problème de JAXBFactory not found -->
+            <!-- TODO : 1) Voir pour utiliser cette instruction si c'est mieux... (<Bundle-ClassPath>)-->
+            <!-- TODO : 2) restreindre l'import dynamique à la classe qui va bien -->
+            <DynamicImport-Package>
+                                *
+                        </DynamicImport-Package>
           </instructions>
         </configuration>
       </plugin>
@@ -93,61 +110,6 @@
   </build>
 
   <dependencies>
-  
-  <!-- TODO : use scope provided for this dependencies -->
-  
-    <!-- dep on skosifier -->
-<!--     <dependency> -->
-<!--       <groupId>eu.lh</groupId> -->
-<!--       <artifactId>eu.lh.skosifier</artifactId> -->
-<!--     </dependency> -->
-    
-    
-<!--     <dependency> -->
-<!--       <groupId>eu.lh</groupId> -->
-<!--       <artifactId>eu.lh.registry.broadcaster</artifactId> -->
-<!--       <version>0.0.2-incubating-SNAPSHOT</version> -->
-<!--     </dependency> -->
-    
-    <!-- dependencies on other IKS modules -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.stanbol</groupId> -->
-<!--       <artifactId>org.apache.stanbol.enhancer.servicesapi</artifactId> -->
-<!--     </dependency> -->
-    <!-- <dependency> -->
-    <!--   <groupId>org.apache.stanbol</groupId> -->
-    <!--   <artifactId>org.apache.stanbol.enhancer.standalone</artifactId> -->
-    <!-- </dependency> -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.stanbol</groupId> -->
-<!--       <artifactId>org.apache.stanbol.commons.jsonld</artifactId> -->
-<!--     </dependency> -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.stanbol</groupId> -->
-<!--       <artifactId>org.apache.stanbol.commons.web.base</artifactId> -->
-<!--     </dependency> -->
-    <!-- Clerezza dependencies -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.clerezza</groupId> -->
-<!--       <artifactId>rdf.core</artifactId> -->
-<!--     </dependency> -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.clerezza</groupId> -->
-<!--       <artifactId>jaxrs.rdf.providers</artifactId> -->
-<!--     </dependency> -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.clerezza</groupId> -->
-<!--       <artifactId>rdf.jena.serializer</artifactId> -->
-<!--     </dependency> -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.clerezza</groupId> -->
-<!--       <artifactId>rdf.jena.parser</artifactId> -->
-<!--     </dependency> -->
-    <!-- TODO : when this dependency is enable Tcprovider initialisation in test fail -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.clerezza</groupId> -->
-<!--       <artifactId>rdf.rdfjson</artifactId> -->
-<!--     </dependency> -->
     
     <!-- Jersey -->
     <dependency>
@@ -223,37 +185,6 @@
 	      <artifactId>org.apache.stanbol.commons.web.base</artifactId>
 	    <version>0.10.0-incubating</version>
     </dependency>
-
-	<!-- Dependencies for search related functions -->
-<!-- 	<dependency> -->
-<!--       <groupId>org.apache.stanbol</groupId> -->
-<!--       <artifactId>org.apache.stanbol.commons.namespaceprefix.service</artifactId> -->
-<!--     </dependency> -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.stanbol</groupId> -->
-<!--       <artifactId>org.apache.stanbol.entityhub.core</artifactId> -->
-<!--     </dependency> -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.stanbol</groupId> -->
-<!--       <artifactId>org.apache.stanbol.entityhub.model.clerezza</artifactId> -->
-<!--     </dependency> -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.stanbol</groupId> -->
-<!--       <artifactId>org.apache.stanbol.entityhub.query.clerezza</artifactId> -->
-<!--     </dependency> -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.stanbol</groupId> -->
-<!--       <artifactId>org.apache.stanbol.entityhub.ldpath</artifactId> -->
-<!--     </dependency> -->
-<!--     <dependency> -->
-<!--       <groupId>org.apache.stanbol</groupId> -->
-<!--       <artifactId>org.apache.stanbol.commons.indexedgraph</artifactId> -->
-<!--     </dependency> -->
-    <!-- for some Static LDPath utilities -->
-<!-- 	<dependency> -->
-<!-- 	  <groupId>org.apache.stanbol</groupId> -->
-<!--       <artifactId>org.apache.stanbol.entityhub.jersey</artifactId> -->
-<!-- 	</dependency> -->
 	
     <!-- for tests -->
     <dependency>
@@ -262,16 +193,12 @@
       <scope>test</scope>
     </dependency>
     <!-- dependencies for parsing a graph -->
-    <dependency>
-    	<groupId>org.apache.clerezza</groupId>
-      	<artifactId>rdf.simple.storage</artifactId>
-      	<scope>test</scope>
-    </dependency>
-    <!-- end dependencies for parsing a graph -->
 <!--     <dependency> -->
-<!--     	<groupId>com.google.guava</groupId> -->
-<!--     	<artifactId>guava</artifactId> -->
+<!--     	<groupId>org.apache.clerezza</groupId> -->
+<!--       	<artifactId>rdf.simple.storage</artifactId> -->
+<!--       	<scope>test</scope> -->
 <!--     </dependency> -->
+    <!-- end dependencies for parsing a graph -->
     
     <dependency>
     	<groupId>eu.ooffee.utilities</groupId>
@@ -287,6 +214,87 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 		</dependency>
+		
+		<dependency>
+	    <groupId>org.eclipse.persistence</groupId>
+	    <artifactId>javax.persistence</artifactId>
+	    <version>2.0.4.v201112161009</version>
+	    <type>jar</type>
+	    <scope>compile</scope>
+	    <optional>false</optional>
+	  </dependency>
+	  
+	  <dependency>
+	    <groupId>org.eclipse.persistence</groupId>
+	    <artifactId>org.eclipse.persistence.asm</artifactId>
+	    <version>3.3.1.v201206041142</version>
+	    <type>jar</type>
+	    <scope>compile</scope>
+	    <optional>false</optional>
+	  </dependency>
+	  
+	  <dependency>
+	    <groupId>org.eclipse.persistence</groupId>
+	    <artifactId>org.eclipse.persistence.antlr</artifactId>
+	    <version>3.2.0.v201206041011</version>
+	    <type>jar</type>
+	    <scope>compile</scope>
+	    <optional>false</optional>
+	  </dependency>
+	  
+	  <dependency>
+	    <groupId>org.eclipse.persistence</groupId>
+	    <artifactId>org.eclipse.persistence.jpa.jpql</artifactId>
+	    <version>2.4.0</version>
+	    <type>jar</type>
+	    <scope>compile</scope>
+	    <optional>false</optional>
+	  </dependency>
+	  <dependency>
+	    <groupId>org.eclipse.persistence</groupId>
+	    <artifactId>org.eclipse.persistence.core</artifactId>
+	    <version>2.4.0</version>
+	    <type>jar</type>
+	    <scope>compile</scope>
+	    <optional>false</optional>
+	  </dependency>
+	  
+	  <dependency>
+	    <groupId>org.eclipse.persistence</groupId>
+	    <artifactId>org.eclipse.persistence.moxy</artifactId>
+	    <version>2.4.0</version>
+	    <scope>runtime</scope>
+	  </dependency>
+	  
+	  
+	  <dependency>
+	    <groupId>javax.persistence</groupId>
+	    <artifactId>persistence-api</artifactId>
+	    <version>1.0.2</version>
+	  </dependency>
+	  
+	  <dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.xml</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2.7</version>
+		</dependency>
   </dependencies>
 
+<repositories>
+	  <repository>
+	    <id>EclipseLink</id>
+	    <url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+	  </repository>
+	</repositories>
 </project>

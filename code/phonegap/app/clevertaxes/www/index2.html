@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>Your public money in your hand</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	
+	  <style type="text/css">
+	  
+		  body {
+			  padding-top: 50px;
+			}
+			.starter-template {
+			  padding: 40px 15px;
+			  text-align: center;
+			}
+			
+			#graphContainer * {
+				display : none;
+			}
+			
+			.step1{
+				display : none;
+			}
+			
+			.step1.1{
+				display : none;
+			}
+			
+			.step2{
+				display : none;
+			}
+			
+			.step3{
+				display : none;
+			}
+	  
+	  </style>
+	
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Clever Taxes</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+      	<div class="step0" >
+      		<h1>Enter your annual tax amount</h1>
+        	<div class="row" >
+        
+        	<div class="col-md-4 col-md-offset-4">
+        
+        	<form class="bs-example bs-example-form">
+	        	<div class="input-group">
+				  <span class="input-group-addon">@</span>
+				  <input type="text" class="form-control" placeholder="Your name">
+				</div>
+				<br>
+				<div class="input-group">
+				  <span class="input-group-addon">€ </span>
+				  <input id="taxamount" type="text" class="form-control" placeholder="Your annual tax amount">
+<!-- 				  <span class="input-group-addon">.00</span> -->
+				</div>
+				<br>
+		 		<button id="valid" type="button" data-loading-text="Loading..." class="btn btn-lg btn-primary btn-block">GO!</button>
+		        
+	        	</form>
+        	</div>
+        </div>
+      	</div>
+        
+                
+ 		
+ 		<div>
+	 		<h1 class="step1" >See what do politicians with</h1>
+	 		<h2 class="step1 small">When you are okay (or not) with that, click on the button</h2>
+	 		<p class="step1 text-muted">Please note that actual data are related to France 2011 budget. See "About" page for details</p>
+	 		
+	 		<h1 class="step2">Tell politicians what you would like they do with</h1>
+	 		<h2 class="step2 small">Change the budget allocation according to your Democratic spirit.</h2>
+	 		<p class="step2 text-muted">Use buttons on top of the bars and when you are done click on the button to save your changes</p>
+	 		
+	 		<h1 class="step3">See what others have suggest to politicians</h1>
+	 		<h2 class="step3 small">This show (in average) how people would have manage the budget.</h2>
+	 		<p class="step3 text-muted">Click here to share this with your friends !</p>
+	 		
+	 		<button id="stepButton" 
+	 				type="button" 
+	 				data-loading-text="Loading..." 
+	 				class="btn btn-lg btn-primary col-md-4 col-md-offset-4 step1 step2 step3">Express Myself !</button>
+	 				
+	 		<div id="chart" class="step1 step2 step3"></div>
+	 		
+	 		
+ 		</div>
+ 		
+<!--         <div id="about"> -->
+<!--         	<h1>Informations coming soon</h1> -->
+<!--         </div> -->
+        
+<!--         <div id="contact"> -->
+<!--         	<h1>Informations coming soon</h1> -->
+<!--         </div> -->
+        
+      </div>
+
+    </div><!-- /.container -->
+
+
+    
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="resources/js/array.js"></script>
+    
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    
+    
+    <!-- mock datas -->
+    <script type="text/javascript" src="./data/rawData.js"></script>
+    <script type="text/javascript" src="./data/dataInit.js"></script>
+    <script type="text/javascript" src="./data/dataInit2.js"></script>
+    <script type="text/javascript" src="./data/dataInit3.js"></script>
+    <!-- cleverTaxes script -->
+    <script type="text/javascript" src="./resources/js/cleverTaxes.js"></script>
+  </body>
+</html>

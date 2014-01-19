@@ -424,6 +424,19 @@ $(document).ready(function(){
 	 	dfd.resolve();
 	});
 	
+	$('#calculatebtn').click(function() {
+		$("#name").val("florent");
+		$("#taxamount").val("5000");
+		$("#caRow").hide();
+        $('#myModal').modal('hide');
+    });
+	
+	$("#caConnect").click(function(){
+		
+		$('#myModal').modal('show');
+		
+	});
+	
 //	console.warn("remove this, as it's test");
 //	
 //	$("#taxamount").attr("value",800);

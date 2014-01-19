@@ -7,22 +7,22 @@ var dataInit3 = [
    				             {
   				               "id" : 1,
   				               "label" : "Économie ",
-  				               "percent" : 0.5444153439
+  				               "percent" : 0.3444153439
   				             },
   				             {
   				               "id" : 2,
   				               "label" : "Écologie, développement et aménagement durables ",
-  				               "percent" : 2.6500185185
+  				               "percent" : 2.9500185185
   				             },
   				             {
   				               "id" : 3,
   				               "label" : "Ville et logement ",
-  				               "percent" : 2.0087857143
+  				               "percent" : 1.8087857143
   				             },
   				             {
   				               "id" : 4,
   				               "label" : "Travail et emploi ",
-  				               "percent" : 3.2671481481
+  				               "percent" : 3.0671481481
   				             },
   				             {
   				               "id" : 5,
@@ -32,22 +32,22 @@ var dataInit3 = [
   				             {
   				               "id" : 6,
   				               "label" : "Sécurité ",
-  				               "percent" : 4.4455582011
+  				               "percent" : 4.1455582011
   				             },
   				             {
   				               "id" : 7,
   				               "label" : "Sport, jeunesse et vie associative ",
-  				               "percent" : 0.1107380952
+  				               "percent" : 0.2107380952
   				             },
   				             {
   				               "id" : 8,
   				               "label" : "Solidarité, insertion et égalité des chances ",
-  				               "percent" : 3.2729126984
+  				               "percent" : 3.4729126984
   				             },
   				             {
   				               "id" : 9,
   				               "label" : "Santé ",
-  				               "percent" : 0.3231825397
+  				               "percent" : 0.6231825397
   				             },
   				             {
   				               "id" : 10,
@@ -57,7 +57,7 @@ var dataInit3 = [
   				             {
   				               "id" : 11,
   				               "label" : "Remboursements et dégrèvements ",
-  				               "percent" : 21.7334814815
+  				               "percent" : 20.7334814815
   				             },
   				             {
   				               "id" : 12,
@@ -67,7 +67,7 @@ var dataInit3 = [
   				             {
   				               "id" : 13,
   				               "label" : "Recherche et enseignement supérieur ",
-  				               "percent" : 6.7088201058
+  				               "percent" : 7.7088201058
   				             },
   				             {
   				               "id" : 14,
@@ -77,7 +77,7 @@ var dataInit3 = [
   				             {
   				               "id" : 15,
   				               "label" : "Pouvoirs publics ",
-  				               "percent" : 0.2692910053
+  				               "percent" : 0.0692910053
   				             },
   				             {
   				               "id" : 16,
@@ -97,7 +97,7 @@ var dataInit3 = [
   				             {
   				               "id" : 19,
   				               "label" : "Justice ",
-  				               "percent" : 2.3696243386
+  				               "percent" : 2.0696243386
   				             },
   				             {
   				               "id" : 20,
@@ -107,22 +107,22 @@ var dataInit3 = [
   				             {
   				               "id" : 21,
   				               "label" : "Gestion des finances publiques et des ressources humaines ",
-  				               "percent" : 3.1011349206
+  				               "percent" : 3.2011349206
   				             },
   				             {
   				               "id" : 22,
   				               "label" : "Enseignement scolaire ",
-  				               "percent" : 16.2606005292
+  				               "percent" : 18.2606005292
   				             },
   				             {
   				               "id" : 23,
   				               "label" : "Engagements financiers de l'État ",
-  				               "percent" : 12.4142619048
+  				               "percent" : 10.6142619048
   				             },
   				             {
   				               "id" : 24,
   				               "label" : "Défense ",
-  				               "percent" : 11.1038941799
+  				               "percent" : 10.1038941799
   				             },
   				             {
   				               "id" : 25,
@@ -132,7 +132,7 @@ var dataInit3 = [
   				             {
   				               "id" : 26,
   				               "label" : "Culture ",
-  				               "percent" : 0.7188835979
+  				               "percent" : 1.9188835979
   				             },
   				             {
   				               "id" : 27,
@@ -157,7 +157,7 @@ var dataInit3 = [
   				             {
   				               "id" : 31,
   				               "label" : "Administration générale et territoriale de l'État ",
-  				               "percent" : 0.680026455
+  				               "percent" : 0.580026455
   				             },
   				             {
   				               "id" : 32,

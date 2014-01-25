@@ -412,6 +412,12 @@ $(document).ready(function(){
 		});
 	}
 	
+	function step1local(){
+		alert("manage this !!")
+		//query to the endpoint
+		//display of saisie message if empty
+	}
+	
 	var dfd = $.Deferred();
 	
 	$("#valid").click(function(){
@@ -419,6 +425,16 @@ $(document).ready(function(){
 		
 		$.when(dfd.promise()).then(function(){
 			step1(taxAmount);
+		});	
+		
+	 	dfd.resolve();
+	});
+	
+	$("#golocal").click(function(){
+		var taxAmount = +$("#taxamount").val();
+		
+		$.when(dfd.promise()).then(function(){
+			step1local(taxAmount);
 		});	
 		
 	 	dfd.resolve();

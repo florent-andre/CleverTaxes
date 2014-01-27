@@ -384,6 +384,8 @@ $(document).ready(function(){
 		step1elems = [".step1"],
 		step2elems = [".step2",$stepButton],
 		step3elems = [".step3"],
+		step1local = [".step1local"],
+		chart = [".chart"],
 		$stepButton = $("#stepButton")
 		;
 		
@@ -438,6 +440,49 @@ $(document).ready(function(){
 		});	
 		
 	 	dfd.resolve();
+	});
+	
+	$("#validCity").click(function(){
+		
+		//TODO : hacky solution, do it cleaner
+		if(ref == null) ref = 5000;
+		//TODO : if town exist on the server or not
+		if($("#cityName").val() == "demo"){
+			console.log("we are in");
+			//display graph
+			$.ajax({
+				url : "http://localhost:8080/skosifier?name=demo",
+				contentType : "application/json",
+				accepts : "application/json"
+			})
+			.done(function(data){
+				data = JSON.parse(data);
+				
+				
+				data.forEach(function(d,i){
+					d.realId = d.id;
+					d.id = i;
+				})
+				
+				//test
+				var people = {data : dataInit3, source : "allpeople", referenceBudget : ref};
+				prepareData(people);
+				
+				console.log(people.data);
+				
+				hideShow(step1local,chart);
+				var city = {data : data, source : "allpeople", referenceBudget : ref};
+				prepareData(city);
+				console.log(city.data);
+				print([city]);
+				
+			});
+		}
+		else{
+			//display city filling default webcomponent
+			
+			
+		}
 	});
 	
 	$('#calculatebtn').click(function() {

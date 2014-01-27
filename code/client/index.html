@@ -11,7 +11,7 @@
     <title>Your public money in your hand</title>
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/css/libs/bootstrap-3.0.2.min.css">
 	
 	  <style type="text/css">
 	  
@@ -115,8 +115,19 @@
  		
  		<div>
  			<h1 class="step1local">Select your town</h1>
- 			<span class="step1local input-group-addon">My lovely city</span>
-			<input class="step1local form-control" id="taxamount" type="text" placeholder="Your town">
+ 			<div class="row">
+	 			<div class="step1local input-group col-md-4 col-md-offset-4">
+	 				<span class="step1local input-group-addon">My lovely city</span>
+					<input class="step1local form-control" id="cityName" type="text" placeholder="Your town">
+				</div>
+ 			</div>
+ 			
+			<br>
+			<div id="localButtonRow" class="step1local row" >
+        		<div class="col-md-4 col-md-offset-4">
+		        	<button id="validCity" type="button" data-loading-text="Loading..." class="btn btn-lg btn-primary btn-block btn-warning">Valid!</button>
+		        </div>
+		    </div>
 			
 	 		<h1 class="step1" >See what do politicians with</h1>
 	 		<h2 class="step1 small">When you are okay (or not) with that, click on the button</h2>
@@ -135,7 +146,8 @@
 	 				data-loading-text="Loading..." 
 	 				class="btn btn-lg btn-primary col-md-4 col-md-offset-4 step1 step2 step3">Express Myself !</button>
 	 				
-	 		<div id="chart" class="step1 step2 step3"></div>
+	 		<!-- TODO : remove other classes than chart -->
+	 		<div id="chart" class="chart step1 step2 step3"></div>
 	 		
 	 		
  		</div>
@@ -172,13 +184,13 @@
 	</div><!-- /.modal -->
     
     <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="resources/js/libs/jquery-1.10.2.min.js"></script>
     <!-- Bootstrap -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src="resources/js/libs/bootstrap-3.0.2.min.js"></script>
     
     <script type="text/javascript" src="resources/js/array.js"></script>
     
-    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="resources/js/libs/d3.v3.min.js"></script>
     
     
     <!-- mock datas -->

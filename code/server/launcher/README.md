@@ -1,22 +1,7 @@
-preliminary datamodel : 
 
-city
-	name
-	hasBudgetLine
-
-budgetLine
-	name
-	children
-	
-
-budgetPlan
-	userName
-	values
+# To run this server : 
 
 
-value
-	budgetLine
-	amount
 
 
 

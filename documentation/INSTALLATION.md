@@ -1,8 +1,10 @@
 
 # Code : 
 
+``` bash
 cd ~/dev
 git clone git@github.com:florent-andre/CleverTaxes.git
+```
 
 # Configuration apache
 
@@ -98,6 +100,7 @@ sudo npm install -g cordova
 ## get the Sdk :
 
 
+# documentation a revoir : 
 * a ajouter dans le bashrc
 ** export PATH=$PATH:/home/florent/devel/dev-clever-taxes/code/phonegap/infra/adt-bundle-linux-x86_64-20131030/sdk/tools:/home/florent/devel/dev-clever-taxes/code/phonegap\
 /infra/adt-bundle-linux-x86_64-20131030/sdk/platform-tools

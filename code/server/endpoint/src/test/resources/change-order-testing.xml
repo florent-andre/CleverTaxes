@@ -1,0 +1,48 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:h="http://www.culture-terminology.org/ontologies/history#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+	<!-- test the change order : the older one is apply on the object before the newer one -->
+	<h:history rdf:about="http://ontoHisto.test/histoGraph/3">
+		<h:historyOf rdf:resource="http://ontoHisto.testGraph/1"/>
+		<h:change rdf:resource="http://ontoHisto.test/change/1"/>
+		<h:change rdf:resource="http://ontoHisto.test/change/2"/>
+	</h:history>
+	<!-- older change -->
+	<h:change rdf:about="http://ontoHisto.test/change/1">
+		<h:from rdf:resource="http://define.GRAPH.VERSION"/>
+		<h:date rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1334747282373</h:date>
+		<h:user>default user</h:user>
+		<h:subject rdf:resource="http://ontoHisto.test/change/1/subject/1"/>
+	</h:change>
+	<h:subject rdf:about="http://ontoHisto.test/change/1/subject/1">
+		<h:element rdf:resource="http://www/subject/2"/>
+		<h:property rdf:resource="http://ontoHisto.test/change/1/property/1"/>
+	</h:subject>
+	<h:property rdf:about="http://ontoHisto.test/change/1/property/1">
+		<h:element rdf:resource="http://www/prop/narrower"/>
+		<h:object rdf:resource="http://ontoHisto.test/change/1/object/1"/>
+	</h:property>
+	<h:object rdf:about="http://ontoHisto.test/change/1/object/1">
+		<h:element>plain text value</h:element>
+		<h:newValue>TEMP VALUE</h:newValue>
+	</h:object>
+
+	<!-- newer change -->
+	<h:change rdf:about="http://ontoHisto.test/change/2">
+		<h:from rdf:resource="http://define.GRAPH.VERSION"/>
+		<h:date rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1334747282374</h:date>
+		<h:user>default user</h:user>
+		<h:subject rdf:resource="http://ontoHisto.test/change/2/subject/1"/>
+	</h:change>
+
+	<h:subject rdf:about="http://ontoHisto.test/change/2/subject/1">
+		<h:element rdf:resource="http://www/subject/2"/>
+		<h:property rdf:resource="http://ontoHisto.test/change/2/property/1"/>
+	</h:subject>
+	<h:property rdf:about="http://ontoHisto.test/change/2/property/1">
+		<h:element rdf:resource="http://www/prop/narrower"/>
+		<h:object rdf:resource="http://ontoHisto.test/change/2/object/1"/>
+	</h:property>
+	<h:object rdf:about="http://ontoHisto.test/change/2/object/1">
+		<h:element>TEMP VALUE</h:element>
+		<h:newValue>CHANGED</h:newValue>
+	</h:object>
+</rdf:RDF>

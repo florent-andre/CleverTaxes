@@ -1,0 +1,28 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:h="http://www.culture-terminology.org/ontologies/history#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+	<h:history rdf:about="http://ontoHisto.test/histoGraph/2">
+		<h:historyOf rdf:resource="http://ontoHisto.testGraph/1"/>
+		<h:change rdf:resource="http://ontoHisto.test/change/4"/>
+	</h:history>
+
+	<!-- CHANGE ONE : 1 suject with 2 differents props and then one obj for each props -->
+	<h:change rdf:about="http://ontoHisto.test/change/4">
+		<h:from rdf:resource="http://define.GRAPH.VERSION"/>
+		<h:date rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1334747282380</h:date>
+		<h:user>default user</h:user>
+		<h:subject rdf:resource="http://ontoHisto.test/change/4/subject/1"/>
+	</h:change>
+
+	<h:subject rdf:about="http://ontoHisto.test/change/4/subject/1">
+		<h:element rdf:resource="http://www/subject/TOREMOVE"/>
+		<h:property rdf:resource="http://ontoHisto.test/change/12/property/1"/>
+	</h:subject>
+	<h:property rdf:about="http://ontoHisto.test/change/12/property/1">
+		<h:element rdf:resource="http://www/prop/broader"/>
+		<h:newValue rdf:resource="http://www.culture-terminology.org/ontologies/history#delete"/>
+		<h:object rdf:resource="http://ontoHisto.test/change/12/object/1"/>
+	</h:property>
+	<h:object rdf:about="http://ontoHisto.test/change/12/object/1">
+		<h:element>Will be remove in the next test</h:element>
+	</h:object>
+
+</rdf:RDF>

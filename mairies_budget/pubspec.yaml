@@ -1,0 +1,9 @@
+name: mairies_budget
+description: A sample web application
+dependencies:
+  browser: any
+  json: any
+  json_object: any
+  logging_handlers: any
+  polymer: any
+ 

@@ -1,12 +1,12 @@
 import 'dart:html';
 import 'dart:convert';
-import 'package:json_object/json_object.dart';
+
 import 'package:polymer/polymer.dart';
 import 'budget_line.dart';
 import 'package:logging_handlers/logging_handlers_shared.dart';
 
 var lignes;
-
+String BudgetLinesAsJsonData;
 
 @CustomTag('budget-form')
 class FormBudget extends FormElement with Polymer, Observable {
@@ -20,45 +20,28 @@ class FormBudget extends FormElement with Polymer, Observable {
   HttpRequest request;
   
   void addNewLigne(){
+    
     lines.add(budgetFactory.getNewBudgetLine());
   }
   void submitForm(Event e, var detail, Node target) {
+    e.preventDefault(); // Don't do the default submit.
     startQuickLogging();
     //calcul percent
     var tot = 0;
+   BudgetLinesAsJsonData = "[";
    
     lines.forEach((budgetLine bl){ 
-      if (!(bl.amount.isEmpty))
+      if (int.parse(bl.amount) != 0)
             tot+=int.parse(bl.amount);
       });
     if (tot != 0)
       lines.forEach((budgetLine bl) => bl.percent = int.parse(bl.amount)/tot);
     
-   
-   
-    budgetLine bl = budgetFactory.getNewBudgetLine();
-    bl.label ="tetcc";
-    info(bl.toString());
-    var json = objectToJson(bl);  // Here is the magic
-
-    info(json); // Valid JSON
-   /* 
-    List <budgetLine> liste;
-    liste = new List <budgetLine>() ;
-    liste.add(bl);
-   
-    info(JSON.encode(liste));
-    */
-    
-    //var json = objectToJson(b);  // Here is the magic
-  //  objectToJson(b).then((jsonStr) => print(jsonStr));
-   // print(json); // Valid JSON
-    //JsonEncoder je = new JsonEncoder(lines);
-    //print(je.convert);
-   // lines.forEach((Element b) => print (b.toString()));
-   //print(lines.forEach(budgetLine b => b.to));
-    
-    e.preventDefault(); // Don't do the default submit.
+      lines.forEach((budgetLine bl) =>  BudgetLinesAsJsonData += bl.toJson() );
+      
+      BudgetLinesAsJsonData += "]";
+    info(BudgetLinesAsJsonData); // Valid JSON
+  
   
     request = new HttpRequest();
     
@@ -67,13 +50,12 @@ class FormBudget extends FormElement with Polymer, Observable {
     // POST the data to the server.
     var url = 'http://127.0.0.1:4040';
     request.open('POST', url);
+ 
+   request.send(BudgetLinesAsJsonData);
   
-     
-   
-   // request.send(_slambookAsJsonData());
-
   }
   
+ 
   void onData(_) {
     if (request.readyState == HttpRequest.DONE &&
         request.status == 200) {
@@ -93,7 +75,7 @@ class FormBudget extends FormElement with Polymer, Observable {
     e.preventDefault(); // Default behavior clears elements,
                         // but bound values don't follow
                         // so have to do this explicitly.
-    lines.forEach((element) => element = "");
+    lines.forEach((InputElement e) => e.text = "");
       
     serverResponse = 'Data cleared.';
   }
@@ -128,7 +110,7 @@ class FormBudget extends FormElement with Polymer, Observable {
     
     InputElement input2 = new Element.tag("input");
     input2.type = "text";
-    input2.id = "amount"+nbLignes.toString();
+    input2.id = "amount$nbLignes";
     
     LIElement li = new LIElement();
     li.append(label1);

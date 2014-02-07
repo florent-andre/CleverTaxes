@@ -6,4 +6,6 @@ dependencies:
   json_object: any
   logging_handlers: any
   polymer: any
- 
+transformers:
+- polymer:
+    entry_points: web/index.html

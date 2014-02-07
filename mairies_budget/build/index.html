@@ -1,27 +1,104 @@
-<!DOCTYPE html>
+<!DOCTYPE html><html><head><script src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script src="packages/custom_element/custom-elements.debug.js"></script>
+<script src="packages/browser/interop.js"></script>
 
-<html>
-  <head>
     <meta charset="utf-8">
     <title>Saisie des budgets des mairies</title>
    
-    <link rel="import" href="budget_form.html">
-     <script type="application/dart" >
-     	export 'package:polymer/init.dart';
-     </script>
-     <script src="packages/browser/dart.js"></script>
- 	<script src="index.dart.js"></script>
-<script src="index.dart.js.map"></script>
-<script src="index.dart.precompiled.js"></script>
+    
+     <script src="index.html_bootstrap.dart.js"></script>
+     
      
   </head>
-  <body>
+  <body>   
+<polymer-element name="budget-form" extends="form">
+    <style>
+      .entry {
+        float: left;
+        padding: 3px 3px 3px 3px;
+        width: 100%;
+      }
+      
+      .entry label {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+        vertical-align: middle;
+      }
+      
+      label.andrews {
+        width:auto;
+      }
+      
+      .submitarea {
+        padding: 10px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: SlateBlue;
+        clear: left;
+      }
+     .responsetext {
+        padding: 5px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;
+        clear: left;
+        background-color: WhiteSmoke;
+        width: 90%;
+        height: 70px;
+        resize: none;
+      }
+     li {
+      list-style-type : none;
+      liste-style-image : url(ton-image);
+      }
+    </style>
+    <template>
+      
+      <div id="impotForm">
+        <div class="entry">
+          <label>Annee</label>
+          <input type="text" value="{{annee}}">
+       </div>
+      <div> 
+     
+       <ul id="lignes">
+        <template repeat="{{line in lines}}">
+          <li class="entry">
+            <label>Intitule</label>
+            <input type="text" value="{{line.label}}">
+            
+            <label>Montant</label>
+            <input type="text" value="{{line.amount}}">
+        
+          </li>
+        
+        </template>
+       
+        </ul>  
+       </div> 
+       <div class="entry">
+        <button on-click="{{addNewLigne}}">Ajouter new ligne</button>
+       </div>
+  
+        <div class="submitarea">
+          <input type="submit" value="Submit" on-click="{{submitForm}}">
+          <input type="reset" value="Clear" on-click="{{resetForm}}"> <br>    
+          <textarea disabled="" class="responsetext" value="{{serverResponse}}"></textarea>
+          
+        </div>
+      </div>
+    </template>
+      
+    
+  </polymer-element>
+
+
    
     <h1>Formulaire</h1>
     
     <div class="entry">
           <label>Mairie</label>
-          <select selectedIndex="{{theData['mairie']}}">
+          <select selectedindex="{{theData['mairie']}}">
             <option>Paris</option>
             <option>Nanterre</option>
             <option>Neuilly-sur-seine</option>
@@ -29,12 +106,15 @@
           </select>
     </div>
     <div class="entry">
-          <label>Votre mairie n'existe pas ? Connaissez-vous les valeurs d'une annee precedente ?</label></br>
-          <input on-change="ouiNon" name="ouiNon" id ="oui" type="radio" value="oui">Oui</input>
+          <label>Votre mairie n'existe pas ? Connaissez-vous les valeurs d'une annee precedente ?</label><br>
+          <input on-change="ouiNon" name="ouiNon" id="oui" type="radio" value="oui">Oui
     </div>
-    <div class="container" disabled>
-      <form is="budget-form" id = "budget-form" ></form>
+    <div class="container" disabled="">
+      <budget-form></budget-form>
+      <h2>SEPARATION</h2>
+      <form is="budget-form" id="budget-form"></form>
     </div>
   
-  </body>
-</html>
+  
+
+</body></html>

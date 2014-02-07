@@ -1,0 +1,465 @@
+---
+build.dart --machine --changed=pubspec.yaml
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":808,"charEnd":813}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":902,"charEnd":910}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":831,"charEnd":849}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element \"budget-form\" extends from \"form\", but this tag will not include the default properties of \"form\". To fix this, either write this tag as <form is=\"budget-form\"> or remove the \"extends\" attribute from the custom element declaration.","line":33,"charStart":965,"charEnd":978}}]
+build.dart finished [20819 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":808,"charEnd":813}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":902,"charEnd":910}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":831,"charEnd":849}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element \"budget-form\" extends from \"form\", but this tag will not include the default properties of \"form\". To fix this, either write this tag as <form is=\"budget-form\"> or remove the \"extends\" attribute from the custom element declaration.","line":33,"charStart":965,"charEnd":978}}]
+build.dart finished [13954 ms]
+
+---
+build.dart --machine --removed=build/budget_form.html --removed=build/index.dart.js --removed=build/index.dart....
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":808,"charEnd":813}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":902,"charEnd":910}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":831,"charEnd":849}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element \"budget-form\" extends from \"form\", but this tag will not include the default properties of \"form\". To fix this, either write this tag as <form is=\"budget-form\"> or remove the \"extends\" attribute from the custom element declaration.","line":33,"charStart":965,"charEnd":978}}]
+build.dart finished [6181 ms]
+
+---
+build.dart --machine --changed=build/index.dart.js --changed=build/index.dart.js.map --changed=build/index.dart...
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":808,"charEnd":813}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":902,"charEnd":910}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":831,"charEnd":849}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element \"budget-form\" extends from \"form\", but this tag will not include the default properties of \"form\". To fix this, either write this tag as <form is=\"budget-form\"> or remove the \"extends\" attribute from the custom element declaration.","line":33,"charStart":965,"charEnd":978}}]
+build.dart finished [11637 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element \"budget-form\" extends from \"form\", but this tag will not include the default properties of \"form\". To fix this, either write this tag as <form is=\"budget-form\"> or remove the \"extends\" attribute from the custom element declaration.","line":33,"charStart":962,"charEnd":975}}]
+build.dart finished [22495 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element \"budget-form\" extends from \"form\", but this tag will not include the default properties of \"form\". To fix this, either write this tag as <form is=\"budget-form\"> or remove the \"extends\" attribute from the custom element declaration.","line":33,"charStart":962,"charEnd":975}}]
+build.dart finished [12590 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element \"budget-form\" extends from \"form\", but this tag will not include the default properties of \"form\". To fix this, either write this tag as <form is=\"budget-form\"> or remove the \"extends\" attribute from the custom element declaration.","line":33,"charStart":962,"charEnd":975}}]
+build.dart finished [7575 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element \"budget-form\" extends from \"form\", but this tag will not include the default properties of \"form\". To fix this, either write this tag as <form is=\"budget-form\"> or remove the \"extends\" attribute from the custom element declaration.","line":33,"charStart":962,"charEnd":975}}]
+build.dart finished [3741 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element \"budget-form\" extends from \"form\", but this tag will not include the default properties of \"form\". To fix this, either write this tag as <form is=\"budget-form\"> or remove the \"extends\" attribute from the custom element declaration.","line":33,"charStart":962,"charEnd":975}}]
+build.dart finished [15315 ms]
+
+---
+build.dart --machine --changed=web/slambookserver.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element \"budget-form\" extends from \"form\", but this tag will not include the default properties of \"form\". To fix this, either write this tag as <form is=\"budget-form\"> or remove the \"extends\" attribute from the custom element declaration.","line":33,"charStart":962,"charEnd":975}}]
+build.dart finished [3729 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [10584 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [3378 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [4100 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [3886 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [3233 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [5835 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [7536 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [5377 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [4153 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [4792 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (br). Treated as br element.","line":29,"charStart":805,"charEnd":810}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":899,"charEnd":907}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":828,"charEnd":846}}]
+build.dart finished [7981 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [4746 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [5220 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [4159 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3583 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3563 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3524 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3567 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [4172 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3647 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3647 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3578 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3553 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [4008 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [4013 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3742 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3741 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"Dropped duplicate attribute on tag.","line":62,"charStart":1394,"charEnd":1418}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"Dropped duplicate attribute on tag.","line":62,"charStart":1394,"charEnd":1418}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [5469 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3988 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3822 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [4074 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [5479 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [5069 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3746 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3884 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3793 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3627 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3814 ms]
+

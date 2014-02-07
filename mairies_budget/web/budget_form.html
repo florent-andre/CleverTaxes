@@ -48,7 +48,7 @@
       <div id="impotForm">
         <div class="entry">
           <label>Annee</label>
-          <input type="text" value="{{annee}}">
+          <input type="number" value="{{annee}}" step ="1" min = "2010">
        </div>
       <div> 
      
@@ -59,7 +59,7 @@
             <input type="text" value="{{line.label}}" />
             
             <label>Montant</label>
-            <input type="text" value="{{line.amount}}"/>
+            <input  type="number" value="{{line.amount}}" step ="1000" min = "0"/>
         
           </li>
         
@@ -73,7 +73,8 @@
   
         <div class="submitarea">
           <input type="submit" value="Submit" on-click="{{submitForm}}">
-          <input type="reset"  value="Clear"  on-click="{{resetForm}}"> <br>    
+          <!--<input type="reset"  value="Clear"  on-click="{{resetForm}}">  -->  
+          <br> 
           <textarea disabled class="responsetext" value="{{serverResponse}}"></textarea>
           
         </div>

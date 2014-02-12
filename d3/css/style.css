@@ -1,0 +1,26 @@
+text {
+    font: 10px sans-serif;
+}
+.background {
+    fill: none;
+    pointer-events: all;
+}
+#chart3 {
+    width: 600px;
+    height: 600px;
+    border: solid 1px #ccc;
+}
+#chart3 line {
+    fill: none;
+    stroke: #333;
+    shape-rendering: crispEdges;
+}
+.axis path, .axis line {
+    fill: none;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+.fisheye_area {
+    fill: #000;
+    opacity: .5;
+}

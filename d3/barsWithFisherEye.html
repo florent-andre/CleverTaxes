@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+ 
+
+    <title>Loading external Data with D3.js</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/d3.v3.min.js" charset="utf-8"></script>
+   <script src="http://bost.ocks.org/mike/fisheye/fisheye.js?0.0.3"></script>
+    <!--<script src="fisheye.js" charset="utf-8"></script>-->
+
+</head>
+
+<body>
+	<p id="chart3">
+		<script type="text/javascript">
+	//d3.json("js/data.json", function (data){
+	(function chart3() {
+		d3.json("js/data.json", function (data){
+
+
+		
+    var width = 600,
+        height = 600,
+        xSteps = d3.range(10, width, 30),
+        ySteps = d3.range(10, height, 30);
+
+    var xFisheye = d3.fisheye.scale(d3.scale.identity).domain([0, width]).focus(360),
+        yFisheye = d3.fisheye.scale(d3.scale.identity).domain([0, height]).focus(90);
+
+     var max_val = d3.max(data, function(d) { return d.amount; })
+    		//console.log (max_val);
+    		var v_scale = width / max_val;
+    		var data_counts = data.length;
+    		console.log (data_counts);
+    		var bar_height = height / data_counts;
+    		console.log (bar_height);
+			var widthScale = d3.scale.linear()
+    					.domain ([0,max_val])
+    					.range ([0, width]);
+
+    		var color = d3.scale.linear()
+    				.domain([0,max_val])
+    				.range(["red", "blue"]);
+    var y = d3.time.scale()
+                    .range([0, height]);
+            yAxis = d3.svg.axis().scale(y).orient("left");
+
+            var x = d3.scale.linear()
+                    .domain([0, max_val])
+                    .range ([0, width]);
+                    
+            xAxis = d3.svg.axis()
+                    .scale(x)
+                    .ticks(5);
+
+    var svg = d3.select("#chart3").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", "translate(-.5,-.5)");
+       //les axes
+    svg.append("g")
+				.attr("class", "xaxis")
+    			.attr("transform", "translate(10,550)")
+    			.call(xAxis);
+
+    svg.append("g")
+        		.attr("class", "yaxis")
+        		.attr("transform", "translate(9,0)")
+        		.call(yAxis);
+        //les bars
+    svg.selectAll ("rect")
+  				.data (data)
+  				.enter() //append a rect foreach data element		
+					.append ("rect")
+					.attr ("width", function (d){ return widthScale(d.amount);})
+					.attr ("height", bar_height)
+					.attr ("y", function (d, i) { return i * 40; })
+					.attr ("fill", function (d) {return color(d.amount)})
+					.attr("transform", "translate(10,0)")    
+        //le text
+    svg.selectAll ("text")
+  				.data (data)
+  				.enter() 	
+					.append ("text")
+					.attr ("y", function (d, i) { return i * 40 + (bar_height / 2); })
+					.text (function (d){ return d.label ;})
+					.attr("transform", "translate(10,0)")
+					.attr ("class", "label");
+
+    svg.append("rect")
+        .attr("class", "background")
+        .attr("width", width)
+        .attr("height", height);
+
+    var xLine = svg.selectAll(".x")
+        .data(xSteps)
+        .enter().append("line")
+        .attr("class", "x")
+        .attr("y2", height);
+
+    var yLine = svg.selectAll(".y")
+        .data(ySteps)
+        .enter().append("line")
+        .attr("class", "y")
+        .attr("x2", width);
+
+    var bg = svg.append("rect")
+        .attr("class", "background")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", width)
+        .attr("height", height)
+
+    var fe_area_x = svg.append('rect')
+        .attr('x', 0)
+        .attr('y', 90)
+        .attr('width', height)
+        .attr('height', 20)
+        .attr('class', 'fisheye_area')
+    var fe_area_y = svg.append('rect')
+        .attr('x', 360)
+        .attr('y', 0)
+        .attr('width', 20)
+        .attr('height', height)
+        .attr('class', 'fisheye_area')
+
+    var dragged = false;
+
+    var mag = svg.append('circle')
+        .attr('cx', 360)
+        .attr('cy', 90)
+        .attr('r', 20)
+        .attr('transform', 'translate(10, 10)')
+        .on("mousedown", function () {
+        dragged = true;
+    })
+        .on("mouseup", function () {
+        dragged = false;
+        var mouse = d3.mouse(this)
+        moveClosestLines(mouse[0]+20, mouse[1]+20);
+    })
+
+    svg.on("mousemove", function () {
+        if (dragged) {
+            var mouse = d3.mouse(this);
+            xFisheye.focus(mouse[0]);
+            yFisheye.focus(mouse[1]);
+            startFishEye(mouse[0], mouse[1]);
+        }
+    });
+
+    function startFishEye(x, y) {
+
+        mag.attr('cx', x);
+        mag.attr('cy', y);
+        fe_area_x.attr('y', y);
+        fe_area_y.attr('x', x);
+        xLine.attr("x1", xFisheye)
+            .attr("x2", xFisheye);
+        yLine.attr("y1", yFisheye).attr("y2", yFisheye);
+    }
+
+    function moveClosestLines(x, y) {
+        var minDistX = Number.MAX_VALUE;
+        var minIndexX = 0;
+        var minDistY = Number.MAX_VALUE;
+        var minIndexY = 0;
+
+        xLine.attr("x1", function (d, i) {
+            if (minDistX > Math.abs(x - d)) {
+                minDistX = Math.abs(x - d);
+                minIndexX = i;
+            }
+            return xFisheye(d);
+        });
+        xLine.filter(function (d, i) {
+            if (i == minIndexX) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+            .attr("x1", x)
+            .attr("x2", x);
+        
+        yLine.attr("y1", function (d, i) {
+            if (minDistY > Math.abs(y - d)) {
+                minDistY = Math.abs(y - d);
+                minIndexY = i;
+            }
+            return yFisheye(d);
+        });
+        yLine.filter(function (d, i) {
+            if (i == minIndexY) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+            .attr("y1", y)
+            .attr("y2", y);
+    }
+
+    startFishEye(360, 90);
+
+});
+})();
+
+</script>
+</body>
+<!-- https://github.com/d3/d3-plugins/tree/master/fisheye
+    http://bost.ocks.org/mike/fisheye/
+-->
+</html>

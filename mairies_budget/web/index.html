@@ -25,6 +25,7 @@
   <script>
   var mairieSelect = document.querySelector('mairie-select');
            mairieSelect.addEventListener('mairie-select', function(e) {
+             console.log(e.type);
              var obj = document.getElementById("container");
              obj.style.display = 'inline';      
       });

@@ -1524,3 +1524,53 @@ build.dart --machine --changed=web/budget_form.dart
 
 build.dart finished [3513 ms]
 
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4147 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3635 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3560 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3810 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3708 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3739 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3602 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3804 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3329 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3979 ms]
+

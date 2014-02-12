@@ -14,8 +14,9 @@ import 'package:logging_handlers/logging_handlers_shared.dart';
       @observable String texte = 'DuTextePourle fun';
       MairieSelect.created() : super.created();
      
+      
       void showForm() {
-        this.fire('mairie-select');
+        this.asyncFire('mairie-select');
       }
      
     

@@ -1,0 +1,30 @@
+  
+<polymer-element name="mairie-select">
+    <style>
+      .entry {
+      
+    </style>
+    <template>
+      <label>Mairie</label>
+      <select id="mairiesList" selectedIndex ="{{selected}}" value ="{{value}}" >
+          <option  template repeat="{{name in mairiesList}}">
+              {{name}}
+          </option>
+      </select>
+     <div> 
+      <template if="{{selected == 5}}"> <!-- Autre -->
+        <p>Votre mairie n'existe pas ? Connaissez-vous les valeurs d'une annee precedente?</p>
+        <button on-click="{{showForm}}">Oui</button>       
+      </template>
+      
+       <template if="{{selected != 5}}">
+        <button on-click="{{next}}">Suivant</button>
+      </template>
+   
+    </div>
+    </template>
+    
+    
+    <script type="application/dart" src="mairie_select.dart">
+    </script>
+  </polymer-element>

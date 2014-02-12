@@ -19,11 +19,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
+   <parent>
 	<groupId>eu.lh</groupId>
 	<artifactId>eu.lh.parent</artifactId>
 	<version>0.0.2-incubating-SNAPSHOT</version>
-  </parent>
+  </parent> 
 
   <groupId>eu.ooffee</groupId>
   <artifactId>clevertaxes.endpoint</artifactId>

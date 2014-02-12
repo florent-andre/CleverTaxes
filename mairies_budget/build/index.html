@@ -6,8 +6,8 @@
     <title>Saisie des budgets des mairies</title>
    
     
-     <script src="index.html_bootstrap.dart.js"></script>
-     
+    <script src="index.html_bootstrap.dart.js"></script>
+    
      
   </head>
   <body>   
@@ -49,7 +49,7 @@
       }
      li {
       list-style-type : none;
-      liste-style-image : url(ton-image);
+    
       }
     </style>
     <template>
@@ -57,7 +57,7 @@
       <div id="impotForm">
         <div class="entry">
           <label>Annee</label>
-          <input type="text" value="{{annee}}">
+          <input type="number" value="{{annee}}" step="1" min="2010">
        </div>
       <div> 
      
@@ -68,7 +68,7 @@
             <input type="text" value="{{line.label}}">
             
             <label>Montant</label>
-            <input type="text" value="{{line.amount}}">
+            <input type="number" value="{{line.amount}}" step="1000" min="0">
         
           </li>
         
@@ -82,7 +82,8 @@
   
         <div class="submitarea">
           <input type="submit" value="Submit" on-click="{{submitForm}}">
-          <input type="reset" value="Clear" on-click="{{resetForm}}"> <br>    
+          <!--<input type="reset"  value="Clear"  on-click="{{resetForm}}">  -->  
+          <br> 
           <textarea disabled="" class="responsetext" value="{{serverResponse}}"></textarea>
           
         </div>
@@ -106,13 +107,11 @@
           </select>
     </div>
     <div class="entry">
-          <label>Votre mairie n'existe pas ? Connaissez-vous les valeurs d'une annee precedente ?</label><br>
-          <input on-change="ouiNon" name="ouiNon" id="oui" type="radio" value="oui">Oui
+          <label>Votre mairie n'existe pas ? Connaissez-vous les valeurs d'une annee precedente ?</label>
+          <!--<input onchange ="ouiNon" name="ouiNon" id ="oui" type="radio" value="oui">Oui</input>-->
     </div>
     <div class="container" disabled="">
-      <budget-form></budget-form>
-      <h2>SEPARATION</h2>
-      <form is="budget-form" id="budget-form"></form>
+         <form is="budget-form" id="budget-form"></form>
     </div>
   
   

@@ -463,3 +463,1064 @@ build.dart --machine --changed=web/budget_form.dart
 [{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
 build.dart finished [3814 ms]
 
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (br). Treated as br element.","line":22,"charStart":623,"charEnd":628}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Unexpected end tag (input). Ignored.","line":23,"charStart":717,"charEnd":725}}]
+[{"method":"warning","params":{"file":"web/index1.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":23,"charStart":646,"charEnd":664}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [9516 ms]
+
+---
+build.dart --machine --removed=web/index1.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [17536 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [9471 ms]
+
+---
+build.dart --machine --changed=build/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [19579 ms]
+
+---
+build.dart --machine --changed=build/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [10497 ms]
+
+---
+build.dart --machine --changed=build/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [7516 ms]
+
+---
+build.dart --machine --removed=build/index1.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [4202 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3323 ms]
+
+---
+build.dart --machine --removed=web/index.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [6215 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3460 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3639 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3382 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3823 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3731 ms]
+
+---
+build.dart --machine --removed=build/index.dart.js --removed=build/index.dart.js.map --removed=build/index.dart...
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3700 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [4758 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3581 ms]
+
+---
+build.dart --machine --removed=build/index.html --removed=build/index.html_bootstrap.dart.js --removed=build/in...
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [4020 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Event handler \"onchange\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [6897 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Event handler \"onchange\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [8276 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Event handler \"onchange\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [9897 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Event handler \"onchange\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3626 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4445 ms]
+
+---
+build.dart --machine --removed=build/index.html --removed=build/index.html_bootstrap.dart.js --removed=build/in...
+
+build.dart finished [4596 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+
+build.dart finished [9916 ms]
+
+---
+build.dart --machine --removed=web/slambookserver.dart
+
+build.dart finished [3525 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3387 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3496 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3628 ms]
+
+---
+build.dart --machine --removed=build/index.html --removed=build/index.html_bootstrap.dart.js --removed=build/in...
+
+build.dart finished [4593 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+
+build.dart finished [9090 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3989 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3701 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3227 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [6161 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [9072 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [5232 ms]
+
+---
+build.dart --machine --removed=build/index.html --removed=build/index.html_bootstrap.dart.js --removed=build/in...
+
+build.dart finished [5104 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [8873 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+
+build.dart finished [11634 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [3191 ms]
+
+---
+build.dart --machine --removed=build/index.html --removed=build/index.html_bootstrap.dart.js --removed=build/in...
+
+build.dart finished [4427 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+
+build.dart finished [5709 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+
+build.dart finished [10270 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [4385 ms]
+
+---
+build.dart --machine --removed=build/index.html --removed=build/index.html_bootstrap.dart.js --removed=build/in...
+
+build.dart finished [14264 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+
+build.dart finished [4778 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [6022 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [5382 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3239 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3455 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [4013 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":30,"charStart":894,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":30,"charStart":823,"charEnd":841}}]
+build.dart finished [3606 ms]
+
+---
+build.dart --machine --changed=web/index.dart --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":24,"charStart":703,"charEnd":711}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":24,"charStart":632,"charEnd":650}}]
+build.dart finished [3658 ms]
+
+---
+build.dart --machine --removed=web/index.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":24,"charStart":703,"charEnd":711}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":24,"charStart":632,"charEnd":650}}]
+build.dart finished [5564 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (input). Ignored.","line":24,"charStart":703,"charEnd":711}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Inline event handlers are only supported inside declarations of <polymer-element>.","line":24,"charStart":632,"charEnd":650}}]
+build.dart finished [4195 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [6876 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4560 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [5885 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [4029 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3622 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [6268 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [5800 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [4656 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [5228 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [4069 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [5221 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3604 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [6346 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"End tag (div) seen too early. Expected other end tag.","line":23,"charStart":546,"charEnd":552}}]
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"End tag (div) seen too early. Expected other end tag.","line":23,"charStart":546,"charEnd":552}}]
+build.dart finished [12378 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"End tag (div) seen too early. Expected other end tag.","line":25,"charStart":652,"charEnd":658}}]
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"End tag (div) seen too early. Expected other end tag.","line":25,"charStart":652,"charEnd":658}}]
+build.dart finished [4624 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3481 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3605 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [4491 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3726 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3355 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4063 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [7510 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [14075 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [4764 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3651 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3595 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3584 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [6760 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3897 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3796 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [4002 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"definition for Polymer element with tag name \"budget-form\" not found.","line":23,"charStart":735,"charEnd":778}}]
+build.dart finished [21857 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"Only one \"application/dart\" script tag per document is allowed.","line":41,"charStart":1184,"charEnd":1241}}]
+build.dart finished [5521 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"Only one \"application/dart\" script tag per document is allowed.","line":41,"charStart":1184,"charEnd":1241}}]
+build.dart finished [3420 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"Only one \"application/dart\" script tag per document is allowed.","line":41,"charStart":1184,"charEnd":1241}}]
+build.dart finished [5654 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"definition for Polymer element with tag name \"budget-form\" not found.","line":20,"charStart":702,"charEnd":745}}]
+build.dart finished [3998 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3318 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4322 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [5354 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3649 ms]
+
+---
+build.dart --machine --changed=bower_components/platform/AUTHORS --changed=bower_components/platform/CONTRIBUTI...
+
+build.dart finished [5995 ms]
+
+---
+build.dart --machine --changed=bower_components/platform/README.md --changed=bower_components/platform/bower.js...
+
+build.dart finished [3330 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [5238 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":26,"charStart":729,"charEnd":737}}]
+build.dart finished [4294 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":26,"charStart":729,"charEnd":737}}]
+build.dart finished [3549 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":26,"charStart":729,"charEnd":737}}]
+build.dart finished [3641 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":26,"charStart":729,"charEnd":737}}]
+build.dart finished [3692 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [4418 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3594 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3924 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3526 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [5111 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [4702 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3641 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3772 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3807 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [10266 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [14380 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [4324 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [5606 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4550 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3433 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4770 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [4443 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3816 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3496 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [5203 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3885 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [4123 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3818 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4007 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [6584 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [7523 ms]
+
+---
+build.dart --machine --removed=bower_components/platform/AUTHORS --removed=bower_components/platform/CONTRIBUTI...
+
+build.dart finished [5803 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [5090 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [7793 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3610 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3907 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [4118 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3674 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [3848 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [4005 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3926 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3730 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3736 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":754,"charEnd":762}}]
+build.dart finished [3691 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":754,"charEnd":762}}]
+build.dart finished [3767 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":28,"charStart":759,"charEnd":767}}]
+build.dart finished [3828 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":28,"charStart":756,"charEnd":764}}]
+build.dart finished [3988 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":31,"charStart":837,"charEnd":845}}]
+build.dart finished [4078 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"Unexpected end of file. Expected end tag (script).","line":29,"charStart":761,"charEnd":818}}]
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"Expected closing tag. Unexpected end of file.","line":2,"charStart":3,"charEnd":41}}]
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"script tag has \"src\" attribute and also has script text.","line":29,"charStart":761,"charEnd":818}}]
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"Unexpected end of file. Expected end tag (script).","line":29,"charStart":761,"charEnd":818}}]
+[{"method":"warning","params":{"file":"web/mairie_select.html","message":"Expected closing tag. Unexpected end of file.","line":2,"charStart":3,"charEnd":41}}]
+build.dart finished [3885 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [4199 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3551 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4142 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3735 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4954 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3575 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3677 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3601 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3595 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3690 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4097 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3615 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4796 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3368 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3897 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3710 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.dart
+
+build.dart finished [9752 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4546 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3705 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3553 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4455 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3662 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3742 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3582 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3846 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3648 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4074 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4464 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4217 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3627 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [4266 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3940 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3476 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3388 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3764 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3492 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3744 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3518 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3618 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4670 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3583 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3569 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3571 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3783 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3625 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3605 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3664 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3639 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4055 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3543 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3637 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3662 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3656 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3656 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4531 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3696 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3592 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3513 ms]
+

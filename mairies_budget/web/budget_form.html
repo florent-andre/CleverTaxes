@@ -40,15 +40,22 @@
       }
      li {
       list-style-type : none;
-      liste-style-image : url(ton-image);
+    
       }
+      :required {
+   border: 2px dotted orange;
+    }
     </style>
     <template>
       
       <div id="impotForm">
         <div class="entry">
+          <label>Mairie</label>
+          <input type="text" placeholder="Entrez une mairie" value="{{mairie}}" required>
+       </div>
+        <div class="entry">
           <label>Annee</label>
-          <input type="number" value="{{annee}}" step ="1" min = "2010">
+          <input type="number" placeholder="Entrez une annee" value={{annee}} step ="1" min = "2010" required>
        </div>
       <div> 
      

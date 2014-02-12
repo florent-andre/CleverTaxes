@@ -14,7 +14,8 @@ class FormBudget extends FormElement with Polymer, Observable {
   FormBudget.created() : super.created();
   
   @observable List  lines = toObservable([budgetFactory.getNewBudgetLine()]);
-  @observable String annee = "";
+  @observable int annee;
+  @observable String mairie = "";
   @observable String serverResponse = '';
   
   HttpRequest request;
@@ -26,12 +27,22 @@ class FormBudget extends FormElement with Polymer, Observable {
   void submitForm(Event e, var detail, Node target) {
     e.preventDefault(); // Don't do the default submit.
     startQuickLogging();
-    //calcul percent
-    var tot = 0;
-   BudgetLinesAsJsonData = "[";
+   // TODO : Add control input element
+    
    
-    lines.forEach((budgetLine bl){ 
-      if (int.parse(bl.amount) != 0)
+    if (!this.checkValidity()) {
+      info ( this.checkValidity().toString());
+      return;
+    } 
+    
+    
+   BudgetLinesAsJsonData = "[";
+  
+   //calcul percent
+   var tot = 0;
+    lines.forEach((budgetLine bl){
+      if (!(bl.amount == null))
+      //if (int.parse(bl.amount) != 0)
             tot+=int.parse(bl.amount);
       });
     if (tot != 0)
@@ -40,8 +51,11 @@ class FormBudget extends FormElement with Polymer, Observable {
       lines.forEach((budgetLine bl) =>  BudgetLinesAsJsonData += bl.toJson() );
       
       BudgetLinesAsJsonData += "]";
-    info(BudgetLinesAsJsonData); // Valid JSON
-  
+      //multi-line string
+      serverResponse = '''annee: '$annee', mairie : '$mairie'  
+        $BudgetLinesAsJsonData ''';
+   // info(BudgetLinesAsJsonData); // Valid JSON
+  /*
   
     request = new HttpRequest();
     
@@ -52,10 +66,25 @@ class FormBudget extends FormElement with Polymer, Observable {
     request.open('POST', url);
  
    request.send(BudgetLinesAsJsonData);
-  
+  */
   }
   
- 
+  bool  checkValidity(){
+    info (this.mairie);
+    if (this.mairie == null)
+      return false;
+   /*
+    if ((annee == null) || !(annee.isNaN) )
+      return false;
+    lines.forEach((budgetLine bl){
+      if (!bl.amount.isNaN)
+        return false;
+      }); */
+    return true;
+  }
+  void hideForm(Event e, var detail, Node target) {
+    $['container'].style.display = 'none';
+  }
   void onData(_) {
     if (request.readyState == HttpRequest.DONE &&
         request.status == 200) {

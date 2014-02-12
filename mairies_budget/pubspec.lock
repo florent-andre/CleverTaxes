@@ -37,14 +37,6 @@ packages:
     description: intl
     source: hosted
     version: "0.9.1"
-  json:
-    description: json
-    source: hosted
-    version: "0.9.1"
-  json_object:
-    description: json_object
-    source: hosted
-    version: "1.0.18+2"
   logging:
     description: logging
     source: hosted

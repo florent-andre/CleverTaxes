@@ -6,32 +6,29 @@
     <title>Saisie des budgets des mairies</title>
    
     <link rel="import" href="budget_form.html">
+    <link rel="import" href="mairie_select.html">
     <script type="application/dart" >
-     	export 'package:polymer/init.dart';
+      export 'package:polymer/init.dart';
     </script>
     <script src="packages/browser/dart.js"></script>
      
   </head>
   <body>
    
-    <h1>Formulaire</h1>
-    
-    <div class="entry">
-          <label>Mairie</label>
-          <select selectedIndex="{{theData['mairie']}}">
-            <option>Paris</option>
-            <option>Nanterre</option>
-            <option>Neuilly-sur-seine</option>
-            <option>Rueil-malmaison</option>
-          </select>
-    </div>
-    <div class="entry">
-          <label>Votre mairie n'existe pas ? Connaissez-vous les valeurs d'une annee precedente ?</label>
-          <input on-change="ouiNon" name="ouiNon" id ="oui" type="radio" value="oui">Oui</input>
-    </div>
-    <div class="container" disabled>
-         <form is="budget-form" id = "budget-form" ></form>
+    <div id= "selectMairie" class="entry">
+      <mairie-select></mairie-select>
     </div>
   
+    <div id="container" style="display:none">
+       <form is="budget-form" id = "budget-form" ></form>
+    </div>
+  <script>
+  var mairieSelect = document.querySelector('mairie-select');
+           mairieSelect.addEventListener('mairie-select', function(e) {
+             var obj = document.getElementById("container");
+             obj.style.display = 'inline';      
+      });
+           
+ </script>
   </body>
 </html>

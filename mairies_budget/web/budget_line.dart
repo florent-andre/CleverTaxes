@@ -1,5 +1,5 @@
 
-import 'package:json_object/json_object.dart';
+
 
 class budgetLine   {
   
@@ -14,24 +14,17 @@ class budgetLine   {
 
   budgetLine(id) : this._id = id;
  String toString(){
-   return "id=$_id ; label = $label  ; amonut=$amount ; percent = $percent";
+   return "id=$_id ; label = '$label'  ; amount=$amount ; percent = $percent";
  }
  
  String toJson(){
-   return "{id : $_id, label : $label , amonut : $amount ,percent : $percent },";
+   return "{id : $_id, label : '$label' , amount : $amount ,percent : $percent },";
  }
+ /*
 void reset(){
   this.label = "";
   }
- void main(){
-   var b = new budgetLine(8);
-   b.label = "Mr Smith";
-   b.amount = "30";
-  
-   var json = objectToJson(b);  // Here is the magic
-
-   print(json); // Valid JSON
- }
+*/ 
   
 }
 

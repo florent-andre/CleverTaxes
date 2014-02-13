@@ -20,11 +20,21 @@ class budgetLine   {
  String toJson(){
    return "{id : $_id, label : '$label' , amount : $amount ,percent : $percent },";
  }
- /*
-void reset(){
-  this.label = "";
-  }
-*/ 
+ 
+ bool isEmpty (){
+   if ((label == null) || (amount == null))
+     return true;
+   else if ((label.trim().length == 0) || (amount.trim().length == 0)) 
+     return true;
+   else return false;
+ }
+ 
+ void reset(){
+   label = "";
+   amount = "";
+   percent = 0.0;
+ }
+ 
   
 }
 

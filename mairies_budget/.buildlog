@@ -1574,3 +1574,330 @@ build.dart --machine --changed=web/index.html
 
 build.dart finished [3979 ms]
 
+---
+build.dart --machine --removed=build/index.html --removed=build/index.html_bootstrap.dart.js --removed=build/in...
+
+build.dart finished [3847 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+
+build.dart finished [5993 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [5363 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4592 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [6060 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3258 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3409 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3742 ms]
+
+---
+build.dart --machine --changed=web/normalize.css
+
+build.dart finished [5689 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3661 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [5798 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3731 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3584 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3789 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3535 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3790 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [7835 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [4094 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"End tag (div) seen too early. Expected other end tag.","line":71,"charStart":1769,"charEnd":1775}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"End tag (div) seen too early. Expected other end tag.","line":86,"charStart":2311,"charEnd":2317}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"Unexpected end tag (template). Ignored.","line":87,"charStart":2322,"charEnd":2333}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"Unexpected end tag (polymer-element). Ignored.","line":91,"charStart":2417,"charEnd":2435}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"Unexpected end tag (polymer-element). Missing end tag (body).","line":92,"charStart":2436,"charEnd":2443}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"End tag (div) seen too early. Expected other end tag.","line":71,"charStart":1769,"charEnd":1775}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"End tag (div) seen too early. Expected other end tag.","line":86,"charStart":2311,"charEnd":2317}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"Unexpected end tag (template). Ignored.","line":87,"charStart":2322,"charEnd":2333}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"Unexpected end tag (polymer-element). Ignored.","line":91,"charStart":2417,"charEnd":2435}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"Unexpected end tag (polymer-element). Missing end tag (body).","line":92,"charStart":2436,"charEnd":2443}}]
+build.dart finished [4509 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3660 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3416 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3752 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"Unexpected end tag (divdiv). Ignored.","line":56,"charStart":1721,"charEnd":1730}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"End tag (fieldset) seen too early. Expected other end tag.","line":63,"charStart":1910,"charEnd":1921}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"Unexpected end tag (divdiv). Ignored.","line":56,"charStart":1721,"charEnd":1730}}]
+[{"method":"warning","params":{"file":"web/budget_form.html","message":"End tag (fieldset) seen too early. Expected other end tag.","line":63,"charStart":1910,"charEnd":1921}}]
+build.dart finished [3611 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3728 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3549 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3912 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3694 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [4998 ms]
+
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3872 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3998 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [11262 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4918 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4075 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3593 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3604 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3601 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3524 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3565 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3374 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3583 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [4141 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3272 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3534 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3581 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3608 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3643 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3283 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3625 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3812 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3551 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3697 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3590 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3575 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3614 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3524 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3297 ms]
+
+---
+build.dart --machine --changed=web/budget_line.dart
+
+build.dart finished [3595 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3565 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3275 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3579 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3794 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3665 ms]
+
+---
+build.dart --machine --changed=web/budget_form.dart
+
+build.dart finished [3619 ms]
+

@@ -5,15 +5,17 @@
       
     </style>
     <template>
+    <p>
       <label>Mairie</label>
       <select id="mairiesList" selectedIndex ="{{selected}}" value ="{{value}}" >
           <option  template repeat="{{name in mairiesList}}">
               {{name}}
           </option>
       </select>
-     <div> 
+     </p> 
+     <p> 
       <template if="{{selected == 5}}"> <!-- Autre -->
-        <p>Votre mairie n'existe pas ? Connaissez-vous les valeurs d'une annee precedente?</p>
+        Votre mairie n'existe pas ? Connaissez-vous les valeurs d'une annee precedente?
         <button on-click="{{showForm}}">Oui</button>       
       </template>
       
@@ -21,7 +23,7 @@
         <button on-click="{{next}}">Suivant</button>
       </template>
    
-    </div>
+    </p>
     </template>
     
     

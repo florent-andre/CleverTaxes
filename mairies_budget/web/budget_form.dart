@@ -14,7 +14,7 @@ class FormBudget extends FormElement with Polymer, Observable {
   FormBudget.created() : super.created();
   
   @observable List  lines = toObservable([budgetFactory.getNewBudgetLine()]);
-  @observable int annee;
+  @observable var annee;
   @observable String mairie = "";
   @observable String serverResponse = '';
   
@@ -27,36 +27,44 @@ class FormBudget extends FormElement with Polymer, Observable {
   void submitForm(Event e, var detail, Node target) {
     e.preventDefault(); // Don't do the default submit.
     startQuickLogging();
-   // TODO : Add control input element
     
+   // TODO : Add control input element
    
     if (!this.checkValidity()) {
-      info ( this.checkValidity().toString());
+      info (this.checkValidity().toString());
       return;
     } 
     
-    
-   BudgetLinesAsJsonData = "[";
-  
+    info (lines.length.toString());
+   //remove blank line
+    lines.removeWhere((budgetLine bl) => bl.isEmpty() == true);
+    info (lines.length.toString());
+   
    //calcul percent
-   var tot = 0;
+    var tot = 0;
     lines.forEach((budgetLine bl){
-      if (!(bl.amount == null))
+      if (bl.amount != null)
       //if (int.parse(bl.amount) != 0)
             tot+=int.parse(bl.amount);
       });
-    if (tot != 0)
-      lines.forEach((budgetLine bl) => bl.percent = int.parse(bl.amount)/tot);
-    
+    if (tot != 0){
+      lines.forEach((budgetLine bl){
+        if (bl.amount != null)
+          bl.percent = int.parse(bl.amount)/tot;
+      });     
+    }
+  //Construire les donnees en format JSON 
+      BudgetLinesAsJsonData = "[";
+      
       lines.forEach((budgetLine bl) =>  BudgetLinesAsJsonData += bl.toJson() );
       
       BudgetLinesAsJsonData += "]";
-      //multi-line string
-      serverResponse = '''annee: '$annee', mairie : '$mairie'  
+      //''' multi-line string
+      serverResponse = ''' [annee: '$annee', mairie : '$mairie'], 
         $BudgetLinesAsJsonData ''';
    // info(BudgetLinesAsJsonData); // Valid JSON
-  /*
   
+    /*
     request = new HttpRequest();
     
     request.onReadyStateChange.listen(onData); 
@@ -70,12 +78,14 @@ class FormBudget extends FormElement with Polymer, Observable {
   }
   
   bool  checkValidity(){
-    info (this.mairie);
-    if (this.mairie == null)
+    /* 
+    if ((this.mairie == null) || (this.mairie.length == 0)){
       return false;
-   /*
-    if ((annee == null) || !(annee.isNaN) )
+    }
+    
+    if ((this.annee == null) || (this.annee == 0))
       return false;
+  
     lines.forEach((budgetLine bl){
       if (!bl.amount.isNaN)
         return false;
@@ -101,12 +111,17 @@ class FormBudget extends FormElement with Polymer, Observable {
   
   
   void resetForm(Event e, var detail, Node target) {
+    startQuickLogging();
     e.preventDefault(); // Default behavior clears elements,
                         // but bound values don't follow
                         // so have to do this explicitly.
-    lines.forEach((InputElement e) => e.text = "");
-      
-    serverResponse = 'Data cleared.';
+    lines.removeWhere((budgetLine bl) => bl.isEmpty() == true);
+    lines.forEach((budgetLine bl){
+      bl.reset();
+    });
+    this.annee = "";
+    this.mairie = "";
+
   }
  
   String _slambookAsJsonData() {

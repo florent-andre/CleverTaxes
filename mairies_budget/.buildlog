@@ -1901,3 +1901,48 @@ build.dart --machine --changed=web/budget_form.dart
 
 build.dart finished [3619 ms]
 
+---
+build.dart --machine --changed=web/mairie_select.html
+
+build.dart finished [3573 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+
+build.dart finished [7746 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [5663 ms]
+
+---
+build.dart --machine --changed=web/hela.css
+
+build.dart finished [3763 ms]
+
+---
+build.dart --machine --changed=web/style.css --removed=web/hela.css
+
+build.dart finished [3480 ms]
+
+---
+build.dart --machine --changed=web/style.css
+
+build.dart finished [3497 ms]
+
+---
+build.dart --machine --changed=web/budget_form.html
+
+build.dart finished [3492 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [3539 ms]
+
+---
+build.dart --machine --changed=build/index.html --changed=build/index.html_bootstrap.dart.js --changed=build/in...
+
+build.dart finished [10744 ms]
+

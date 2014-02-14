@@ -6,6 +6,7 @@
     <title>Saisie des budgets des mairies</title>
    
     
+    <link rel="stylesheet" href="normalize.css" media="screen">
     
     <script src="index.html_bootstrap.dart.js"></script>
     
@@ -13,109 +14,64 @@
   </head>
   <body>   
 <polymer-element name="budget-form" extends="form">
-    <style>
-      .entry {
-        float: left;
-        padding: 3px 3px 3px 3px;
-        width: 100%;
-      }
-      
-      .entry label {
-        display: inline-block;
-        width: 150px;
-        text-align: right;
-        vertical-align: middle;
-      }
-      
-      label.andrews {
-        width:auto;
-      }
-      
-      .submitarea {
-        padding: 10px 10px 10px 10px;
-        margin: 10px 10px 10px 10px;
-        border-style: solid;
-        border-width: 1px;
-        border-color: SlateBlue;
-        clear: left;
-      }
-     .responsetext {
-        padding: 5px 10px 10px 10px;
-        margin: 10px 10px 10px 10px;
-        clear: left;
-        background-color: WhiteSmoke;
-        width: 90%;
-        height: 70px;
-        resize: none;
-      }
-     li {
-      list-style-type : none;
-    
-      }
-      :required {
-   border: 2px dotted orange;
-    }
-    </style>
+   
     <template>
-      
-      <div id="impotForm">
-        <div class="entry">
-          <label>Mairie</label>
-          <input type="text" placeholder="Entrez une mairie" value="{{mairie}}" required="">
-       </div>
-        <div class="entry">
-          <label>Annee</label>
-          <input type="number" placeholder="Entrez une annee" value="{{annee}}" step="1" min="2010" required="">
-       </div>
-      <div> 
-     
-       <ul id="lignes">
+     <fieldset>
+        <legend>
+              Votre mairie
+        </legend>
+        <p> 
+          <label for="mairie">Mairie*</label>
+          <input type="text" name="mairie" id="mairie" placeholder="Le nom de votre mairie" value="{{mairie}}" autofocus="" required="">
+       </p>
+       <p> 
+          <label for="annee">Annee*</label>
+          <input type="number" name="annee" id="annee" placeholder="L'annee" value="{{annee}}" step="1" min="2010" required="">
+       </p>
         <template repeat="{{line in lines}}">
-          <li class="entry">
-            <label>Intitule</label>
+          <p>
+            <label>Intitule*</label>
             <input type="text" value="{{line.label}}">
             
-            <label>Montant</label>
+            <label>Montant*</label>
             <input type="number" value="{{line.amount}}" step="1000" min="0">
-        
-          </li>
-        
+          </p>
         </template>
-       
-        </ul>  
-       </div> 
-       <div class="entry">
+      
+       <p>
         <button on-click="{{addNewLigne}}">Ajouter new ligne</button>
+       </p>
+       <p id="errorMessage"></p>
+       <div class="submitarea">
+          <input type="submit" name="submit" value="Envoyer" on-click="{{submitForm}}">
+          <input type="reset" name="reset" value="Reinitialiser" on-click="{{resetForm}}"> 
        </div>
-  
-        <div class="submitarea">
-          <input type="submit" value="Submit" on-click="{{submitForm}}">
-          <!--<input type="reset"  value="Clear"  on-click="{{resetForm}}">  -->  
-          <br> 
+       <p>
+              *Champs obligatoires
+       </p>
+        <p> 
           <textarea disabled="" class="responsetext" value="{{serverResponse}}"></textarea>
-          
-        </div>
-      </div>
+        </p>  
+    </fieldset>   
     </template>
       
     
   </polymer-element>
 
 <polymer-element name="mairie-select">
-    <style>
-      .entry {
-      
-    </style>
+    
     <template>
+    <p>
       <label>Mairie</label>
       <select id="mairiesList" selectedindex="{{selected}}" value="{{value}}">
           <option template="" repeat="{{name in mairiesList}}">
               {{name}}
           </option>
       </select>
-     <div> 
+     </p> 
+     <p> 
       <template if="{{selected == 5}}"> <!-- Autre -->
-        <p>Votre mairie n'existe pas ? Connaissez-vous les valeurs d'une annee precedente?</p>
+        Votre mairie n'existe pas ? Connaissez-vous les valeurs d'une annee precedente?
         <button on-click="{{showForm}}">Oui</button>       
       </template>
       
@@ -123,21 +79,24 @@
         <button on-click="{{next}}">Suivant</button>
       </template>
    
-    </div>
+    </p>
     </template>
     
     
     
   </polymer-element>
 
-   
-    <div id="selectMairie" class="entry">
-      <mairie-select></mairie-select>
-    </div>
+    <h1>Mairie Budget</h1>
+    
+    <div id="container_id">
+      <div id="selectMairie" class="entry">
+        <mairie-select></mairie-select>
+      </div>
   
-    <div id="container" style="display:none">
+      <div id="container" style="display:none">
        <form is="budget-form" id="budget-form"></form>
-    </div>
+      </div>
+    </div>  
   <script>
   var mairieSelect = document.querySelector('mairie-select');
            mairieSelect.addEventListener('mairie-select', function(e) {
@@ -147,6 +106,7 @@
       });
            
  </script>
+ 
   
 
 </body></html>

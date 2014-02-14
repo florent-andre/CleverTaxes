@@ -15,14 +15,17 @@
      
   </head>
   <body>
-   
-    <div id= "selectMairie" class="entry">
-      <mairie-select></mairie-select>
-    </div>
+    <h1>Mairie Budget</h1>
+    
+    <div id="container_id">
+      <div id= "selectMairie" class="entry">
+        <mairie-select></mairie-select>
+      </div>
   
-    <div id="container" style="display:none">
+      <div id="container" style="display:none">
        <form is="budget-form" id = "budget-form" ></form>
-    </div>
+      </div>
+    </div>  
   <script>
   var mairieSelect = document.querySelector('mairie-select');
            mairieSelect.addEventListener('mairie-select', function(e) {

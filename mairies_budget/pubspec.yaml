@@ -1,6 +1,7 @@
 name: mairies_budget
 description: A sample web application
 dependencies:
+  path: any
   browser: any
   logging_handlers: any
   polymer: any

@@ -1,0 +1,45 @@
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 15px;
+}
+
+h1 {
+  color: #333;
+}
+
+#container_id {
+  width: 100%;
+  
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+ p {
+        color: #333333;
+        font-size: 90%;
+        line-height: 1.8;
+        margin-bottom: 1em;
+      }
+      .submitarea {
+        padding: 10px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: SlateBlue;
+        clear: left;
+      }
+     .responsetext {
+        padding: 5px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;
+        clear: left;
+        background-color: WhiteSmoke;
+        width: 90%;
+        height: 70px;
+        resize: none;
+
+

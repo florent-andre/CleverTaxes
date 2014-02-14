@@ -1946,3 +1946,8 @@ build.dart --machine --changed=build/index.html --changed=build/index.html_boots
 
 build.dart finished [10744 ms]
 
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [5241 ms]
+

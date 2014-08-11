@@ -4,7 +4,7 @@
 
 //function for the data transformation
 function prepareData(/*{data : d, source : "sourceName", referenceBudget : value}*/){
-	
+	console.log ("prepareData");
 	var args = Array.prototype.slice.call(arguments, 0);
 	
 	//prepare data structure and add functions.
@@ -103,7 +103,7 @@ function prepareData(/*{data : d, source : "sourceName", referenceBudget : value
  * Main function, manage the render of the graph
  */
 function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*boolean*/ modifiable){
-	
+	console.log ("print");
 	var data = [];
 	args.forEach(function(arr,i){
 		arr.data.reduce(function(p,c){
@@ -160,7 +160,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 	
 	
 	function displayBar(data,svg,printAxes){
-	
+	console.log ("displayBar");
 		function budgetId(d){
 			//@TODO : see why this number generation
 // 						return d.sourceID+d.amount/100000;
@@ -199,6 +199,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 		}
 		
 		function addModifyButtons(){
+			console.log ("addModifyButtons");
 			
 			var buttonHeight = 15,
 				buttonColor = "#D9534F",
@@ -210,6 +211,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 			;
 			
 			function dragmove(d) {
+				console.log ("dragmove");
 				function amountFromPosition(y){
 					return startValue + (starty - y - buttonHeight)*pixelValue;
 				}
@@ -345,6 +347,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 var ref, state, user, people;
 
 function graphRender(taxAmount){
+	console.log ("graphRender");
 	
 	var realReferenceBudget = "378440180000"; //378 billions
 	var userReferenceBudget = taxAmount;

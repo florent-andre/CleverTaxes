@@ -161,6 +161,23 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 	
 	function displayBar(data,svg,printAxes){
 	console.log ("displayBar");
+	var seen = []
+	var json = JSON.stringify(data, function(key, val) {
+   if (typeof val == "object") {
+        if (seen.indexOf(val) >= 0){
+        	return seen.push(val)
+        }
+        var i =0;
+       val.forEach(function(entry) {
+       	console.log("entry"+entry);
+    		console.log("entry"+i+ "= "+entry);
+    		i++;
+		});
+            return seen.push(val)
+    }
+    return val
+})
+	console.log( "json "+json);
 		function budgetId(d){
 			//@TODO : see why this number generation
 // 						return d.sourceID+d.amount/100000;
@@ -170,11 +187,12 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 		}
 		  
 		function getHeight(d){
+			console.log ("getHeight");
 			return height - y(d.amount);
 		}
 		
 		function printAxis(){
-			
+			console.log ("printAxis");
 			 svg.append("g")
 		      .attr("class", "x axis")
 		      .attr("transform", "translate(0," + height + ")")
@@ -394,6 +412,7 @@ $(document).ready(function(){
 		
 	//manage the diffents steps
 	function step1(taxAmount){
+		console.log ("step1");
 		graphRender(taxAmount);
 		hideShow(step0elems,step1elems);
 		
@@ -401,6 +420,7 @@ $(document).ready(function(){
 	}
 	
 	function step2(){
+		console.log ("step2");
 		hideShow(step1elems,step2elems);
 		
 		print( [state, user],false,true);
@@ -426,6 +446,7 @@ $(document).ready(function(){
 	var dfd = $.Deferred();
 	
 	$("#valid").click(function(){
+		console.log ("point de depart");
 		var taxAmount = +$("#taxamount").val();
 		
 		$.when(dfd.promise()).then(function(){

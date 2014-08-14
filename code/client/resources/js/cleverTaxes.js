@@ -169,8 +169,8 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
         }
         var i =0;
        val.forEach(function(entry) {
-       	console.log("entry"+entry);
-    		console.log("entry"+i+ "= "+entry);
+       	//console.log("entry"+entry);
+    		//console.log("entry"+i+ "= "+entry);
     		i++;
 		});
             return seen.push(val)
@@ -237,6 +237,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 				var amount = amountFromPosition(d3.event.y);
 				if(amount >= 0 && amount <= maxValue){
 					d3.select(this).attr("y", d.y = d3.event.y);
+					
 					d.amount = amount;
 				}
 		    	  
@@ -252,6 +253,21 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 					    })
 					    .on("drag", dragmove)
 						.on("dragend",function(d){
+							//console.log(user.data);
+							if(typeof(Storage) !== "undefined") {
+    							// Code for localStorage/sessionStorage.
+							} else {
+    							// Sorry! No Web Storage support..
+							}
+							var fs = require('fs');
+							var outputFilename = 'my.json';
+							fs.writeFile(outputFilename, JSON.stringify(user.data, null, 4), function(err) {
+    						if(err) {
+      						console.log(err);
+    						} else {
+      						console.log("JSON saved to " + outputFilename);
+    						}
+							}); 
 							displayBar(data,svg);
 						})
 						;
@@ -365,6 +381,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 var ref, state, user, people;
 
 function graphRender(taxAmount){
+	
 	console.log ("graphRender");
 	
 	var realReferenceBudget = "378440180000"; //378 billions

@@ -252,7 +252,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 					    	maxValue = d.amount + d.unassignied.amount;
 					    })
 					    .on("drag", dragmove)
-						.on("dragend",function(d){
+							.on("dragend",function(d){
 							console.log(user.data);
 							if(typeof(Storage) !== "undefined") {
     							// Code for localStorage/sessionStorage.
@@ -452,10 +452,94 @@ $(document).ready(function(){
 		console.log (user);
 		$stepButton.text("Share !")
 		$stepButton.click(function(){
+			//sauvegarde user couchDB: create a new document
+			saveDB(user);
+			console.log ("Fin saveDB");
+			//calculer la moyenne
 			alert("Sharing function comming soon !");
 		});
 	}
+	function saveDB(user){
+		console.log ("saveDB");
+		var referenceBudget = user.referenceBudget;
+		var label = user.data[0].label;
+		console.log (label);
+		console.log (referenceBudget);
 
+
+		//var doc = JSON.stringify(user.data);
+	
+		/*
+		//Construire les donnees en format JSON 
+      	var lines = "[";
+      	user.data.forEach(function(entry) {
+
+    		console.log(entry);
+    		lines += "{\"id\":" + entry.id+",";
+    		lines += "\"label\":\" "+ entry.label+ "\",";
+    		lines += "\"amount\":" + entry.amount+",";
+    		lines += "\"percentage\":" + entry.percentage+"},";
+		});
+		 	lines += "]";
+      	console.log(lines);
+      */
+      	var lines = new Array();
+      	user.data.forEach(function(entry) {
+      		var p      = {};
+      		p['id']   = entry.id;
+      		p['label']= entry.label;
+      		p['amount']= entry.amount;
+      		p['percentage']= entry.percentage;
+      		lines.push(p);
+
+      	});	
+      
+     	//console.log (lines);
+		var linesStr = JSON.stringify(lines);
+		console.log (linesStr);
+		
+		var doc = {
+			"name": "wiem4",
+			"lines": +linesStr,
+			"referenceBudget":+user.referenceBudget,	
+		};
+		/*[
+				{
+						"id": 1,
+						"label": "Économie ",
+						"amount": 200.89,
+						"percentage": 0.5444153439
+				},
+				{
+						"id": 2,
+						"label": "Écologie, développement et aménagement durables ",
+						"amount": 10017.07,
+						"percentage": 2.6500185185
+				},
+				{
+						"id": 3,
+						"label": "Ville et logement ",
+						"amount": 7593.21,
+						"percentage": 2.0087857143
+				},
+				{
+						"id": 4,
+						"label": "Travail et emploi ",
+						"amount": 12349.82,
+						"percentage": 3.2671481481
+				}
+				]
+			};*/
+
+			$.couch.db("graphs").saveDoc(doc, {
+				success: function(user) {
+				console.log(user);
+			},
+			error: function(status) {
+			console.log(status);
+		}
+		});
+	}
 	function step1local(){
 		alert("manage this !!")
 		//query to the endpoint

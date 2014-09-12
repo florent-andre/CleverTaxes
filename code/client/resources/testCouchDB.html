@@ -12,6 +12,8 @@
   </head>
   <body>
   <script>
+//pour lancer la page
+//http://127.0.0.1:5984/graphs/webpage/testCouchDB.html
  $.couch.urlPrefix = "http://127.0.0.1:5984";
  $.couch.db("graphs").allDesignDocs({
    success: function(data) {
@@ -23,13 +25,13 @@
  });
  //http://127.0.0.1:5984/_utils/database.html?graphs/_design/lines/_view/lines
  $.couch.db("graphs").view("lines/lines", {
-success: function(data) {
-console.log(data);
-},
-error: function(status) {
-console.log(status);
-},
-reduce: false
+    success: function(data) {
+      console.log(data);
+    },
+    error: function(status) {
+      console.log(status);
+    },
+    group: true //pour executer la fonction on reduce
 });
 /*
   //$.couch.info({

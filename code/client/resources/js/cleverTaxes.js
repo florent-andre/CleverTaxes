@@ -516,16 +516,24 @@ $(document).ready(function(){
 
 	function step3(){
 		//sauvegarde user couchDB: create a new document
-		saveDB(user);
-		console.log ("Fin saveDB");
+		var docId=saveDB(user);
+		console.log ("Fin saveDB"+ docId);
 		hideShow(step2elems,step3elems);
 		print( [state, user, people]);
 		console.log (user);
 		console.log (people);
 		$stepButton.text("Share !")
 		$stepButton.click(function(){
-			
+			//redirection
 			alert("Sharing function comming soon !");
+			//print( [state, user, people]);
+			var title = encodeURIComponent('My title');
+        	var summary = encodeURIComponent('My message');
+        	var url = encodeURIComponent('http://localhost/clevertaxes/code/client/');
+        	var image = encodeURIComponent('https://pics.mysite.com/mylogo.png');
+
+        	window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + title + '&amp;p[summary]=' + summary + '&amp;p[url]=' + url + '&amp;p[images][0]=' + image,'sharer','toolbar=0,status=0,width=548,height=325');
+   
 		});
 	}
 
@@ -634,21 +642,35 @@ $(document).ready(function(){
 		};		
 
 		var docIdUser;
+		
+		$.ajaxSetup({
+			async: false
+		});
 
-		result = $.couch.db("graphs").saveDoc(doc, {
-			success: function(user) {
-			var docIdUser = user.id;
+		var result = $.couch.db("graphs").saveDoc(doc);/*, {
 			
+			success: function(user) {
+			docIdUser = user.id;
+			
+		},
+		complete : function(user){
+			docIdUser = user.id;
 		},
 			error: function(status) {
 
 			console.log(status);
 		}
+		});*/
+		
+		result.then(function(d,i){
+			console.log(this);
+			console.log(docIdUser);
+			console.log(d);
+			docIdUser = d.id;
+			
 		});
-
-		console.log(result);
-		console.log(result.readyState);
-		console.log(result.responseText);
+		console.log(docIdUser);
+		return(docIdUser);
 
 		
 	}

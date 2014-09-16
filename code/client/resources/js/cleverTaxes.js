@@ -86,12 +86,14 @@ function prepareData(/*{data : d, source : "sourceName", referenceBudget : value
 
 			//if(a.source == "user" && a.id==0) unassignied = a;
 			//add the unassignied element to the parent
-			if(a.id == 0){
-				//init to 100% as after values are removed from unassignied
-				a.percent = 100;
-				d.unassignied = a;
-			}
-
+			//console.log (a.source);
+			//if (a.source != "allpeople"){
+				if( (a.id == 0)){
+					//init to 100% as after values are removed from unassignied
+					a.percent = 100;
+					d.unassignied = a;
+				}
+			//}
 			//object data initialization
 			a.percentage = a.percent;
 
@@ -160,24 +162,8 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 
 
 	function displayBar(data,svg,printAxes){
-	console.log ("displayBar");
-	var seen = []
-	var json = JSON.stringify(data, function(key, val) {
-   if (typeof val == "object") {
-        if (seen.indexOf(val) >= 0){
-        	return seen.push(val)
-        }
-        var i =0;
-       val.forEach(function(entry) {
-       	//console.log("entry"+entry);
-    		//console.log("entry"+i+ "= "+entry);
-    		i++;
-		});
-            return seen.push(val)
-    }
-    return val
-})
-	console.log( "json "+json);
+	
+	
 		function budgetId(d){
 			//@TODO : see why this number generation
 // 						return d.sourceID+d.amount/100000;
@@ -396,9 +382,90 @@ function graphRender(taxAmount){
 
 	user = {data : dataInit2, source : "user", referenceBudget : ref};
 	prepareData(user);
+	
+	$.couch.db("graphs").view("lines/lines", {
 
-	people = {data : dataInit3, source : "allpeople", referenceBudget : ref};
-	prepareData(people);
+	    success: function(dataAvg) {
+	    	var lines = new Array();
+	    	//console.log(dataAvg);
+	    	dataAvg.rows.forEach(function(entry) {
+	      		var p = {
+	      			"id":entry.key,
+	      			"label":getLabelFromId(entry.key),
+	      			"percent":entry.value * 1.0
+	      		};
+	      		//console.log(entry.key+" " +entry.value);
+	      		//console.log(p);
+	      		lines.push(p);
+      		});
+			//console.log (lines);
+      		function getLabelFromId(id){
+      			switch(id) {		
+					case 0 : 
+						return "Non assigné"; break;
+		  			case 1 : 
+		  				return "Économie "; break;
+		  			case 2 : 
+		  				return "Écologie, développement et aménagement durables "; break;
+		  			case 3 : 
+		  				return "Ville et logement "; break;
+		  			case 4 : 
+		  				return "Travail et emploi "; break;
+		  			case 5 : 
+		  				return "Sécurité civile "; break;
+		  			case 6 : 
+		  				return "Sécurité "; break;
+		  			case 7 : 
+		  				return "Sport, jeunesse et vie associative "; break;
+		  			case 8 : return "Solidarité, insertion et égalité des chances "; break;
+		  			case 9 : return "Santé "; break;
+		  			case 10: return "Régimes sociaux et de retraite "; break;
+		  			case 11: return "Remboursements et dégrèvements "; break;
+		  			case 12: return "Relations avec les collectivités territoriales "; break;
+		  			case 13: return "Recherche et enseignement supérieur "; break;
+		  			case 14: return"Provisions "; break;
+		  			case 15: return"Pouvoirs publics "; break;
+		  			case 16: return"Politique des territoires "; break;
+		  			case 17: return"Outre-mer "; break;
+		  			case 18: return"Médias, livre et industries culturelles "; break;
+		  			case 19: return"Justice "; break;
+		  			case 20: return"Immigration, asile et intégration "; break;
+		  			case 21: return"Gestion des finances publiques et des ressources humaines "; break;
+		  			case 22: return"Enseignement scolaire "; break;
+		  			case 23: return"Engagements financiers de l'État "; break;
+		  			case 24: return"Défense "; break;
+		  			case 25: return"Direction de l'action du Gouvernement "; break;
+		  			case 26: return"Culture "; break;
+		  			case 27: return"Conseil et contrôle de l'État "; break;
+		  			case 28: return"Anciens combattants, mémoire et liens avec la nation "; break;
+		  			case 29: return"Aide publique au développement "; break;
+		  			case 30: return"Agriculture, pêche, alimentation, forêt et affaires rurales "; break;
+		  			case 31: return"Administration générale et territoriale de l'État "; break;
+		  			case 32: return"Action extérieure de l'État "; break;
+		  			default:
+        				return "label";        				
+				} 
+      		}
+
+      
+	    	people = {data : lines, source : "allpeople", referenceBudget : ref};
+ 
+			prepareData(people);
+	    },
+	    error: function(status) {
+	      console.log(status);
+	    },
+	    group: true //pour executer la fonction on reduce
+	});
+
+	
+	/*
+	people = {data : dataInit3, source : "allpeople", referenceBudget : ref}; 
+	    	//console.log(people);  
+	    	//console.log(people1); 
+			prepareData(people);
+	*/
+	
 
 	print([state],true);
 };
@@ -428,6 +495,7 @@ $(document).ready(function(){
 		$stepButton = $("#stepButton")
 		;
 
+	
 	//manage the diffents steps
 	function step1(taxAmount){
 		console.log ("step1");
@@ -447,98 +515,142 @@ $(document).ready(function(){
 	}
 
 	function step3(){
+		//sauvegarde user couchDB: create a new document
+		saveDB(user);
+		console.log ("Fin saveDB");
 		hideShow(step2elems,step3elems);
 		print( [state, user, people]);
 		console.log (user);
+		console.log (people);
 		$stepButton.text("Share !")
 		$stepButton.click(function(){
-			//sauvegarde user couchDB: create a new document
-			saveDB(user);
-			console.log ("Fin saveDB");
-			//calculer la moyenne
+			
 			alert("Sharing function comming soon !");
 		});
+	}
+
+	
+	function getDataAllPeople(){
+		$.couch.db("graphs").view("lines/lines", {
+
+	    success: function(dataAvg) {
+	    	var lines = new Array();
+	    	//console.log(dataAvg);
+	    	dataAvg.rows.forEach(function(entry) {
+	      		var p = {
+	      			"id":entry.key,
+	      			"label":getLabelFromId(entry.key),
+	      			"percent":entry.value * 1.0
+	      		};
+	      		//console.log(entry.key+" " +entry.value);
+	      		//console.log(p);
+	      		lines.push(p);
+      		});
+			//console.log (lines);
+      		function getLabelFromId(id){
+      			switch(id) {		
+					case 0 : 
+						return "Non assigné"; break;
+		  			case 1 : 
+		  				return "Économie "; break;
+		  			case 2 : 
+		  				return "Écologie, développement et aménagement durables "; break;
+		  			case 3 : 
+		  				return "Ville et logement "; break;
+		  			case 4 : 
+		  				return "Travail et emploi "; break;
+		  			case 5 : 
+		  				return "Sécurité civile "; break;
+		  			case 6 : 
+		  				return "Sécurité "; break;
+		  			case 7 : 
+		  				return "Sport, jeunesse et vie associative "; break;
+		  			case 8 : return "Solidarité, insertion et égalité des chances "; break;
+		  			case 9 : return "Santé "; break;
+		  			case 10: return "Régimes sociaux et de retraite "; break;
+		  			case 11: return "Remboursements et dégrèvements "; break;
+		  			case 12: return "Relations avec les collectivités territoriales "; break;
+		  			case 13: return "Recherche et enseignement supérieur "; break;
+		  			case 14: return"Provisions "; break;
+		  			case 15: return"Pouvoirs publics "; break;
+		  			case 16: return"Politique des territoires "; break;
+		  			case 17: return"Outre-mer "; break;
+		  			case 18: return"Médias, livre et industries culturelles "; break;
+		  			case 19: return"Justice "; break;
+		  			case 20: return"Immigration, asile et intégration "; break;
+		  			case 21: return"Gestion des finances publiques et des ressources humaines "; break;
+		  			case 22: return"Enseignement scolaire "; break;
+		  			case 23: return"Engagements financiers de l'État "; break;
+		  			case 24: return"Défense "; break;
+		  			case 25: return"Direction de l'action du Gouvernement "; break;
+		  			case 26: return"Culture "; break;
+		  			case 27: return"Conseil et contrôle de l'État "; break;
+		  			case 28: return"Anciens combattants, mémoire et liens avec la nation "; break;
+		  			case 29: return"Aide publique au développement "; break;
+		  			case 30: return"Agriculture, pêche, alimentation, forêt et affaires rurales "; break;
+		  			case 31: return"Administration générale et territoriale de l'État "; break;
+		  			case 32: return"Action extérieure de l'État "; break;
+		  			default:
+        				return "label";        				
+				} 
+      		}
+
+      
+	    	people = {data : lines, source : "allpeople", referenceBudget : ref};
+ 
+			prepareData(people);
+	    },
+	    error: function(status) {
+	      console.log(status);
+	    },
+	    group: true //pour executer la fonction on reduce
+	});
+
 	}
 	function saveDB(user){
 		console.log ("saveDB");
 		var referenceBudget = user.referenceBudget;
-		var label = user.data[0].label;
-		console.log (label);
-		console.log (referenceBudget);
 
-
-		//var doc = JSON.stringify(user.data);
-	
-		/*
-		//Construire les donnees en format JSON 
-      	var lines = "[";
-      	user.data.forEach(function(entry) {
-
-    		console.log(entry);
-    		lines += "{\"id\":" + entry.id+",";
-    		lines += "\"label\":\" "+ entry.label+ "\",";
-    		lines += "\"amount\":" + entry.amount+",";
-    		lines += "\"percentage\":" + entry.percentage+"},";
-		});
-		 	lines += "]";
-      	console.log(lines);
-      */
       	var lines = new Array();
       	user.data.forEach(function(entry) {
       		var p      = {};
       		p['id']   = entry.id;
       		p['label']= entry.label;
       		p['amount']= entry.amount;
-      		p['percentage']= entry.percentage;
+      		p['percent']= entry.percentage;
       		lines.push(p);
 
-      	});	
-      
+      	});
+     /*
      	//console.log (lines);
 		var linesStr = JSON.stringify(lines);
 		console.log (linesStr);
-		
+		//linesStr = [{"id":0,"label":"Non assigné","amount":3.998489755963064e-9,"percentage":9.998724070925391e-11},{"id":1,"label":"Économie ","amount":21.771169602561,"percentage":0.5444153439},{"id":2,"label":"Écologie, développement et aménagement durables ","amount":105.97424055481501,"percentage":2.6500185185},{"id":3,"label":"Ville et logement ","amount":80.331340714857,"percentage":2.0087857143},{"id":4,"label":"Travail et emploi ","amount":130.653254442519,"percentage":3.2671481481},{"id":5,"label":"Sécurité civile ","amount":4.863968887704,"percentage":0.1216296296},{"id":6,"label":"Sécurité ","amount":177.77787246198898,"percentage":4.4455582011},{"id":7,"label":"Sport, jeunesse et vie associative ","amount":4.428416427048,"percentage":0.1107380952},{"id":29,"label":"Aide publique au développement ","amount":48.401970557481,"percentage":1.2103518519},{"id":30,"label":"Agriculture, pêche, alimentation, forêt et affaires rurales ","amount":37.938132143238,"percentage":0.9486904762},{"id":31,"label":"Administration générale et territoriale de l\'État ","amount":27.19425793545,"percentage":0.680026455}];
+	*/	
 		var doc = {
 			"name": "wiem4",
-			"lines": +linesStr,
-			"referenceBudget":+user.referenceBudget,	
-		};
-		/*[
-				{
-						"id": 1,
-						"label": "Économie ",
-						"amount": 200.89,
-						"percentage": 0.5444153439
-				},
-				{
-						"id": 2,
-						"label": "Écologie, développement et aménagement durables ",
-						"amount": 10017.07,
-						"percentage": 2.6500185185
-				},
-				{
-						"id": 3,
-						"label": "Ville et logement ",
-						"amount": 7593.21,
-						"percentage": 2.0087857143
-				},
-				{
-						"id": 4,
-						"label": "Travail et emploi ",
-						"amount": 12349.82,
-						"percentage": 3.2671481481
-				}
-				]
-			};*/
+			"lines": lines,
+			"referenceBudget":user.referenceBudget	
+		};		
 
-			$.couch.db("graphs").saveDoc(doc, {
-				success: function(user) {
-				console.log(user);
-			},
+		var docIdUser;
+
+		result = $.couch.db("graphs").saveDoc(doc, {
+			success: function(user) {
+			var docIdUser = user.id;
+			
+		},
 			error: function(status) {
+
 			console.log(status);
 		}
 		});
+
+		console.log(result);
+		console.log(result.readyState);
+		console.log(result.responseText);
+
+		
 	}
 	function step1local(){
 		alert("manage this !!")

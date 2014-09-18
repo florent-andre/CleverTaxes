@@ -28,6 +28,42 @@ sudo service apache2 restart
 
 ```
 
+# installation Apache couchDB 
+
+* Suivre le lien http://guide.couchdb.org/editions/1/fr/source.html
+
+Pour créer un user suivre la partie :Security Considerations
+
+# demarrer le serveur
+``` bash
+sudo -i -u couchdb couchdb -b
+
+```
+
+## lancer la bdd
+
+``` bash
+curl http://127.0.0.1:5984/
+```
+## pour checker que tout est ok, il y a l’interface d’administration Futon
+http://127.0.0.1:5984/_utils/index.html
+
+## Créons une base de données : 
+``` bash
+curl -X PUT http://127.0.0.1:5984/graphs
+```
+## Couchdb CORS
+* Config is visible here :http://wiki.apache.org/couchdb/CORS
+enabling CORS
+
+* http://localhost:5984/_utils/config.html
+
+[httpd]
+enable_cors = true
+
+[cors]
+origins = *
+
 
 # webSite :
 

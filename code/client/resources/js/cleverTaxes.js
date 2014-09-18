@@ -163,7 +163,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 
 	function displayBar(data,svg,printAxes){
 	
-	
+		
 		function budgetId(d){
 			//@TODO : see why this number generation
 // 						return d.sourceID+d.amount/100000;
@@ -173,13 +173,14 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 		}
 
 		function getHeight(d){
-			console.log ("getHeight");
+			//console.log ("getHeight");
 			return height - y(d.amount);
 		}
 
 		function printAxis(){
-			console.log ("printAxis");
-			 svg.append("g")
+			console.log ("printAxis" + 	user);
+			
+			svg.append("g")
 		      .attr("class", "x axis")
 		      .attr("transform", "translate(0," + height + ")")
 		      .call(xAxis)
@@ -191,15 +192,23 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 			    .style("text-anchor", "end");
 		      ;
 
-			  svg.append("g")
-			      .attr("class", "y axis")
-			      .call(yAxis)
+			svg.append("g")
+			    .attr("class", "y axis")
+			    .call(yAxis)
 			    .append("text")
-			      .attr("transform", "rotate(-90)")
-			      .attr("y", 6)
-			      .attr("dy", ".71em")
-			      .style("text-anchor", "end")
-			      .text("Amount");
+			    .attr("transform", "rotate(-90)")
+			    .attr("y", 6)
+			    .attr("dy", ".71em")
+			    .style("text-anchor", "end")
+			    .text("Amount");
+			//pour le titre
+			svg.append("text")
+        		.attr("x", (width / 2))             
+        		.attr("y", 0 - (margin.top / 2))
+        		.attr("text-anchor", "middle")  
+        		.style("font-size", "16px") 
+        		.style("text-decoration", "underline")  
+        		.text("");
 		}
 
 		function addModifyButtons(){
@@ -239,25 +248,8 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 					    })
 					    .on("drag", dragmove)
 							.on("dragend",function(d){
-							console.log(user.data);
-							if(typeof(Storage) !== "undefined") {
-    							// Code for localStorage/sessionStorage.
-							} else {
-    							// Sorry! No Web Storage support..
-							}
-							/*
-							var fs = require('fs');
-							var outputFilename = 'my.json';
-							fs.writeFile(outputFilename, JSON.stringify(user.data, null, 4), function(err) {
-    						if(err) {
-      						console.log(err);
-    						} else {
-      						console.log("JSON saved to " + outputFilename);
-    						}
-							}); */
-							displayBar(data,svg);
-						})
-						;
+								displayBar(data,svg);
+						});
 
 			var buttons = state.selectAll("rect.button")
 		      .data(function(d,i) {
@@ -367,12 +359,13 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 
 var ref, state, user, people;
 
-function graphRender(taxAmount){
+function graphRender(taxAmount, name){
 
 	console.log ("graphRender");
 
 	var realReferenceBudget = "378440180000"; //378 billions
 	var userReferenceBudget = taxAmount;
+	var name = name;
 
 	//ref = realReferenceBudget;
 	ref = userReferenceBudget;
@@ -380,7 +373,7 @@ function graphRender(taxAmount){
 	state = {data : dataInit, source : "state",referenceBudget : ref};
 	prepareData(state);
 
-	user = {data : dataInit2, source : "user", referenceBudget : ref};
+	user = {data : dataInit2, source : "user", referenceBudget : ref, name:name};
 	prepareData(user);
 	
 	$.couch.db("graphs").view("lines/lines", {
@@ -470,76 +463,42 @@ function graphRender(taxAmount){
 	print([state],true);
 };
 
+function graphRenderById(docId){
 
-/**
- * User Interaction stuff
- */
-$(document).ready(function(){
+	var realReferenceBudget = "378440180000"; //378 billions
+	var ref ;
+	$.ajaxSetup({
+		async: false
+	});
 
-	//user actions (on buttons)
-	function hideShow(hide,show){
-		hide.forEach(function(d){
-			$(d).hide();
-		});
-		show.forEach(function(d){
-			$(d).show();
-		});
-	}
+	var result = $.couch.db("graphs").openDoc(docId);/*, {
+	    	success: function(dataUser) {
+	    		console.log(dataUser);
+	    		user = {data : dataUser, source : "user", referenceBudget : dataUser.referenceBudget};
+				prepareData(user);
+				console.log (user);
+				console.log (people);
+			print( [state, user, people]);
+	    	},
+	   		error: function(status) {
+	    		console.log(status);
+	  		}
+	  	});*/
+	result.then(function(d,i){
+		//console.log(d);
+		user = {data : d.lines, source : "user", referenceBudget : d.referenceBudget, name:d.name};
+		ref = d.referenceBudget;
+		//console.log (user);
+		//console.log (ref);
+		prepareData(user);
 
-	var step0elems = [".step0"],
-		step1elems = [".step1"],
-		step2elems = [".step2",$stepButton],
-		step3elems = [".step3"],
-		step1local = [".step1local"],
-		chart = [".chart"],
-		$stepButton = $("#stepButton")
-		;
-
+	});
 	
-	//manage the diffents steps
-	function step1(taxAmount){
-		console.log ("step1");
-		graphRender(taxAmount);
-		hideShow(step0elems,step1elems);
 
-		$stepButton.click(step2);
-	}
+	state = {data : dataInit, source : "state",referenceBudget : ref};
+	prepareData(state);	
 
-	function step2(){
-		console.log ("step2");
-		hideShow(step1elems,step2elems);
-
-		print( [state, user],false,true);
-		$stepButton.text("Save and...")
-		$stepButton.click(step3)
-	}
-
-	function step3(){
-		//sauvegarde user couchDB: create a new document
-		var docId=saveDB(user);
-		console.log ("Fin saveDB"+ docId);
-		hideShow(step2elems,step3elems);
-		print( [state, user, people]);
-		console.log (user);
-		console.log (people);
-		$stepButton.text("Share !")
-		$stepButton.click(function(){
-			//redirection
-			alert("Sharing function comming soon !");
-			//print( [state, user, people]);
-			var title = encodeURIComponent('My title');
-        	var summary = encodeURIComponent('My message');
-        	var url = encodeURIComponent('http://localhost/clevertaxes/code/client/');
-        	var image = encodeURIComponent('https://pics.mysite.com/mylogo.png');
-
-        	window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + title + '&amp;p[summary]=' + summary + '&amp;p[url]=' + url + '&amp;p[images][0]=' + image,'sharer','toolbar=0,status=0,width=548,height=325');
-   
-		});
-	}
-
-	
-	function getDataAllPeople(){
-		$.couch.db("graphs").view("lines/lines", {
+	$.couch.db("graphs").view("lines/lines", {
 
 	    success: function(dataAvg) {
 	    	var lines = new Array();
@@ -605,7 +564,7 @@ $(document).ready(function(){
 
       
 	    	people = {data : lines, source : "allpeople", referenceBudget : ref};
- 
+ 			//console.log(people);
 			prepareData(people);
 	    },
 	    error: function(status) {
@@ -614,11 +573,111 @@ $(document).ready(function(){
 	    group: true //pour executer la fonction on reduce
 	});
 
+	
+	/*
+	people = {data : dataInit3, source : "allpeople", referenceBudget : ref}; 
+	    	//console.log(people);  
+	    	//console.log(people1); 
+			prepareData(people);
+	*/
+	
+
+	print([state],true);
+};
+
+
+/**
+ * User Interaction stuff
+ */
+$(document).ready(function(){
+
+	var step0elems = [".step0"],
+			step1elems = [".step1"],
+			step2elems = [".step2",$stepButton],
+			step3elems = [".step3"],
+			step1local = [".step1local"],
+			chart = [".chart"],
+			$stepButton = $("#stepButton")
+			;
+	
+	var urlCouch = location.protocol+"//"+location.hostname+":5984";
+		
+	
+  	$.couch.urlPrefix = urlCouch;
+  	docId = getURLargs()['docId'];
+	console.log ("docId " + docId + " urlcouch "+ $.couch.urlPrefix);
+	if (docId != undefined) {
+		
+		graphRenderById(docId);
+		//console.log (user);
+		var $stepButton = $("#stepButton");
+		var step0elems1 = [".step0", ".step1",".step1local", ".step2",$stepButton ];
+		$stepButton.text("Share !")
+		hideShow(step0elems1,step3elems);
+		print( [state, user, people]);
+		
+
+		var title   = encodeURIComponent(user.name);
+        var summary = encodeURIComponent('See what others have suggest to politicians');
+        
+        var url     = encodeURIComponent(location.href+'docId='+docId);
+        var image   = encodeURIComponent('https://pics.mysite.com/mylogo.png');
+
+        window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + title + '&amp;p[summary]=' + summary + '&amp;p[url]=' + url + '&amp;p[images][0]=' + image,'sharer','toolbar=0,status=0,width=548,height=325');
+
+	}	
+	//user actions (on buttons)
+	function hideShow(hide,show){
+		hide.forEach(function(d){
+			$(d).hide();
+		});
+		show.forEach(function(d){
+			$(d).show();
+		});
 	}
+	//manage the diffents steps
+	function step1(taxAmount, name){
+		console.log ("step1");
+		graphRender(taxAmount, name);
+		hideShow(step0elems,step1elems);
+
+		$stepButton.click(step2);
+	}
+
+	function step2(){
+		console.log ("step2");
+		hideShow(step1elems,step2elems);
+
+		print( [state, user],false,true);
+		$stepButton.text("Save and...")
+		$stepButton.click(function(){
+			var docId = saveDB(user);
+			console.log ("Fin saveDB : "+ docId);
+			step3(docId);
+		});
+	}
+
+	function step3(docId){
+		
+		hideShow(step2elems,step3elems);
+		print( [state, user, people]);
+		console.log (user);
+		console.log (people);
+		$stepButton.text("Share !")
+		$stepButton.click(function(){
+			//redirection
+			//alert("Sharing function comming soon !" + docId);
+			window.open("./index.html?docId="+docId);
+			
+			
+		});
+	}
+
+	
+	
 	function saveDB(user){
 		console.log ("saveDB");
-		var referenceBudget = user.referenceBudget;
-
+		
       	var lines = new Array();
       	user.data.forEach(function(entry) {
       		var p      = {};
@@ -636,7 +695,7 @@ $(document).ready(function(){
 		//linesStr = [{"id":0,"label":"Non assigné","amount":3.998489755963064e-9,"percentage":9.998724070925391e-11},{"id":1,"label":"Économie ","amount":21.771169602561,"percentage":0.5444153439},{"id":2,"label":"Écologie, développement et aménagement durables ","amount":105.97424055481501,"percentage":2.6500185185},{"id":3,"label":"Ville et logement ","amount":80.331340714857,"percentage":2.0087857143},{"id":4,"label":"Travail et emploi ","amount":130.653254442519,"percentage":3.2671481481},{"id":5,"label":"Sécurité civile ","amount":4.863968887704,"percentage":0.1216296296},{"id":6,"label":"Sécurité ","amount":177.77787246198898,"percentage":4.4455582011},{"id":7,"label":"Sport, jeunesse et vie associative ","amount":4.428416427048,"percentage":0.1107380952},{"id":29,"label":"Aide publique au développement ","amount":48.401970557481,"percentage":1.2103518519},{"id":30,"label":"Agriculture, pêche, alimentation, forêt et affaires rurales ","amount":37.938132143238,"percentage":0.9486904762},{"id":31,"label":"Administration générale et territoriale de l\'État ","amount":27.19425793545,"percentage":0.680026455}];
 	*/	
 		var doc = {
-			"name": "wiem4",
+			"name": user.name,
 			"lines": lines,
 			"referenceBudget":user.referenceBudget	
 		};		
@@ -680,17 +739,38 @@ $(document).ready(function(){
 		//display of saisie message if empty
 	}
 
+	function getURLargs () {
+		var args = document.location.search.substring(1).split(/\&/);
+		argsParsed = {};
+
+		for (i = 0; i < args.length; i++) {
+			arg = unescape(args[i]);
+
+			if (arg.indexOf('=') == -1) {
+				argsParsed[arg.trim()] = true;
+			} else {
+				kvp = arg.split('=');
+				argsParsed[kvp[0].trim()] = kvp[1].trim();
+			}
+		}
+		return argsParsed;
+	}
+
+
 	var dfd = $.Deferred();
 
 	$("#valid").click(function(){
 		console.log ("point de depart");
+		
 		var taxAmount = +$("#taxamount").val();
+		var name = $("#name").val();
 
 		$.when(dfd.promise()).then(function(){
-			step1(taxAmount);
+			step1(taxAmount, name);
 		});
 
-	 	dfd.resolve();
+		 dfd.resolve();
+		 	
 	});
 
 	$("#golocal").click(function(){

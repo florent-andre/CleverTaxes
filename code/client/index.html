@@ -58,14 +58,7 @@
 
 <script>
 
-$( document ).ready(function() {
-  $.couch.urlPrefix = "http://127.0.0.1:5984";
-  $.couch.allDbs({
-  success: function(data) {
-      //console.log(data);
-  }
-});
-});
+
 
 </script>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -197,7 +190,6 @@ $( document ).ready(function() {
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 
-
     <!-- Bootstrap -->
     <script src="resources/js/libs/bootstrap-3.0.2.min.js"></script>
 
@@ -205,11 +197,11 @@ $( document ).ready(function() {
 
     <script type="text/javascript" src="resources/js/libs/d3.v3.min.js"></script>
 
-<script src="http://127.0.0.1:5984/_utils/script/json2.js"></script>
-<script src="http://127.0.0.1:5984/_utils/script/sha1.js"></script>
-<script src="http://127.0.0.1:5984/_utils/script/jquery.js?1.4.2"></script>
-<script src="http://127.0.0.1:5984/_utils/script/jquery.couch.js?0.11.0"></script>
-<script src="http://127.0.0.1:5984/_utils/script/jquery.dialog.js?0.11.0"></script>
+	<script src="resources/js/libs/couchJquery/json2.js"></script>
+	<script src="resources/js/libs/couchJquery/sha1.js"></script>
+	<script src="resources/js/libs/couchJquery/jquery.js"></script>
+	<script src="resources/js/libs/couchJquery/jquery.couch.js"></script>
+	<script src="resources/js/libs/couchJquery/jquery.dialog.js"></script>
 
     <!-- mock datas -->
     <script type="text/javascript" src="./data/rawData.js"></script>

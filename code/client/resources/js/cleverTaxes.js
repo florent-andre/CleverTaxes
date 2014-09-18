@@ -464,9 +464,9 @@ function graphRender(taxAmount, name){
 };
 
 function graphRenderById(docId){
-
+	var ref, state, user, people;
 	var realReferenceBudget = "378440180000"; //378 billions
-	var ref ;
+	
 	$.ajaxSetup({
 		async: false
 	});
@@ -485,16 +485,17 @@ function graphRenderById(docId){
 	  		}
 	  	});*/
 	result.then(function(d,i){
-		//console.log(d);
+		console.log(d.lines);
 		user = {data : d.lines, source : "user", referenceBudget : d.referenceBudget, name:d.name};
 		ref = d.referenceBudget;
-		//console.log (user);
-		//console.log (ref);
+		console.log (user.data[32]);
+		//console.log (user.data);
 		prepareData(user);
+		console.log (user.data[32]);
 
 	});
 	
-
+	console.log (user.data[32]);
 	state = {data : dataInit, source : "state",referenceBudget : ref};
 	prepareData(state);	
 
@@ -564,7 +565,7 @@ function graphRenderById(docId){
 
       
 	    	people = {data : lines, source : "allpeople", referenceBudget : ref};
- 			//console.log(people);
+ 			console.log(people);
 			prepareData(people);
 	    },
 	    error: function(status) {
@@ -573,16 +574,14 @@ function graphRenderById(docId){
 	    group: true //pour executer la fonction on reduce
 	});
 
-	
-	/*
-	people = {data : dataInit3, source : "allpeople", referenceBudget : ref}; 
-	    	//console.log(people);  
-	    	//console.log(people1); 
-			prepareData(people);
-	*/
+		console.log (user);
+		console.log (people);
+		console.log (state);
+		print( [state, user, people]);
+		
 	
 
-	print([state],true);
+	
 };
 
 
@@ -607,14 +606,14 @@ $(document).ready(function(){
   	docId = getURLargs()['docId'];
 	console.log ("docId " + docId + " urlcouch "+ $.couch.urlPrefix);
 	if (docId != undefined) {
-		
+
 		graphRenderById(docId);
-		//console.log (user);
 		var $stepButton = $("#stepButton");
 		var step0elems1 = [".step0", ".step1",".step1local", ".step2",$stepButton ];
 		$stepButton.text("Share !")
 		hideShow(step0elems1,step3elems);
-		print( [state, user, people]);
+
+		
 		
 
 		var title   = encodeURIComponent(user.name);
@@ -645,20 +644,21 @@ $(document).ready(function(){
 	}
 
 	function step2(){
+
 		console.log ("step2");
 		hideShow(step1elems,step2elems);
 
 		print( [state, user],false,true);
 		$stepButton.text("Save and...")
 		$stepButton.click(function(){
-			var docId = saveDB(user);
-			console.log ("Fin saveDB : "+ docId);
+			
 			step3(docId);
 		});
 	}
 
 	function step3(docId){
-		
+		var docId = saveDB(user);
+		console.log ("Fin saveDB : "+ docId);
 		hideShow(step2elems,step3elems);
 		print( [state, user, people]);
 		console.log (user);
@@ -677,17 +677,21 @@ $(document).ready(function(){
 	
 	function saveDB(user){
 		console.log ("saveDB");
-		
+		console.log (user.data);
       	var lines = new Array();
       	user.data.forEach(function(entry) {
+      		console.log (entry.label);
+      		console.log (entry.amount);
+      		console.log (entry.percentage);
       		var p      = {};
       		p['id']   = entry.id;
       		p['label']= entry.label;
       		p['amount']= entry.amount;
-      		p['percent']= entry.percentage;
+      		p['percent']= entry.percent;
       		lines.push(p);
 
       	});
+      	console.log (lines);
      /*
      	//console.log (lines);
 		var linesStr = JSON.stringify(lines);

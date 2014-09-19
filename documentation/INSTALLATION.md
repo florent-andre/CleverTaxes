@@ -48,9 +48,9 @@ curl http://127.0.0.1:5984/
 ## pour checker que tout est ok, il y a l’interface d’administration Futon
 http://127.0.0.1:5984/_utils/index.html
 
-## Créons une base de données : 
+## Création de la base de données : 
 ``` bash
-curl -X PUT http://127.0.0.1:5984/graphs
+curl -X PUT http://127.0.0.1:5984/clevertaxes
 ```
 ## Couchdb CORS
 * Config is visible here :http://wiki.apache.org/couchdb/CORS

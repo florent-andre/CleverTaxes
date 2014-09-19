@@ -75,8 +75,8 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -94,12 +94,12 @@
 	        	<form class="bs-example bs-example-form">
 		        	<div class="input-group">
 					  <span class="input-group-addon">@</span>
-					  <input id="name" type="text" class="form-control" placeholder="Your name">
+					  <input required autofocus id="name" type="text" class="form-control" placeholder="Your name">
 					</div>
 					<br>
 					<div class="input-group">
 					  <span class="input-group-addon">€ </span>
-					  <input id="taxamount" type="text" class="form-control" placeholder="Your annual tax amount">
+					  <input id="taxamount" type="text" class="form-control" placeholder="Your annual tax amount" required>
 	<!-- 				  <span class="input-group-addon">.00</span> -->
 					</div>
 					<br>
@@ -120,7 +120,7 @@
 
 
 
- 		<div>
+ 		<div class ="">
  			<h1 class="step1local">Select your town</h1>
  			<div class="row">
 	 			<div class="step1local input-group col-md-4 col-md-offset-4">
@@ -141,9 +141,16 @@
 	 		<p class="step1 text-muted">Please note that actual data are related to France 2011 budget. See "About" page for details</p>
 
 	 		<h1 class="step2">Tell politicians what you would like they do with</h1>
+	 		
 	 		<h2 class="step2 small">Change the budget allocation according to your Democratic spirit.</h2>
 	 		<p class="step2 text-muted">Use buttons on top of the bars and when you are done click on the button to save your changes</p>
-
+	 		<div class="step2 row">
+				<div class="input-group col-md-4 col-md-offset-4">
+					<span class="input-group-addon">Name</span>
+					<input id="graphicName" class="form-control" type="text" placeholder="Your Graphic Name" required>
+				</div>
+			</div>
+		</br>
 	 		<h1 class="step3">See what others have suggest to politicians</h1>
 	 		<h2 class="step3 small">This show (in average) how people would have manage the budget.</h2>
 	 		<p class="step3 text-muted">Click here to share this with your friends !</p>

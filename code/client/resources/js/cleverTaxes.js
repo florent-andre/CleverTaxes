@@ -601,7 +601,7 @@ function graphRenderById(docId){
       	});
       	//console.log(sum);
 		
-		user = {data : lines, source : "user", referenceBudget : d.referenceBudget, name:d.name};
+		user = {data : lines, source : "user", referenceBudget : d.referenceBudget, name:d.name, graphicName : d.graphicName};
 		ref = d.referenceBudget;
 		name = d.name;
 		prepareDataBis(user);
@@ -720,11 +720,11 @@ $(document).ready(function(){
 		graphRenderById(docId);
 		var $stepButton = $("#stepButton");
 		var step0elems1 = [".step0", ".step1",".step1local", ".step2",$stepButton ];
-		$stepButton.text("Share !")
+		$stepButton.text("Share ! "+ user.graphicName);
 		hideShow(step0elems1,step3elems);
 
 
-		var title   = encodeURIComponent(user.name);
+		var title   = encodeURIComponent(user.graphicName);
         var summary = encodeURIComponent('See what others have suggest to politicians');
         
         var url     = encodeURIComponent(location.href+'docId='+docId);
@@ -754,24 +754,25 @@ $(document).ready(function(){
 	function step2(){
 
 		//console.log ("step2");
+		//var step1elems1 = [".step1",".step1local"];
 		hideShow(step1elems,step2elems);
 
 		print( [state, user],false,true);
 		$stepButton.text("Save and...")
 		$stepButton.click(function(){
-			
-			step3();
+			var graphicName = $("#graphicName").val();
+			step3(graphicName);
 		});
 	}
 
-	function step3(){
-		var docId = saveDB(user);
+	function step3(graphicName){
+		var docId = saveDB(user,graphicName);
 		//console.log ("Fin saveDB : "+ docId);
 		hideShow(step2elems,step3elems);
 		print( [state, user, people]);  //ok
 		//console.log (user);
 		//console.log (people);
-		$stepButton.text("Share !");
+		$stepButton.text("Share ! "+graphicName);
 		$stepButton.click(function(){
 			
 			//redirection
@@ -784,9 +785,9 @@ $(document).ready(function(){
 
 	
 	
-	function saveDB(user){
-		console.log ("saveDB");
-		console.log (user.data);
+	function saveDB(user, graphicName){
+		//console.log ("saveDB");
+		//console.log (user.data);
       	var lines = new Array();
       	user.data.forEach(function(entry) {
       		/*
@@ -800,7 +801,7 @@ $(document).ready(function(){
       		p['label']= entry.label;
       		p['amount']= entry.amount;
       		p['percent']= entry.percent;
-      		console.log (entry.percent == entry.percentage);
+      		//console.log (entry.percent == entry.percentage);
       		if (entry.percent  == entry.percentage )
       			p['percentage']= (entry.percentage * 1.0);
       		else
@@ -812,6 +813,7 @@ $(document).ready(function(){
       	//console.log (lines);
    
 		var doc = {
+			"graphicName": graphicName,
 			"name": user.name,
 			"lines": lines,
 			"referenceBudget":user.referenceBudget	

@@ -4,13 +4,15 @@
 
 //function for the data transformation
 function prepareData(/*{data : d, source : "sourceName", referenceBudget : value}*/){
-	console.log ("prepareData");
+	//console.log ("prepareData");
+	
 	var args = Array.prototype.slice.call(arguments, 0);
 
 	//prepare data structure and add functions.
 
 	//data transformation add the source attribute to objects
 	args.forEach(function(d,i){
+		
 		Object.defineProperty(d, "unassignied", {
 			value : null,
 			writable : true,
@@ -19,7 +21,8 @@ function prepareData(/*{data : d, source : "sourceName", referenceBudget : value
 
 
 		d.data.forEach(function(a,j){
-
+			//console.log (a);
+			//console.log(j);
 			Object.defineProperty(a, "_parent", {
 				value : d,
 				writable : false,
@@ -97,6 +100,96 @@ function prepareData(/*{data : d, source : "sourceName", referenceBudget : value
 			//object data initialization
 			a.percentage = a.percent;
 
+		});//d.data.forEach
+	});
+}
+function prepareDataBis(/*{data : d, source : "sourceName", referenceBudget : value}*/){
+	//console.log ("prepareDataBis");
+	
+	var args = Array.prototype.slice.call(arguments, 0);
+
+	//prepare data structure and add functions.
+
+	//data transformation add the source attribute to objects
+	args.forEach(function(d,i){
+		
+		Object.defineProperty(d, "unassignied", {
+			value : null,
+			writable : true,
+			enumerable : false,
+			configurable : false});
+
+
+		d.data.forEach(function(a,j){
+			//console.log (a);
+			//console.log(j);
+			Object.defineProperty(a, "_parent", {
+				value : d,
+				writable : false,
+				enumerable : false,
+				configurable : false});
+
+			Object.defineProperty(a, "_amount", {
+				value : 0,
+				writable : true,
+				enumerable : false,
+				configurable : false});
+
+			Object.defineProperty(a, "_percentage", {
+				value : 0,
+				writable : true,
+				enumerable : false,
+				configurable : false});
+
+			Object.defineProperty(a, "source", {
+				get : function(){return this._parent.source},
+				enumerable : true,
+				});
+
+			Object.defineProperty(a, "unassignied", {
+				get : function(){
+					if(this !== this._parent.unassignied) return this._parent.unassignied;
+					return this;
+				},
+				enumerable : true,
+				configurable : false});
+
+			Object.defineProperty(a, "amount", {
+				get : function(){return this._amount},
+				enumerable : true,
+				configurable : false});
+
+			Object.defineProperty(a, "percentage", {
+				get : function(){return this._percentage},
+				set : function(a){
+					this._amount = this._parent.referenceBudget * a /100;
+
+					//don't calculate the unassignied for the unassignied object
+					
+					this._percentage = a;
+
+				},
+				enumerable : true,
+				configurable : false});
+			//We generate here a random id in order to be able to define a key
+			//TODO : use a real unique number
+			a.sourceID = Math.random();
+
+
+			//if(a.source == "user" && a.id==0) unassignied = a;
+			//add the unassignied element to the parent
+			//console.log (a.source);
+			//if (a.source != "allpeople"){
+				
+				if( (a.id == 0)){
+					//init to 100% as after values are removed from unassignied
+					//a.percent = 100;
+					d.unassignied = a;
+				}
+			//}
+			//object data initialization
+			a.percentage = a.percent;
+
 		});
 	});
 }
@@ -107,6 +200,7 @@ function prepareData(/*{data : d, source : "sourceName", referenceBudget : value
 function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*boolean*/ modifiable){
 	console.log ("print");
 	var data = [];
+	var titleGraph = "";
 	args.forEach(function(arr,i){
 		arr.data.reduce(function(p,c){
 			var i = p.lazyIndexOf(function(a,b){
@@ -114,6 +208,8 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 						return x.id == y.id}
 					,b) != -1;
 				},c);
+			//console.log (i);
+			//console.log (c);
 			if(i != -1){
 				p[i].push(c);
 			}else{
@@ -123,7 +219,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 		},data);
 
 	});
-
+	//console.log (data);
 	var margin = {top: 20, right: 20, bottom: 430, left: 40},
 		    width = 1060 - margin.left - margin.right,
 		    height = 900 - margin.top - margin.bottom;
@@ -163,7 +259,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 
 	function displayBar(data,svg,printAxes){
 	
-		
+		//console.log ("displayBar" + titleGraph);
 		function budgetId(d){
 			//@TODO : see why this number generation
 // 						return d.sourceID+d.amount/100000;
@@ -178,7 +274,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 		}
 
 		function printAxis(){
-			console.log ("printAxis" + 	user);
+			//console.log ("printAxis" + 	titleGraph);
 			
 			svg.append("g")
 		      .attr("class", "x axis")
@@ -212,7 +308,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 		}
 
 		function addModifyButtons(){
-			console.log ("addModifyButtons");
+			
 
 			var buttonHeight = 15,
 				buttonColor = "#D9534F",
@@ -224,7 +320,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 			;
 
 			function dragmove(d) {
-				console.log ("dragmove");
+				//console.log ("dragmove");
 				function amountFromPosition(y){
 					return startValue + (starty - y - buttonHeight)*pixelValue;
 				}
@@ -351,17 +447,17 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 	      .text(function(d) { return d; });
 
 	}
-
+	//console.log (data);
 	displayBar(data,svg,initAxes);
 
 
 };
 
-var ref, state, user, people;
+var ref,name, state, user, people;
 
 function graphRender(taxAmount, name){
 
-	console.log ("graphRender");
+	//console.log ("graphRender");
 
 	var realReferenceBudget = "378440180000"; //378 billions
 	var userReferenceBudget = taxAmount;
@@ -374,9 +470,12 @@ function graphRender(taxAmount, name){
 	prepareData(state);
 
 	user = {data : dataInit2, source : "user", referenceBudget : ref, name:name};
+	//console.log (dataInit2);
+	//console.log (user);
 	prepareData(user);
+	//console.log (user);
 	
-	$.couch.db("graphs").view("lines/lines", {
+	$.couch.db("clevertaxes").view("lines/lines", {
 
 	    success: function(dataAvg) {
 	    	var lines = new Array();
@@ -464,14 +563,14 @@ function graphRender(taxAmount, name){
 };
 
 function graphRenderById(docId){
-	var ref, state, user, people;
+	
 	var realReferenceBudget = "378440180000"; //378 billions
 	
 	$.ajaxSetup({
 		async: false
 	});
 
-	var result = $.couch.db("graphs").openDoc(docId);/*, {
+	var result = $.couch.db("clevertaxes").openDoc(docId);/*, {
 	    	success: function(dataUser) {
 	    		console.log(dataUser);
 	    		user = {data : dataUser, source : "user", referenceBudget : dataUser.referenceBudget};
@@ -485,22 +584,36 @@ function graphRenderById(docId){
 	  		}
 	  	});*/
 	result.then(function(d,i){
-		console.log(d.lines);
-		user = {data : d.lines, source : "user", referenceBudget : d.referenceBudget, name:d.name};
+		var lines = new Array();
+		var sum = 0;
+		var sum1 = 0;
+	    d.lines.forEach(function(entry) {
+	      	var p = {
+	      		"id":entry.id,
+	      		"label":entry.label,
+	      		"percent":entry.percentage * 1.0
+	      	};
+	      		//console.log(entry.key+" " +entry.value);
+	      		//console.log(p);
+	      	//sum1 +=entry.amount* 1.0;
+	      	//sum +=entry.amount* 1.0;
+	      	lines.push(p);
+      	});
+      	//console.log(sum);
+		
+		user = {data : lines, source : "user", referenceBudget : d.referenceBudget, name:d.name};
 		ref = d.referenceBudget;
-		console.log (user.data[32]);
-		//console.log (user.data);
-		prepareData(user);
-		console.log (user.data[32]);
+		name = d.name;
+		prepareDataBis(user);
+		
 
 	});
 	
-	console.log (user.data[32]);
 	state = {data : dataInit, source : "state",referenceBudget : ref};
 	prepareData(state);	
 
-	$.couch.db("graphs").view("lines/lines", {
-
+	$.couch.db("clevertaxes").view("lines/lines", {
+		
 	    success: function(dataAvg) {
 	    	var lines = new Array();
 	    	//console.log(dataAvg);
@@ -565,23 +678,20 @@ function graphRenderById(docId){
 
       
 	    	people = {data : lines, source : "allpeople", referenceBudget : ref};
- 			console.log(people);
-			prepareData(people);
+ 			//console.log(people);
+			prepareDataBis(people);
 	    },
 	    error: function(status) {
 	      console.log(status);
 	    },
-	    group: true //pour executer la fonction on reduce
+	    group: true //pour executer la fonction reduce
 	});
 
-		console.log (user);
-		console.log (people);
-		console.log (state);
-		print( [state, user, people]);
-		
-	
-
-	
+		//console.log (user);
+		//console.log (people);
+		//console.log (state);
+		//console.log (name);
+		print( [state, user, people], true, false, name);
 };
 
 
@@ -613,8 +723,6 @@ $(document).ready(function(){
 		$stepButton.text("Share !")
 		hideShow(step0elems1,step3elems);
 
-		
-		
 
 		var title   = encodeURIComponent(user.name);
         var summary = encodeURIComponent('See what others have suggest to politicians');
@@ -636,7 +744,7 @@ $(document).ready(function(){
 	}
 	//manage the diffents steps
 	function step1(taxAmount, name){
-		console.log ("step1");
+		//console.log ("step1");
 		graphRender(taxAmount, name);
 		hideShow(step0elems,step1elems);
 
@@ -645,26 +753,27 @@ $(document).ready(function(){
 
 	function step2(){
 
-		console.log ("step2");
+		//console.log ("step2");
 		hideShow(step1elems,step2elems);
 
 		print( [state, user],false,true);
 		$stepButton.text("Save and...")
 		$stepButton.click(function(){
 			
-			step3(docId);
+			step3();
 		});
 	}
 
-	function step3(docId){
+	function step3(){
 		var docId = saveDB(user);
-		console.log ("Fin saveDB : "+ docId);
+		//console.log ("Fin saveDB : "+ docId);
 		hideShow(step2elems,step3elems);
-		print( [state, user, people]);
-		console.log (user);
-		console.log (people);
-		$stepButton.text("Share !")
+		print( [state, user, people]);  //ok
+		//console.log (user);
+		//console.log (people);
+		$stepButton.text("Share !");
 		$stepButton.click(function(){
+			
 			//redirection
 			//alert("Sharing function comming soon !" + docId);
 			window.open("./index.html?docId="+docId);
@@ -680,24 +789,28 @@ $(document).ready(function(){
 		console.log (user.data);
       	var lines = new Array();
       	user.data.forEach(function(entry) {
+      		/*
       		console.log (entry.label);
       		console.log (entry.amount);
       		console.log (entry.percentage);
+      		console.log (entry.percent);
+      		*/
       		var p      = {};
       		p['id']   = entry.id;
       		p['label']= entry.label;
       		p['amount']= entry.amount;
       		p['percent']= entry.percent;
+      		console.log (entry.percent == entry.percentage);
+      		if (entry.percent  == entry.percentage )
+      			p['percentage']= (entry.percentage * 1.0);
+      		else
+      			p['percentage']= (entry.percentage * 100.0);
       		lines.push(p);
+      		//console.log (p['percentage']);
 
       	});
-      	console.log (lines);
-     /*
-     	//console.log (lines);
-		var linesStr = JSON.stringify(lines);
-		console.log (linesStr);
-		//linesStr = [{"id":0,"label":"Non assigné","amount":3.998489755963064e-9,"percentage":9.998724070925391e-11},{"id":1,"label":"Économie ","amount":21.771169602561,"percentage":0.5444153439},{"id":2,"label":"Écologie, développement et aménagement durables ","amount":105.97424055481501,"percentage":2.6500185185},{"id":3,"label":"Ville et logement ","amount":80.331340714857,"percentage":2.0087857143},{"id":4,"label":"Travail et emploi ","amount":130.653254442519,"percentage":3.2671481481},{"id":5,"label":"Sécurité civile ","amount":4.863968887704,"percentage":0.1216296296},{"id":6,"label":"Sécurité ","amount":177.77787246198898,"percentage":4.4455582011},{"id":7,"label":"Sport, jeunesse et vie associative ","amount":4.428416427048,"percentage":0.1107380952},{"id":29,"label":"Aide publique au développement ","amount":48.401970557481,"percentage":1.2103518519},{"id":30,"label":"Agriculture, pêche, alimentation, forêt et affaires rurales ","amount":37.938132143238,"percentage":0.9486904762},{"id":31,"label":"Administration générale et territoriale de l\'État ","amount":27.19425793545,"percentage":0.680026455}];
-	*/	
+      	//console.log (lines);
+   
 		var doc = {
 			"name": user.name,
 			"lines": lines,
@@ -710,7 +823,7 @@ $(document).ready(function(){
 			async: false
 		});
 
-		var result = $.couch.db("graphs").saveDoc(doc);/*, {
+		var result = $.couch.db("clevertaxes").saveDoc(doc);/*, {
 			
 			success: function(user) {
 			docIdUser = user.id;

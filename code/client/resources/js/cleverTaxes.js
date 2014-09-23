@@ -486,8 +486,6 @@ function graphRender(taxAmount, name){
 	      			"label":getLabelFromId(entry.key),
 	      			"percent":entry.value * 1.0
 	      		};
-	      		//console.log(entry.key+" " +entry.value);
-	      		//console.log(p);
 	      		lines.push(p);
       		});
 			//console.log (lines);
@@ -570,19 +568,8 @@ function graphRenderById(docId){
 		async: false
 	});
 
-	var result = $.couch.db("clevertaxes").openDoc(docId);/*, {
-	    	success: function(dataUser) {
-	    		console.log(dataUser);
-	    		user = {data : dataUser, source : "user", referenceBudget : dataUser.referenceBudget};
-				prepareData(user);
-				console.log (user);
-				console.log (people);
-			print( [state, user, people]);
-	    	},
-	   		error: function(status) {
-	    		console.log(status);
-	  		}
-	  	});*/
+	var result = $.couch.db("clevertaxes").openDoc(docId);
+
 	result.then(function(d,i){
 		var lines = new Array();
 		var sum = 0;
@@ -701,9 +688,9 @@ function graphRenderById(docId){
 $(document).ready(function(){
 
 	var step0elems = [".step0", ".liste"],
-			step1elems = [".step1"],
-			step2elems = [".step2",$stepButton],
-			step3elems = [".step3"],
+			step1elems = [".step1",".liste"],
+			step2elems = [".step2",$stepButton,".liste"],
+			step3elems = [".step3",".liste"],
 			step1local = [".step1local"],
 			chart = [".chart"],
 			$stepButton = $("#stepButton")
@@ -729,10 +716,10 @@ $(document).ready(function(){
 		name        = "Name";
 	}
 		
-	console.log (englais);
+	//console.log (englais);
   	$.couch.urlPrefix = urlCouch;
   	docId = getURLargs()['docId'];
-	console.log ("docId " + docId + " urlcouch "+ $.couch.urlPrefix);
+	//console.log ("docId " + docId + " urlcouch "+ $.couch.urlPrefix);
 	if (docId != undefined) {
 
 		graphRenderById(docId);

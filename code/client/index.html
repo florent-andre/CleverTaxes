@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>Your public money in your hand</title>
+    <title>Gestion démocratique du budget</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="resources/css/libs/bootstrap-3.0.2.min.css">
@@ -47,13 +47,7 @@
 			.red{
 				border : 1px solid red;
 			}
-			.flag {
-				width: 32px;
-				height: 32px;
-				background:url(flags.png) no-repeat
-			}
-			.flag.flag-fr {background-position: -144px -44px}
-			.flag.flag-england {background-position: -240px -33px}
+			
 
 	  </style>
 
@@ -80,11 +74,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Clever Taxes</a>
+          <a class="navbar-brand" href="index.html">Open Politics</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Acceuil</a></li>
+            <li class="active"><a href="index.html">Accueil</a></li>
             <li><a href="about.html">A propos</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -98,33 +92,33 @@
     		<a href ="index_en.html"><img src="resources/css/images/flag_en.png"/></a>
     	</div>	   
       <div class="starter-template">
-      	<div class="step0" >
-      		<h1>Entrez le montant de votre impôt annuel</h1>
-        	<div class="row" >
+	      	<div class="step0" >
+	      		<h1>Entrez le montant annuel de vos impôts</h1>
+	        	<div class="row" >
 
-	        	<div class="col-md-4 col-md-offset-4">
+		        	<div class="col-md-4 col-md-offset-4">
 
-	        	<form class="bs-example bs-example-form">
-		        	<div class="input-group">
-					  <span class="input-group-addon">@</span>
-					  <input required autofocus id="name" type="text" class="form-control" placeholder="Votre nom">
-					</div>
+		        	<form class="bs-example bs-example-form">
+			        	<div class="input-group">
+						  <span class="input-group-addon">@</span>
+						  <input required autofocus id="name" type="text" class="form-control" placeholder="Nom">
+						</div>
 
 
-					<br>
-					<div class="input-group">
-					  <span class="input-group-addon">€ </span>
-					  <input id="taxamount" type="number" step="100" min ="100" class="form-control" placeholder="Votre montant d'impôt annuel" required>
-						<!--  <span class="input-group-addon">.00</span> -->
-					</div>
-					<br>
-			 		<button id="valid" type="button" data-loading-text="Chargement..." class="btn btn-lg btn-primary btn-block">GO Nationale!</button>
-			 		<!--<button id="golocal" type="button" data-loading-text="Loading..." class="btn btn-lg btn-primary btn-block">GO Local!</button>-->
+						<br>
+						<div class="input-group">
+						  <span class="input-group-addon">€ </span>
+						  <input id="taxamount" type="number" step="100" min ="100" class="form-control" placeholder="Montant annuel de vos impôts" required>
+							<!--  <span class="input-group-addon">.00</span> -->
+						</div>
+						<br>
+				 		<button id="valid" type="button" data-loading-text="Chargement..." class="btn btn-lg btn-primary btn-block">Voir la répartition!</button>
+				 		<!--<button id="golocal" type="button" data-loading-text="Loading..." class="btn btn-lg btn-primary btn-block">GO Local!</button>-->
 
-		        </form>
+			        </form>
+		        	</div>
 	        	</div>
-        	</div>
-        	
+	        	
         		
         	<!--
         	<h1>Or connect with your Crédit Agricole account</h1>
@@ -138,7 +132,7 @@
 
 
 
- 		<div class ="">
+ 		<div>
  			<!--<h1 class="step1local">Select your town</h1>
  			<div class="row">
 	 			<div class="step1local input-group col-md-4 col-md-offset-4">
@@ -154,31 +148,33 @@
 		        </div>
 		    </div>-->
 
-	 		<h1 class="step1" >Voir ce que font les politiciens</h1>
-	 		<h2 class="step1 small">Lorsque vous êtes d'accord (ou non) avec cela, cliquez sur le bouton</h2>
-	 		<p class="step1 text-muted">A noter que ces données sont liées au budget de la France en 2011. Voir page "A propos" pour plus de détails.</p>
+	 		<h1 class="step1" >Voici comment vos impôts sont utilisés</h1>
+	 		<p class="step1 text-muted">A noter que ces données sont issues du budget de la France en 2011.</p>
 
-	 		<h1 class="step2">Dire aux politiciens ce que vous aimeriez qu'ils font avec</h1>
+	 		<h2 class="step1 small">Cliquez sur ce bouton pour donner votre opinion</h2>
 	 		
-	 		<h2 class="step2 small">Modifier la répartition du budget en fonction de votre esprit démocratique.</h2>
-	 		<p class="step2 text-muted">Utilisez les boutons sur le dessus des barres et lorsque vous avez terminé, cliquez sur le bouton pour enregistrer vos modifications</p>
+	 		<h1 class="step2">Exprimez-vous sur la répartition du budget</h1>
+	 		
+	 		
+	 		<p class="step2 text-muted">Utilisez les boutons rouges au-dessus des barres pour faire varier les montants</p>
+	 		<p class="step2 text-muted">Donnez un nom à votre répartition</p>
+	 		<p class="step2 text-muted">Cliquez sur le bouton pour enregistrer et partager vos idées</p>
 	 		<div class="step2 row">
 				<div class="input-group col-md-4 col-md-offset-4">
 					<span class="input-group-addon">Nom</span>
-					<input id="graphicName" class="form-control" type="text" placeholder="Nom de votre Graphique" required>
+					<input id="graphicName" class="form-control" type="text" placeholder="Nom de votre répartition" required>
 				</div>
 			</div>
 			
 		</br>
-	 		<h1 class="step3">Voir ce que les autres ont suggérer aux politiciens</h1>
-	 		<h2 class="step3 small">Ce graphique montre (en moyenne) comment les gens auraient à gérer le budget.</h2>
-	 		<p class="step3 text-muted">Cliquez ici pour partager avec vos amis !</p>
-
+	 		<h1 class="step3">Voici la moyenne des répartitions citoyennes</h1>
+	 		<h2 class="step3 small">Cliquez ici pour partager avec vos amis !</h2>
+	 		<div class ="step3 nameGraph"></div>
 	 		<button id="stepButton"
 	 				type="button"
 	 				data-loading-text="Loading..."
 	 				class="btn btn-lg btn-primary col-md-4 col-md-offset-4 step1 step2 step3">
-					Exprimez-moi !</button>
+					Je m'exprime !</button>
 
 	 		<!-- TODO : remove other classes than chart -->
 	 		<div id="chart" class="chart step1 step2 step3"></div>
@@ -195,11 +191,11 @@
 <!--         </div> -->
 
       </div>
-      <h2>Liste des cinq derniers graphiques</h2>	
-        	<div  id ="listOfGraphic">
-        		
-        		
+      <div class ="liste">
+      	<h2>Liste des cinq derniers graphiques</h2>	
+        	<div  id ="listOfGraphic">	
         	</div>
+      </div>  
     </div><!-- /.container -->
 
 

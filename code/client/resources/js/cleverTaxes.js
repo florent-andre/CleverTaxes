@@ -349,7 +349,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 
 			var buttons = state.selectAll("rect.button")
 		      .data(function(d,i) {
-		    	  return d.reduce(function(p,c) { if (c.source == "user" && c.id != 0) p.push(c); return p; },[]);
+		    	  return d.reduce(function(p,c) { if (c.source == "Vous" && c.id != 0) p.push(c); return p; },[]);
 		    	}, function(d){
 		    		return budgetId(d);
 		    	})
@@ -466,10 +466,10 @@ function graphRender(taxAmount, name){
 	//ref = realReferenceBudget;
 	ref = userReferenceBudget;
 
-	state = {data : dataInit, source : "state",referenceBudget : ref};
+	state = {data : dataInit, source : "Etat",referenceBudget : ref};
 	prepareData(state);
 
-	user = {data : dataInit2, source : "user", referenceBudget : ref, name:name};
+	user = {data : dataInit2, source : "Vous", referenceBudget : ref, name:name};
 	//console.log (dataInit2);
 	//console.log (user);
 	prepareData(user);
@@ -540,7 +540,7 @@ function graphRender(taxAmount, name){
       		}
 
       
-	    	people = {data : lines, source : "allpeople", referenceBudget : ref};
+	    	people = {data : lines, source : "Moyenne", referenceBudget : ref};
  
 			prepareData(people);
 	    },
@@ -601,7 +601,7 @@ function graphRenderById(docId){
       	});
       	//console.log(sum);
 		
-		user = {data : lines, source : "user", referenceBudget : d.referenceBudget, name:d.name, graphicName : d.graphicName};
+		user = {data : lines, source : "Vous", referenceBudget : d.referenceBudget, name:d.name, graphicName : d.graphicName};
 		ref = d.referenceBudget;
 		name = d.name;
 		prepareDataBis(user);
@@ -609,7 +609,7 @@ function graphRenderById(docId){
 
 	});
 	
-	state = {data : dataInit, source : "state",referenceBudget : ref};
+	state = {data : dataInit, source : "Etat",referenceBudget : ref};
 	prepareData(state);	
 
 	$.couch.db("clevertaxes").view("lines/lines", {
@@ -677,7 +677,7 @@ function graphRenderById(docId){
       		}
 
       
-	    	people = {data : lines, source : "allpeople", referenceBudget : ref};
+	    	people = {data : lines, source : "Moyenne", referenceBudget : ref};
  			//console.log(people);
 			prepareDataBis(people);
 	    },
@@ -700,13 +700,14 @@ function graphRenderById(docId){
  */
 $(document).ready(function(){
 
-	var step0elems = [".step0"],
+	var step0elems = [".step0", ".liste"],
 			step1elems = [".step1"],
 			step2elems = [".step2",$stepButton],
 			step3elems = [".step3"],
 			step1local = [".step1local"],
 			chart = [".chart"],
 			$stepButton = $("#stepButton")
+			$graphName = $(".nameGraph")
 			;
 	
 	var urlCouch = location.protocol+"//"+location.hostname+":5984";
@@ -736,9 +737,12 @@ $(document).ready(function(){
 
 		graphRenderById(docId);
 		var $stepButton = $("#stepButton");
-		var step0elems1 = [".step0", ".step1",".step1local", ".step2",$stepButton ];
-		$stepButton.text(textShare +" "+ user.graphicName);
+		var step0elems1 = [".step0",".liste", ".step1",".step1local", ".step2",$stepButton ];
+		$graphName.html ("<p class=\"text-muted\">La répartion de <b>"+user.referenceBudget+"€</b> dans le graphique <b>" +user.graphicName+"</b></p>");
+		
+		$stepButton.text(textShare);
 		hideShow(step0elems1,step3elems);
+		$stepButton.unbind( "click" );
 		$stepButton.click(function(){
 				
 			var title   = encodeURIComponent(user.graphicName);
@@ -766,7 +770,7 @@ $(document).ready(function(){
 		      	
 	      		});
 	      		html += "</tbody></table>";
-	      		$("#listOfGraphic").append(html);	
+	      		$("#listOfGraphic").html(html);	
 		    },
 		    error: function(status) {
 		      console.log(status);
@@ -802,24 +806,28 @@ $(document).ready(function(){
 		hideShow(step1elems,step2elems);
 
 		print([state, user],false,true);
-		$stepButton.text(textSave)
+		$stepButton.text(textSave);
+		$stepButton.unbind( "click" );
 		$stepButton.click(function(){
 			var graphicName = $("#graphicName").val();
-			if (graphicName.trim() != '')
-				step3(graphicName);
-			else
+			if (graphicName.trim() != ''){
+				step3(graphicName, docId);
+			}else
 				alert (alertName);
 		});
 	}
 
 	function step3(graphicName){
+		console.log ("step3");
 		var docId = saveDB(user,graphicName);
 		console.log ("Fin saveDB : "+ docId);
 		hideShow(step2elems,step3elems);
 		print( [state, user, people]);  //ok
 		//console.log (user);
 		//console.log (people);
-		$stepButton.text(textShare +" "+ graphicName);
+		$graphName.html ("<p class=\"text-muted\">La répartion de <b>"+user.referenceBudget+"€</b> dans le graphique <b>" +graphicName+"</b></p>");
+		$stepButton.text(textShare);
+		$stepButton.unbind( "click" );
 		$stepButton.click(function(){
 			
 			//redirection

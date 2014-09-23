@@ -710,8 +710,25 @@ $(document).ready(function(){
 			;
 	
 	var urlCouch = location.protocol+"//"+location.hostname+":5984";
+	var englais     = false;
+	var textSave    = "Enregistrer et...";
+	var textShare   = "Partager sur Facebook !"
+	var summaryText = "Voir ce que les autres ont suggérer aux politiciens"
+	var alertName   = "Nom du graphique est obligatoire";
+	var alertChamps = "Champs obligatoires";
+	var name        = "Nom";
+	//console.log (location.pathname);
+	if ((location.pathname.indexOf("index_en")) != -1){
+		englais     = true;
+		textShare   = "Share on Facebook !";
+		summaryText = 'See what others have suggest to politicians';
+		alertName   = "Name is required";
+		textSave    = "Save and...";
+		alertChamps = "Required fields";
+		name        = "Name";
+	}
 		
-	
+	console.log (englais);
   	$.couch.urlPrefix = urlCouch;
   	docId = getURLargs()['docId'];
 	console.log ("docId " + docId + " urlcouch "+ $.couch.urlPrefix);
@@ -720,18 +737,45 @@ $(document).ready(function(){
 		graphRenderById(docId);
 		var $stepButton = $("#stepButton");
 		var step0elems1 = [".step0", ".step1",".step1local", ".step2",$stepButton ];
-		$stepButton.text("Share ! "+ user.graphicName);
+		$stepButton.text(textShare +" "+ user.graphicName);
 		hideShow(step0elems1,step3elems);
-
-
-		var title   = encodeURIComponent(user.graphicName);
-        var summary = encodeURIComponent('See what others have suggest to politicians');
+		$stepButton.click(function(){
+				
+			var title   = encodeURIComponent(user.graphicName);
+        	var summary = encodeURIComponent(summaryText);
         
-        var url     = encodeURIComponent(location.href+'docId='+docId);
-        var image   = encodeURIComponent('https://pics.mysite.com/mylogo.png');
+        	var url     = encodeURIComponent(location.href+'?docId='+docId);
+        	var image   = encodeURIComponent('https://pics.mysite.com/mylogo.png');
+        	//console.log (url);
+        	window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + title + '&amp;p[summary]=' + summary + '&amp;p[url]=' + url + '&amp;p[images][0]=' + image,'sharer','toolbar=0,status=0,width=548,height=325');
 
-        window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + title + '&amp;p[summary]=' + summary + '&amp;p[url]=' + url + '&amp;p[images][0]=' + image,'sharer','toolbar=0,status=0,width=548,height=325');
+        });	
+	}else{
 
+		$.couch.db("clevertaxes").view("docs/docs", {
+		
+		    success: function(data) {
+		    	var html = "<table class=\"table table-hover\">";
+		    	html    += "<thead><tr><th>"+name+"</th><th>Date</th></thead><tbody>";
+		    	//$("#listOfGraphic").append("<table class=\"table table-hover\">");
+		    	//$("#listOfGraphic").append("<thead><tr><th>Name</th><th>Date</th></thead><tbody>");
+				
+		    	data.rows.forEach(function(entry) {
+		    		html += "<tr><td><a href=\""+location.href+'?docId='+entry.id+"\">"+entry.value+"<a></td><td>"+formatDate(entry.key)+"</td></tr>";
+		    		//$("#listOfGraphic").append("<tr><td><a href=\""+location.href+'?docId='+entry.id+"\">"+entry.value+"<a></td><td>"+formatDate(entry.key)+"</td></tr>");
+		      	
+	      		});
+	      		html += "</tbody></table>";
+	      		$("#listOfGraphic").append(html);	
+		    },
+		    error: function(status) {
+		      console.log(status);
+		    },
+		    limit: 5,
+		    descending:true,
+
+		});
+		
 	}	
 	//user actions (on buttons)
 	function hideShow(hide,show){
@@ -757,27 +801,39 @@ $(document).ready(function(){
 		//var step1elems1 = [".step1",".step1local"];
 		hideShow(step1elems,step2elems);
 
-		print( [state, user],false,true);
-		$stepButton.text("Save and...")
+		print([state, user],false,true);
+		$stepButton.text(textSave)
 		$stepButton.click(function(){
 			var graphicName = $("#graphicName").val();
-			step3(graphicName);
+			if (graphicName.trim() != '')
+				step3(graphicName);
+			else
+				alert (alertName);
 		});
 	}
 
 	function step3(graphicName){
 		var docId = saveDB(user,graphicName);
-		//console.log ("Fin saveDB : "+ docId);
+		console.log ("Fin saveDB : "+ docId);
 		hideShow(step2elems,step3elems);
 		print( [state, user, people]);  //ok
 		//console.log (user);
 		//console.log (people);
-		$stepButton.text("Share ! "+graphicName);
+		$stepButton.text(textShare +" "+ graphicName);
 		$stepButton.click(function(){
 			
 			//redirection
-			//alert("Sharing function comming soon !" + docId);
 			window.open("./index.html?docId="+docId);
+				
+			var title   = encodeURIComponent(graphicName);
+        	var summary = encodeURIComponent(summaryText);
+        
+        	var url     = encodeURIComponent(location.href+'?docId='+docId);
+        	var image   = encodeURIComponent('https://pics.mysite.com/mylogo.png');
+
+        	window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + title + '&amp;p[summary]=' + summary + '&amp;p[url]=' + url + '&amp;p[images][0]=' + image,'sharer','toolbar=0,status=0,width=548,height=325');
+
+			
 			
 			
 		});
@@ -786,8 +842,7 @@ $(document).ready(function(){
 	
 	
 	function saveDB(user, graphicName){
-		//console.log ("saveDB");
-		//console.log (user.data);
+		
       	var lines = new Array();
       	user.data.forEach(function(entry) {
       		/*
@@ -796,10 +851,10 @@ $(document).ready(function(){
       		console.log (entry.percentage);
       		console.log (entry.percent);
       		*/
-      		var p      = {};
-      		p['id']   = entry.id;
-      		p['label']= entry.label;
-      		p['amount']= entry.amount;
+      		var p       = {};
+      		p['id']     = entry.id;
+      		p['label']  = entry.label;
+      		p['amount'] = entry.amount;
       		p['percent']= entry.percent;
       		//console.log (entry.percent == entry.percentage);
       		if (entry.percent  == entry.percentage )
@@ -813,6 +868,7 @@ $(document).ready(function(){
       	//console.log (lines);
    
 		var doc = {
+			"date":new Date().getTime(),
 			"graphicName": graphicName,
 			"name": user.name,
 			"lines": lines,
@@ -875,20 +931,52 @@ $(document).ready(function(){
 		return argsParsed;
 	}
 
+	function formatDate (time) {
+		//time en millisecondes
+		if (time > 1408975839987){
+			var d = new Date(parseInt(time));
+		//	console.log (d);
+			var theyear  = d.getFullYear();
+			var themonth = d.getMonth()+1;
+			var thetoday = d.getDate();
+			var thehour  = d.getHours();
+			var themn    = d.getMinutes();
+			//var thesc    =d.getSeconds();
+			if(thetoday<10){
+        thetoday='0'+thetoday;
+    	}
+    	if(themonth<10){
+        themonth='0'+themonth;
+    	}
+			if(thehour<10){
+				thehour='0'+thehour;
+			}
+			if(themn<10){
+				themn='0'+themn;
+			}
+
+			return (thetoday+"/"+themonth+"/"+theyear+ " "+thehour+":"+themn);
+		}else return "";
+	}
 
 	var dfd = $.Deferred();
 
 	$("#valid").click(function(){
-		console.log ("point de depart");
+		//console.log ("point de depart");
 		
-		var taxAmount = +$("#taxamount").val();
-		var name = $("#name").val();
+		var taxAmount = $("#taxamount").val();
+		var name      = $("#name").val();
+		if ((taxAmount.trim()) != '' && (name .trim() != '')){
+			$.when(dfd.promise()).then(function(){
+				step1(taxAmount, name);
+			});
 
-		$.when(dfd.promise()).then(function(){
-			step1(taxAmount, name);
-		});
-
-		 dfd.resolve();
+		 	dfd.resolve();
+		}else{
+			$("#name").addClass("red");
+			$("#taxamount").addClass("red");
+			alert (alertChamps);
+		} 	
 		 	
 	});
 

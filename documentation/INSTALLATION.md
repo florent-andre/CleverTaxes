@@ -30,9 +30,12 @@ sudo service apache2 restart
 
 # installation Apache couchDB 
 
-* Suivre le lien http://guide.couchdb.org/editions/1/fr/source.html
+* there is a package for ubuntu on the dowload page.
+* if you system is not on this download page follow : http://guide.couchdb.org/editions/1/fr/source.html
 
-Pour créer un user suivre la partie :Security Considerations
+* to grant access external network :
+* emacs /usr/local/etc/couchdb/local.ini
+* and then replace ;bind_address = 127.0.0.1 by bind_address = 0.0.0.0
 
 # demarrer le serveur
 ``` bash

@@ -36,10 +36,14 @@ sudo service apache2 restart
 * to grant access external network :
 * emacs /usr/local/etc/couchdb/local.ini
 * and then replace ;bind_address = 127.0.0.1 by bind_address = 0.0.0.0
+* also edit the last section to add a username and password to the admins.
+* 
+/usr/local/etc/init.d/couchdb restart
+
 
 # demarrer le serveur
 ``` bash
-sudo -i -u couchdb couchdb -b
+/usr/local/etc/init.d/couchdb start
 
 ```
 
@@ -57,9 +61,10 @@ curl -X PUT http://127.0.0.1:5984/clevertaxes
 ```
 ## Couchdb CORS
 * Config is visible here :http://wiki.apache.org/couchdb/CORS
-enabling CORS
 
-* http://localhost:5984/_utils/config.html
+* edit
+* emacs /usr/local/etc/couchdb/local.ini
+* --> TODO : group modifications with the others
 
 [httpd]
 enable_cors = true
@@ -67,6 +72,7 @@ enable_cors = true
 [cors]
 origins = *
 
+* save and restart
 
 # webSite :
 

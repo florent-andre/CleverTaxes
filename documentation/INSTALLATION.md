@@ -30,13 +30,20 @@ sudo service apache2 restart
 
 # installation Apache couchDB 
 
-* Suivre le lien http://guide.couchdb.org/editions/1/fr/source.html
+* there is a package for ubuntu on the dowload page.
+* if you system is not on this download page follow : http://guide.couchdb.org/editions/1/fr/source.html
 
-Pour créer un user suivre la partie :Security Considerations
+* to grant access external network :
+* emacs /usr/local/etc/couchdb/local.ini
+* and then replace ;bind_address = 127.0.0.1 by bind_address = 0.0.0.0
+* also edit the last section to add a username and password to the admins.
+* 
+/usr/local/etc/init.d/couchdb restart
+
 
 # demarrer le serveur
 ``` bash
-sudo -i -u couchdb couchdb -b
+/usr/local/etc/init.d/couchdb start
 
 ```
 
@@ -54,15 +61,17 @@ curl -X PUT http://127.0.0.1:5984/clevertaxes
 ```
 ## Couchdb CORS
 * Config is visible here :http://wiki.apache.org/couchdb/CORS
-enabling CORS
 
-* http://localhost:5984/_utils/config.html
+* edit
+* emacs /usr/local/etc/couchdb/local.ini
+* --> TODO : group modifications with the others
 
 [httpd]
 enable_cors = true
 
 [cors]
 origins = *
+* save and restart
 
 ## Couchdb Views
 Ds le dossier CleverTaxes/code/client/data, 2 views à créer:
@@ -74,6 +83,9 @@ View Name : lines
 2- une deuxieme vue est necessaire : code fourni ds le fichier docs.js
 Design Document : _design/docs
 View Name : docs
+
+
+
 
 # webSite :
 

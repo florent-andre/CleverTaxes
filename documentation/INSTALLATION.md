@@ -64,6 +64,16 @@ enable_cors = true
 [cors]
 origins = *
 
+## Couchdb Views
+Ds le dossier CleverTaxes/code/client/data, 2 views à créer:
+
+1- Se connecter en tant que admin > Selectionner Temporary view ds la select tout en haut à droite > clic View Code > Copier le code fourni ds le fichier lines.js: 2 fonctions à créer (Map function et reduce function) > Save As > 
+Design Document : _design/lines
+View Name : lines
+
+2- une deuxieme vue est necessaire : code fourni ds le fichier docs.js
+Design Document : _design/docs
+View Name : docs
 
 # webSite :
 

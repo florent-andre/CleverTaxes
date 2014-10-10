@@ -349,7 +349,10 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 
 			var buttons = state.selectAll("rect.button")
 		      .data(function(d,i) {
-		    	  return d.reduce(function(p,c) { if (c.source == "Vous" && c.id != 0) p.push(c); return p; },[]);
+		    	  return d.reduce(function(p,c) {
+		    	   	if (((c.source == "Vous") || (c.source == "User") ) && c.id != 0) 
+		    	   		p.push(c); return p; 
+		    	   },[]);
 		    	}, function(d){
 		    		return budgetId(d);
 		    	})
@@ -454,9 +457,9 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 };
 
 var ref,name, state, user, people;
-
+var englais;
 function graphRender(taxAmount, name){
-
+	console.log (englais);
 	//console.log ("graphRender");
 
 	var realReferenceBudget = "378440180000"; //378 billions
@@ -465,11 +468,16 @@ function graphRender(taxAmount, name){
 
 	//ref = realReferenceBudget;
 	ref = userReferenceBudget;
-
-	state = {data : dataInit, source : "Etat",referenceBudget : ref};
+	if (englais){
+		state = {data : dataInit, source : "State",referenceBudget : ref};
+		user = {data : dataInit2, source : "User", referenceBudget : ref, name:name};
+	}else{
+		state = {data : dataInit, source : "Etat",referenceBudget : ref};
+		user = {data : dataInit2, source : "Vous", referenceBudget : ref, name:name};
+	}
 	prepareData(state);
 
-	user = {data : dataInit2, source : "Vous", referenceBudget : ref, name:name};
+	
 	//console.log (dataInit2);
 	//console.log (user);
 	prepareData(user);
@@ -537,8 +545,12 @@ function graphRender(taxAmount, name){
 				} 
       		}
 
-      
-	    	people = {data : lines, source : "Moyenne", referenceBudget : ref};
+      	if (englais){
+			people = {data : lines, source : "Average", referenceBudget : ref};
+		}else{
+			people = {data : lines, source : "Moyenne", referenceBudget : ref};
+		}
+	    	
  
 			prepareData(people);
 	    },
@@ -561,7 +573,7 @@ function graphRender(taxAmount, name){
 };
 
 function graphRenderById(docId){
-	
+	console.log (englais);
 	var realReferenceBudget = "378440180000"; //378 billions
 	
 	$.ajaxSetup({
@@ -587,16 +599,26 @@ function graphRenderById(docId){
 	      	lines.push(p);
       	});
       	//console.log(sum);
+		if (englais){
+			user = {data : lines, source : "User", referenceBudget : d.referenceBudget, name:d.name, graphicName : d.graphicName};
+		}else{
 		
-		user = {data : lines, source : "Vous", referenceBudget : d.referenceBudget, name:d.name, graphicName : d.graphicName};
+			user = {data : lines, source : "Vous", referenceBudget : d.referenceBudget, name:d.name, graphicName : d.graphicName};
+		}
+		
 		ref = d.referenceBudget;
 		name = d.name;
 		prepareDataBis(user);
 		
 
 	});
+	if (englais){
+		state = {data : dataInit, source : "State",referenceBudget : ref};
+	}else{
+		
+		state = {data : dataInit, source : "Etat",referenceBudget : ref};
+	}
 	
-	state = {data : dataInit, source : "Etat",referenceBudget : ref};
 	prepareData(state);	
 
 	$.couch.db("clevertaxes").view("lines/lines", {
@@ -663,8 +685,13 @@ function graphRenderById(docId){
 				} 
       		}
 
-      
-	    	people = {data : lines, source : "Moyenne", referenceBudget : ref};
+      		if (englais){
+				people = {data : lines, source : "Average", referenceBudget : ref};
+			}else{
+		
+				people = {data : lines, source : "Moyenne", referenceBudget : ref};
+			}
+	    	
  			//console.log(people);
 			prepareDataBis(people);
 	    },
@@ -698,13 +725,14 @@ $(document).ready(function(){
 			;
 	
 	var urlCouch = location.protocol+"//"+location.hostname+":5984";
-	var englais     = false;
+	
 	var textSave    = "Enregistrer et...";
 	var textShare   = "Partager sur Facebook !"
 	var summaryText = "Voir ce que les autres ont suggérer aux politiciens"
 	var alertName   = "Nom du graphique est obligatoire";
 	var alertChamps = "Champs obligatoires";
 	var name        = "Nom";
+
 	//console.log (location.pathname);
 	if ((location.pathname.indexOf("index_en")) != -1){
 		englais     = true;
@@ -725,8 +753,11 @@ $(document).ready(function(){
 		graphRenderById(docId);
 		var $stepButton = $("#stepButton");
 		var step0elems1 = [".step0",".liste", ".step1",".step1local", ".step2",$stepButton ];
-		$graphName.html ("<p class=\"text-muted\">La répartion de <b>"+user.referenceBudget+"€</b> dans le graphique <b>" +user.graphicName+"</b></p>");
-		
+		if (englais){
+			$graphName.html ("<p class=\"text-muted\">The distribution of <b>"+user.referenceBudget+"€</b> in the graph <b>" +user.graphicName+"</b></p>");
+		}else{
+			$graphName.html ("<p class=\"text-muted\">La répartition de <b>"+user.referenceBudget+"€</b> sur le graphique <b>" +user.graphicName+"</b></p>");
+		}
 		$stepButton.text(textShare);
 		hideShow(step0elems1,step3elems);
 		$stepButton.unbind( "click" );
@@ -812,13 +843,20 @@ $(document).ready(function(){
 		print( [state, user, people]);  //ok
 		//console.log (user);
 		//console.log (people);
-		$graphName.html ("<p class=\"text-muted\">La répartion de <b>"+user.referenceBudget+"€</b> dans le graphique <b>" +graphicName+"</b></p>");
+		if (englais){
+			$graphName.html ("<p class=\"text-muted\">The distribution of <b>"+user.referenceBudget+"€</b> in the graph <b>" +graphicName+"</b></p>");
+		}else{
+			$graphName.html ("<p class=\"text-muted\">La répartition de <b>"+user.referenceBudget+"€</b> sur le graphique <b>" +graphicName+"</b></p>");
+		}
 		$stepButton.text(textShare);
 		$stepButton.unbind( "click" );
 		$stepButton.click(function(){
 			
 			//redirection
-			window.open("./index.html?docId="+docId);
+			if (englais)
+				window.open("./index_en.html?docId="+docId);
+			else	
+				window.open("./index.html?docId="+docId);
 				
 			var title   = encodeURIComponent(graphicName);
         	var summary = encodeURIComponent(summaryText);

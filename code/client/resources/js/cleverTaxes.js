@@ -732,6 +732,7 @@ $(document).ready(function(){
 	var alertName   = "Nom du graphique est obligatoire";
 	var alertChamps = "Champs obligatoires";
 	var name        = "Nom";
+	
 
 	//console.log (location.pathname);
 	if ((location.pathname.indexOf("index_en")) != -1){

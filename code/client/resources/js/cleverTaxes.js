@@ -223,14 +223,25 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 	var margin = {top: 20, right: 20, bottom: 430, left: 40},
 		    width = 1060 - margin.left - margin.right,
 		    height = 900 - margin.top - margin.bottom;
-
+	
 	var svg = d3.select("#chart svg g");
+
 	if(svg.empty()){
+		console.log ("svg empty");
+		var tip = d3.tip()
+		  .attr('class', 'd3-tip')
+		  .offset([-10, 0])
+		  .html(function(d) {
+		    return "<strong>Amount:</strong> <span style='color:red'>" + d + "</span>";
+		  })
 		svg = d3.select("#chart").append("svg")
 			    .attr("width", width + margin.left + margin.right)
 			    .attr("height", height + margin.top + margin.bottom)
 			    .append("g")
-			    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+			    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+			    .on('mouseover', tip.show)
+      			.on('mouseout', tip.hide)
+		svg.call(tip);
 	}
 
 
@@ -255,11 +266,11 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 	    .orient("left")
 	    .tickFormat(d3.format(".2s"));
 
-
+	   
 
 	function displayBar(data,svg,printAxes){
 	
-		//console.log ("displayBar" + titleGraph);
+		console.log ("displayBar" + titleGraph);
 		function budgetId(d){
 			//@TODO : see why this number generation
 // 						return d.sourceID+d.amount/100000;
@@ -305,6 +316,8 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
         		.style("font-size", "16px") 
         		.style("text-decoration", "underline")  
         		.text("");
+
+
 		}
 
 		function addModifyButtons(){

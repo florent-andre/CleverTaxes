@@ -470,24 +470,30 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 };
 
 var ref,name, state, user, people;
-var englais;
-function graphRender(taxAmount, name){
-	console.log (englais);
-	//console.log ("graphRender");
+var englais, type, textState, textUser, textAvg;
 
+function loadData(englais,type){
+	
+	if(type == "AEPLF2014"){
+		state = {data : dataInitAEPLF2014, source : textState, referenceBudget : ref};
+		user = {data : dataInit2AEPLF2014, source : textUser, referenceBudget : ref, name:name};
+	}else if(type == "AELFi2014"){
+		state = {data : dataInitAELFi2014, source : textState,referenceBudget : ref};
+		user = {data : dataInit2AELFi2014, source : textUser, referenceBudget : ref, name:name};
+	}	
+
+}
+function graphRender(taxAmount, name, type){
+	console.log (englais);
+	console.log ("graphRender");
+	//console.log (dataInitAEPLF2014);
 	var realReferenceBudget = "378440180000"; //378 billions
 	var userReferenceBudget = taxAmount;
 	var name = name;
 
 	//ref = realReferenceBudget;
 	ref = userReferenceBudget;
-	if (englais){
-		state = {data : dataInit, source : "State",referenceBudget : ref};
-		user = {data : dataInit2, source : "User", referenceBudget : ref, name:name};
-	}else{
-		state = {data : dataInit, source : "Etat",referenceBudget : ref};
-		user = {data : dataInit2, source : "Vous", referenceBudget : ref, name:name};
-	}
+	loadData(englais,type);
 	prepareData(state);
 
 	
@@ -504,72 +510,19 @@ function graphRender(taxAmount, name){
 	    	dataAvg.rows.forEach(function(entry) {
 	      		var p = {
 	      			"id":entry.key,
-	      			"label":getLabelFromId(entry.key),
+	      			//"label":getLabelFromId(entry.key),
 	      			"percent":entry.value * 1.0
 	      		};
 	      		lines.push(p);
       		});
-			//console.log (lines);
-      		function getLabelFromId(id){
-      			switch(id) {		
-					case 0 : 
-						return "Non assigné"; break;
-		  			case 1 : 
-		  				return "Économie "; break;
-		  			case 2 : 
-		  				return "Écologie, développement et aménagement durables "; break;
-		  			case 3 : 
-		  				return "Ville et logement "; break;
-		  			case 4 : 
-		  				return "Travail et emploi "; break;
-		  			case 5 : 
-		  				return "Sécurité civile "; break;
-		  			case 6 : 
-		  				return "Sécurité "; break;
-		  			case 7 : 
-		  				return "Sport, jeunesse et vie associative "; break;
-		  			case 8 : return "Solidarité, insertion et égalité des chances "; break;
-		  			case 9 : return "Santé "; break;
-		  			case 10: return "Régimes sociaux et de retraite "; break;
-		  			case 11: return "Remboursements et dégrèvements "; break;
-		  			case 12: return "Relations avec les collectivités territoriales "; break;
-		  			case 13: return "Recherche et enseignement supérieur "; break;
-		  			case 14: return"Provisions "; break;
-		  			case 15: return"Pouvoirs publics "; break;
-		  			case 16: return"Politique des territoires "; break;
-		  			case 17: return"Outre-mer "; break;
-		  			case 18: return"Médias, livre et industries culturelles "; break;
-		  			case 19: return"Justice "; break;
-		  			case 20: return"Immigration, asile et intégration "; break;
-		  			case 21: return"Gestion des finances publiques et des ressources humaines "; break;
-		  			case 22: return"Enseignement scolaire "; break;
-		  			case 23: return"Engagements financiers de l'État "; break;
-		  			case 24: return"Défense "; break;
-		  			case 25: return"Direction de l'action du Gouvernement "; break;
-		  			case 26: return"Culture "; break;
-		  			case 27: return"Conseil et contrôle de l'État "; break;
-		  			case 28: return"Anciens combattants, mémoire et liens avec la nation "; break;
-		  			case 29: return"Aide publique au développement "; break;
-		  			case 30: return"Agriculture, pêche, alimentation, forêt et affaires rurales "; break;
-		  			case 31: return"Administration générale et territoriale de l'État "; break;
-		  			case 32: return"Action extérieure de l'État "; break;
-		  			default:
-        				return "label";        				
-				} 
-      		}
-
-      	if (englais){
-			people = {data : lines, source : "Average", referenceBudget : ref};
-		}else{
-			people = {data : lines, source : "Moyenne", referenceBudget : ref};
-		}
-	    	
- 
+			
+			people = {data : lines, source : textAvg, referenceBudget : ref};
 			prepareData(people);
 	    },
 	    error: function(status) {
 	      console.log(status);
 	    },
+	    type:type,
 	    group: true //pour executer la fonction on reduce
 	});
 
@@ -585,8 +538,19 @@ function graphRender(taxAmount, name){
 	print([state],true);
 };
 
-function graphRenderById(docId){
+function graphRenderById(docId,englais){
 	console.log (englais);
+
+	//console.log (location.pathname);
+	if (englais){
+		textState = "State";
+		textUser  = "User";
+		textAvg   = "Average"
+	}else{
+		textState = "Etat";
+		textUser  = "Vous";
+		textAvg   = "Moyenne";
+	}	
 	var realReferenceBudget = "378440180000"; //378 billions
 	
 	$.ajaxSetup({
@@ -599,6 +563,8 @@ function graphRenderById(docId){
 		var lines = new Array();
 		var sum = 0;
 		var sum1 = 0;
+		type = d.type;
+		console.log (type);
 	    d.lines.forEach(function(entry) {
 	      	var p = {
 	      		"id":entry.id,
@@ -612,12 +578,9 @@ function graphRenderById(docId){
 	      	lines.push(p);
       	});
       	//console.log(sum);
-		if (englais){
-			user = {data : lines, source : "User", referenceBudget : d.referenceBudget, name:d.name, graphicName : d.graphicName};
-		}else{
 		
-			user = {data : lines, source : "Vous", referenceBudget : d.referenceBudget, name:d.name, graphicName : d.graphicName};
-		}
+		user = {data : lines, source : textUser, referenceBudget : d.referenceBudget, name:d.name, graphicName : d.graphicName};
+		
 		
 		ref = d.referenceBudget;
 		name = d.name;
@@ -625,13 +588,8 @@ function graphRenderById(docId){
 		
 
 	});
-	if (englais){
-		state = {data : dataInit, source : "State",referenceBudget : ref};
-	}else{
-		
-		state = {data : dataInit, source : "Etat",referenceBudget : ref};
-	}
-	
+	if (type =="AEPLF2014")
+	sourcetate = {data : dataInitAEPLF2014, source : textState, referenceBudget : ref};
 	prepareData(state);	
 
 	$.couch.db("clevertaxes").view("lines/lines", {
@@ -642,7 +600,7 @@ function graphRenderById(docId){
 	    	dataAvg.rows.forEach(function(entry) {
 	      		var p = {
 	      			"id":entry.key,
-	      			"label":getLabelFromId(entry.key),
+	      			//"label":getLabelFromId(entry.key),
 	      			"percent":entry.value * 1.0
 	      		};
 	      		//console.log(entry.key+" " +entry.value);
@@ -650,74 +608,17 @@ function graphRenderById(docId){
 	      		lines.push(p);
       		});
 			//console.log (lines);
-      		function getLabelFromId(id){
-      			switch(id) {		
-					case 0 : 
-						return "Non assigné"; break;
-		  			case 1 : 
-		  				return "Économie "; break;
-		  			case 2 : 
-		  				return "Écologie, développement et aménagement durables "; break;
-		  			case 3 : 
-		  				return "Ville et logement "; break;
-		  			case 4 : 
-		  				return "Travail et emploi "; break;
-		  			case 5 : 
-		  				return "Sécurité civile "; break;
-		  			case 6 : 
-		  				return "Sécurité "; break;
-		  			case 7 : 
-		  				return "Sport, jeunesse et vie associative "; break;
-		  			case 8 : return "Solidarité, insertion et égalité des chances "; break;
-		  			case 9 : return "Santé "; break;
-		  			case 10: return "Régimes sociaux et de retraite "; break;
-		  			case 11: return "Remboursements et dégrèvements "; break;
-		  			case 12: return "Relations avec les collectivités territoriales "; break;
-		  			case 13: return "Recherche et enseignement supérieur "; break;
-		  			case 14: return"Provisions "; break;
-		  			case 15: return"Pouvoirs publics "; break;
-		  			case 16: return"Politique des territoires "; break;
-		  			case 17: return"Outre-mer "; break;
-		  			case 18: return"Médias, livre et industries culturelles "; break;
-		  			case 19: return"Justice "; break;
-		  			case 20: return"Immigration, asile et intégration "; break;
-		  			case 21: return"Gestion des finances publiques et des ressources humaines "; break;
-		  			case 22: return"Enseignement scolaire "; break;
-		  			case 23: return"Engagements financiers de l'État "; break;
-		  			case 24: return"Défense "; break;
-		  			case 25: return"Direction de l'action du Gouvernement "; break;
-		  			case 26: return"Culture "; break;
-		  			case 27: return"Conseil et contrôle de l'État "; break;
-		  			case 28: return"Anciens combattants, mémoire et liens avec la nation "; break;
-		  			case 29: return"Aide publique au développement "; break;
-		  			case 30: return"Agriculture, pêche, alimentation, forêt et affaires rurales "; break;
-		  			case 31: return"Administration générale et territoriale de l'État "; break;
-		  			case 32: return"Action extérieure de l'État "; break;
-		  			default:
-        				return "label";        				
-				} 
-      		}
-
-      		if (englais){
-				people = {data : lines, source : "Average", referenceBudget : ref};
-			}else{
-		
-				people = {data : lines, source : "Moyenne", referenceBudget : ref};
-			}
-	    	
+			people = {data : lines, source : textAvg, referenceBudget : ref};
  			//console.log(people);
 			prepareDataBis(people);
 	    },
 	    error: function(status) {
 	      console.log(status);
 	    },
+	   	type :type,
 	    group: true //pour executer la fonction reduce
 	});
 
-		//console.log (user);
-		//console.log (people);
-		//console.log (state);
-		//console.log (name);
 		print( [state, user, people], true, false, name);
 };
 
@@ -726,7 +627,12 @@ function graphRenderById(docId){
  * User Interaction stuff
  */
 $(document).ready(function(){
-
+	$('.selectpicker').selectpicker();
+	$('#typebudget').change(function(e) {
+				console.log ("ddd");
+				var id = this.value;
+				loadListGraphics(id);
+	});
 	var step0elems = [".step0", ".liste"],
 			step1elems = [".step1",".liste"],
 			step2elems = [".step2",$stepButton,".liste"],
@@ -736,7 +642,7 @@ $(document).ready(function(){
 			$stepButton = $("#stepButton")
 			$graphName = $(".nameGraph")
 			;
-	
+	var englais = false;
 	var urlCouch = location.protocol+"//"+location.hostname+":5984";
 	
 	var textSave    = "Enregistrer et...";
@@ -745,7 +651,9 @@ $(document).ready(function(){
 	var alertName   = "Nom du graphique est obligatoire";
 	var alertChamps = "Champs obligatoires";
 	var name        = "Nom";
-	
+		textState = "Etat";
+		textUser  = "Vous";
+		textAvg   = "Moyenne";
 
 	//console.log (location.pathname);
 	if ((location.pathname.indexOf("index_en")) != -1){
@@ -756,15 +664,20 @@ $(document).ready(function(){
 		textSave    = "Save and...";
 		alertChamps = "Required fields";
 		name        = "Name";
+		textState = "State";
+		textUser  = "User";
+		textAvg   = "Average"
 	}
-		
+	var type = 	$("#typebudget").val();
+	console.log (type +"  " +textAvg);
+
 	//console.log (englais);
   	$.couch.urlPrefix = urlCouch;
   	docId = getURLargs()['docId'];
 	//console.log ("docId " + docId + " urlcouch "+ $.couch.urlPrefix);
 	if (docId != undefined) {
 
-		graphRenderById(docId);
+		graphRenderById(docId, englais);
 		var $stepButton = $("#stepButton");
 		var step0elems1 = [".step0",".liste", ".step1",".step1local", ".step2",$stepButton ];
 		if (englais){
@@ -788,6 +701,18 @@ $(document).ready(function(){
         });	
 	}else{
 
+		loadListGraphics(type);
+		$(document).ready(function(){
+			$('#typebudget').change(function(e) {
+				console.log ("ddd");
+				var id = this.value;
+				loadListGraphics(id);
+			});
+		});							
+		
+	}
+
+	function loadListGraphics (type){
 		$.couch.db("clevertaxes").view("docs/docs", {
 		
 		    success: function(data) {
@@ -807,11 +732,12 @@ $(document).ready(function(){
 		    error: function(status) {
 		      console.log(status);
 		    },
+		    type :type,
 		    limit: 5,
 		    descending:true,
 
 		});
-		
+
 	}	
 	//user actions (on buttons)
 	function hideShow(hide,show){
@@ -823,9 +749,9 @@ $(document).ready(function(){
 		});
 	}
 	//manage the diffents steps
-	function step1(taxAmount, name){
+	function step1(taxAmount, name, type){
 		//console.log ("step1");
-		graphRender(taxAmount, name);
+		graphRender(taxAmount, name, type);
 		hideShow(step0elems,step1elems);
 
 		$stepButton.click(step2);
@@ -834,7 +760,6 @@ $(document).ready(function(){
 	function step2(){
 
 		//console.log ("step2");
-		//var step1elems1 = [".step1",".step1local"];
 		hideShow(step1elems,step2elems);
 
 		print([state, user],false,true);
@@ -843,15 +768,16 @@ $(document).ready(function(){
 		$stepButton.click(function(){
 			var graphicName = $("#graphicName").val();
 			if (graphicName.trim() != ''){
-				step3(graphicName, docId);
+				step3(graphicName);
 			}else
 				alert (alertName);
 		});
 	}
 
 	function step3(graphicName){
+		var type = "AEPLF2014";
 		console.log ("step3");
-		var docId = saveDB(user,graphicName);
+		var docId = saveDB(user,graphicName, type);
 		console.log ("Fin saveDB : "+ docId);
 		hideShow(step2elems,step3elems);
 		print( [state, user, people]);  //ok
@@ -888,7 +814,7 @@ $(document).ready(function(){
 
 	
 	
-	function saveDB(user, graphicName){
+	function saveDB(user, graphicName, type){
 		
       	var lines = new Array();
       	user.data.forEach(function(entry) {
@@ -919,7 +845,8 @@ $(document).ready(function(){
 			"graphicName": graphicName,
 			"name": user.name,
 			"lines": lines,
-			"referenceBudget":user.referenceBudget	
+			"referenceBudget":user.referenceBudget,
+			"type":type	
 		};		
 
 		var docIdUser;
@@ -944,13 +871,14 @@ $(document).ready(function(){
 		});*/
 		
 		result.then(function(d,i){
+			/*
 			console.log(this);
 			console.log(docIdUser);
-			console.log(d);
+			console.log(d);*/
 			docIdUser = d.id;
 			
 		});
-		console.log(docIdUser);
+		//console.log(docIdUser);
 		return(docIdUser);
 
 		
@@ -1006,22 +934,85 @@ $(document).ready(function(){
 		}else return "";
 	}
 
+	function getLabelFromId(id){
+      			switch(id) {		
+					case 0 : 
+						return "Non assigné"; break;
+		  			case 1 : 
+		  				return "Économie "; break;
+		  			case 2 : 
+		  				return "Écologie, développement et aménagement durables "; break;
+		  			case 3 : 
+		  				return "Ville et logement "; break;
+		  			case 4 : 
+		  				return "Travail et emploi "; break;
+		  			case 5 : 
+		  				return "Sécurité civile "; break;
+		  			case 6 : 
+		  				return "Sécurité "; break;
+		  			case 7 : 
+		  				return "Sport, jeunesse et vie associative "; break;
+		  			case 8 : return "Solidarité, insertion et égalité des chances "; break;
+		  			case 9 : return "Santé "; break;
+		  			case 10: return "Régimes sociaux et de retraite "; break;
+		  			case 11: return "Remboursements et dégrèvements "; break;
+		  			case 12: return "Relations avec les collectivités territoriales "; break;
+		  			case 13: return "Recherche et enseignement supérieur "; break;
+		  			case 14: return"Provisions "; break;
+		  			case 15: return"Pouvoirs publics "; break;
+		  			case 16: return"Politique des territoires "; break;
+		  			case 17: return"Outre-mer "; break;
+		  			case 18: return"Médias, livre et industries culturelles "; break;
+		  			case 19: return"Justice "; break;
+		  			case 20: return"Immigration, asile et intégration "; break;
+		  			case 21: return"Gestion des finances publiques et des ressources humaines "; break;
+		  			case 22: return"Enseignement scolaire "; break;
+		  			case 23: return"Engagements financiers de l'État "; break;
+		  			case 24: return"Défense "; break;
+		  			case 25: return"Direction de l'action du Gouvernement "; break;
+		  			case 26: return"Culture "; break;
+		  			case 27: return"Conseil et contrôle de l'État "; break;
+		  			case 28: return"Anciens combattants, mémoire et liens avec la nation "; break;
+		  			case 29: return"Aide publique au développement "; break;
+		  			case 30: return"Agriculture, pêche, alimentation, forêt et affaires rurales "; break;
+		  			case 31: return"Administration générale et territoriale de l'État "; break;
+		  			case 32: return"Action extérieure de l'État "; break;
+		  			default:
+        				return "label";        				
+				} 
+      		}
+
 	var dfd = $.Deferred();
 
+	$('.selectpicker').click(function() {
+		var id = this.value;
+		console.log (id);
+		loadListGraphics(id);
+    });
+
+	$('.selectpicker').change(function(e) {
+		
+		var id = this.value;
+		console.log (id);
+		loadListGraphics(id);
+	});
 	$("#valid").click(function(){
 		//console.log ("point de depart");
 		
 		var taxAmount = $("#taxamount").val();
 		var name      = $("#name").val();
-		if ((taxAmount.trim()) != '' && (name .trim() != '')){
+		var type = 	$("#typebudget").val();
+		console.log (type);
+		if ((taxAmount.trim()) != '' && (name .trim() != '') && type != undefined){
 			$.when(dfd.promise()).then(function(){
-				step1(taxAmount, name);
+				step1(taxAmount, name, type);
 			});
 
 		 	dfd.resolve();
 		}else{
 			$("#name").addClass("red");
 			$("#taxamount").addClass("red");
+			$("#typebudget").addClass("red");
 			alert (alertChamps);
 		} 	
 		 	
@@ -1092,6 +1083,7 @@ $(document).ready(function(){
 		$('#myModal').modal('show');
 
 	});
+
 
 //	console.warn("remove this, as it's test");
 //

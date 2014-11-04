@@ -27,7 +27,7 @@ fs.readFile('./plf.json', 'utf8', function (err,data) {
 
   });
 
-  var propSelected = "AEPLF2014";
+  var propSelected = "AELFi2014";
 
   var sumTotal = 0;
   //TODO : faire le calcul sur la propriété propSelected pour avoir la somme par ministère et le % de chaque ligne de budget
@@ -52,18 +52,63 @@ fs.readFile('./plf.json', 'utf8', function (err,data) {
   console.log(sumTotal);
   console.log(Object.keys(dataSum).length);
 
+  var rawData = new Array();
+  var dataInit = new Array();
+  var firstElt = {
+      "id" : 0,
+      "label" : "Non assigné",
+      "percent" : 0
+    };
+    dataInit.push(firstElt);
   //TODO : parcours des items de dataSum pour calculer le %age
+  for (var i in dataSum) {
+    var elt = dataSum[i];
+    var percent  = (elt.amount/sumTotal)*100;
+    //console.log(percent);
+    // add a item
+    elt["percent"] = percent;
+    var m = {};
+    var m1 = {};
+    m['id']      = elt.CodeMinistere;
+    m['label']   = elt.Ministere;
+    m['percentage'] = percent ;
+    m['amount'] = elt.amount,
+    rawData.push(m);
 
+    m1['id']      = elt.CodeMinistere;
+    m1['label']   = elt.Ministere;
+    m1['percent'] = percent ;
+    dataInit.push(m1);
+  }
+ //console.log(dataInit);
   //TODO : recréer la structure attendue à partir des objects de la hasmap
 
   //console.log(dataPrepared);
 
-  var content = "var dataInit = " + JSON.stringify(dataPrepared) + ";"; 
-  fs.writeFile("./result.js", content, function(err) {
+  var content = "var rawData"+propSelected+" = {'lines' : " + JSON.stringify(rawData) + "};"; 
+  fs.writeFile("./rawDataresult"+propSelected+".js", content, function(err) {
     if(err) {
         console.log(err);
     } else {
-        console.log("The file was saved!");
+        console.log("The file rawDataresult was saved!");
     }
   }); 
+  var content1 = "var dataInit"+propSelected+" = " + JSON.stringify(dataInit) + ";"; 
+  fs.writeFile("./dataInitresult"+propSelected+".js", content1, function(err) {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log("The file dataInitresult was saved!");
+    }
+  }); 
+
+  var content2 = "var dataInit2"+propSelected+" = " + JSON.stringify(dataInit) + ";"; 
+  fs.writeFile("./dataInitresult2"+propSelected+".js", content2, function(err) {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log("The file dataInitresult2 was saved!");
+    }
+  }); 
+
 });

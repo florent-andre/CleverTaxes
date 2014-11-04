@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
@@ -12,6 +12,7 @@
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="resources/css/libs/bootstrap-3.0.2.min.css">
+	<link rel="stylesheet" href="resources/css/libs/bootstrap-select.css">
 <!-- Jquery -->
 <script src="resources/js/libs/jquery-1.10.2.min.js"></script>
 <script src="https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json2.js"></script>
@@ -22,7 +23,7 @@
 			}
 			.starter-template {
 			  padding: 40px 15px;
-			  text-align: center;
+			  text-align: ;
 			}
 
 			#graphContainer * {
@@ -51,34 +52,34 @@
   				fill: orangered ;
 			}
 			.d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 2px;
-}
+			  line-height: 1;
+			  font-weight: bold;
+			  padding: 12px;
+			  background: rgba(0, 0, 0, 0.8);
+			  color: #fff;
+			  border-radius: 2px;
+			}
 
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
-}
+			/* Creates a small triangle extender for the tooltip */
+			.d3-tip:after {
+			  box-sizing: border-box;
+			  display: inline;
+			  font-size: 10px;
+			  width: 100%;
+			  line-height: 1;
+			  color: rgba(0, 0, 0, 0.8);
+			  content: "\25BC";
+			  position: absolute;
+			  text-align: center;
+			}
 
-/* Style northward tooltips differently */
-.d3-tip.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
-}
-			
+			/* Style northward tooltips differently */
+			.d3-tip.n:after {
+			  margin: -1px 0 0 0;
+			  top: 100%;
+			  left: 0;
+			}
+						
 
 	  </style>
 
@@ -142,6 +143,24 @@
 						  <input id="taxamount" type="number" step="100" min ="100" class="form-control" placeholder="Montant annuel de vos impôts" required>
 							<!--  <span class="input-group-addon">.00</span> -->
 						</div>
+						<br>
+						<div class="input-group">
+							<select class="selectpicker" id = "typebudget" data-style="btn-inverse">
+								<optgroup label="2014">
+									<option value ="AEPLF2014" selected>AEPLF 2014</option>
+									<option value ="AELFi2014">AELFi 2014</option>
+									<option value ="CPPLF2014">CPPLF 2014</option>
+									<option value ="CPLFi2014">CPLFi 2014</option>
+								</optgroup>
+								<optgroup label="2013">
+									<option value ="AELF2013">AELF 2013</option>
+									<option value ="CPLF2013">CPLF 2013</option>
+								</optgroup>
+								<optgroup label="2011">
+									<option value="2011">Budget 2011 </option>
+								</optgroup>
+							</select>
+						</div>	
 						<br>
 				 		<button id="valid" type="button" data-loading-text="Chargement..." class="btn btn-lg btn-primary btn-block">Voir la répartition!</button>
 				 		<!--<button id="golocal" type="button" data-loading-text="Loading..." class="btn btn-lg btn-primary btn-block">GO Local!</button>-->
@@ -250,6 +269,7 @@
 
     <!-- Bootstrap -->
     <script src="resources/js/libs/bootstrap-3.0.2.min.js"></script>
+    <script src="resources/js/libs/bootstrap-select.js"></script>
 
     <script type="text/javascript" src="resources/js/array.js"></script>
 
@@ -262,10 +282,17 @@
 	<script src="resources/js/libs/couchJquery/jquery.dialog.js"></script>
 
     <!-- mock datas -->
-    <script type="text/javascript" src="./data/rawData.js"></script>
-    <script type="text/javascript" src="./data/dataInit.js"></script>
+    
+   <!--<script type="text/javascript" src="./data/dataInitresul.js"></script>
     <script type="text/javascript" src="./data/dataInit2.js"></script>
-    <script type="text/javascript" src="./data/dataInit3.js"></script>
+    <script type="text/javascript" src="./data/dataInit3.js"></script>-->
+
+   <!--<script type="text/javascript" src="./data/traitement/rawDataresult.js"></script> 
+    <script type="text/javascript" src="./data/traitement/dataInitresult.js"></script>
+    <script type="text/javascript" src="./data/traitement/dataInitresult2.js"></script>-->
+     <script type="text/javascript" src="./data/traitement/rawDataresultAELFi2014.js"></script> 
+    <script type="text/javascript" src="./data/traitement/dataInitresultAELFi2014.js"></script>
+    <script type="text/javascript" src="./data/traitement/dataInitresult2AELFi2014.js"></script>
     <!-- cleverTaxes script -->
     <script type="text/javascript" src="./resources/js/cleverTaxes.js"></script>
   </body>

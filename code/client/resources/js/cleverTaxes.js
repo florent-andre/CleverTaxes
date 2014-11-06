@@ -5,14 +5,14 @@
 //function for the data transformation
 function prepareData(/*{data : d, source : "sourceName", referenceBudget : value}*/){
 	//console.log ("prepareData");
-	
+
 	var args = Array.prototype.slice.call(arguments, 0);
 
 	//prepare data structure and add functions.
-
+	console.log (arguments);
 	//data transformation add the source attribute to objects
 	args.forEach(function(d,i){
-		
+
 		Object.defineProperty(d, "unassignied", {
 			value : null,
 			writable : true,
@@ -105,14 +105,14 @@ function prepareData(/*{data : d, source : "sourceName", referenceBudget : value
 }
 function prepareDataBis(/*{data : d, source : "sourceName", referenceBudget : value}*/){
 	//console.log ("prepareDataBis");
-	
+
 	var args = Array.prototype.slice.call(arguments, 0);
 
 	//prepare data structure and add functions.
 
 	//data transformation add the source attribute to objects
 	args.forEach(function(d,i){
-		
+
 		Object.defineProperty(d, "unassignied", {
 			value : null,
 			writable : true,
@@ -165,7 +165,7 @@ function prepareDataBis(/*{data : d, source : "sourceName", referenceBudget : va
 					this._amount = this._parent.referenceBudget * a /100;
 
 					//don't calculate the unassignied for the unassignied object
-					
+
 					this._percentage = a;
 
 				},
@@ -180,7 +180,7 @@ function prepareDataBis(/*{data : d, source : "sourceName", referenceBudget : va
 			//add the unassignied element to the parent
 			//console.log (a.source);
 			//if (a.source != "allpeople"){
-				
+
 				if( (a.id == 0)){
 					//init to 100% as after values are removed from unassignied
 					//a.percent = 100;
@@ -223,7 +223,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 	var margin = {top: 20, right: 20, bottom: 430, left: 40},
 		    width = 1060 - margin.left - margin.right,
 		    height = 900 - margin.top - margin.bottom;
-	
+
 	var svg = d3.select("#chart svg g");
 
 	if(svg.empty()){
@@ -266,10 +266,10 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 	    .orient("left")
 	    .tickFormat(d3.format(".2s"));
 
-	   
+
 
 	function displayBar(data,svg,printAxes){
-	
+
 		console.log ("displayBar" + titleGraph);
 		function budgetId(d){
 			//@TODO : see why this number generation
@@ -286,7 +286,7 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 
 		function printAxis(){
 			//console.log ("printAxis" + 	titleGraph);
-			
+
 			svg.append("g")
 		      .attr("class", "x axis")
 		      .attr("transform", "translate(0," + height + ")")
@@ -310,18 +310,18 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 			    .text("Amount");
 			//pour le titre
 			svg.append("text")
-        		.attr("x", (width / 2))             
+        		.attr("x", (width / 2))
         		.attr("y", 0 - (margin.top / 2))
-        		.attr("text-anchor", "middle")  
-        		.style("font-size", "16px") 
-        		.style("text-decoration", "underline")  
+        		.attr("text-anchor", "middle")
+        		.style("font-size", "16px")
+        		.style("text-decoration", "underline")
         		.text("");
 
 
 		}
 
 		function addModifyButtons(){
-			
+
 
 			var buttonHeight = 15,
 				buttonColor = "#D9534F",
@@ -363,8 +363,8 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 			var buttons = state.selectAll("rect.button")
 		      .data(function(d,i) {
 		    	  return d.reduce(function(p,c) {
-		    	   	if (((c.source == "Vous") || (c.source == "User") ) && c.id != 0) 
-		    	   		p.push(c); return p; 
+		    	   	if (((c.source == "Vous") || (c.source == "User") ) && c.id != 0)
+		    	   		p.push(c); return p;
 		    	   },[]);
 		    	}, function(d){
 		    		return budgetId(d);
@@ -469,22 +469,51 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 
 };
 
-var ref,name, state, user, people;
-var englais, type, textState, textUser, textAvg;
+var type, ref,name, state, user, people;
+var englais, textState, textUser, textAvg;
 
-function loadData(englais,type){
-	
+
+function loadStateBytype(type){
+
 	if(type == "AEPLF2014"){
 		state = {data : dataInitAEPLF2014, source : textState, referenceBudget : ref};
-		user = {data : dataInit2AEPLF2014, source : textUser, referenceBudget : ref, name:name};
 	}else if(type == "AELFi2014"){
 		state = {data : dataInitAELFi2014, source : textState,referenceBudget : ref};
+	}else if(type == "CPPLF2014"){
+		state = {data : dataInitCPPLF2014, source : textState,referenceBudget : ref};
+	}else if(type == "CPLFi2014"){
+		state = {data : dataInitCPLFi2014, source : textState,referenceBudget : ref};
+	}else if(type == "AELF2013"){
+		state = {data : dataInitAELF2013, source : textState,referenceBudget : ref};
+	}else if(type == "CPLF2013"){
+		state = {data : dataInitCPLF2013, source : textState,referenceBudget : ref};
+	}else if(type == "2011"){
+		state = {data : dataInit, source : textState,referenceBudget : ref};
+	}
+
+}
+function loadUserBytype(type){
+
+	if(type == "AEPLF2014"){
+		user = {data : dataInit2AEPLF2014, source : textUser, referenceBudget : ref, name:name};
+	}else if(type == "AELFi2014"){
 		user = {data : dataInit2AELFi2014, source : textUser, referenceBudget : ref, name:name};
-	}	
+	}else if(type == "CPPLF2014"){
+		user = {data : dataInit2CPPLF2014, source : textUser, referenceBudget : ref, name:name};
+	}else if(type == "CPLFi2014"){
+		user = {data : dataInit2CPLFi2014, source : textUser, referenceBudget : ref, name:name};
+	}else if(type == "AELF2013"){
+		user = {data : dataInit2AELF2013, source : textUser,referenceBudget : ref};
+	}else if(type == "CPLF2013"){
+		user = {data : dataInit2CPLF2013, source : textUser,referenceBudget : ref};
+	}else if(type == "2011"){
+		user = {data : dataInit2, source : textUser,referenceBudget : ref};
+	}
 
 }
 function graphRender(taxAmount, name, type){
-	console.log (englais);
+	console.log ("englais :" +englais);
+	console.log ("type :" +type);
 	console.log ("graphRender");
 	//console.log (dataInitAEPLF2014);
 	var realReferenceBudget = "378440180000"; //378 billions
@@ -493,21 +522,20 @@ function graphRender(taxAmount, name, type){
 
 	//ref = realReferenceBudget;
 	ref = userReferenceBudget;
-	loadData(englais,type);
+	loadStateBytype(type);
 	prepareData(state);
 
-	
-	//console.log (dataInit2);
-	//console.log (user);
+	loadUserBytype(type);
 	prepareData(user);
 	//console.log (user);
-	
-	$.couch.db("clevertaxes").view("lines/lines", {
+
+	$.couch.db("clevertaxes").view("lines/"+type, {
 
 	    success: function(dataAvg) {
 	    	var lines = new Array();
 	    	//console.log(dataAvg);
 	    	dataAvg.rows.forEach(function(entry) {
+					console.log (entry);
 	      		var p = {
 	      			"id":entry.key,
 	      			//"label":getLabelFromId(entry.key),
@@ -515,33 +543,21 @@ function graphRender(taxAmount, name, type){
 	      		};
 	      		lines.push(p);
       		});
-			
+
 			people = {data : lines, source : textAvg, referenceBudget : ref};
 			prepareData(people);
 	    },
 	    error: function(status) {
 	      console.log(status);
 	    },
-	    type:type,
+	    //type:type,
 	    group: true //pour executer la fonction on reduce
 	});
-
-	
-	/*
-	people = {data : dataInit3, source : "allpeople", referenceBudget : ref}; 
-	    	//console.log(people);  
-	    	//console.log(people1); 
-			prepareData(people);
-	*/
-	
-
 	print([state],true);
 };
 
 function graphRenderById(docId,englais){
-	console.log (englais);
 
-	//console.log (location.pathname);
 	if (englais){
 		textState = "State";
 		textUser  = "User";
@@ -550,50 +566,42 @@ function graphRenderById(docId,englais){
 		textState = "Etat";
 		textUser  = "Vous";
 		textAvg   = "Moyenne";
-	}	
+	}
 	var realReferenceBudget = "378440180000"; //378 billions
-	
+
 	$.ajaxSetup({
 		async: false
 	});
 
+	//charger object user from BDD by docId
 	var result = $.couch.db("clevertaxes").openDoc(docId);
-
 	result.then(function(d,i){
 		var lines = new Array();
 		var sum = 0;
 		var sum1 = 0;
 		type = d.type;
 		console.log (type);
-	    d.lines.forEach(function(entry) {
+	  d.lines.forEach(function(entry) {
 	      	var p = {
 	      		"id":entry.id,
 	      		"label":entry.label,
 	      		"percent":entry.percentage * 1.0
 	      	};
-	      		//console.log(entry.key+" " +entry.value);
-	      		//console.log(p);
-	      	//sum1 +=entry.amount* 1.0;
-	      	//sum +=entry.amount* 1.0;
 	      	lines.push(p);
-      	});
-      	//console.log(sum);
-		
+    });
+
 		user = {data : lines, source : textUser, referenceBudget : d.referenceBudget, name:d.name, graphicName : d.graphicName};
-		
-		
+
 		ref = d.referenceBudget;
 		name = d.name;
 		prepareDataBis(user);
-		
-
 	});
-	if (type =="AEPLF2014")
-	sourcetate = {data : dataInitAEPLF2014, source : textState, referenceBudget : ref};
-	prepareData(state);	
+	//charger object state from file
+	loadStateBytype(type);
+	prepareData(state);
+	//charger object moyenne from BDD
+	$.couch.db("clevertaxes").view("lines/"+type, {
 
-	$.couch.db("clevertaxes").view("lines/lines", {
-		
 	    success: function(dataAvg) {
 	    	var lines = new Array();
 	    	//console.log(dataAvg);
@@ -615,7 +623,7 @@ function graphRenderById(docId,englais){
 	    error: function(status) {
 	      console.log(status);
 	    },
-	   	type :type,
+	   	//type :type,
 	    group: true //pour executer la fonction reduce
 	});
 
@@ -627,12 +635,7 @@ function graphRenderById(docId,englais){
  * User Interaction stuff
  */
 $(document).ready(function(){
-	$('.selectpicker').selectpicker();
-	$('#typebudget').change(function(e) {
-				console.log ("ddd");
-				var id = this.value;
-				loadListGraphics(id);
-	});
+
 	var step0elems = [".step0", ".liste"],
 			step1elems = [".step1",".liste"],
 			step2elems = [".step2",$stepButton,".liste"],
@@ -644,7 +647,7 @@ $(document).ready(function(){
 			;
 	var englais = false;
 	var urlCouch = location.protocol+"//"+location.hostname+":5984";
-	
+
 	var textSave    = "Enregistrer et...";
 	var textShare   = "Partager sur Facebook !"
 	var summaryText = "Voir ce que les autres ont suggérer aux politiciens"
@@ -668,7 +671,7 @@ $(document).ready(function(){
 		textUser  = "User";
 		textAvg   = "Average"
 	}
-	var type = 	$("#typebudget").val();
+	type = 	$("#typebudget").val();
 	console.log (type +"  " +textAvg);
 
 	//console.log (englais);
@@ -681,64 +684,61 @@ $(document).ready(function(){
 		var $stepButton = $("#stepButton");
 		var step0elems1 = [".step0",".liste", ".step1",".step1local", ".step2",$stepButton ];
 		if (englais){
-			$graphName.html ("<p class=\"text-muted\">The distribution of <b>"+user.referenceBudget+"€</b> in the graph <b>" +user.graphicName+"</b></p>");
+			$graphName.html ("<p class=\"text-muted\">The distribution of <b>"+user.referenceBudget+"€</b> in the graph <b>" +user.graphicName+"</b></p><p class=\"text-muted\">PLF 2014 - General budget  (BG) by destination <b> ( " +type+" )</b></p>");
 		}else{
-			$graphName.html ("<p class=\"text-muted\">La répartition de <b>"+user.referenceBudget+"€</b> sur le graphique <b>" +user.graphicName+"</b></p>");
+			$graphName.html ("<p class=\"text-muted\">La répartition de <b>"+user.referenceBudget+"€</b> sur le graphique <b>" +user.graphicName+"</b></p><p class=\"text-muted\">PLF 2014 - Budget général (BG) par destination <b> ( " +type+" )</b></p>");
 		}
 		$stepButton.text(textShare);
 		hideShow(step0elems1,step3elems);
 		$stepButton.unbind( "click" );
 		$stepButton.click(function(){
-				
-			var title   = encodeURIComponent(user.graphicName);
-        	var summary = encodeURIComponent(summaryText);
-        
-        	var url     = encodeURIComponent(location.href+'?docId='+docId);
-        	var image   = encodeURIComponent('https://pics.mysite.com/mylogo.png');
-        	//console.log (url);
-        	window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + title + '&amp;p[summary]=' + summary + '&amp;p[url]=' + url + '&amp;p[images][0]=' + image,'sharer','toolbar=0,status=0,width=548,height=325');
 
-        });	
+			var title   = encodeURIComponent(user.graphicName);
+	    var summary = encodeURIComponent(summaryText);
+
+	    var url     = encodeURIComponent(location.href+'?docId='+docId);
+	    var image   = encodeURIComponent('https://pics.mysite.com/mylogo.png');
+	        	//console.log (url);
+	    window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + title + '&amp;p[summary]=' + summary + '&amp;p[url]=' + url + '&amp;p[images][0]=' + image,'sharer','toolbar=0,status=0,width=548,height=325');
+
+    });
 	}else{
 
 		loadListGraphics(type);
-		$(document).ready(function(){
-			$('#typebudget').change(function(e) {
-				console.log ("ddd");
-				var id = this.value;
-				loadListGraphics(id);
-			});
-		});							
-		
 	}
 
 	function loadListGraphics (type){
-		$.couch.db("clevertaxes").view("docs/docs", {
-		
+		console.log ("loadListGraphics "+type);
+		$("#listOfGraphic").html("");
+		var html = "";
+		var header = "";
+
+		$.couch.db("clevertaxes").view("docs/"+type, {
+
 		    success: function(data) {
-		    	var html = "<table class=\"table table-hover\">";
-		    	html    += "<thead><tr><th>"+name+"</th><th>Date</th></thead><tbody>";
-		    	//$("#listOfGraphic").append("<table class=\"table table-hover\">");
-		    	//$("#listOfGraphic").append("<thead><tr><th>Name</th><th>Date</th></thead><tbody>");
-				
 		    	data.rows.forEach(function(entry) {
-		    		html += "<tr><td><a href=\""+location.href+'?docId='+entry.id+"\">"+entry.value+"<a></td><td>"+formatDate(entry.key)+"</td></tr>";
-		    		//$("#listOfGraphic").append("<tr><td><a href=\""+location.href+'?docId='+entry.id+"\">"+entry.value+"<a></td><td>"+formatDate(entry.key)+"</td></tr>");
-		      	
-	      		});
-	      		html += "</tbody></table>";
-	      		$("#listOfGraphic").html(html);	
+						//if (entry.value.type == type)
+		    			html += "<tr><td><a href=\""+location.href+'?docId='+entry.id+"\">"+entry.value.graphicName+"<a></td><td>"+formatDate(entry.value.date)+"</td></tr>";
+		    	});
+					if (html != ""){
+						header = "<h2>Liste des derniers graphiques</h2>";
+						header += "<table class=\"table table-hover\">";
+						header += "<thead><tr><th>"+name+"</th><th>Date</th></thead><tbody>";
+						html = header + html + "</tbody></table>";
+					}
+
+	      	$("#listOfGraphic").html(html);
 		    },
 		    error: function(status) {
 		      console.log(status);
 		    },
-		    type :type,
-		    limit: 5,
+		    //type :type,
 		    descending:true,
+				limit:5
 
 		});
 
-	}	
+	}
 	//user actions (on buttons)
 	function hideShow(hide,show){
 		hide.forEach(function(d){
@@ -750,16 +750,18 @@ $(document).ready(function(){
 	}
 	//manage the diffents steps
 	function step1(taxAmount, name, type){
-		//console.log ("step1");
+		console.log ("step1");
 		graphRender(taxAmount, name, type);
 		hideShow(step0elems,step1elems);
-
-		$stepButton.click(step2);
+		$stepButton.unbind( "click" );
+		$stepButton.click(function(){
+			step2(type);
+		});
 	}
 
-	function step2(){
+	function step2(type){
 
-		//console.log ("step2");
+		console.log ("step2 :" + type);
 		hideShow(step1elems,step2elems);
 
 		print([state, user],false,true);
@@ -768,54 +770,49 @@ $(document).ready(function(){
 		$stepButton.click(function(){
 			var graphicName = $("#graphicName").val();
 			if (graphicName.trim() != ''){
-				step3(graphicName);
+				step3(graphicName, type);
 			}else
 				alert (alertName);
 		});
 	}
 
-	function step3(graphicName){
-		var type = "AEPLF2014";
-		console.log ("step3");
+	function step3(graphicName, type){
+
+		console.log ("step3" + type);
 		var docId = saveDB(user,graphicName, type);
 		console.log ("Fin saveDB : "+ docId);
 		hideShow(step2elems,step3elems);
 		print( [state, user, people]);  //ok
-		//console.log (user);
-		//console.log (people);
+
 		if (englais){
-			$graphName.html ("<p class=\"text-muted\">The distribution of <b>"+user.referenceBudget+"€</b> in the graph <b>" +graphicName+"</b></p>");
+			$graphName.html ("<p class=\"text-muted\">The distribution of <b>"+user.referenceBudget+"€</b> in the graph <b>" +graphicName+"</b></p><p class=\"text-muted\">PLF 2014 - General budget  (BG) by destination <b> ( " +type+" )</b></p>");
 		}else{
-			$graphName.html ("<p class=\"text-muted\">La répartition de <b>"+user.referenceBudget+"€</b> sur le graphique <b>" +graphicName+"</b></p>");
+			$graphName.html ("<p class=\"text-muted\">La répartition de <b>"+user.referenceBudget+"€</b> sur le graphique <b>" +graphicName+"</b></p><p class=\"text-muted\">PLF 2014 - Budget général (BG) par destination <b> ( " +type+" )</b></p>");
 		}
 		$stepButton.text(textShare);
 		$stepButton.unbind( "click" );
 		$stepButton.click(function(){
-			
+
 			//redirection
 			if (englais)
 				window.open("./index_en.html?docId="+docId);
-			else	
+			else
 				window.open("./index.html?docId="+docId);
-				
+
 			var title   = encodeURIComponent(graphicName);
-        	var summary = encodeURIComponent(summaryText);
-        
-        	var url     = encodeURIComponent(location.href+'?docId='+docId);
-        	var image   = encodeURIComponent('https://pics.mysite.com/mylogo.png');
+      var summary = encodeURIComponent(summaryText);
 
-        	window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + title + '&amp;p[summary]=' + summary + '&amp;p[url]=' + url + '&amp;p[images][0]=' + image,'sharer','toolbar=0,status=0,width=548,height=325');
+      var url     = encodeURIComponent(location.href+'?docId='+docId);
+      var image   = encodeURIComponent('https://pics.mysite.com/mylogo.png');
 
-			
-			
-			
+      window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + title + '&amp;p[summary]=' + summary + '&amp;p[url]=' + url + '&amp;p[images][0]=' + image,'sharer','toolbar=0,status=0,width=548,height=325');
 		});
 	}
 
-	
-	
+
+
 	function saveDB(user, graphicName, type){
-		
+
       	var lines = new Array();
       	user.data.forEach(function(entry) {
       		/*
@@ -839,27 +836,27 @@ $(document).ready(function(){
 
       	});
       	//console.log (lines);
-   
+
 		var doc = {
 			"date":new Date().getTime(),
 			"graphicName": graphicName,
 			"name": user.name,
 			"lines": lines,
 			"referenceBudget":user.referenceBudget,
-			"type":type	
-		};		
+			"type":type
+		};
 
 		var docIdUser;
-		
+
 		$.ajaxSetup({
 			async: false
 		});
 
 		var result = $.couch.db("clevertaxes").saveDoc(doc);/*, {
-			
+
 			success: function(user) {
 			docIdUser = user.id;
-			
+
 		},
 		complete : function(user){
 			docIdUser = user.id;
@@ -869,19 +866,19 @@ $(document).ready(function(){
 			console.log(status);
 		}
 		});*/
-		
+
 		result.then(function(d,i){
 			/*
 			console.log(this);
 			console.log(docIdUser);
 			console.log(d);*/
 			docIdUser = d.id;
-			
+
 		});
 		//console.log(docIdUser);
 		return(docIdUser);
 
-		
+
 	}
 	function step1local(){
 		alert("manage this !!")
@@ -935,22 +932,22 @@ $(document).ready(function(){
 	}
 
 	function getLabelFromId(id){
-      			switch(id) {		
-					case 0 : 
+      			switch(id) {
+					case 0 :
 						return "Non assigné"; break;
-		  			case 1 : 
+		  			case 1 :
 		  				return "Économie "; break;
-		  			case 2 : 
+		  			case 2 :
 		  				return "Écologie, développement et aménagement durables "; break;
-		  			case 3 : 
+		  			case 3 :
 		  				return "Ville et logement "; break;
-		  			case 4 : 
+		  			case 4 :
 		  				return "Travail et emploi "; break;
-		  			case 5 : 
+		  			case 5 :
 		  				return "Sécurité civile "; break;
-		  			case 6 : 
+		  			case 6 :
 		  				return "Sécurité "; break;
-		  			case 7 : 
+		  			case 7 :
 		  				return "Sport, jeunesse et vie associative "; break;
 		  			case 8 : return "Solidarité, insertion et égalité des chances "; break;
 		  			case 9 : return "Santé "; break;
@@ -978,30 +975,26 @@ $(document).ready(function(){
 		  			case 31: return"Administration générale et territoriale de l'État "; break;
 		  			case 32: return"Action extérieure de l'État "; break;
 		  			default:
-        				return "label";        				
-				} 
+        				return "label";
+				}
       		}
 
 	var dfd = $.Deferred();
 
-	$('.selectpicker').click(function() {
-		var id = this.value;
-		console.log (id);
-		loadListGraphics(id);
-    });
+;
 
-	$('.selectpicker').change(function(e) {
-		
+	$('#typebudget').change(function(e) {
+
 		var id = this.value;
-		console.log (id);
+		console.log ("select : "+id);
 		loadListGraphics(id);
 	});
 	$("#valid").click(function(){
 		//console.log ("point de depart");
-		
+
 		var taxAmount = $("#taxamount").val();
 		var name      = $("#name").val();
-		var type = 	$("#typebudget").val();
+		type          = $("#typebudget").val();
 		console.log (type);
 		if ((taxAmount.trim()) != '' && (name .trim() != '') && type != undefined){
 			$.when(dfd.promise()).then(function(){
@@ -1014,8 +1007,8 @@ $(document).ready(function(){
 			$("#taxamount").addClass("red");
 			$("#typebudget").addClass("red");
 			alert (alertChamps);
-		} 	
-		 	
+		}
+
 	});
 
 	$("#golocal").click(function(){

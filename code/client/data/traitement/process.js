@@ -27,20 +27,20 @@ fs.readFile('./plf.json', 'utf8', function (err,data) {
 
   });
 
-  var propSelected = "AELFi2014";
+  var propSelected = "CPLF2013";//AEPLF2014;"AELFi2014";"CPPLF2014";"CPLFi2014";"AELF2013";"CPLF2013
 
   var sumTotal = 0;
   //TODO : faire le calcul sur la propriété propSelected pour avoir la somme par ministère et le % de chaque ligne de budget
   var dataSum = dataPrepared.reduce(function(prev,cur,i,original){
 
   	sumTotal += cur[propSelected];
-  	
+
     if(prev[cur.CodeMinistere]){
   		prev[cur.CodeMinistere].amount += cur[propSelected];
-  		
+
   	}else{
   		prev[cur.CodeMinistere] = cur;
-      prev[cur.CodeMinistere].amount = cur[propSelected];    
+      prev[cur.CodeMinistere].amount = cur[propSelected];
   	}
 
   	return prev;
@@ -85,30 +85,30 @@ fs.readFile('./plf.json', 'utf8', function (err,data) {
 
   //console.log(dataPrepared);
 
-  var content = "var rawData"+propSelected+" = {'lines' : " + JSON.stringify(rawData) + "};"; 
+  var content = "var rawData"+propSelected+" = {'lines' : " + JSON.stringify(rawData) + "};";
   fs.writeFile("./rawDataresult"+propSelected+".js", content, function(err) {
     if(err) {
         console.log(err);
     } else {
-        console.log("The file rawDataresult was saved!");
+        console.log("The file rawDataresult"+propSelected+" was saved!");
     }
-  }); 
-  var content1 = "var dataInit"+propSelected+" = " + JSON.stringify(dataInit) + ";"; 
+  });
+  var content1 = "var dataInit"+propSelected+" = " + JSON.stringify(dataInit) + ";";
   fs.writeFile("./dataInitresult"+propSelected+".js", content1, function(err) {
     if(err) {
         console.log(err);
     } else {
-        console.log("The file dataInitresult was saved!");
+        console.log("The file dataInitresult"+propSelected+" was saved!");
     }
-  }); 
+  });
 
-  var content2 = "var dataInit2"+propSelected+" = " + JSON.stringify(dataInit) + ";"; 
+  var content2 = "var dataInit2"+propSelected+" = " + JSON.stringify(dataInit) + ";";
   fs.writeFile("./dataInitresult2"+propSelected+".js", content2, function(err) {
     if(err) {
         console.log(err);
     } else {
-        console.log("The file dataInitresult2 was saved!");
+        console.log("The file dataInitresult2"+propSelected+" was saved!");
     }
-  }); 
+  });
 
 });

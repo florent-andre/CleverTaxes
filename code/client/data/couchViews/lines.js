@@ -1,10 +1,11 @@
 function(doc) {
-  if(doc.name && doc.lines) {
+  if(doc.type && doc.graphicName && doc.lines ) {
+
 	doc.lines.forEach(function(line) {
 		emit(line.id, line.percentage);
-		
-		
-    		
+
+
+
     	});
   }
 }
@@ -13,25 +14,33 @@ function(keys, values) {
   return (sum(values)/values.length);
 }
 
-var result = 0;
-	for (var i in values) {
-    		var elt = values[i];
-    		result +=elt.percentage;
-	}
-return (result);
-/*
-//console.log(values);
-	var test = false;
-	var result = "";
-	values.forEach(function(d,i){
-		log(d);
-		//result += JSON.parse(d).percentage || 0;
-		//result += typeof JSON.parse(d).percentage;
-		var t = JSON.parse(d);
-		result =  t;
-	});
-
-	//JSON.parse("{\"id\":0,\"label\":\"Non assigné\",\"amount\":1.5486871041989332,\"percent\":100,\"percentage\":0.2212410148855619}")
-	
-  return //JSON.parse(values[0]);;//values[0];//JSON.parse('{"tto" : 1}');//values[0];//JSON.parse(values[0]);//.length;// values[0][0];//result; //values.length; //result;//(sum(values.percent)/values.length);
-*/
+"views": {
+    "2011": {
+        "map": "function(doc) {\n  if(doc.type=='2011' && doc.graphicName && doc.lines ) {\n\n\tdoc.lines.forEach(function(line) {\n\t\temit(line.id, line.percentage);\n\n\n\n    \t});\n  }\n}\n",
+        "reduce": "function(keys, values) {\n  return (sum(values)/values.length);\n}"
+    },
+    "AEPLF2014": {
+        "map": "function(doc) {\n  if(doc.type=='AEPLF2014' && doc.graphicName && doc.lines ) {\n\n\tdoc.lines.forEach(function(line) {\n\t\temit(line.id, line.percentage);\n\n\n\n    \t});\n  }\n}\n",
+        "reduce": "function(keys, values) {\n  return (sum(values)/values.length);\n}"
+    },
+    "AELFi2014": {
+        "map": "function(doc) {\n  if(doc.type=='AELFi2014' && doc.graphicName && doc.lines ) {\n\n\tdoc.lines.forEach(function(line) {\n\t\temit(line.id, line.percentage);\n\n\n\n    \t});\n  }\n}\n",
+        "reduce": "function(keys, values) {\n  return (sum(values)/values.length);\n}"
+    },
+    "CPPLF2014": {
+        "map": "function(doc) {\n  if(doc.type=='CPPLF2014' && doc.graphicName && doc.lines ) {\n\n\tdoc.lines.forEach(function(line) {\n\t\temit(line.id, line.percentage);\n\n\n\n    \t});\n  }\n}\n",
+        "reduce": "function(keys, values) {\n  return (sum(values)/values.length);\n}"
+    },
+    "CPLFi2014": {
+        "map": "function(doc) {\n  if(doc.type=='CPLFi2014' && doc.graphicName && doc.lines ) {\n\n\tdoc.lines.forEach(function(line) {\n\t\temit(line.id, line.percentage);\n\n\n\n    \t});\n  }\n}\n",
+        "reduce": "function(keys, values) {\n  return (sum(values)/values.length);\n}"
+    },
+    "AELF2013": {
+        "map": "function(doc) {\n  if(doc.type=='AELF2013' && doc.graphicName && doc.lines ) {\n\n\tdoc.lines.forEach(function(line) {\n\t\temit(line.id, line.percentage);\n\n\n\n    \t});\n  }\n}\n",
+        "reduce": "function(keys, values) {\n  return (sum(values)/values.length);\n}"
+    },
+    "CPLF2013": {
+        "map": "function(doc) {\n  if(doc.type=='CPLF2013' && doc.graphicName && doc.lines ) {\n\n\tdoc.lines.forEach(function(line) {\n\t\temit(line.id, line.percentage);\n\n\n\n    \t});\n  }\n}\n",
+        "reduce": "function(keys, values) {\n  return (sum(values)/values.length);\n}"
+    }
+}

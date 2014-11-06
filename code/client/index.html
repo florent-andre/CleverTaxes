@@ -48,38 +48,6 @@
 			.red{
 				border : 1px solid red;
 			}
-			.bar:hover {
-  				fill: orangered ;
-			}
-			.d3-tip {
-			  line-height: 1;
-			  font-weight: bold;
-			  padding: 12px;
-			  background: rgba(0, 0, 0, 0.8);
-			  color: #fff;
-			  border-radius: 2px;
-			}
-
-			/* Creates a small triangle extender for the tooltip */
-			.d3-tip:after {
-			  box-sizing: border-box;
-			  display: inline;
-			  font-size: 10px;
-			  width: 100%;
-			  line-height: 1;
-			  color: rgba(0, 0, 0, 0.8);
-			  content: "\25BC";
-			  position: absolute;
-			  text-align: center;
-			}
-
-			/* Style northward tooltips differently */
-			.d3-tip.n:after {
-			  margin: -1px 0 0 0;
-			  top: 100%;
-			  left: 0;
-			}
-
 
 	  </style>
 
@@ -88,15 +56,19 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-  </head>
-
-  <body>
-
-<script>
+    <script type="text/javascript">
 
 
 
 </script>
+  </head>
+
+  <body>
+  <script>
+
+</script>
+
+
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -145,7 +117,7 @@
 						</div>
 						<br>
 						<div class="input-group">
-							<select  id = "typebudget" data-style="btn-inverse">
+							<select  id = "typebudget" style= "width:350px">
 								<optgroup label="2014">
 									<option value ="AEPLF2014" >AEPLF 2014</option>
 									<option value ="AELFi2014">AELFi 2014</option>
@@ -267,13 +239,13 @@
 	</div><!-- /.modal -->
 
     <!-- Bootstrap -->
-    <script src="resources/js/libs/bootstrap-3.0.2.min.js"></script>
     <script src="resources/js/libs/bootstrap-select.js"></script>
+    <script src="resources/js/libs/bootstrap-3.0.2.min.js"></script>
 
     <script type="text/javascript" src="resources/js/array.js"></script>
 
     <script type="text/javascript" src="resources/js/libs/d3.v3.min.js"></script>
-    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <!--<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>-->
   	<script src="resources/js/libs/couchJquery/json2.js"></script>
   	<script src="resources/js/libs/couchJquery/sha1.js"></script>
   	<script src="resources/js/libs/couchJquery/jquery.js"></script>
@@ -281,36 +253,31 @@
   	<script src="resources/js/libs/couchJquery/jquery.dialog.js"></script>
 
       <!-- mock datas -->
-    <script type="text/javascript" src="./data/rawData.js"></script>  
+    <!--<script type="text/javascript" src="./data/rawData.js"></script>-->
     <!-- 2011 -->
     <script type="text/javascript" src="./data/dataInit.js"></script>
     <script type="text/javascript" src="./data/dataInit2.js"></script>
-    <script type="text/javascript" src="./data/dataInit3.js"></script>
+
     <!-- AEPLF2014 -->
 
     <script type="text/javascript" src="./data/traitement/dataInitresult.js"></script>
     <script type="text/javascript" src="./data/traitement/dataInitresult2.js"></script>
     <!-- AELFi2014 -->
-    <!--<script type="text/javascript" src="./data/traitement/rawDataresultAELFi2014.js"></script>-->
     <script type="text/javascript" src="./data/traitement/dataInitresultAELFi2014.js"></script>
     <script type="text/javascript" src="./data/traitement/dataInitresult2AELFi2014.js"></script>
 
     <!-- CPPLF2014 -->
-    <!--<script type="text/javascript" src="./data/traitement/rawDataresultCPPLF2014.js"></script>-->
     <script type="text/javascript" src="./data/traitement/dataInitresultCPPLF2014.js"></script>
-    <script type="text/javascript" src="./data/traitement/dataInitresultCPPLF2014.js"></script>
+    <script type="text/javascript" src="./data/traitement/dataInitresult2CPPLF2014.js"></script>
     <!-- CPLFi2014 -->
-    <!--<script type="text/javascript" src="./data/traitement/rawDataresultCPLFi2014.js"></script>-->
     <script type="text/javascript" src="./data/traitement/dataInitresultCPLFi2014.js"></script>
-    <script type="text/javascript" src="./data/traitement/dataInitresultCPLFi2014.js"></script>
+    <script type="text/javascript" src="./data/traitement/dataInitresult2CPLFi2014.js"></script>
     <!-- AELF2013 -->
-    <!--<script type="text/javascript" src="./data/traitement/rawDataresultAELF2013.js"></script>-->
     <script type="text/javascript" src="./data/traitement/dataInitresultAELF2013.js"></script>
-    <script type="text/javascript" src="./data/traitement/dataInitresultAELF2013.js"></script>
+    <script type="text/javascript" src="./data/traitement/dataInitresult2AELF2013.js"></script>
     <!-- CPLF2013 -->
-    <!--<script type="text/javascript" src="./data/traitement/rawDataresultCPLF2013.js"></script>-->
     <script type="text/javascript" src="./data/traitement/dataInitresultCPLF2013.js"></script>
-    <script type="text/javascript" src="./data/traitement/dataInitresultCPLF2013.js"></script>
+    <script type="text/javascript" src="./data/traitement/dataInitresult2CPLF2013.js"></script>
 
     <!-- cleverTaxes script -->
     <script type="text/javascript" src="./resources/js/cleverTaxes.js"></script>

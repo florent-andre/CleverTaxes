@@ -85,14 +85,7 @@ fs.readFile('./plf.json', 'utf8', function (err,data) {
 
   //console.log(dataPrepared);
 
-  var content = "var rawData"+propSelected+" = {'lines' : " + JSON.stringify(rawData) + "};";
-  fs.writeFile("./rawDataresult"+propSelected+".js", content, function(err) {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log("The file rawDataresult"+propSelected+" was saved!");
-    }
-  });
+
   var content1 = "var dataInit"+propSelected+" = " + JSON.stringify(dataInit) + ";";
   fs.writeFile("./dataInitresult"+propSelected+".js", content1, function(err) {
     if(err) {

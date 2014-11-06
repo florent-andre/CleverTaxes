@@ -12,6 +12,7 @@
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="resources/css/libs/bootstrap-3.0.2.min.css">
+  <link rel="stylesheet" href="resources/css/libs/bootstrap-select.css">
 <!-- Jquery -->
 <script src="resources/js/libs/jquery-1.10.2.min.js"></script>
 <script src="https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json2.js"></script>
@@ -22,7 +23,7 @@
 			}
 			.starter-template {
 			  padding: 40px 15px;
-			  text-align: center;
+			  text-align: ;
 			}
 
 			#graphContainer * {
@@ -96,7 +97,7 @@
     	<div style ="float:right;">
     		<a href ="index.html"><img src="resources/css/images/flag_fr.png"/> </a>
     		<a href ="index_en.html"><img src="resources/css/images/flag_en.png"/></a>
-    	</div>	   
+    	</div>
       <div class="starter-template">
       	<div class="step0" >
       		<h1>Enter your annual tax amount</h1>
@@ -118,14 +119,33 @@
 						<!--  <span class="input-group-addon">.00</span> -->
 					</div>
 					<br>
+
+          <div class="input-group">
+            <select  id = "typebudget" data-style="btn-inverse">
+              <optgroup label="2014">
+                <option value ="AEPLF2014" >AEPLF 2014</option>
+                <option value ="AELFi2014">AELFi 2014</option>
+                <option value ="CPPLF2014">CPPLF 2014</option>
+                <option value ="CPLFi2014">CPLFi 2014</option>
+              </optgroup>
+              <optgroup label="2013">
+                <option value ="AELF2013">AELF 2013</option>
+                <option value ="CPLF2013">CPLF 2013</option>
+              </optgroup>
+              <optgroup label="2011">
+                <option value="2011" selected>Budget 2011 </option>
+              </optgroup>
+            </select>
+          </div>
+          <br>
 			 		<button id="valid" type="button" data-loading-text="Loading..." class="btn btn-lg btn-primary btn-block">See how it's used</button>
 			 		<!--<button id="golocal" type="button" data-loading-text="Loading..." class="btn btn-lg btn-primary btn-block">GO Local!</button>-->
 
 		        </form>
 	        	</div>
         	</div>
-        
-        	
+
+
         	<!--
         	<h1>Or connect with your Crédit Agricole account</h1>
         	<div id="caRow" class="row" >
@@ -164,14 +184,14 @@
 	 		<p class="step2 text-muted">Give a name to your distribution</p>
 	 		<p class="step2 text-muted">Click the button to save and share your ideas</p>
 
-	 		
+
 	 		<div class="step2 row">
 				<div class="input-group col-md-4 col-md-offset-4">
 					<span class="input-group-addon">Name</span>
 					<input id="graphicName" class="form-control" type="text" placeholder="Your Graphic Name" required>
 				</div>
 			</div>
-			
+
 		</br>
 
 	 		<h1 class="step3">This show (in average) how people would have manage the budget.</h1>
@@ -199,11 +219,11 @@
 
       </div>
       <div class ="liste">
-      	<h2>List of the last five charts</h2>	
+
         	<div  id ="listOfGraphic">
-        		
+
         	</div>
-       </div> 		
+       </div>
     </div><!-- /.container -->
 
 
@@ -227,7 +247,7 @@
 
     <!-- Bootstrap -->
     <script src="resources/js/libs/bootstrap-3.0.2.min.js"></script>
-
+    <script src="resources/js/libs/bootstrap-select.js"></script>
     <script type="text/javascript" src="resources/js/array.js"></script>
 
     <script type="text/javascript" src="resources/js/libs/d3.v3.min.js"></script>
@@ -238,11 +258,34 @@
 	<script src="resources/js/libs/couchJquery/jquery.couch.js"></script>
 	<script src="resources/js/libs/couchJquery/jquery.dialog.js"></script>
 
-    <!-- mock datas -->
-    <script type="text/javascript" src="./data/rawData.js"></script>
-    <script type="text/javascript" src="./data/dataInit.js"></script>
-    <script type="text/javascript" src="./data/dataInit2.js"></script>
-    <script type="text/javascript" src="./data/dataInit3.js"></script>
+
+  <!-- mock datas -->
+  <!--<script type="text/javascript" src="./data/rawData.js"></script>-->
+  <!-- 2011 -->
+  <script type="text/javascript" src="./data/dataInit.js"></script>
+  <script type="text/javascript" src="./data/dataInit2.js"></script>
+
+  <!-- AEPLF2014 -->
+
+  <script type="text/javascript" src="./data/traitement/dataInitresult.js"></script>
+  <script type="text/javascript" src="./data/traitement/dataInitresult2.js"></script>
+  <!-- AELFi2014 -->
+  <script type="text/javascript" src="./data/traitement/dataInitresultAELFi2014.js"></script>
+  <script type="text/javascript" src="./data/traitement/dataInitresult2AELFi2014.js"></script>
+
+  <!-- CPPLF2014 -->
+  <script type="text/javascript" src="./data/traitement/dataInitresultCPPLF2014.js"></script>
+  <script type="text/javascript" src="./data/traitement/dataInitresult2CPPLF2014.js"></script>
+  <!-- CPLFi2014 -->
+  <script type="text/javascript" src="./data/traitement/dataInitresultCPLFi2014.js"></script>
+  <script type="text/javascript" src="./data/traitement/dataInitresult2CPLFi2014.js"></script>
+  <!-- AELF2013 -->
+  <script type="text/javascript" src="./data/traitement/dataInitresultAELF2013.js"></script>
+  <script type="text/javascript" src="./data/traitement/dataInitresult2AELF2013.js"></script>
+  <!-- CPLF2013 -->
+  <script type="text/javascript" src="./data/traitement/dataInitresultCPLF2013.js"></script>
+  <script type="text/javascript" src="./data/traitement/dataInitresult2CPLF2013.js"></script>
+
     <!-- cleverTaxes script -->
     <script type="text/javascript" src="./resources/js/cleverTaxes.js"></script>
   </body>

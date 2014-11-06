@@ -227,21 +227,12 @@ function print( /*An array of prepared data*/ args, /*boolean*/ initAxes, /*bool
 	var svg = d3.select("#chart svg g");
 
 	if(svg.empty()){
-		console.log ("svg empty");
-		var tip = d3.tip()
-		  .attr('class', 'd3-tip')
-		  .offset([-10, 0])
-		  .html(function(d) {
-		    return "<strong>Amount:</strong> <span style='color:red'>" + d + "</span>";
-		  })
 		svg = d3.select("#chart").append("svg")
-			    .attr("width", width + margin.left + margin.right)
-			    .attr("height", height + margin.top + margin.bottom)
-			    .append("g")
-			    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-			    .on('mouseover', tip.show)
-      			.on('mouseout', tip.hide)
-		svg.call(tip);
+			.attr("width", width + margin.left + margin.right)
+			.attr("height", height + margin.top + margin.bottom)
+			.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 	}
 
 
@@ -654,9 +645,11 @@ $(document).ready(function(){
 	var alertName   = "Nom du graphique est obligatoire";
 	var alertChamps = "Champs obligatoires";
 	var name        = "Nom";
+	var titleOfList = "Liste des derniers graphiques";
 		textState = "Etat";
 		textUser  = "Vous";
 		textAvg   = "Moyenne";
+
 
 	//console.log (location.pathname);
 	if ((location.pathname.indexOf("index_en")) != -1){
@@ -667,9 +660,12 @@ $(document).ready(function(){
 		textSave    = "Save and...";
 		alertChamps = "Required fields";
 		name        = "Name";
+		titleOfList = "List of the last charts";
 		textState = "State";
 		textUser  = "User";
 		textAvg   = "Average"
+
+
 	}
 	type = 	$("#typebudget").val();
 	console.log (type +"  " +textAvg);
@@ -721,7 +717,7 @@ $(document).ready(function(){
 		    			html += "<tr><td><a href=\""+location.href+'?docId='+entry.id+"\">"+entry.value.graphicName+"<a></td><td>"+formatDate(entry.value.date)+"</td></tr>";
 		    	});
 					if (html != ""){
-						header = "<h2>Liste des derniers graphiques</h2>";
+						header = "<h2>"+titleOfList+"</h2>";
 						header += "<table class=\"table table-hover\">";
 						header += "<thead><tr><th>"+name+"</th><th>Date</th></thead><tbody>";
 						html = header + html + "</tbody></table>";
@@ -981,14 +977,18 @@ $(document).ready(function(){
 
 	var dfd = $.Deferred();
 
-;
 
-	$('#typebudget').change(function(e) {
+$(document).ready(function(){
+	console.log ("select : ");
+//$('.selectpicker').selectpicker('val', 'Mustard');
+		$('select#typebudget').change(function() {
+			var id = $("#typebudget option:selected").val();
+			//var id = this.value;
+			console.log ("select : "+id);
+			loadListGraphics(id);
+		});
 
-		var id = this.value;
-		console.log ("select : "+id);
-		loadListGraphics(id);
-	});
+});
 	$("#valid").click(function(){
 		//console.log ("point de depart");
 
@@ -1003,9 +1003,22 @@ $(document).ready(function(){
 
 		 	dfd.resolve();
 		}else{
-			$("#name").addClass("red");
-			$("#taxamount").addClass("red");
-			$("#typebudget").addClass("red");
+			if (taxAmount.trim() == ''){
+				$("#taxamount").addClass("red");
+				$("#name").removeClass("red");
+				$("#typebudget").removeClass("red");
+			}if (name.trim() == ''){
+				$("#name").addClass("red");
+				$("#taxamount").removeClass("red");
+				$("#typebudget").removeClass("red");
+			}
+
+			if (type == undefined){
+				$("#typebudget").addClass("red");
+				$("#name").removeClass("red");
+				$("#taxamount").removeClass("red");
+			}
+
 			alert (alertChamps);
 		}
 

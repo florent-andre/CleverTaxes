@@ -1,19 +1,3 @@
-function(doc) {
-  if(doc.type && doc.graphicName && doc.lines ) {
-
-	doc.lines.forEach(function(line) {
-		emit(line.id, line.percentage);
-
-
-
-    	});
-  }
-}
-
-function(keys, values) {
-  return (sum(values)/values.length);
-}
-
 "views": {
     "2011": {
         "map": "function(doc) {\n  if(doc.type=='2011' && doc.graphicName && doc.lines ) {\n\n\tdoc.lines.forEach(function(line) {\n\t\temit(line.id, line.percentage);\n\n\n\n    \t});\n  }\n}\n",

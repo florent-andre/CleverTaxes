@@ -1,7 +1,4 @@
 
-
-console.log("hello");
-
 fs = require('fs')
 fs.readFile('./plf.json', 'utf8', function (err,data) {
   if (err) {

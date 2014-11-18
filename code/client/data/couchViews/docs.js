@@ -1,9 +1,3 @@
-function(doc) {
-  if(doc.type && doc.graphicName) {
-	emit(doc.id, doc);
-
-  }
-}
 
 "views": {
        "2011": {

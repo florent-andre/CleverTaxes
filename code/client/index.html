@@ -23,7 +23,7 @@
 			}
 			.starter-template {
 			  padding: 40px 15px;
-			  text-align: ;
+			  text-align: center;
 			}
 
 			#graphContainer * {
@@ -97,7 +97,7 @@
     	</div>
       <div class="starter-template">
 	      	<div class="step0" >
-	      		<h1 class="col-md-8 col-md-offset-3">Entrez le montant annuel de vos impôts</h1>
+	      		<h1>Entrez le montant annuel de vos impôts</h1>
 	        	<div class="row" >
 
 		        	<div class="col-md-4 col-md-offset-4">
@@ -119,17 +119,17 @@
 						<div class="input-group">
 							<select id="typebudget" class="form-control" style="width:350px" >
 								<optgroup label="2014">
-									<option value ="AEPLF2014" selected="true">Budget 2014 (AELF)</option>
+									<option value ="AEPLF2014" selected="selected">Budget 2014 (AELF)</option>
 									<!-- <option value ="AELFi2014">AELFi 2014</option> -->
 									<!-- <option value ="CPPLF2014">CPPLF 2014</option> -->
 									<!-- <option value ="CPLFi2014">CPLFi 2014</option> -->
 								</optgroup>
 								<optgroup label="2013">
-									<option value ="AELF2013">Budget 2013 (AELF)</option>
+									<option value="AELF2013">Budget 2013 (AELF)</option>
 									<!-- <option value ="CPLF2013">CPLF 2013</option> -->
 								</optgroup>
 								<optgroup label="2011">
-									<option value="2011" selected>Budget 2011 </option>
+									<option value="2011">Budget 2011 </option>
 								</optgroup>
 							</select>
 						</div>
@@ -170,17 +170,17 @@
 		        </div>
 		    </div>-->
 
-	 		<h1 class="step1 col-md-7 col-md-offset-3" >Voici comment vos impôts sont utilisés</h1>
+	 		<h1 class="step1" >Voici comment vos impôts sont utilisés</h1>
 	 		<!-- <p class="step1 text-muted col-md-5 col-md-offset-4">A noter que ces données sont issues du budget de la France en 2011.</p> -->
 
-	 		<h2 class="step1 small col-md-5 col-md-offset-4">Cliquez sur ce bouton pour donner votre opinion</h2>
+	 		<h2 class="step1 small">Cliquez sur ce bouton pour donner votre opinion</h2>
 
-	 		<h1 class="step2 col-md-9 col-md-offset-2">Exprimez-vous sur la répartition du budget</h1>
+	 		<h1 class="step2">Exprimez-vous sur la répartition du budget</h1>
 
 
-	 		<p class="step2 text-muted col-md-7 col-md-offset-3">Utilisez les boutons rouges au-dessus des barres pour faire varier les montants</p>
-	 		<p class="step2 text-muted col-md-7 col-md-offset-3">Donnez un nom à votre répartition</p>
-	 		<p class="step2 text-muted col-md-7 col-md-offset-3">Cliquez sur le bouton pour enregistrer et partager vos idées</p>
+	 		<p class="step2 text-muted">Utilisez les boutons rouges au-dessus des barres pour faire varier les montants</p>
+	 		<p class="step2 text-muted">Donnez un nom à votre répartition</p>
+	 		<p class="step2 text-muted">Cliquez sur le bouton pour enregistrer et partager vos idées</p>
 	 		<div class="step2 row">
 				<div class="input-group col-md-4 col-md-offset-4">
 					<span class="input-group-addon">Nom</span>
@@ -189,9 +189,9 @@
 			</div>
 
 		</br>
-	 		<h1 class="step3 col-md-9 col-md-offset-2">Voici la moyenne des répartitions citoyennes</h1>
-	 		<h2 class="step3 small col-md-5 col-md-offset-4">Cliquez ici pour partager avec vos amis !</h2>
-	 		<div class="step3 nameGraph col-md-5 col-md-offset-4"></div>
+	 		<h1 class="step3">Voici la moyenne des répartitions citoyennes</h1>
+	 		<h2 class="step3 small">Cliquez ici pour partager avec vos amis !</h2>
+	 		<div class="step3 nameGraph"></div>
 	 		<button id="stepButton"
 	 				type="button"
 	 				data-loading-text="Loading..."
@@ -213,7 +213,7 @@
 <!--         </div> -->
 
       </div>
-      <div class ="liste">
+      <div class ="liste col-md-8 col-md-offset-2">
         	<div id ="listOfGraphic">
         	</div>
       </div>

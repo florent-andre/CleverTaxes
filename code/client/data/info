@@ -1,1 +1,7 @@
 Montants des autorisations d'engagement (AE) et des crédits de paiement (CP) exprimés en euros pour les projets de loi de finances (PLF) et les lois de finances initiales (LFi)
+
+
+Suggestion : utilise plutôt les CP (crédits effectivement consommés dans l'année) que les AE (engagements potentiellement pluriannuels). Par exemple, pour un loyer de 100k€ annuels sur un bail de sept ans, on aurait :
+
+AE = 7 * 100 = 700k€
+CP = 100k€ 

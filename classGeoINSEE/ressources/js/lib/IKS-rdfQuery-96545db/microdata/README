@@ -1,0 +1,5 @@
+Microdata is a syntax for embedding machine-readable metadata in HTML.
+
+MicrodataJS is a jQuery plugin that provides an API for accessing
+Microdata inspired by (but by necessity slightly different from) the
+native DOM API.

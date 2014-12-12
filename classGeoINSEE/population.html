@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Population insee</title>
+
+    <link href="ressources/css/lib/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="ressources/css/lib/starter-template.css" rel="stylesheet">
+    <link rel="stylesheet" href="ressources/css/lib/bootstrap-multiselect.css" type="text/css"/>
+
+    <script  src="ressources/js/lib/jquery-1.11.0.min.js"></script>
+    <script  src="ressources/js/lib/bootstrap.min.js"></script>
+    <script  src="ressources/js/lib/bootstrap-multiselect.js"></script> 
+    
+    <script  src="ressources/js/lib/IKS-rdfQuery-96545db/jquery.uri.js"></script>
+    <script  src="ressources/js/lib/IKS-rdfQuery-96545db/jquery.datatype.js"></script>
+    <script  src="ressources/js/lib/IKS-rdfQuery-96545db/jquery.curie.js"></script>
+    <script  src="ressources/js/lib/IKS-rdfQuery-96545db/jquery.rdf.js"></script>
+    <script  src="ressources/js/lib/IKS-rdfQuery-96545db/jquery.rdf.json.js"></script>
+    <script  src="ressources/js/lib/IKS-rdfQuery-96545db/jquery.rdf.xml.js"></script>
+
+    <script  src="ressources/js/insee-util.js"></script>
+  
+<script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script>
+  
+</head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Urban Explorer</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  
+    <div class="container">
+     
+      <h3 class="form-signin-heading">Description of node <b><span id ="nodeId"></span></b></h3>
+      
+      <form name="findForm" id="findForm" role="form" >
+        <h4 class="form-signin-heading">Select the predicates and click on Display </h4>
+
+        <select id="example22" multiple="multiple" style="display: none;">
+        </select>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="afficheDataByPredicate(); return false;">Display</button>
+   
+      </form>
+
+      <table id ="PopulationTable" class="table table-hover">
+        
+      </table>
+      <div id="testSearchResult">
+        <pre id="testSearchResultText"></pre>
+      </div>
+  
+
+    </div><!-- /.container -->
+  
+ <script type="text/javascript">
+      $(document).ready(function() {
+
+        mutiselectCode();
+        
+        
+        affichePopulation();
+   });  
+
+    
+  </script> 
+<div id="cacaowebchromeextension"></div>
+<script type="text/javascript">var Cacaoweb = { callbackIsRunning: function () { var cacaodiv = document.createElement("div"); cacaodiv.id = "cacaorunning"; document.body.appendChild(cacaodiv); } };</script><script id="isrunning" src="http://127.0.0.1:4001/isrunning" type="text/javascript"></script>
+
+</body>
+</html>

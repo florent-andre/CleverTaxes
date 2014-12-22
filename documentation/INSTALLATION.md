@@ -1,4 +1,3 @@
-
 # Code : 
 
 ``` bash
@@ -94,14 +93,28 @@ TODO : remove jsonjaxb & clevertaxes as they are not usefull anymore
 <pre>
 sudo npm install -g cordova
 </pre>
-
+* pour verifuer que l'install s'est bien passée et avoir la version
+<pre>
+cordova --version
+</pre>
 * Documentation about this npm is here : https://npmjs.org/package/cordova
 
-## get the Sdk :
-
-
-# documentation a revoir : 
-* a ajouter dans le bashrc
+## Tester sur un mobile :
+#pour compiler pour ios : il suffit d'avoir un mac, installer Xcode depuis l'app Store et le lancer
+#pour compiler pour Android : installer dans l'ordre jdk, Android Sdk et Ant et ajouter les fichiers binaires dans le path
+ *http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+ *http://www.android-dev.fr/installation-du-sdk-android-sous-ubuntu#.UvH463jiCPJ
+ *http://ant.apache.org/bindownload.cgi
+* a ajouter dans le bashrc: le path vers sdk/tools,sdk/platform-tools et le ant/bin
+* pour se faire se placer dans dossier binaire a ajouter, Par défaut ::
+<pre> 
+cd Téléchargements/
+cd android-sdk-linux/tools/
+echo "export PATH=${PATH}:$(pwd)" >> ~/.bashrc
+. ~/.bashrc
+</pre>
+** De meme pour pour android-sdk-linux/platform-tools/
+** et le soddier bin de Apache Ant
 ** export PATH=$PATH:/home/florent/devel/dev-clever-taxes/code/phonegap/infra/adt-bundle-linux-x86_64-20131030/sdk/tools:/home/florent/devel/dev-clever-taxes/code/phonegap\
 /infra/adt-bundle-linux-x86_64-20131030/sdk/platform-tools
 
@@ -116,6 +129,14 @@ sudo npm install -g cordova
 
 * suivre les instructin ici :
 * http://docs.phonegap.com/en/3.3.0/guide_cli_index.md.html#The%20Command-Line%20Interface
+* ou ici :
+* http://android-er.blogspot.fr/2009/10/create-android-virtual-device-avd-in.html
+Avant de crér une AVD, vérifier les targets de votre système ici your system.
+<pre> 
+cd ~/android-sdk-linux_x86-1.6_r1/tools 
+$./android list targets
+</pre>
+
 
 * if erreur 
 <pre>

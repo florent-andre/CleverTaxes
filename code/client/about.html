@@ -12,10 +12,10 @@
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="resources/css/libs/bootstrap-3.0.2.min.css">
-<!-- Jquery -->
-<script src="resources/js/libs/jquery-1.10.2.min.js"></script>
-<script src="https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json2.js"></script>
-	  <style type="text/css">
+	<!-- Jquery -->
+	<script src="resources/js/libs/jquery-1.10.2.min.js"></script>
+	<script src="https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json2.js"></script>
+	<style type="text/css">
 
 		  body {
 			  padding-top: 50px;
@@ -45,7 +45,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Open Politics</a>
+          <a class="navbar-brand" href="index.html">Open Budget</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -56,34 +56,81 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-
+    
     <div class="container">
       <br>
       <div class="row">  
-  
-  <div class="span9"> 
-<div class="page-header">
-    <h1>A propos <small></small></h1>
-  </div>
+	
+	<div class="span9"> 
+	  <div class="page-header">
+	    <h1>A propos <small></small></h1>
+	  </div>
+	  
+	  <!-- Headings & Paragraph Copy -->
+	  <div class="row">
+	    
+	    <div class="span9">
+	      <h3>Objectifs</h3>
+	      <p>L'idée générale du projet est d'offrir aux citoyens un accès simple, compréhensible et participatif aux données du budget des organisations, mairies, états, fédérations d'états.</p>
+	      <p>Actuellement l'application est un démonstrateur qui permet déjà :
+		<ul>
+		  <li>de visualiser de manière graphique les données budgétaires française sur une échelle représentative pour un citoyen (en fonction du montant de ses impôts)</li>
+		  <li>de définir sa répartition idéale</li>
+		  <li>de disposer de la moyenne des répartitions effectuées par les autres utilisateurs.</li>
+		</ul>
+	      </p>
+	      <p>De nombreuses fonctionnalités sont actuellement envisagées pour permettre aux citoyens une action plus participative et démocratique sur la gestion budgétaire. Par exemple :
+		<ul>
+		  <li>Visualiser lors du clic sur une barre du graphique, une représentation visuelle détaillant les sous-lignes budgétaires la composant</li>
+		  <li>Associer à chaque graphique de répartition ou ligne budgétaire un forum de discussion, des documents issus de l'institution ou des citoyens</li>
+		  <li>Permettre aux citoyens d'ajouter des propositions de lignes budgétaires</li>
+		  <li>Proposer d'autres représentations graphiques (camemberts, graphes cumulés,...) pouvant être plus pertinentes pour certaines personnes</li>
+		  <li>Disposer d'une vue historique et/ou prospective des répartitions budgétaires</li>
+		  <li>Disposer d'un graphique comparatif entre différentes options</li>
+		  <li>Permettre aux citoyens de voter pour une répartition particulière</li>
+		  <li>...</li>
+		</ul>
+	      </p>
+	      <p>Ces propositions sont surtout axées sur l'aspect visualisation et participation citoyenne mais nous avons aussi plusieurs idées pour faciliter le travail des agents administratif disposant des données et ainsi les inciter au partage de ces données via cette application. </p>
+	    </div>
+	    
+	    <div class="span9">
+	      <h3>Licence du logiciel</h3>
+	      <p>Ce logiciel, est publié sous la <a href="http://www.apache.org/licenses/LICENSE-2.0">licence Apache2</a>.</p>
+	      <p>La version actuelle est disponible sous <a href="https://github.com/florent-andre/CleverTaxes">GitHub sous le nom temporaire "Clevertaxes"</a>. Veuillez noter que la version actuelle est un POC destiné à démontrer la faisabilité, receuillir des besoins, créer les prémisses d'une communauté.</p>
+	      <p>A ce titre, le code actuellement disponible dans ce repository ne correspond pas à l'architecture logicielle ni à la qualitée logicielle cible.</p>
+	    </div>
+	    
+	    <div class="span9">
+	      <h3>Données utilisées</h3>
+	      <p>Les données actuellement utilisées sont les suivantes : 
+		<ul>
+		  <li><a href="http://deep-stone-7721.herokuapp.com/">pour l'année 2011</a></li>
+		  <li><a href="https://www.data.gouv.fr/fr/datasets/plf-2014-budget-general-bg-par-destination-mission-programme-action-titre/">pour 2013 et 2014</a></li>
+		</ul>
+		
+	      </p>
+	      <p>Les données transformées pour le fonctionnement du logiciel sont disponibles <a href="https://github.com/florent-andre/CleverTaxes/tree/sauvegarde/code/client/data">dans ce dossier en ligne Github</a></p>
+	      <p>Une fonctionnalité permettant de retracer les modifications effectuées sur les données pour le fonctionnement du logiciel, et ainsi offrir à tout un chacun l'opportunité de vérifier les données du lociciel sera mise en place prochainement.</p>
+	      <p>OpenBudget.fr a pour objectif d'être une plateforme de transparence et d'expression démocratique. Cette plateforme sera donc totalement transparente et gérée démocratiquement.</p>
+	    </div>
+	    
+	    
+	    <div class="span9">
+	      <h3>Participer au projet</h3>
+	      <p>En tant que projet Citoyen et Open Source nous sommes ouvert a toute participation.</p>
+	      <p>Une liste de diffusion dédiée au projet sera prochainement mise en place. En attentant, envoyez un mail à florent [at] ooffee.eu, pour vous faire connaitre et commencer les discussions ! </p>
+	    </div>
 
-  <!-- Headings & Paragraph Copy -->
-  <div class="row">
-  
-  
-    <div class="span9">
-      <h3>OOFFEE</h3>
-      <p>Ooffee provide consultancy and development for companies that want to take care of their amount of informations. Semantics and data management, help you to create values from existing data. Each request is evaluate throw the your particular organisation's needs and context. Ooffee tend to not just develop tools... with the help of ergonomics, tend to create tools that are build for your users goods !</p>
-    </div>
-
-
-  <!-- Misc Elements -->
-  
-  </div><!-- /row -->
-      
-    </div><!-- /.container -->
-
-     <!-- Bootstrap -->
-    <script src="resources/js/libs/bootstrap-3.0.2.min.js"></script>
-
-    </body>
+	    
+	    <!-- Misc Elements -->
+	    
+	  </div><!-- /row -->
+	  
+	</div><!-- /.container -->
+	
+	<!-- Bootstrap -->
+	<script src="resources/js/libs/bootstrap-3.0.2.min.js"></script>
+	
+  </body>
 </html>
